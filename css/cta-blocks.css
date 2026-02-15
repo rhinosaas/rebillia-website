@@ -1,0 +1,159 @@
+/* ==========================================================================
+   CTA BLOCKS — Full-width + inline banners
+   ========================================================================== */
+
+/* ── Full-Width CTA ─────────────────────────────────────────────────────── */
+
+.cta-block {
+  position: relative;
+  padding: var(--space-20) 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-block--gradient {
+  background: var(--gradient-hero);
+}
+
+.cta-block--purple {
+  background: var(--gradient-purple);
+}
+
+.cta-block--dark {
+  background: var(--gradient-dark);
+}
+
+.cta-block--teal {
+  background: var(--gradient-cta);
+}
+
+.cta-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.05), transparent);
+  pointer-events: none;
+}
+
+.cta-block__content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-block__title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-tight);
+}
+
+.cta-block__text {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.8);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-relaxed);
+}
+
+.cta-block__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* ── Inline CTA (within page content) ───────────────────────────────────── */
+
+.cta-inline {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12) var(--space-10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.cta-inline__content {
+  max-width: 480px;
+}
+
+.cta-inline__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.cta-inline__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.cta-inline__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* ── CTA with gradient border ───────────────────────────────────────────── */
+
+.cta-bordered {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  padding: 2px;
+  background: var(--gradient-hero);
+}
+
+.cta-bordered__inner {
+  background: var(--color-card-bg);
+  border-radius: calc(var(--radius-2xl) - 2px);
+  padding: var(--space-10);
+  text-align: center;
+}
+
+.cta-bordered__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  margin-bottom: var(--space-3);
+}
+
+.cta-bordered__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Newsletter / Email CTA ─────────────────────────────────────────────── */
+
+.email-cta {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.email-cta__input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.1);
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  backdrop-filter: blur(8px);
+}
+
+.email-cta__input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.email-cta__input:focus {
+  outline: none;
+  border-color: var(--color-teal-400);
+}

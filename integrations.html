@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrations - BigCommerce, WooCommerce, API &amp; 7 Payment Gateways | Rebillia</title>
+  <meta name="description" content="Connect Rebillia with BigCommerce, WooCommerce, or any platform via API. 7 payment gateways: Stripe, PayPal, Authorize.net, PayFabric, Square, Braintree, CyberSource.">
+  <link rel="canonical" href="https://www.rebillia.com/integrations">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rebillia.com/integrations">
+  <meta property="og:title" content="Integrations - BigCommerce, WooCommerce, API &amp; 7 Payment Gateways | Rebillia">
+  <meta property="og:description" content="Connect Rebillia with BigCommerce, WooCommerce, or any platform via API. 7 payment gateways: Stripe, PayPal, Authorize.net, PayFabric, Square, Braintree, CyberSource.">
+  <meta property="og:site_name" content="Rebillia">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Integrations - BigCommerce, WooCommerce, API &amp; 7 Payment Gateways | Rebillia">
+  <meta name="twitter:description" content="Connect Rebillia with BigCommerce, WooCommerce, or any platform via API. 7 payment gateways: Stripe, PayPal, Authorize.net, PayFabric, Square, Braintree, CyberSource.">
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.rebillia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Integrations",
+        "item": "https://www.rebillia.com/integrations"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Page-specific styles -->
+  <style>
+    /* ── Platform Integration Cards (enhanced) ──────────────────────────── */
+    .integration-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .integration-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-hero);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .integration-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .integration-card:hover::before {
+      opacity: 1;
+    }
+
+    .integration-card .badge {
+      margin-bottom: var(--space-5);
+    }
+
+    .integration-card__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: var(--space-5);
+      background: rgba(92,46,145,0.15);
+    }
+
+    .integration-card__title {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--color-white);
+      margin-bottom: var(--space-3);
+    }
+
+    .integration-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-6);
+    }
+
+    .integration-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .integration-card__features li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+    }
+
+    .integration-card__features li svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .integration-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--color-primary);
+      transition: gap var(--transition-fast);
+    }
+
+    .integration-card__cta:hover {
+      gap: var(--space-3);
+    }
+
+    /* ── Gateway Cards ──────────────────────────────────────────────────── */
+    .gateways-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+    }
+
+    @media (max-width: 1024px) {
+      .gateways-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gateways-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gateways-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gateway-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      text-align: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .gateway-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .gateway-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-4);
+      background: rgba(92,46,145,0.15);
+    }
+
+    .gateway-card__icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--color-primary);
+    }
+
+    .gateway-card__name {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      color: var(--color-white);
+      margin-bottom: var(--space-2);
+    }
+
+    .gateway-card__text {
+      font-size: var(--text-xs);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-4);
+    }
+
+    .gateway-card__tier {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      border-radius: var(--radius-full);
+      background: rgba(0,163,138,0.15);
+      color: var(--color-accent);
+    }
+
+    .gateway-card__tier--all {
+      background: rgba(92,46,145,0.15);
+      color: var(--color-primary);
+    }
+
+    /* ── Routing feature cards ──────────────────────────────────────────── */
+    .routing-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .routing-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .routing-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-5);
+    }
+
+    .routing-card__icon--purple {
+      background: rgba(92,46,145,0.15);
+      color: var(--color-primary);
+    }
+
+    .routing-card__icon--teal {
+      background: rgba(0,163,138,0.15);
+      color: var(--color-accent);
+    }
+
+    .routing-card__icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .routing-card__title {
+      font-size: var(--text-xl);
+      font-weight: var(--font-semibold);
+      color: var(--color-white);
+      margin-bottom: var(--space-3);
+    }
+
+    .routing-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo.png" alt="Rebillia" width="160" height="46">
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="navbar__nav">
+
+        <!-- Solutions dropdown -->
+        <div class="navbar__dropdown">
+          <a href="solutions.html" class="navbar__link">
+            Solutions
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2v-2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+              Subscribe &amp; Save
+            </a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+              </span>
+              Subscription Boxes
+            </a>
+            <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </span>
+              Usage-Based Billing
+            </a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+              Recurring Services
+            </a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Membership &amp; Access
+            </a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              API-First Billing
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="bigcommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </span>
+              BigCommerce
+            </a>
+            <a href="woocommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              </span>
+              WooCommerce
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+              View All Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <a href="features.html" class="navbar__link">Features</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="integrations.html" class="navbar__link navbar__link--active">Integrations</a>
+        <a href="developers.html" class="navbar__link">Developers</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <a href="login.html" class="navbar__login">Login</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       PAGE WRAPPER
+       ════════════════════════════════════════════════════════════════════════ -->
+  <main class="page-wrapper">
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 1: HERO
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="hero hero--light hero--center">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">INTEGRATIONS</span>
+          <h1 class="hero__title">Connect to Your Entire Stack</h1>
+          <p class="hero__subtitle">Native platform integrations, 7 payment gateways, and a REST API for custom connections. Rebillia fits into your existing workflow.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 2: PLATFORM INTEGRATIONS
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">PLATFORMS</span>
+          <h2>Platform Integrations</h2>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+
+          <!-- BigCommerce -->
+          <div class="integration-card">
+            <span class="badge badge--popular">TOP 3 APP</span>
+            <div class="integration-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="integration-card__title">BigCommerce</h3>
+            <p class="integration-card__text">Deep native integration with BigCommerce. Top-3 rated on the marketplace. Seamless checkout, product catalog sync, and customer portal.</p>
+            <ul class="integration-card__features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Native checkout integration
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Product catalog sync
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Customer portal
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Multi-storefront support
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                One-click install from marketplace
+              </li>
+            </ul>
+            <a href="bigcommerce.html" class="integration-card__cta">
+              View BigCommerce Integration
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- WooCommerce -->
+          <div class="integration-card">
+            <span class="badge badge--new">NEW</span>
+            <div class="integration-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M16 6l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 6L6 8l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13 4l-2 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="2" y="14" width="20" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 17.5h2M10 17.5h2M14 17.5h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="integration-card__title">WooCommerce</h3>
+            <p class="integration-card__text">WordPress plugin for WooCommerce stores. Install from the Plugin Directory. Better and more affordable than WooCommerce Subscriptions.</p>
+            <ul class="integration-card__features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                WordPress Plugin Directory
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                WooCommerce checkout hooks
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Product catalog sync
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                PHP-native integration
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Automatic updates
+              </li>
+            </ul>
+            <a href="woocommerce.html" class="integration-card__cta">
+              View WooCommerce Integration
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Direct API -->
+          <div class="integration-card">
+            <span class="badge badge--primary">FLEXIBLE</span>
+            <div class="integration-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="integration-card__title">Direct API</h3>
+            <p class="integration-card__text">Build custom integrations with our REST API. Connect any platform, any frontend, any backend. Full programmatic control.</p>
+            <ul class="integration-card__features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                RESTful JSON API
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                OAuth 2.0 auth
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Webhooks for events
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                MCP server for AI
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Sandbox environment
+              </li>
+            </ul>
+            <a href="developers.html" class="integration-card__cta">
+              View API Documentation
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 3: 7 PAYMENT GATEWAYS
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">PAYMENT GATEWAYS</span>
+          <h2>7 Payment Gateways, One Platform</h2>
+          <p class="section-subtitle">Route transactions through the best gateway for each customer. Multi-gateway support reduces declines and increases authorization rates.</p>
+        </div>
+
+        <div class="gateways-grid reveal-stagger">
+
+          <!-- Stripe -->
+          <div class="gateway-card">
+            <div class="gateway-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+            </div>
+            <div class="gateway-card__name">Stripe</div>
+            <p class="gateway-card__text">Global payment processing. Cards, wallets, and local payment methods.</p>
+            <span class="gateway-card__tier">Essentials+</span>
+          </div>
+
+          <!-- PayPal -->
+          <div class="gateway-card">
+            <div class="gateway-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 21H4a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2h-3"/>
+                <path d="M12 11V3l7 7h-5a2 2 0 01-2-2z"/>
+                <circle cx="10" cy="16" r="2"/>
+              </svg>
+            </div>
+            <div class="gateway-card__name">PayPal</div>
+            <p class="gateway-card__text">Trusted worldwide. PayPal and Venmo checkout.</p>
+            <span class="gateway-card__tier">Essentials+</span>
+          </div>
+
+          <!-- Authorize.net -->
+          <div class="gateway-card">
+            <div class="gateway-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="gateway-card__name">Authorize.net</div>
+            <p class="gateway-card__text">Established payment gateway by Visa. Trusted by enterprise.</p>
+            <span class="gateway-card__tier">Essentials+</span>
+          </div>
+
+          <!-- PayFabric -->
+          <div class="gateway-card">
+            <div class="gateway-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
+            </div>
+            <div class="gateway-card__name">PayFabric</div>
+            <p class="gateway-card__text">Global Payments' PayFabric gateway. Required for Lite plan.</p>
+            <span class="gateway-card__tier gateway-card__tier--all">All plans</span>
+          </div>
+
+          <!-- Square -->
+          <div class="gateway-card">
+            <div class="gateway-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <rect x="8" y="8" width="8" height="8" rx="1"/>
+              </svg>
+            </div>
+            <div class="gateway-card__name">Square</div>
+            <p class="gateway-card__text">Unified commerce. Online and in-person payments.</p>
+            <span class="gateway-card__tier">Essentials+</span>
+          </div>
+
+          <!-- Braintree -->
+          <div class="gateway-card">
+            <div class="gateway-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <path d="M2 10h20"/>
+                <path d="M6 14h.01M10 14h4"/>
+              </svg>
+            </div>
+            <div class="gateway-card__name">Braintree</div>
+            <p class="gateway-card__text">PayPal's full-stack payment platform. Cards, PayPal, Venmo.</p>
+            <span class="gateway-card__tier">Essentials+</span>
+          </div>
+
+          <!-- CyberSource -->
+          <div class="gateway-card">
+            <div class="gateway-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <div class="gateway-card__name">CyberSource</div>
+            <p class="gateway-card__text">Visa's enterprise payment management platform.</p>
+            <span class="gateway-card__tier">Pro+</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 4: GLOBAL PAYMENTS PARTNERSHIP
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="partnership">
+          <div class="partnership__logos">
+            <div class="partnership__logo partnership__logo--rebillia">R</div>
+            <span class="partnership__divider">&times;</span>
+            <div class="partnership__logo partnership__logo--gp">GP</div>
+          </div>
+          <div class="partnership__content">
+            <h3>Strategic Partnership with Global Payments</h3>
+            <p>Rebillia is a proud Global Payments partner. Our integration with PayFabric provides enterprise-grade payment processing, fraud prevention, and global reach for subscription businesses of all sizes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 5: MULTI-GATEWAY ROUTING
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">SMART ROUTING</span>
+          <h2>Intelligent Gateway Routing</h2>
+          <p class="section-subtitle">Automatically route transactions through the optimal gateway based on your rules.</p>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+
+          <!-- Failover Routing -->
+          <div class="routing-card">
+            <div class="routing-card__icon routing-card__icon--purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="23 4 23 10 17 10"/>
+                <polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+              </svg>
+            </div>
+            <h3 class="routing-card__title">Failover Routing</h3>
+            <p class="routing-card__text">If one gateway declines, automatically retry through another. Maximize successful transactions and reduce involuntary churn.</p>
+          </div>
+
+          <!-- Cost Optimization -->
+          <div class="routing-card">
+            <div class="routing-card__icon routing-card__icon--teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </div>
+            <h3 class="routing-card__title">Cost Optimization</h3>
+            <p class="routing-card__text">Route transactions through the lowest-cost gateway. Reduce processing fees without sacrificing reliability or coverage.</p>
+          </div>
+
+          <!-- Geographic Routing -->
+          <div class="routing-card">
+            <div class="routing-card__icon routing-card__icon--purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
+            </div>
+            <h3 class="routing-card__title">Geographic Routing</h3>
+            <p class="routing-card__text">Route international transactions through region-specific gateways. Improve authorization rates and reduce cross-border fees.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 6: CTA
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="cta-block cta-block--gradient reveal">
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">Connect Your Payment Stack</h2>
+          <p class="cta-block__text">Start your 14-day free trial and integrate in minutes.</p>
+          <div class="cta-block__actions">
+            <a href="signup.html" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="pricing.html" class="btn btn--ghost btn--lg">View All Gateways</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h4 class="footer__heading">Solutions</h4>
+          <nav class="footer__links">
+            <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+            <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+            <a href="solutions.html#membership" class="footer__link">Membership</a>
+            <a href="solutions.html#api-first" class="footer__link">API-First</a>
+          </nav>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="footer__heading">Product</h4>
+          <nav class="footer__links">
+            <a href="features.html" class="footer__link">Features</a>
+            <a href="pricing.html" class="footer__link">Pricing</a>
+            <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+          </nav>
+        </div>
+
+        <!-- Developers -->
+        <div>
+          <h4 class="footer__heading">Developers</h4>
+          <nav class="footer__links">
+            <a href="developers.html#api-docs" class="footer__link">API Docs</a>
+            <a href="developers.html#mcp-server" class="footer__link">MCP Server</a>
+            <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
+            <a href="developers.html#sandbox" class="footer__link">Sandbox</a>
+            <a href="status.html" class="footer__link">Status</a>
+          </nav>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="blog.html" class="footer__link">Blog</a>
+            <a href="contact.html" class="footer__link">Contact</a>
+            <a href="careers.html" class="footer__link">Careers</a>
+            <a href="press.html" class="footer__link">Press</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer__bottom">
+        <span>&copy; 2026 Rebillia. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>

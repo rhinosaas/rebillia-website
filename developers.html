@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Tools - Subscription Billing API &amp; MCP Server | Rebillia</title>
+  <meta name="description" content="Build with Rebillia: REST API, MCP server for AI, webhooks. Subscription billing infrastructure for developers. Code examples in curl, Node.js, Python, PHP.">
+  <link rel="canonical" href="https://www.rebillia.com/developers">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rebillia.com/developers">
+  <meta property="og:title" content="Developer Tools - Subscription Billing API &amp; MCP Server | Rebillia">
+  <meta property="og:description" content="Build with Rebillia: REST API, MCP server for AI, webhooks. Subscription billing infrastructure for developers. Code examples in curl, Node.js, Python, PHP.">
+  <meta property="og:site_name" content="Rebillia">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Developer Tools - Subscription Billing API &amp; MCP Server | Rebillia">
+  <meta name="twitter:description" content="Build with Rebillia: REST API, MCP server for AI, webhooks. Subscription billing infrastructure for developers. Code examples in curl, Node.js, Python, PHP.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.rebillia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developers",
+        "item": "https://www.rebillia.com/developers"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       NAVBAR
+       ==================================================================== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo.png" alt="Rebillia" width="160" height="46">
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="navbar__nav">
+
+        <!-- Solutions dropdown -->
+        <div class="navbar__dropdown">
+          <a href="solutions.html" class="navbar__link">
+            Solutions
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F504;</span>
+              Subscribe &amp; Save
+            </a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F4E6;</span>
+              Subscription Boxes
+            </a>
+            <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F4CA;</span>
+              Usage-Based Billing
+            </a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F527;</span>
+              Recurring Services
+            </a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F3AB;</span>
+              Membership &amp; Access
+            </a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x26A1;</span>
+              API-First Billing
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="bigcommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              BigCommerce
+            </a>
+            <a href="woocommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              WooCommerce
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+              View All Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <a href="features.html" class="navbar__link">Features</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="integrations.html" class="navbar__link">Integrations</a>
+        <a href="developers.html" class="navbar__link navbar__link--active">Developers</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <a href="login.html" class="navbar__login">Login</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ====================================================================
+       MAIN CONTENT
+       ==================================================================== -->
+  <main class="page-wrapper">
+
+
+    <!-- ================================================================
+         1. HERO
+         ================================================================ -->
+    <section class="hero hero--dark hero--center">
+      <div class="hero__grid-pattern"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">DEVELOPER TOOLS</span>
+          <h1 class="hero__title">Build with <span>Rebillia</span></h1>
+          <p class="hero__subtitle">Subscription billing infrastructure for developers. REST API, MCP server, webhooks. Build any recurring revenue product.</p>
+          <div class="hero__actions">
+            <a href="#api-docs" class="btn btn--primary btn--lg">Read API Docs</a>
+            <a href="#sandbox" class="btn btn--ghost btn--lg">Try Sandbox</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         2. DEVELOPER PATHS
+         ================================================================ -->
+    <section class="section section--dark reveal" id="paths">
+      <div class="container">
+        <div class="grid grid-3 reveal-stagger">
+
+          <!-- REST API -->
+          <div class="dev-path">
+            <div class="dev-path__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="dev-path__title">REST API</h3>
+            <p class="dev-path__text">Full CRUD access to subscriptions, customers, invoices, and payments. RESTful endpoints with JSON responses.</p>
+            <a href="#api-docs" class="dev-path__link">API Reference &rarr;</a>
+          </div>
+
+          <!-- MCP Server -->
+          <div class="dev-path">
+            <div class="dev-path__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="7" cy="10" r="1" fill="currentColor"/>
+                <circle cx="12" cy="10" r="1" fill="currentColor"/>
+                <circle cx="17" cy="10" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="dev-path__title">MCP Server</h3>
+            <p class="dev-path__text">Connect Rebillia to 500+ AI clients. Manage subscriptions through Claude, ChatGPT, Cursor, and more. 80+ tools.</p>
+            <a href="#mcp-server" class="dev-path__link">MCP Documentation &rarr;</a>
+          </div>
+
+          <!-- Webhooks -->
+          <div class="dev-path">
+            <div class="dev-path__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="dev-path__title">Webhooks</h3>
+            <p class="dev-path__text">Real-time event notifications for subscription lifecycle events. Reliable delivery with retry logic.</p>
+            <a href="#webhooks" class="dev-path__link">Webhook Events &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         3. MCP SERVER SECTION
+         ================================================================ -->
+    <section class="section reveal" id="mcp-server">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">AI-READY INFRASTRUCTURE</span>
+          <h2>AI-Ready Subscription Infrastructure</h2>
+          <p class="section-subtitle">The Rebillia MCP Server gives any AI assistant the power to manage subscriptions, customers, invoices, and billing. 80+ tools that work with Claude, ChatGPT, Cursor, Windsurf, and 500+ other AI clients.</p>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="grid grid-1 mb-12 reveal-stagger" style="max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: var(--space-12);">
+          <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p style="color: var(--color-gray-600); margin: 0;">Build an AI customer support agent that can look up subscriptions and process refunds</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p style="color: var(--color-gray-600); margin: 0;">Create an AI sales assistant that creates customers and sets up subscriptions</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p style="color: var(--color-gray-600); margin: 0;">Power a chatbot that answers billing questions and manages payment methods</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p style="color: var(--color-gray-600); margin: 0;">Automate subscription operations with AI-driven workflows</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p style="color: var(--color-gray-600); margin: 0;">Build AI-powered billing dashboards that query real-time subscription data</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Installation Code Block -->
+        <div class="code-block mx-auto reveal" style="max-width: 640px; margin-bottom: var(--space-12);">
+          <div class="code-block__header">
+            <div class="code-block__dots">
+              <span class="code-block__dot"></span>
+              <span class="code-block__dot"></span>
+              <span class="code-block__dot"></span>
+            </div>
+            <span class="code-block__title">Terminal</span>
+            <button class="code-block__copy" data-copy="npx rebillia-mcp-server --api-key YOUR_API_KEY" aria-label="Copy to clipboard">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+              Copy
+            </button>
+          </div>
+          <div class="code-block__body">
+            <pre><span class="token-function">npx</span> rebillia-mcp-server <span class="token-operator">--</span>api-key <span class="token-string">YOUR_API_KEY</span></pre>
+          </div>
+        </div>
+
+        <!-- Config Examples — 2 code blocks side by side -->
+        <div class="grid grid-2 reveal-stagger" style="margin-bottom: var(--space-12);">
+
+          <!-- Claude Desktop -->
+          <div class="code-block">
+            <div class="code-block__header">
+              <div class="code-block__dots">
+                <span class="code-block__dot"></span>
+                <span class="code-block__dot"></span>
+                <span class="code-block__dot"></span>
+              </div>
+              <span class="code-block__title">Claude Desktop</span>
+              <button class="code-block__copy" aria-label="Copy to clipboard">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+                Copy
+              </button>
+            </div>
+            <div class="code-block__body">
+              <pre><span class="token-punctuation">{</span>
+  <span class="token-property">"mcpServers"</span><span class="token-punctuation">:</span> <span class="token-punctuation">{</span>
+    <span class="token-property">"rebillia"</span><span class="token-punctuation">:</span> <span class="token-punctuation">{</span>
+      <span class="token-property">"command"</span><span class="token-punctuation">:</span> <span class="token-string">"npx"</span><span class="token-punctuation">,</span>
+      <span class="token-property">"args"</span><span class="token-punctuation">:</span> <span class="token-punctuation">[</span><span class="token-string">"rebillia-mcp-server"</span><span class="token-punctuation">]</span><span class="token-punctuation">,</span>
+      <span class="token-property">"env"</span><span class="token-punctuation">:</span> <span class="token-punctuation">{</span>
+        <span class="token-property">"REBILLIA_API_KEY"</span><span class="token-punctuation">:</span> <span class="token-string">"your-api-key"</span>
+      <span class="token-punctuation">}</span>
+    <span class="token-punctuation">}</span>
+  <span class="token-punctuation">}</span>
+<span class="token-punctuation">}</span></pre>
+            </div>
+          </div>
+
+          <!-- Cursor -->
+          <div class="code-block">
+            <div class="code-block__header">
+              <div class="code-block__dots">
+                <span class="code-block__dot"></span>
+                <span class="code-block__dot"></span>
+                <span class="code-block__dot"></span>
+              </div>
+              <span class="code-block__title">Cursor</span>
+              <button class="code-block__copy" aria-label="Copy to clipboard">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+                Copy
+              </button>
+            </div>
+            <div class="code-block__body">
+              <pre><span class="token-punctuation">{</span>
+  <span class="token-property">"mcpServers"</span><span class="token-punctuation">:</span> <span class="token-punctuation">{</span>
+    <span class="token-property">"rebillia"</span><span class="token-punctuation">:</span> <span class="token-punctuation">{</span>
+      <span class="token-property">"command"</span><span class="token-punctuation">:</span> <span class="token-string">"npx"</span><span class="token-punctuation">,</span>
+      <span class="token-property">"args"</span><span class="token-punctuation">:</span> <span class="token-punctuation">[</span><span class="token-string">"rebillia-mcp-server"</span><span class="token-punctuation">]</span><span class="token-punctuation">,</span>
+      <span class="token-property">"env"</span><span class="token-punctuation">:</span> <span class="token-punctuation">{</span>
+        <span class="token-property">"REBILLIA_API_KEY"</span><span class="token-punctuation">:</span> <span class="token-string">"your-api-key"</span>
+      <span class="token-punctuation">}</span>
+    <span class="token-punctuation">}</span>
+  <span class="token-punctuation">}</span>
+<span class="token-punctuation">}</span></pre>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Natural Language Examples -->
+        <div class="nl-examples mx-auto reveal" style="max-width: 640px;">
+          <div class="nl-example">
+            <span class="nl-example__prompt">&gt;</span>
+            List all active subscriptions
+          </div>
+          <div class="nl-example">
+            <span class="nl-example__prompt">&gt;</span>
+            Create a monthly subscription for customer #42
+          </div>
+          <div class="nl-example">
+            <span class="nl-example__prompt">&gt;</span>
+            Refund the last transaction for customer #123
+          </div>
+          <div class="nl-example">
+            <span class="nl-example__prompt">&gt;</span>
+            Show me MRR for this quarter
+          </div>
+          <div class="nl-example">
+            <span class="nl-example__prompt">&gt;</span>
+            Pause subscription #789 and notify the customer
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         4. API OVERVIEW
+         ================================================================ -->
+    <section class="section section--alt reveal" id="api-docs">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">REST API</span>
+          <h2>Powerful REST API</h2>
+          <p class="section-subtitle">RESTful JSON API with OAuth 2.0 authentication. Base URL: <code>api.rebillia.com/v3</code></p>
+        </div>
+
+        <!-- Code Tabs -->
+        <div class="code-block mx-auto reveal" style="max-width: 760px;">
+          <div class="code-tabs">
+            <div class="code-tabs__nav">
+              <button class="code-tabs__btn active" data-tab="tab-curl">curl</button>
+              <button class="code-tabs__btn" data-tab="tab-node">Node.js</button>
+              <button class="code-tabs__btn" data-tab="tab-python">Python</button>
+              <button class="code-tabs__btn" data-tab="tab-php">PHP</button>
+            </div>
+
+            <!-- curl -->
+            <div class="code-tabs__panel active" id="tab-curl">
+              <div class="code-block__header" style="border-top: none;">
+                <div class="code-block__dots" style="visibility: hidden;">
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                </div>
+                <span class="code-block__title">bash</span>
+                <button class="code-block__copy" aria-label="Copy to clipboard">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body">
+                <pre><span class="token-function">curl</span> <span class="token-operator">-</span>X GET <span class="token-url">https://api.rebillia.com/v3/subscriptions</span> \
+  <span class="token-operator">-</span>H <span class="token-string">"Authorization: Bearer YOUR_API_KEY"</span> \
+  <span class="token-operator">-</span>H <span class="token-string">"Content-Type: application/json"</span></pre>
+              </div>
+            </div>
+
+            <!-- Node.js -->
+            <div class="code-tabs__panel" id="tab-node">
+              <div class="code-block__header" style="border-top: none;">
+                <div class="code-block__dots" style="visibility: hidden;">
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                </div>
+                <span class="code-block__title">javascript</span>
+                <button class="code-block__copy" aria-label="Copy to clipboard">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body">
+                <pre><span class="token-keyword">const</span> response <span class="token-operator">=</span> <span class="token-keyword">await</span> <span class="token-function">fetch</span><span class="token-punctuation">(</span><span class="token-string">'https://api.rebillia.com/v3/subscriptions'</span><span class="token-punctuation">,</span> <span class="token-punctuation">{</span>
+  <span class="token-property">headers</span><span class="token-punctuation">:</span> <span class="token-punctuation">{</span>
+    <span class="token-string">'Authorization'</span><span class="token-punctuation">:</span> <span class="token-string">'Bearer YOUR_API_KEY'</span><span class="token-punctuation">,</span>
+    <span class="token-string">'Content-Type'</span><span class="token-punctuation">:</span> <span class="token-string">'application/json'</span>
+  <span class="token-punctuation">}</span>
+<span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+<span class="token-keyword">const</span> subscriptions <span class="token-operator">=</span> <span class="token-keyword">await</span> response<span class="token-punctuation">.</span><span class="token-function">json</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span></pre>
+              </div>
+            </div>
+
+            <!-- Python -->
+            <div class="code-tabs__panel" id="tab-python">
+              <div class="code-block__header" style="border-top: none;">
+                <div class="code-block__dots" style="visibility: hidden;">
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                </div>
+                <span class="code-block__title">python</span>
+                <button class="code-block__copy" aria-label="Copy to clipboard">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body">
+                <pre><span class="token-keyword">import</span> requests
+
+response <span class="token-operator">=</span> requests<span class="token-punctuation">.</span><span class="token-function">get</span><span class="token-punctuation">(</span>
+    <span class="token-string">'https://api.rebillia.com/v3/subscriptions'</span><span class="token-punctuation">,</span>
+    <span class="token-property">headers</span><span class="token-operator">=</span><span class="token-punctuation">{</span><span class="token-string">'Authorization'</span><span class="token-punctuation">:</span> <span class="token-string">'Bearer YOUR_API_KEY'</span><span class="token-punctuation">}</span>
+<span class="token-punctuation">)</span>
+subscriptions <span class="token-operator">=</span> response<span class="token-punctuation">.</span><span class="token-function">json</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span></pre>
+              </div>
+            </div>
+
+            <!-- PHP -->
+            <div class="code-tabs__panel" id="tab-php">
+              <div class="code-block__header" style="border-top: none;">
+                <div class="code-block__dots" style="visibility: hidden;">
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                </div>
+                <span class="code-block__title">php</span>
+                <button class="code-block__copy" aria-label="Copy to clipboard">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body">
+                <pre><span class="token-keyword">$ch</span> <span class="token-operator">=</span> <span class="token-function">curl_init</span><span class="token-punctuation">(</span><span class="token-string">'https://api.rebillia.com/v3/subscriptions'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+<span class="token-function">curl_setopt</span><span class="token-punctuation">(</span><span class="token-keyword">$ch</span><span class="token-punctuation">,</span> CURLOPT_HTTPHEADER<span class="token-punctuation">,</span> <span class="token-punctuation">[</span>
+    <span class="token-string">'Authorization: Bearer YOUR_API_KEY'</span><span class="token-punctuation">,</span>
+    <span class="token-string">'Content-Type: application/json'</span>
+<span class="token-punctuation">]</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+<span class="token-function">curl_setopt</span><span class="token-punctuation">(</span><span class="token-keyword">$ch</span><span class="token-punctuation">,</span> CURLOPT_RETURNTRANSFER<span class="token-punctuation">,</span> <span class="token-keyword">true</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+<span class="token-keyword">$response</span> <span class="token-operator">=</span> <span class="token-function">json_decode</span><span class="token-punctuation">(</span><span class="token-function">curl_exec</span><span class="token-punctuation">(</span><span class="token-keyword">$ch</span><span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         5. SDK & TOOLS
+         ================================================================ -->
+    <section class="section reveal" id="tools">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tools &amp; Resources</h2>
+        </div>
+        <div class="grid grid-2 reveal-stagger" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+
+          <!-- MCP Server -->
+          <div class="card">
+            <div class="card__icon card__icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">MCP Server</h3>
+            <p class="card__text" style="margin-bottom: var(--space-3);">AI-ready server with 80+ tools for managing subscriptions through any AI client.</p>
+            <code style="font-size: var(--text-xs);">npm install rebillia-mcp-server</code>
+          </div>
+
+          <!-- REST API Docs -->
+          <div class="card" id="webhooks">
+            <div class="card__icon card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">REST API Docs</h3>
+            <p class="card__text">Comprehensive API documentation with interactive examples, authentication guides, and endpoint references.</p>
+          </div>
+
+          <!-- Postman Collection -->
+          <div class="card">
+            <div class="card__icon card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Postman Collection</h3>
+            <p class="card__text">Import our full API collection into Postman. Pre-configured environments for sandbox and production.</p>
+          </div>
+
+          <!-- Sandbox Environment -->
+          <div class="card" id="sandbox">
+            <div class="card__icon card__icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Sandbox Environment</h3>
+            <p class="card__text">Test integrations safely before going live. Full API access with test data and simulated payment processing.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         6. CTA
+         ================================================================ -->
+    <section class="cta-block cta-block--purple reveal">
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">Start Building with Rebillia</h2>
+          <p class="cta-block__text">Get your API key and start integrating in minutes.</p>
+          <div class="cta-block__actions">
+            <a href="signup.html" class="btn btn--primary btn--lg">Get API Key</a>
+            <a href="#api-docs" class="btn btn--ghost btn--lg">Read Docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h4 class="footer__heading">Solutions</h4>
+          <nav class="footer__links">
+            <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+            <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+            <a href="solutions.html#membership" class="footer__link">Membership</a>
+            <a href="solutions.html#api-first" class="footer__link">API-First</a>
+          </nav>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="footer__heading">Product</h4>
+          <nav class="footer__links">
+            <a href="features.html" class="footer__link">Features</a>
+            <a href="pricing.html" class="footer__link">Pricing</a>
+            <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+          </nav>
+        </div>
+
+        <!-- Developers -->
+        <div>
+          <h4 class="footer__heading">Developers</h4>
+          <nav class="footer__links">
+            <a href="developers.html#api-docs" class="footer__link">API Docs</a>
+            <a href="developers.html#mcp-server" class="footer__link">MCP Server</a>
+            <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
+            <a href="developers.html#sandbox" class="footer__link">Sandbox</a>
+            <a href="status.html" class="footer__link">Status</a>
+          </nav>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="blog.html" class="footer__link">Blog</a>
+            <a href="contact.html" class="footer__link">Contact</a>
+            <a href="careers.html" class="footer__link">Careers</a>
+            <a href="press.html" class="footer__link">Press</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer__bottom">
+        <span>&copy; 2026 Rebillia. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/code-copy.js"></script>
+
+</body>
+</html>

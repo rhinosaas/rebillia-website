@@ -1,0 +1,356 @@
+/* ==========================================================================
+   RESPONSIVE — Mobile-first breakpoints
+   ========================================================================== */
+
+/* ── Max 1200px ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-card--featured {
+    transform: none;
+  }
+
+  .pricing-card--featured:hover {
+    transform: translateY(-4px);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1.5fr repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .footer__grid > *:nth-child(4),
+  .footer__grid > *:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+/* ── Max 1024px (Tablet landscape) ──────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  :root {
+    --section-py: var(--space-16);
+  }
+
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-5 { grid-template-columns: repeat(3, 1fr); }
+  .grid-6 { grid-template-columns: repeat(3, 1fr); }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .split--reverse {
+    direction: ltr;
+  }
+
+  .navbar__nav {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-6);
+    background: var(--color-gray-900);
+    overflow-y: auto;
+    gap: var(--space-1);
+    z-index: var(--z-overlay);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .navbar__nav.open {
+    display: flex;
+  }
+
+  .navbar__link {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+    border-radius: var(--radius-lg);
+  }
+
+  .navbar__dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 0 var(--space-6);
+    min-width: auto;
+    display: none;
+    background: transparent;
+  }
+
+  .navbar__dropdown.open .navbar__dropdown-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar__dropdown-item {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__actions {
+    display: none;
+  }
+
+  .navbar__nav.open ~ .navbar__actions,
+  .navbar__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-4) var(--space-6);
+    gap: var(--space-3);
+  }
+
+  .hero {
+    padding: var(--space-16) 0 var(--space-12);
+  }
+
+  .hero__title {
+    font-size: var(--text-5xl);
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .steps::before {
+    display: none;
+  }
+
+  .partnership {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Max 768px (Tablet portrait) ────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  :root {
+    --section-py: var(--space-12);
+    --container-px: var(--space-5);
+  }
+
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .grid-6 { grid-template-columns: repeat(2, 1fr); }
+
+  .hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-base);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__trust {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-inline {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-inline__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer__brand {
+    grid-column: span 2;
+    max-width: none;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+
+  h2, .h2 {
+    font-size: var(--text-3xl);
+  }
+
+  .tabs__nav {
+    gap: 0;
+  }
+
+  .tabs__btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .email-cta {
+    flex-direction: column;
+  }
+
+  .trust-bar {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .logo-cloud {
+    gap: var(--space-6);
+  }
+
+  .brand-cloud {
+    gap: var(--space-8);
+  }
+
+  .comparison-table-wrapper {
+    margin-left: calc(-1 * var(--container-px));
+    margin-right: calc(-1 * var(--container-px));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* ── Max 480px (Mobile) ─────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  :root {
+    --container-px: var(--space-4);
+  }
+
+  .grid-5 { grid-template-columns: 1fr; }
+  .grid-6 { grid-template-columns: 1fr; }
+
+  .hero {
+    padding: var(--space-12) 0 var(--space-10);
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-6) 0;
+  }
+
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: left;
+  }
+
+  .stat__number {
+    font-size: var(--text-3xl);
+    margin-bottom: 0;
+    min-width: 80px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__brand {
+    grid-column: span 1;
+  }
+
+  .pricing-card {
+    padding: var(--space-6);
+  }
+
+  .card {
+    padding: var(--space-6);
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  .cta-block {
+    padding: var(--space-12) 0;
+  }
+
+  .cta-block__title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* ── Min 1441px (Wide screens) ──────────────────────────────────────────── */
+
+@media (min-width: 1441px) {
+  .container--wide {
+    max-width: 1600px;
+  }
+}

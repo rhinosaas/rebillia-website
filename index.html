@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebillia - Subscription Billing & Recurring Revenue Platform</title>
+  <meta name="description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, 7 gateways, and AI-ready API.">
+  <link rel="canonical" href="https://www.rebillia.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rebillia.com/">
+  <meta property="og:title" content="Rebillia - Subscription Billing & Recurring Revenue Platform">
+  <meta property="og:description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, 7 gateways, and AI-ready API.">
+  <meta property="og:site_name" content="Rebillia">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rebillia - Subscription Billing & Recurring Revenue Platform">
+  <meta name="twitter:description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, 7 gateways, and AI-ready API.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Rebillia",
+        "url": "https://www.rebillia.com",
+        "description": "Rebillia powers recurring revenue for businesses of all sizes with multi-platform subscription billing.",
+        "sameAs": []
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Rebillia",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Multi-platform subscription billing with smart dunning, customer portal, 7 payment gateways, and AI-ready API.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "14-day free trial, no credit card required"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "80"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       NAVBAR
+       ==================================================================== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo.png" alt="Rebillia" width="160" height="46">
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="navbar__nav">
+
+        <!-- Solutions dropdown -->
+        <div class="navbar__dropdown">
+          <a href="solutions.html" class="navbar__link">
+            Solutions
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F504;</span>
+              Subscribe &amp; Save
+            </a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F4E6;</span>
+              Subscription Boxes
+            </a>
+            <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F4CA;</span>
+              Usage-Based Billing
+            </a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F527;</span>
+              Recurring Services
+            </a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F3AB;</span>
+              Membership &amp; Access
+            </a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x26A1;</span>
+              API-First Billing
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="bigcommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              BigCommerce
+            </a>
+            <a href="woocommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              WooCommerce
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+              View All Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <a href="features.html" class="navbar__link">Features</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="integrations.html" class="navbar__link">Integrations</a>
+        <a href="developers.html" class="navbar__link">Developers</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <a href="login.html" class="navbar__login">Login</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ====================================================================
+       MAIN CONTENT
+       ==================================================================== -->
+  <main class="page-wrapper">
+
+
+    <!-- ================================================================
+         1. HERO
+         ================================================================ -->
+    <section class="hero hero--gradient hero--center">
+      <div class="hero__grid-pattern"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">Multi-Platform Subscription Infrastructure</span>
+          <h1 class="hero__title">Subscription Infrastructure for <span>Modern Business</span></h1>
+          <p class="hero__subtitle">From ecommerce subscribe-and-save to API-first usage billing, Rebillia powers recurring revenue for businesses of all sizes. Multi-platform, multi-gateway, AI-ready.</p>
+          <div class="hero__actions">
+            <a href="signup.html" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="demo.html" class="btn btn--ghost btn--lg">Book a Demo</a>
+          </div>
+          <div class="hero__trust">
+            <div class="hero__trust-item">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              PCI DSS Compliant
+            </div>
+            <div class="hero__trust-item">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              99.9% Uptime
+            </div>
+            <div class="hero__trust-item">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              SOC 2 Type II
+            </div>
+            <div class="hero__trust-item">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              24/7 Support
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         2. STATS BAR
+         ================================================================ -->
+    <section class="stats-bar reveal">
+      <div class="container">
+        <div class="stats-bar__grid">
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="25" data-suffix="%">0%</span></div>
+            <div class="stat__label">Revenue Lift</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="80" data-suffix="+">0</span></div>
+            <div class="stat__label">Businesses</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="3" data-prefix="Top ">0</span></div>
+            <div class="stat__label">BigCommerce App</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="7">0</span></div>
+            <div class="stat__label">Payment Gateways</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="500" data-suffix="+">0</span></div>
+            <div class="stat__label">AI Client Tools</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         3. HOW IT WORKS
+         ================================================================ -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">HOW IT WORKS</span>
+          <h2>Up and Running in Minutes</h2>
+        </div>
+        <div class="steps reveal-stagger">
+          <div class="step">
+            <div class="step__number">1</div>
+            <h3 class="step__title">Connect Your Platform</h3>
+            <p class="step__text">Install our native BigCommerce or WooCommerce integration, or connect via our REST API.</p>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <h3 class="step__title">Configure Billing</h3>
+            <p class="step__text">Set up subscription plans, billing cycles, payment gateways, and customer portal.</p>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <h3 class="step__title">Grow Recurring Revenue</h3>
+            <p class="step__text">Smart dunning, analytics, and automation tools help maximize subscriber lifetime value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         4. SOLUTION CATEGORIES
+         ================================================================ -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">SOLUTIONS</span>
+          <h2>One Platform, Every Subscription Model</h2>
+        </div>
+        <div class="grid grid-3 reveal-stagger">
+          <a href="solutions.html#subscribe-save" class="feature-card">
+            <div class="feature-card__icon">&#x1F504;</div>
+            <h3 class="feature-card__title">Subscribe &amp; Save</h3>
+            <p class="feature-card__text">Recurring orders with discounts for ecommerce stores</p>
+          </a>
+          <a href="solutions.html#subscription-boxes" class="feature-card">
+            <div class="feature-card__icon">&#x1F4E6;</div>
+            <h3 class="feature-card__title">Subscription Boxes</h3>
+            <p class="feature-card__text">Curated product boxes on flexible schedules</p>
+          </a>
+          <a href="solutions.html#usage-based" class="feature-card">
+            <div class="feature-card__icon">&#x1F4CA;</div>
+            <h3 class="feature-card__title">Usage-Based Billing</h3>
+            <p class="feature-card__text">Metered billing for APIs, data, and consumption</p>
+          </a>
+          <a href="solutions.html#recurring-services" class="feature-card">
+            <div class="feature-card__icon">&#x1F527;</div>
+            <h3 class="feature-card__title">Recurring Services</h3>
+            <p class="feature-card__text">Service subscriptions with auto-invoicing</p>
+          </a>
+          <a href="solutions.html#membership" class="feature-card">
+            <div class="feature-card__icon">&#x1F3AB;</div>
+            <h3 class="feature-card__title">Membership &amp; Access</h3>
+            <p class="feature-card__text">Communities, content, VIP programs</p>
+          </a>
+          <a href="solutions.html#api-first" class="feature-card">
+            <div class="feature-card__icon feature-card__icon--teal">&#x26A1;</div>
+            <h3 class="feature-card__title">API-First Billing</h3>
+            <p class="feature-card__text">Build custom subscription experiences with our API</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         5. PLATFORM INTEGRATIONS
+         ================================================================ -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">INTEGRATIONS</span>
+          <h2>Connect to Your Stack</h2>
+        </div>
+        <div class="grid grid-3 reveal-stagger">
+
+          <!-- BigCommerce -->
+          <a href="bigcommerce.html" class="card">
+            <span class="badge badge--popular">TOP 3</span>
+            <div class="card__icon card__icon--purple" style="margin-top: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 3h18v18H3V3zm3 3v12h12V6H6z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="card__title">BigCommerce</h3>
+            <p class="card__text">Deep native integration. Top-3 rated app on the BigCommerce marketplace.</p>
+            <span class="card__link">Learn more <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <!-- WooCommerce -->
+          <a href="woocommerce.html" class="card">
+            <span class="badge badge--new">NEW</span>
+            <div class="card__icon card__icon--teal" style="margin-top: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 4h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">WooCommerce</h3>
+            <p class="card__text">WordPress plugin for WooCommerce stores. Full subscription management.</p>
+            <span class="card__link">Learn more <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <!-- Direct API -->
+          <a href="developers.html" class="card">
+            <span class="badge badge--dark">FLEXIBLE</span>
+            <div class="card__icon card__icon--purple" style="margin-top: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Direct API</h3>
+            <p class="card__text">Build custom integrations for any platform. RESTful API with comprehensive docs.</p>
+            <span class="card__link">Explore API <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+        </div>
+
+        <!-- Gateway logo cloud -->
+        <div class="logo-cloud mt-12 reveal">
+          <span class="logo-cloud__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            Stripe
+          </span>
+          <span class="logo-cloud__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            PayPal
+          </span>
+          <span class="logo-cloud__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            Authorize.net
+          </span>
+          <span class="logo-cloud__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            PayFabric
+          </span>
+          <span class="logo-cloud__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            Square
+          </span>
+          <span class="logo-cloud__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            Braintree
+          </span>
+          <span class="logo-cloud__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            CyberSource
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         6. INDUSTRY VERTICALS
+         ================================================================ -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">INDUSTRIES</span>
+          <h2>Built for Subscription Businesses</h2>
+        </div>
+        <div class="grid grid-5 reveal-stagger">
+          <div class="card text-center">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x2615;</div>
+            <h3 class="card__title" style="font-size: var(--text-base);">Coffee &amp; Tea</h3>
+            <p class="card__text">Fresh roasts delivered on schedule</p>
+          </div>
+          <div class="card text-center">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F48A;</div>
+            <h3 class="card__title" style="font-size: var(--text-base);">Supplements</h3>
+            <p class="card__text">Auto-refill wellness products</p>
+          </div>
+          <div class="card text-center">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F43E;</div>
+            <h3 class="card__title" style="font-size: var(--text-base);">Pet Supplies</h3>
+            <p class="card__text">Never run out of pet essentials</p>
+          </div>
+          <div class="card text-center">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F484;</div>
+            <h3 class="card__title" style="font-size: var(--text-base);">Beauty</h3>
+            <p class="card__text">Curated beauty boxes and refills</p>
+          </div>
+          <div class="card text-center">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F37D;&#xFE0F;</div>
+            <h3 class="card__title" style="font-size: var(--text-base);">Meal Kits</h3>
+            <p class="card__text">Weekly meal plans and ingredients</p>
+          </div>
+        </div>
+        <div class="text-center mt-8 reveal">
+          <p class="text-muted">And many more &mdash; SaaS, professional services, health &amp; wellness, and beyond.</p>
+          <a href="solutions.html" class="card__link justify-center" style="display: inline-flex;">
+            View all solutions
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         7. TESTIMONIALS
+         ================================================================ -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">SOCIAL PROOF</span>
+          <h2>Trusted by Growing Businesses</h2>
+        </div>
+        <div class="testimonials-grid reveal-stagger">
+
+          <!-- Testimonial 1 -->
+          <div class="testimonial">
+            <div class="testimonial__stars" aria-label="5 out of 5 stars">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+            <p class="testimonial__quote">"Rebillia transformed our subscription business. We saw a 30% increase in recurring revenue within the first quarter. The dunning management alone paid for itself."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">MR</div>
+              <div>
+                <div class="testimonial__name">Michael Rodriguez</div>
+                <div class="testimonial__role">CEO, FreshBean Coffee Co.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial">
+            <div class="testimonial__stars" aria-label="5 out of 5 stars">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+            <p class="testimonial__quote">"The BigCommerce integration is seamless. Our subscribers can manage everything from their account portal. Support team is incredibly responsive."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">SK</div>
+              <div>
+                <div class="testimonial__name">Sarah Kim</div>
+                <div class="testimonial__role">Head of Ecommerce, VitaBox</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial">
+            <div class="testimonial__stars" aria-label="5 out of 5 stars">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+            <p class="testimonial__quote">"We needed a flexible API for our custom billing workflows. Rebillia delivered exactly what we needed, plus the MCP server makes AI integration a breeze."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">JL</div>
+              <div>
+                <div class="testimonial__name">James Liu</div>
+                <div class="testimonial__role">CTO, CloudMetrics</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Partnership callout -->
+        <div class="partnership mt-12 reveal">
+          <div class="partnership__logos">
+            <div class="partnership__logo partnership__logo--rebillia">R</div>
+            <span class="partnership__divider">+</span>
+            <div class="partnership__logo partnership__logo--gp">GP</div>
+          </div>
+          <div class="partnership__content">
+            <h3>Rebillia + Global Payments</h3>
+            <p>Our strategic partnership with Global Payments brings enterprise-grade payment processing to subscription businesses of every size. Access preferred rates and dedicated support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         8. DEVELOPER / AI TEASER
+         ================================================================ -->
+    <section class="section section--dark reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label section-label--light">FOR DEVELOPERS</span>
+          <h2>AI-Ready Subscription Infrastructure</h2>
+          <p class="section-subtitle" style="color: var(--color-gray-400);">Our MCP server connects Rebillia to 500+ AI tools. Any developer building AI-powered products can manage subscriptions through Claude, ChatGPT, Cursor, and more.</p>
+        </div>
+
+        <div class="code-block mx-auto" style="max-width: 640px;">
+          <div class="code-block__header">
+            <div class="code-block__dots">
+              <span class="code-block__dot"></span>
+              <span class="code-block__dot"></span>
+              <span class="code-block__dot"></span>
+            </div>
+            <span class="code-block__title">Terminal</span>
+            <button class="code-block__copy" data-copy="npx rebillia-mcp-server --api-key YOUR_KEY" aria-label="Copy to clipboard">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+              Copy
+            </button>
+          </div>
+          <div class="code-block__body">
+            <pre><span class="token-comment"># Connect Rebillia to any AI client</span>
+<span class="token-function">npx</span> rebillia-mcp-server <span class="token-operator">--</span>api-key <span class="token-string">YOUR_KEY</span></pre>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="developers.html" class="card__link" style="color: var(--color-teal-400); display: inline-flex;">
+            Explore Developer Tools &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         9. FINAL CTA
+         ================================================================ -->
+    <section class="cta-block cta-block--gradient reveal">
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">Ready to Build Recurring Revenue?</h2>
+          <p class="cta-block__text">Start your 14-day free trial. No credit card required.</p>
+          <div class="cta-block__actions">
+            <a href="signup.html" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="contact.html" class="btn btn--ghost btn--lg">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h4 class="footer__heading">Solutions</h4>
+          <nav class="footer__links">
+            <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+            <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+            <a href="solutions.html#membership" class="footer__link">Membership</a>
+            <a href="solutions.html#api-first" class="footer__link">API-First</a>
+          </nav>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="footer__heading">Product</h4>
+          <nav class="footer__links">
+            <a href="features.html" class="footer__link">Features</a>
+            <a href="pricing.html" class="footer__link">Pricing</a>
+            <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+          </nav>
+        </div>
+
+        <!-- Developers -->
+        <div>
+          <h4 class="footer__heading">Developers</h4>
+          <nav class="footer__links">
+            <a href="developers.html#api-docs" class="footer__link">API Docs</a>
+            <a href="developers.html#mcp-server" class="footer__link">MCP Server</a>
+            <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
+            <a href="developers.html#sandbox" class="footer__link">Sandbox</a>
+            <a href="status.html" class="footer__link">Status</a>
+          </nav>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="blog.html" class="footer__link">Blog</a>
+            <a href="contact.html" class="footer__link">Contact</a>
+            <a href="careers.html" class="footer__link">Careers</a>
+            <a href="press.html" class="footer__link">Press</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer__bottom">
+        <span>&copy; 2026 Rebillia. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/counter.js"></script>
+
+</body>
+</html>

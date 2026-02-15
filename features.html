@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - Subscription Management, Dunning, Portal, API &amp; More | Rebillia</title>
+  <meta name="description" content="Explore Rebillia's full feature set: subscription management, smart dunning, customer portal, analytics, REST API, MCP server, multi-gateway support, and more.">
+  <link rel="canonical" href="https://www.rebillia.com/features">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rebillia.com/features">
+  <meta property="og:title" content="Features - Subscription Management, Dunning, Portal, API & More | Rebillia">
+  <meta property="og:description" content="Explore Rebillia's full feature set: subscription management, smart dunning, customer portal, analytics, REST API, MCP server, multi-gateway support, and more.">
+  <meta property="og:site_name" content="Rebillia">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Features - Subscription Management, Dunning, Portal, API & More | Rebillia">
+  <meta name="twitter:description" content="Explore Rebillia's full feature set: subscription management, smart dunning, customer portal, analytics, REST API, MCP server, multi-gateway support, and more.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.rebillia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Features",
+            "item": "https://www.rebillia.com/features"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which features are included in each plan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All plans include core subscription management, customer portal, and basic analytics. Smart dunning is available on Essentials and above. Advanced analytics, API access, and MCP server are available on Pro and Platform+ plans. See our pricing page for the full feature comparison."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do all plans support smart dunning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Smart dunning is available on Essentials plans and above. It includes intelligent retry logic, customizable retry schedules, pre-dunning email notifications, and detailed recovery analytics to help you recover failed payments automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use the API on any plan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "API access is available on Pro and Platform+ plans. This includes full REST API access, webhooks, sandbox environment, and the MCP server for AI integrations. Pro plans include generous rate limits, while Platform+ offers custom rate limits and priority support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the customer portal customizable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the portal is fully brandable with your logo, colors, and custom domain. Customers can manage subscriptions, update payment methods, view billing history, and modify their plans. The portal is mobile-responsive and works on all devices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you support usage-based billing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, usage-based billing is available on Pro and Platform+ plans. You can meter usage, set thresholds, configure overage pricing, and combine usage-based charges with flat-rate subscriptions for hybrid billing models."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What analytics are available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Basic analytics are included on all plans. Advanced analytics including MRR dashboards, churn analysis, cohort reports, customer lifetime value, and revenue forecasting are available on Pro and Platform+ plans. All data is exportable via CSV or API."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Accordion inline styles -->
+  <style>
+    .accordion__item { border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); margin-bottom: var(--space-3); overflow: hidden; }
+    .accordion__trigger { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: var(--space-5) var(--space-6); font-size: var(--text-base); font-weight: var(--font-semibold); color: var(--color-gray-200); background: var(--color-card-bg); border: none; cursor: pointer; text-align: left; }
+    .accordion__trigger:hover { background: var(--color-bg-alt); }
+    .accordion__trigger svg { width: 20px; height: 20px; transition: transform var(--transition-base); flex-shrink: 0; color: var(--color-gray-400); }
+    .accordion__item.open .accordion__trigger svg { transform: rotate(180deg); }
+    .accordion__content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .accordion__content__inner { padding: 0 var(--space-6) var(--space-6); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-relaxed); }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================================================
+       NAVBAR
+       ==================================================================== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo.png" alt="Rebillia" width="160" height="46">
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="navbar__nav">
+
+        <!-- Solutions dropdown -->
+        <div class="navbar__dropdown">
+          <a href="solutions.html" class="navbar__link">
+            Solutions
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F504;</span>
+              Subscribe &amp; Save
+            </a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F4E6;</span>
+              Subscription Boxes
+            </a>
+            <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F4CA;</span>
+              Usage-Based Billing
+            </a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F527;</span>
+              Recurring Services
+            </a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F3AB;</span>
+              Membership &amp; Access
+            </a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x26A1;</span>
+              API-First Billing
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="bigcommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              BigCommerce
+            </a>
+            <a href="woocommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              WooCommerce
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+              View All Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <a href="features.html" class="navbar__link navbar__link--active">Features</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="integrations.html" class="navbar__link">Integrations</a>
+        <a href="developers.html" class="navbar__link">Developers</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <a href="login.html" class="navbar__login">Login</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ====================================================================
+       MAIN CONTENT
+       ==================================================================== -->
+  <main class="page-wrapper">
+
+
+    <!-- ================================================================
+         1. HERO
+         ================================================================ -->
+    <section class="hero hero--light hero--center">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">FEATURES</span>
+          <h1 class="hero__title">Everything You Need to Manage Subscriptions</h1>
+          <p class="hero__subtitle">From basic subscribe-and-save to enterprise API-first billing. One platform, every feature.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         2. FEATURE TABS
+         ================================================================ -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="tabs">
+
+          <!-- Tab Navigation -->
+          <div class="tabs__nav">
+            <button class="tabs__btn active" data-tab="tab-subscriptions">Subscription Management</button>
+            <button class="tabs__btn" data-tab="tab-payment">Payment &amp; Billing</button>
+            <button class="tabs__btn" data-tab="tab-customer">Customer Experience</button>
+            <button class="tabs__btn" data-tab="tab-analytics">Analytics &amp; Insights</button>
+            <button class="tabs__btn" data-tab="tab-developer">Developer &amp; API</button>
+            <button class="tabs__btn" data-tab="tab-platform">Platform &amp; Security</button>
+          </div>
+
+          <!-- Tab 1: Subscription Management -->
+          <div class="tabs__panel active" id="tab-subscriptions">
+            <div class="feature-list">
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Flexible Billing Cycles</div>
+                  <div class="feature-list__text">Daily, weekly, bi-weekly, monthly, quarterly, annual &mdash; any frequency</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Subscribe &amp; Save</div>
+                  <div class="feature-list__text">Offer discounts on recurring orders to increase conversion</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Subscription Boxes</div>
+                  <div class="feature-list__text">Curated boxes with product rotation, add-ons, and personalization</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Skip, Pause, Swap</div>
+                  <div class="feature-list__text">Customers can modify subscriptions without canceling</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Gift Subscriptions</div>
+                  <div class="feature-list__text">Allow customers to purchase subscriptions as gifts</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Quantity Management</div>
+                  <div class="feature-list__text">Auto-adjust quantities and manage multi-product subscriptions</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Subscription Groups</div>
+                  <div class="feature-list__text">Bundle related subscriptions together for management</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6m-6 4h6m-6 4h4m5-12H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Proration</div>
+                  <div class="feature-list__text">Automatically calculate prorated charges on plan changes</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 2: Payment & Billing -->
+          <div class="tabs__panel" id="tab-payment">
+            <div class="feature-list">
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">7 Payment Gateways</div>
+                  <div class="feature-list__text">Stripe, PayPal, Authorize.net, PayFabric, Square, Braintree, CyberSource</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Smart Dunning</div>
+                  <div class="feature-list__text">Intelligent retry logic with customizable schedules to recover failed payments</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Multi-Currency</div>
+                  <div class="feature-list__text">Accept payments in multiple currencies with automatic conversion</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Multi-Gateway Routing</div>
+                  <div class="feature-list__text">Route transactions through different gateways based on rules</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6m-6 4h6m-6 4h4m5-12H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Invoice Management</div>
+                  <div class="feature-list__text">Automatic invoice generation, customizable templates</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Tax Calculation</div>
+                  <div class="feature-list__text">Integrated tax calculation and compliance</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10h18M3 14h18M9 3v18M15 3v18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Refund Management</div>
+                  <div class="feature-list__text">Full and partial refunds with automatic subscription adjustments</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">PCI Compliance</div>
+                  <div class="feature-list__text">PCI DSS Level 1 compliant payment processing</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 3: Customer Experience -->
+          <div class="tabs__panel" id="tab-customer">
+            <div class="feature-list">
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Self-Service Portal</div>
+                  <div class="feature-list__text">Branded portal where customers manage their own subscriptions</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm10 0a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1h-4a1 1 0 01-1-1v-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Account Dashboard</div>
+                  <div class="feature-list__text">Customers view billing history, upcoming charges, and subscription details</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Payment Method Management</div>
+                  <div class="feature-list__text">Update credit cards and payment methods without contacting support</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Email Notifications</div>
+                  <div class="feature-list__text">Customizable emails for billing events, reminders, and updates</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Cancellation Flows</div>
+                  <div class="feature-list__text">Retention-focused cancellation with save offers and feedback collection</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Multi-Language Support</div>
+                  <div class="feature-list__text">Localized customer experience for international subscribers</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Mobile-Responsive Portal</div>
+                  <div class="feature-list__text">Customer portal works perfectly on all devices</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Subscription Modification</div>
+                  <div class="feature-list__text">Upgrade, downgrade, add-on changes with clear pricing</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 4: Analytics & Insights -->
+          <div class="tabs__panel" id="tab-analytics">
+            <div class="feature-list">
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">MRR Dashboard</div>
+                  <div class="feature-list__text">Track Monthly Recurring Revenue, growth rate, and trends</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Churn Analysis</div>
+                  <div class="feature-list__text">Understand voluntary vs involuntary churn with detailed breakdowns</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Customer Lifetime Value</div>
+                  <div class="feature-list__text">Calculate and forecast LTV across subscription cohorts</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Revenue Forecasting</div>
+                  <div class="feature-list__text">Predict future revenue based on current trends and growth</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Subscription Metrics</div>
+                  <div class="feature-list__text">Active subscribers, new, canceled, paused &mdash; all in real time</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Dunning Performance</div>
+                  <div class="feature-list__text">Track recovery rates, retry success, and revenue saved</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Cohort Analysis</div>
+                  <div class="feature-list__text">Compare subscriber cohorts to identify trends and optimize</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Export &amp; Reporting</div>
+                  <div class="feature-list__text">Export data to CSV, connect to BI tools via API</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 5: Developer & API -->
+          <div class="tabs__panel" id="tab-developer">
+            <div class="feature-list">
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">REST API</div>
+                  <div class="feature-list__text">Full CRUD access to subscriptions, customers, invoices, and payments</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">MCP Server</div>
+                  <div class="feature-list__text">AI-ready server connecting Rebillia to 500+ AI clients including Claude and ChatGPT</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Webhooks</div>
+                  <div class="feature-list__text">Real-time event notifications for subscription lifecycle events</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Sandbox Environment</div>
+                  <div class="feature-list__text">Test integrations in a safe sandbox before going live</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">SDKs &amp; Libraries</div>
+                  <div class="feature-list__text">Official SDKs for Node.js, Python, PHP, and more</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">API Documentation</div>
+                  <div class="feature-list__text">Comprehensive docs with code examples in multiple languages</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Rate Limiting</div>
+                  <div class="feature-list__text">Generous rate limits with burst capacity for high-volume operations</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Versioned API</div>
+                  <div class="feature-list__text">Stable, versioned API endpoints with backward compatibility</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 6: Platform & Security -->
+          <div class="tabs__panel" id="tab-platform">
+            <div class="feature-list">
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 3h18v18H3V3zm3 3v12h12V6H6z" fill="currentColor"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">BigCommerce Integration</div>
+                  <div class="feature-list__text">Deep native integration with BigCommerce checkout and catalog</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 4h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">WooCommerce Plugin</div>
+                  <div class="feature-list__text">WordPress plugin for WooCommerce stores</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Multi-Store Support</div>
+                  <div class="feature-list__text">Manage subscriptions across multiple storefronts</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">PCI DSS Compliance</div>
+                  <div class="feature-list__text">Level 1 PCI DSS compliant infrastructure</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4M7.835 4.697A3.42 3.42 0 009.78 3.89a3.42 3.42 0 004.44 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.44 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.44 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.44 3.42 3.42 0 00.806-1.946A3.42 3.42 0 017.835 4.697z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">SOC 2 Type II</div>
+                  <div class="feature-list__text">Audited security controls and data protection</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">99.9% Uptime SLA</div>
+                  <div class="feature-list__text">Enterprise-grade availability with redundant infrastructure</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">Data Encryption</div>
+                  <div class="feature-list__text">End-to-end encryption for all sensitive data</div>
+                </div>
+              </div>
+
+              <div class="feature-list__item">
+                <div class="feature-list__icon feature-list__icon--teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="feature-list__title">GDPR Compliance</div>
+                  <div class="feature-list__text">Data privacy controls and compliance tools</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         3. STATS BAR
+         ================================================================ -->
+    <section class="stats-bar reveal">
+      <div class="container">
+        <div class="stats-bar__grid">
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="7">0</span></div>
+            <div class="stat__label">Gateways</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="500" data-suffix="+">0</span></div>
+            <div class="stat__label">AI Tools</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="99.9" data-suffix="%">0%</span></div>
+            <div class="stat__label">Uptime</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="80" data-suffix="+">0</span></div>
+            <div class="stat__label">Businesses</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span class="counter" data-count="25" data-suffix="%">0%</span></div>
+            <div class="stat__label">Revenue Lift</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         4. FAQ
+         ================================================================ -->
+    <section class="section section--alt reveal">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Feature FAQ</h2>
+        </div>
+
+        <div class="accordion">
+
+          <!-- FAQ 1 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Which features are included in each plan?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                All plans include core subscription management, customer portal, and basic analytics. Smart dunning is available on Essentials and above. Advanced analytics, API access, and MCP server are available on Pro and Platform+ plans. See our <a href="pricing.html" class="link">pricing page</a> for the full feature comparison.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Do all plans support smart dunning?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Smart dunning is available on Essentials plans and above. It includes intelligent retry logic, customizable retry schedules, pre-dunning email notifications, and detailed recovery analytics to help you recover failed payments automatically.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Can I use the API on any plan?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                API access is available on Pro and Platform+ plans. This includes full REST API access, webhooks, sandbox environment, and the MCP server for AI integrations. Pro plans include generous rate limits, while Platform+ offers custom rate limits and priority support.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Is the customer portal customizable?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, the portal is fully brandable with your logo, colors, and custom domain. Customers can manage subscriptions, update payment methods, view billing history, and modify their plans. The portal is mobile-responsive and works on all devices.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Do you support usage-based billing?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, usage-based billing is available on Pro and Platform+ plans. You can meter usage, set thresholds, configure overage pricing, and combine usage-based charges with flat-rate subscriptions for hybrid billing models.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              What analytics are available?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Basic analytics are included on all plans. Advanced analytics including MRR dashboards, churn analysis, cohort reports, customer lifetime value, and revenue forecasting are available on Pro and Platform+ plans. All data is exportable via CSV or API.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         5. CTA
+         ================================================================ -->
+    <section class="cta-block cta-block--gradient reveal">
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">See Every Feature in Action</h2>
+          <p class="cta-block__text">Start your 14-day free trial or book a personalized demo.</p>
+          <div class="cta-block__actions">
+            <a href="signup.html" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="demo.html" class="btn btn--ghost btn--lg">Book a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h4 class="footer__heading">Solutions</h4>
+          <nav class="footer__links">
+            <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+            <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+            <a href="solutions.html#membership" class="footer__link">Membership</a>
+            <a href="solutions.html#api-first" class="footer__link">API-First</a>
+          </nav>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="footer__heading">Product</h4>
+          <nav class="footer__links">
+            <a href="features.html" class="footer__link">Features</a>
+            <a href="pricing.html" class="footer__link">Pricing</a>
+            <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+          </nav>
+        </div>
+
+        <!-- Developers -->
+        <div>
+          <h4 class="footer__heading">Developers</h4>
+          <nav class="footer__links">
+            <a href="developers.html#api-docs" class="footer__link">API Docs</a>
+            <a href="developers.html#mcp-server" class="footer__link">MCP Server</a>
+            <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
+            <a href="developers.html#sandbox" class="footer__link">Sandbox</a>
+            <a href="status.html" class="footer__link">Status</a>
+          </nav>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="blog.html" class="footer__link">Blog</a>
+            <a href="contact.html" class="footer__link">Contact</a>
+            <a href="careers.html" class="footer__link">Careers</a>
+            <a href="press.html" class="footer__link">Press</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer__bottom">
+        <span>&copy; 2026 Rebillia. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/counter.js"></script>
+
+</body>
+</html>

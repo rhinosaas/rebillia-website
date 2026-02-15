@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best BigCommerce Subscription App | Rebillia - Top 3 Rated</title>
+  <meta name="description" content="The #1 rated BigCommerce subscription app. Add subscribe-and-save, subscription boxes, and recurring billing to your BigCommerce store. 7 payment gateways, smart dunning, customer portal.">
+  <link rel="canonical" href="https://www.rebillia.com/bigcommerce">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Best BigCommerce Subscription App | Rebillia - Top 3 Rated">
+  <meta property="og:description" content="The #1 rated BigCommerce subscription app. Add subscribe-and-save, subscription boxes, and recurring billing to your BigCommerce store.">
+  <meta property="og:url" content="https://www.rebillia.com/bigcommerce">
+  <meta property="og:type" content="website">
+
+  <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Accordion Styles (inline) -->
+  <style>
+    /* ── Accordion ──────────────────────────────────────────────────────────── */
+    .accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .accordion__item {
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-3);
+      background: var(--color-card-bg);
+      overflow: hidden;
+      transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .accordion__item:hover {
+      border-color: var(--color-purple-200);
+    }
+
+    .accordion__item.open {
+      border-color: var(--color-purple-200);
+      box-shadow: var(--shadow-md);
+    }
+
+    .accordion__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: var(--space-5) var(--space-6);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      color: var(--color-white);
+      text-align: left;
+      line-height: var(--leading-snug);
+      gap: var(--space-4);
+      font-family: var(--font-sans);
+    }
+
+    .accordion__trigger:hover {
+      color: var(--color-primary);
+    }
+
+    .accordion__trigger:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: -2px;
+      border-radius: var(--radius-xl);
+    }
+
+    .accordion__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: var(--color-gray-400);
+      transition: transform var(--transition-base), color var(--transition-base);
+    }
+
+    .accordion__item.open .accordion__icon {
+      transform: rotate(180deg);
+      color: var(--color-primary);
+    }
+
+    .accordion__content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .accordion__body {
+      padding: 0 var(--space-6) var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* ── Stats bar enhancement for this page ───────────────────────────────── */
+    .stats-bar__divider {
+      width: 1px;
+      height: 40px;
+      background: var(--color-border);
+    }
+
+    /* ── Pricing preview grid ──────────────────────────────────────────────── */
+    .pricing-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-preview-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+    }
+
+    /* ── Marketplace rating badge ──────────────────────────────────────────── */
+    .marketplace-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-6);
+      background: var(--gradient-card);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      margin-top: var(--space-8);
+    }
+
+    .marketplace-badge__stars {
+      display: flex;
+      gap: 2px;
+      color: var(--color-warning);
+      font-size: var(--text-lg);
+    }
+
+    .marketplace-badge__text {
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--color-gray-300);
+    }
+
+    .marketplace-badge__sub {
+      font-size: var(--text-xs);
+      color: var(--color-gray-500);
+      font-weight: var(--font-normal);
+    }
+
+    /* ── Pain point cards ──────────────────────────────────────────────────── */
+    .pain-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .pain-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .pain-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto var(--space-5);
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--color-error);
+    }
+
+    .pain-card__title {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      color: var(--color-white);
+      margin-bottom: var(--space-3);
+    }
+
+    .pain-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rebillia",
+    "url": "https://www.rebillia.com",
+    "logo": "https://www.rebillia.com/images/rebillia-logo.png",
+    "sameAs": [
+      "https://twitter.com/rebillia",
+      "https://www.linkedin.com/company/rebillia"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Rebillia Subscriptions for BigCommerce",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "49",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "47",
+      "bestRating": "5"
+    },
+    "description": "The #1 rated BigCommerce subscription app. Add subscribe-and-save, subscription boxes, and recurring billing to your BigCommerce store.",
+    "url": "https://www.rebillia.com/bigcommerce"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.rebillia.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Integrations",
+        "item": "https://www.rebillia.com/integrations"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "BigCommerce",
+        "item": "https://www.rebillia.com/bigcommerce"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I install Rebillia on BigCommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Installing Rebillia is simple. Visit the BigCommerce App Marketplace, search for 'Rebillia,' and click Install. The app connects to your store automatically. You can configure your first subscription product in under 10 minutes with our guided setup wizard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Rebillia work with BigCommerce checkout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Rebillia integrates natively with the BigCommerce checkout. Customers subscribe through your standard checkout flow with no redirects, iframes, or external pages. It works with both the default BigCommerce checkout and optimized one-page checkout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which payment gateways work with BigCommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rebillia supports 7 payment gateways on BigCommerce: Stripe, PayPal, Authorize.net, PayFabric, Square, Braintree, and CyberSource. You can use any gateway you already have configured in your BigCommerce store."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I migrate from another subscription app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We offer free migration assistance from any existing subscription app. Our team will help transfer your active subscribers, payment methods, and subscription plans with zero downtime. Contact our support team to get started."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a free trial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Rebillia offers a free trial so you can test the full platform before committing. Install from the BigCommerce Marketplace and explore all features including subscription creation, customer portal, and analytics. No credit card required to start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you support BigCommerce multi-storefront?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Rebillia fully supports BigCommerce multi-storefront. You can manage subscriptions across multiple storefronts from a single Rebillia dashboard, with unique subscription configurations, pricing, and branding for each storefront."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ════════════════════════════════════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo.png" alt="Rebillia" width="160" height="46">
+      </a>
+
+      <div class="navbar__nav" role="menubar">
+        <!-- Solutions Dropdown -->
+        <div class="navbar__dropdown" role="none">
+          <a href="solutions.html" class="navbar__link" role="menuitem" aria-haspopup="true">
+            Solutions
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item" role="menuitem">
+              <span class="dropdown-icon">&#x1F504;</span>
+              Subscribe &amp; Save
+            </a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item" role="menuitem">
+              <span class="dropdown-icon">&#x1F4E6;</span>
+              Subscription Boxes
+            </a>
+            <a href="solutions.html#usage-billing" class="navbar__dropdown-item" role="menuitem">
+              <span class="dropdown-icon">&#x1F4CA;</span>
+              Usage-Based Billing
+            </a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item" role="menuitem">
+              <span class="dropdown-icon">&#x1F527;</span>
+              Recurring Services
+            </a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item" role="menuitem">
+              <span class="dropdown-icon">&#x1F511;</span>
+              Membership &amp; Access
+            </a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item" role="menuitem">
+              <span class="dropdown-icon">&#x1F4BB;</span>
+              API-First Billing
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="bigcommerce.html" class="navbar__dropdown-item navbar__link--active" role="menuitem">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              BigCommerce
+            </a>
+            <a href="woocommerce.html" class="navbar__dropdown-item" role="menuitem">
+              <span class="dropdown-icon">&#x1F6D2;</span>
+              WooCommerce
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight" role="menuitem">
+              View All Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <a href="features.html" class="navbar__link" role="menuitem">Features</a>
+        <a href="pricing.html" class="navbar__link" role="menuitem">Pricing</a>
+        <a href="integrations.html" class="navbar__link" role="menuitem">Integrations</a>
+        <a href="developers.html" class="navbar__link" role="menuitem">Developers</a>
+        <a href="about.html" class="navbar__link" role="menuitem">About</a>
+        <a href="blog.html" class="navbar__link" role="menuitem">Blog</a>
+      </div>
+
+      <div class="navbar__actions">
+        <a href="#" class="navbar__login">Login</a>
+        <a href="#" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+
+      <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       PAGE WRAPPER
+       ════════════════════════════════════════════════════════════════════════ -->
+  <div class="page-wrapper">
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         1. HERO
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="hero hero--dark hero--center">
+      <div class="hero__grid-pattern"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            BIGCOMMERCE PARTNER
+          </div>
+
+          <h1 class="hero__title">The Subscription App BigCommerce <span>Merchants Trust</span></h1>
+
+          <p class="hero__subtitle">Top-3 rated on the BigCommerce App Marketplace. Add subscribe-and-save, subscription boxes, and smart recurring billing to your store in minutes.</p>
+
+          <div class="hero__actions">
+            <a href="#" class="btn btn--primary btn--lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Install from Marketplace
+            </a>
+            <a href="#" class="btn btn--ghost btn--lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Book a Demo
+            </a>
+          </div>
+
+          <div class="hero__trust">
+            <div class="hero__trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Top 3 BigCommerce App
+            </div>
+            <div class="hero__trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              80+ Active Merchants
+            </div>
+            <div class="hero__trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              7 Payment Gateways
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         2. STATS BAR
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="stats-bar reveal">
+      <div class="container">
+        <div class="stats-bar__grid">
+          <div class="stat">
+            <div class="stat__number">Top <span data-count="3" data-prefix="">3</span></div>
+            <div class="stat__label">Rated App</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span data-count="80" data-suffix="+">80+</span></div>
+            <div class="stat__label">Active Merchants</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span data-count="25" data-suffix="%">25%</span></div>
+            <div class="stat__label">Revenue Lift</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span data-count="7">7</span></div>
+            <div class="stat__label">Payment Gateways</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number"><span data-count="99" data-suffix=".9%">99.9%</span></div>
+            <div class="stat__label">Uptime</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         3. PAIN POINTS
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">THE PROBLEM</span>
+          <h2>BigCommerce Doesn't Include Subscriptions</h2>
+          <p class="section-subtitle">Without subscriptions, you're leaving recurring revenue on the table.</p>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+          <!-- Pain Point 1 -->
+          <div class="pain-card">
+            <div class="pain-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h3 class="pain-card__title">No Built-In Subscriptions</h3>
+            <p class="pain-card__text">BigCommerce doesn't offer native subscription billing. You need a third-party app.</p>
+          </div>
+
+          <!-- Pain Point 2 -->
+          <div class="pain-card">
+            <div class="pain-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="pain-card__title">Limited Gateway Options</h3>
+            <p class="pain-card__text">Most subscription apps lock you into a single payment gateway. Rebillia supports 7.</p>
+          </div>
+
+          <!-- Pain Point 3 -->
+          <div class="pain-card">
+            <div class="pain-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3 class="pain-card__title">High Customer Churn</h3>
+            <p class="pain-card__text">Without smart dunning and retry logic, failed payments mean lost subscribers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         4. FEATURES
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">BIGCOMMERCE FEATURES</span>
+          <h2>Everything You Need for BigCommerce Subscriptions</h2>
+        </div>
+
+        <div class="grid grid-2 reveal-stagger">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="feature-card__title">Deep Checkout Integration</h3>
+            <p class="feature-card__text">Native BigCommerce checkout. No redirects, no iframes. Customers subscribe through the same checkout they already trust.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-card__icon feature-card__icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <h3 class="feature-card__title">Product Catalog Sync</h3>
+            <p class="feature-card__text">Sync your BigCommerce products directly to subscription plans. Automatic inventory and pricing updates in real time.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Smart Dunning</h3>
+            <p class="feature-card__text">Automatic retry logic recovers failed payments and reduces churn. Customizable retry schedules and customer notifications.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-card__icon feature-card__icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="feature-card__title">Customer Self-Service Portal</h3>
+            <p class="feature-card__text">Customers manage subscriptions, skip, pause, swap products, and update payment methods without contacting support.</p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3 class="feature-card__title">7 Payment Gateways</h3>
+            <p class="feature-card__text">Stripe, PayPal, Authorize.net, PayFabric, Square, Braintree, CyberSource. Use the gateway you already have.</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card">
+            <div class="feature-card__icon feature-card__icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3 class="feature-card__title">Subscription Analytics</h3>
+            <p class="feature-card__text">Track MRR, churn rate, LTV, and subscriber growth. Real-time dashboards and exportable reports.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         5. SUBSCRIPTION TYPES
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">SUBSCRIPTION MODELS</span>
+          <h2>Every Subscription Model for BigCommerce</h2>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+          <!-- Subscribe & Save -->
+          <div class="solution-card">
+            <div class="solution-card__icon" style="background: rgba(0,163,138,0.15);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <h3 class="solution-card__title">Subscribe &amp; Save</h3>
+            <p class="solution-card__text">Offer recurring auto-delivery with discounts. Perfect for consumables, supplements, food and beverage, and pet supplies.</p>
+            <div class="solution-card__features">
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Flexible delivery schedules
+              </div>
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Automatic discounts
+              </div>
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Skip, pause, swap
+              </div>
+            </div>
+            <a href="solutions.html#subscribe-save" class="card__link">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Subscription Boxes -->
+          <div class="solution-card">
+            <div class="solution-card__icon" style="background: rgba(92,46,145,0.15);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-purple-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3 class="solution-card__title">Subscription Boxes</h3>
+            <p class="solution-card__text">Build and sell curated subscription boxes with variant selection, tiered pricing, and prepaid options.</p>
+            <div class="solution-card__features">
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Curated or custom builds
+              </div>
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Prepaid subscriptions
+              </div>
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Tiered pricing plans
+              </div>
+            </div>
+            <a href="solutions.html#subscription-boxes" class="card__link">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Recurring Services -->
+          <div class="solution-card">
+            <div class="solution-card__icon" style="background: rgba(0,163,138,0.15);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3 class="solution-card__title">Recurring Services</h3>
+            <p class="solution-card__text">Bill for ongoing services, memberships, maintenance plans, and digital access with automated recurring invoices.</p>
+            <div class="solution-card__features">
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Automated recurring invoices
+              </div>
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom billing cycles
+              </div>
+              <div class="solution-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Service-based pricing
+              </div>
+            </div>
+            <a href="solutions.html#recurring-services" class="card__link">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         6. TESTIMONIALS
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">SOCIAL PROOF</span>
+          <h2>What BigCommerce Merchants Say</h2>
+        </div>
+
+        <div class="testimonials-grid reveal-stagger">
+          <!-- Testimonial 1 -->
+          <div class="testimonial">
+            <div class="testimonial__stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial__quote">"Rebillia transformed our BigCommerce store. We launched subscribe-and-save in one afternoon and saw a 30% lift in repeat orders within the first month."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">JM</div>
+              <div>
+                <div class="testimonial__name">Jessica Martinez</div>
+                <div class="testimonial__role">Founder, NutraBlend Supplements</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial">
+            <div class="testimonial__stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial__quote">"The smart dunning alone saved us thousands. We were losing 12% of subscribers to failed payments. Rebillia brought that down to under 3%."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">DL</div>
+              <div>
+                <div class="testimonial__name">David Liu</div>
+                <div class="testimonial__role">Ecommerce Director, PureRoast Coffee</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial">
+            <div class="testimonial__stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial__quote">"We switched from a competitor and the migration was seamless. Rebillia's customer portal is miles ahead -- our support tickets dropped 40%."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">SP</div>
+              <div>
+                <div class="testimonial__name">Sarah Patel</div>
+                <div class="testimonial__role">COO, FreshBox Pet Supplies</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marketplace Rating Badge -->
+        <div class="text-center">
+          <div class="marketplace-badge">
+            <div class="marketplace-badge__stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div>
+              <div class="marketplace-badge__text">4.8/5 on BigCommerce Marketplace</div>
+              <div class="marketplace-badge__sub">Based on 47+ verified reviews</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         7. PRICING PREVIEW
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">PRICING</span>
+          <h2>Simple Pricing for BigCommerce</h2>
+          <p class="section-subtitle">Start small and scale as you grow. No hidden fees, no long-term contracts.</p>
+        </div>
+
+        <div class="pricing-preview-grid reveal-stagger">
+          <!-- Lite -->
+          <div class="pricing-card">
+            <div class="pricing-card__tier">Lite</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount">49</span>
+              <span class="pricing-card__period">/mo</span>
+            </div>
+            <div class="pricing-card__transaction">+ 1% transaction fee</div>
+            <p class="pricing-card__description">Perfect for stores just getting started with subscriptions.</p>
+            <div class="pricing-card__features">
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Up to 200 active subscribers
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Subscribe &amp; Save
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Customer portal
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Basic analytics
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Email support
+              </div>
+            </div>
+            <a href="pricing.html" class="btn btn--ghost-dark btn--full">Get Started</a>
+          </div>
+
+          <!-- Essentials -->
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-card__badge badge--popular">MOST POPULAR</div>
+            <div class="pricing-card__tier">Essentials</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount">180</span>
+              <span class="pricing-card__period">/mo</span>
+            </div>
+            <div class="pricing-card__transaction">+ 0.75% transaction fee</div>
+            <p class="pricing-card__description">For growing stores with advanced subscription needs.</p>
+            <div class="pricing-card__features">
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Up to 2,000 active subscribers
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                All subscription models
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Smart dunning &amp; retry
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Advanced analytics
+              </div>
+              <div class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority support
+              </div>
+            </div>
+            <a href="pricing.html" class="btn btn--primary btn--full">Start Free Trial</a>
+          </div>
+        </div>
+
+        <p class="pricing-note mt-8">
+          Need more? We offer Growth and Enterprise plans for high-volume stores.
+          <a href="pricing.html">View All Plans &rarr;</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         8. FAQ
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>BigCommerce Subscription FAQ</h2>
+        </div>
+
+        <div class="accordion" role="region" aria-label="Frequently Asked Questions">
+          <!-- FAQ 1 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              How do I install Rebillia on BigCommerce?
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" role="region">
+              <div class="accordion__body">
+                Installing Rebillia is simple. Visit the BigCommerce App Marketplace, search for "Rebillia," and click Install. The app connects to your store automatically. You can configure your first subscription product in under 10 minutes with our guided setup wizard.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Does Rebillia work with BigCommerce checkout?
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" role="region">
+              <div class="accordion__body">
+                Yes. Rebillia integrates natively with the BigCommerce checkout. Customers subscribe through your standard checkout flow with no redirects, iframes, or external pages. It works with both the default BigCommerce checkout and optimized one-page checkout.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Which payment gateways work with BigCommerce?
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" role="region">
+              <div class="accordion__body">
+                Rebillia supports 7 payment gateways on BigCommerce: Stripe, PayPal, Authorize.net, PayFabric, Square, Braintree, and CyberSource. You can use any gateway you already have configured in your BigCommerce store. Switching gateways is seamless with no disruption to active subscribers.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Can I migrate from another subscription app?
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" role="region">
+              <div class="accordion__body">
+                Absolutely. We offer free migration assistance from any existing subscription app. Our team will help transfer your active subscribers, payment methods, and subscription plans with zero downtime. Contact our support team to get started.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Is there a free trial?
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" role="region">
+              <div class="accordion__body">
+                Yes, Rebillia offers a free trial so you can test the full platform before committing. Install from the BigCommerce Marketplace and explore all features including subscription creation, customer portal, and analytics. No credit card required to start.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Do you support BigCommerce multi-storefront?
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" role="region">
+              <div class="accordion__body">
+                Yes. Rebillia fully supports BigCommerce multi-storefront. You can manage subscriptions across multiple storefronts from a single Rebillia dashboard, with unique subscription configurations, pricing, and branding for each storefront.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         9. CTA
+         ══════════════════════════════════════════════════════════════════════ -->
+    <section class="cta-block cta-block--gradient reveal">
+      <div class="hero__grid-pattern"></div>
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">Start Selling Subscriptions on BigCommerce</h2>
+          <p class="cta-block__text">Join 80+ merchants growing recurring revenue with Rebillia.</p>
+          <div class="cta-block__actions">
+            <a href="#" class="btn btn--primary btn--lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Install from Marketplace
+            </a>
+            <a href="#" class="btn btn--ghost btn--lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Book a Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         FOOTER
+         ══════════════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Brand Column -->
+          <div class="footer__brand">
+            <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+            <p>The subscription billing platform built for ecommerce. Power recurring revenue on BigCommerce and WooCommerce.</p>
+          </div>
+
+          <!-- Solutions Column -->
+          <div>
+            <h4 class="footer__heading">Solutions</h4>
+            <nav class="footer__links">
+              <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+              <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+              <a href="solutions.html#usage-billing" class="footer__link">Usage-Based Billing</a>
+              <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+              <a href="solutions.html#membership" class="footer__link">Membership &amp; Access</a>
+            </nav>
+          </div>
+
+          <!-- Product Column -->
+          <div>
+            <h4 class="footer__heading">Product</h4>
+            <nav class="footer__links">
+              <a href="features.html" class="footer__link">Features</a>
+              <a href="pricing.html" class="footer__link">Pricing</a>
+              <a href="integrations.html" class="footer__link">Integrations</a>
+              <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+              <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+            </nav>
+          </div>
+
+          <!-- Developers Column -->
+          <div>
+            <h4 class="footer__heading">Developers</h4>
+            <nav class="footer__links">
+              <a href="developers.html" class="footer__link">API Reference</a>
+              <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
+              <a href="developers.html#sdks" class="footer__link">SDKs</a>
+              <a href="#" class="footer__link">Changelog</a>
+              <a href="#" class="footer__link">Status Page</a>
+            </nav>
+          </div>
+
+          <!-- Company Column -->
+          <div>
+            <h4 class="footer__heading">Company</h4>
+            <nav class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="blog.html" class="footer__link">Blog</a>
+              <a href="#" class="footer__link">Careers</a>
+              <a href="about.html#contact" class="footer__link">Contact</a>
+              <a href="#" class="footer__link">Partners</a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <span>&copy; 2026 Rebillia. All rights reserved.</span>
+          <div class="footer__bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

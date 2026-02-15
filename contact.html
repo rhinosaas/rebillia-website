@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; Book a Demo | Rebillia</title>
+  <meta name="description" content="Get in touch with the Rebillia team. Book a personalized demo, request a quote, or ask about our subscription billing platform. We typically respond within 24 hours.">
+  <link rel="canonical" href="https://www.rebillia.com/contact">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Us & Book a Demo | Rebillia">
+  <meta property="og:description" content="Get in touch with the Rebillia team. Book a personalized demo, request a quote, or ask about our subscription billing platform. We typically respond within 24 hours.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rebillia.com/contact">
+  <meta property="og:site_name" content="Rebillia">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us & Book a Demo | Rebillia">
+  <meta name="twitter:description" content="Get in touch with the Rebillia team. Book a personalized demo, request a quote, or ask about our subscription billing platform. We typically respond within 24 hours.">
+
+  <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Accordion & Contact Inline Styles -->
+  <style>
+    .accordion__item {
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-3);
+      overflow: hidden;
+    }
+    .accordion__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      color: var(--color-gray-200);
+      background: var(--color-card-bg);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    .accordion__trigger:hover {
+      background: rgba(92,46,145,0.15);
+    }
+    .accordion__trigger svg {
+      width: 20px;
+      height: 20px;
+      transition: transform var(--transition-base);
+      flex-shrink: 0;
+      color: var(--color-gray-400);
+    }
+    .accordion__item.open .accordion__trigger svg {
+      transform: rotate(180deg);
+    }
+    .accordion__content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .accordion__content__inner {
+      padding: 0 var(--space-6) var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* Contact Cards */
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+    @media (max-width: 768px) {
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      text-align: center;
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+    }
+    .contact-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .contact-card__icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-4);
+    }
+    .contact-card__title {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      color: var(--color-gray-200);
+      margin-bottom: var(--space-2);
+    }
+    .contact-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+      line-height: var(--leading-relaxed);
+    }
+    .contact-card__email {
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .contact-card__email:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Split Layout */
+    .contact-split {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-12);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .contact-split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Form Styles */
+    .form {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+    }
+    .form h3 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      color: var(--color-gray-200);
+      margin-bottom: var(--space-6);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-group {
+      margin-bottom: var(--space-5);
+    }
+    .form-group label {
+      display: block;
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      color: var(--color-gray-300);
+      margin-bottom: var(--space-2);
+    }
+    .form-group label .required {
+      color: #e53e3e;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-family: inherit;
+      color: var(--color-gray-200);
+      background: var(--color-card-bg);
+      transition: border-color var(--transition-base), box-shadow var(--transition-base);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error {
+      border-color: #e53e3e;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: var(--space-10);
+    }
+    .form-error {
+      font-size: var(--text-xs);
+      color: #e53e3e;
+      margin-top: var(--space-1);
+      display: none;
+    }
+    .form-group.has-error .form-error {
+      display: block;
+    }
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    .form-checkbox input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--color-primary);
+    }
+    .form-checkbox label {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+    }
+    .form-checkbox label a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: var(--space-10) var(--space-6);
+    }
+    .form-success.visible {
+      display: block;
+    }
+    .form-success__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-4);
+      background: rgba(0,163,138,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-success__icon svg {
+      width: 32px;
+      height: 32px;
+      color: #10b981;
+    }
+    .form-success__title {
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      color: var(--color-gray-200);
+      margin-bottom: var(--space-2);
+    }
+    .form-success__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    /* Contact Sidebar */
+    .contact-sidebar h3 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      color: var(--color-gray-200);
+      margin-bottom: var(--space-3);
+    }
+    .contact-sidebar > p {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+    }
+    .contact-sidebar__bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-6) 0;
+    }
+    .contact-sidebar__bullets li {
+      font-size: var(--text-sm);
+      color: var(--color-gray-300);
+      padding: var(--space-2) 0;
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .contact-sidebar__bullets li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .contact-sidebar__divider {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: var(--space-8) 0;
+    }
+    .contact-sidebar h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      color: var(--color-gray-200);
+      margin-bottom: var(--space-4);
+    }
+    .contact-sidebar__links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .contact-sidebar__links li {
+      margin-bottom: var(--space-3);
+    }
+    .contact-sidebar__links a {
+      font-size: var(--text-sm);
+      color: var(--color-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: color var(--transition-base);
+    }
+    .contact-sidebar__links a:hover {
+      text-decoration: underline;
+    }
+    .contact-sidebar__links a svg {
+      width: 14px;
+      height: 14px;
+    }
+  </style>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.rebillia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://www.rebillia.com/contact"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo.png" alt="Rebillia" width="160" height="46">
+      </a>
+
+      <!-- Navigation -->
+      <div class="navbar__nav">
+
+        <!-- Solutions dropdown -->
+        <div class="navbar__dropdown">
+          <a href="solutions.html" class="navbar__link">
+            Solutions
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2v-2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+              Subscribe &amp; Save
+            </a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+              </span>
+              Subscription Boxes
+            </a>
+            <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </span>
+              Usage-Based Billing
+            </a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+              Recurring Services
+            </a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Membership &amp; Access
+            </a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              API-First Billing
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="bigcommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </span>
+              BigCommerce
+            </a>
+            <a href="woocommerce.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              </span>
+              WooCommerce
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+              View All Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <a href="features.html" class="navbar__link">Features</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="integrations.html" class="navbar__link">Integrations</a>
+        <a href="developers.html" class="navbar__link">Developers</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <a href="login.html" class="navbar__login">Login</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button class="navbar__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       PAGE WRAPPER
+       ════════════════════════════════════════════════════════════════════════ -->
+  <main class="page-wrapper">
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 1: HERO
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="hero hero--light hero--center reveal">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">CONTACT</span>
+          <h1 class="hero__title">Let's Talk Subscriptions</h1>
+          <p class="hero__subtitle">Have questions? Want a personalized demo? Our team is here to help you build recurring revenue.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 2: CONTACT CARDS
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section section--sm reveal">
+      <div class="container">
+        <div class="contact-cards">
+
+          <!-- Sales -->
+          <div class="contact-card">
+            <div class="contact-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              </svg>
+            </div>
+            <h3 class="contact-card__title">Talk to Sales</h3>
+            <p class="contact-card__text">Get a personalized demo and pricing for your business.</p>
+            <a href="mailto:sales@rebillia.com" class="contact-card__email">sales@rebillia.com</a>
+          </div>
+
+          <!-- Support -->
+          <div class="contact-card">
+            <div class="contact-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8a2.5 2.5 0 014 2c0 2-3 3-3 3"/>
+                <circle cx="12" cy="17" r="0.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="contact-card__title">Technical Support</h3>
+            <p class="contact-card__text">Need help with your integration? Our support team is ready.</p>
+            <a href="mailto:support@rebillia.com" class="contact-card__email">support@rebillia.com</a>
+          </div>
+
+          <!-- Partnerships -->
+          <div class="contact-card">
+            <div class="contact-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 17a4 4 0 01-8 0c0-3 4-7 4-7s4 4 4 7z"/>
+                <path d="M21 17a4 4 0 01-8 0c0-3 4-7 4-7s4 4 4 7z"/>
+                <path d="M12 3C8 7 6 9 6 12M12 3c4 4 6 6 6 9"/>
+              </svg>
+            </div>
+            <h3 class="contact-card__title">Partnerships</h3>
+            <p class="contact-card__text">Interested in partnering with Rebillia?</p>
+            <a href="mailto:partners@rebillia.com" class="contact-card__email">partners@rebillia.com</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 3: CONTACT FORM + SIDEBAR
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="contact-split">
+
+          <!-- Left: Form -->
+          <div class="form" data-validate>
+            <h3>Send Us a Message</h3>
+
+            <div id="contact-form-fields">
+              <!-- Row: First Name + Last Name -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name <span class="required">*</span></label>
+                  <input type="text" id="first-name" name="first_name" required placeholder="John">
+                  <div class="form-error">First name is required.</div>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name <span class="required">*</span></label>
+                  <input type="text" id="last-name" name="last_name" required placeholder="Doe">
+                  <div class="form-error">Last name is required.</div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="john@company.com">
+                <div class="form-error">Please enter a valid email address.</div>
+              </div>
+
+              <!-- Company -->
+              <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Acme Inc.">
+              </div>
+
+              <!-- Interest Select -->
+              <div class="form-group">
+                <label for="interest">I'm interested in...</label>
+                <select id="interest" name="interest">
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="demo">Book a Demo</option>
+                  <option value="pricing">Pricing Question</option>
+                  <option value="support">Technical Support</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="enterprise">Enterprise Plan</option>
+                  <option value="migration">Migration Help</option>
+                </select>
+              </div>
+
+              <!-- Revenue Select -->
+              <div class="form-group">
+                <label for="revenue">Monthly subscription revenue</label>
+                <select id="revenue" name="revenue">
+                  <option value="" disabled selected>Select a range</option>
+                  <option value="starting">Just starting</option>
+                  <option value="under-10k">Under $10K</option>
+                  <option value="10k-50k">$10K - $50K</option>
+                  <option value="50k-100k">$50K - $100K</option>
+                  <option value="100k-plus">$100K+</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label for="message">Tell us about your project <span class="required">*</span></label>
+                <textarea id="message" name="message" required placeholder="Tell us about your subscription needs, timeline, and any questions you have..."></textarea>
+                <div class="form-error">Please describe your project.</div>
+              </div>
+
+              <!-- Privacy Checkbox -->
+              <div class="form-checkbox">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy">I agree to the <a href="privacy.html">Privacy Policy</a> <span class="required">*</span></label>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <div class="form-error" id="privacy-error">You must agree to the Privacy Policy.</div>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn--primary btn--lg btn--full" id="contact-submit">Send Message</button>
+            </div>
+
+            <!-- Success Message -->
+            <div class="form-success" id="contact-success">
+              <div class="form-success__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div class="form-success__title">Message Sent!</div>
+              <p class="form-success__text">We'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+
+          <!-- Right: Sidebar -->
+          <div class="contact-sidebar">
+            <h3>Book a Demo</h3>
+            <p>See Rebillia in action with a personalized walkthrough tailored to your business.</p>
+            <ul class="contact-sidebar__bullets">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                30-minute personalized demo
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                See features relevant to your industry
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Get pricing tailored to your needs
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Ask questions live
+              </li>
+            </ul>
+            <a href="demo.html" class="btn btn--secondary btn--lg">Schedule Demo</a>
+
+            <hr class="contact-sidebar__divider">
+
+            <h4>Quick Links</h4>
+            <ul class="contact-sidebar__links">
+              <li>
+                <a href="pricing.html">
+                  View Pricing
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="developers.html#api-docs">
+                  API Documentation
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="bigcommerce.html">
+                  BigCommerce App
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="woocommerce.html">
+                  WooCommerce Plugin
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 4: PRE-SALES FAQ
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section section--alt reveal">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="accordion">
+
+          <!-- Q1 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              How long does setup take?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Most merchants are up and running within a day. Our BigCommerce and WooCommerce integrations install in minutes, and our onboarding team can walk you through the configuration process to ensure everything is set up correctly for your business.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Do you offer migration support?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, we help migrate subscribers from other platforms with zero downtime. Our team handles the data transfer, payment method migration, and ensures your subscribers experience a seamless transition without any interruption to their service.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Is there a free trial?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, all plans include a 14-day free trial with full access to every feature in your chosen plan. No credit card required to start. You can explore the platform, set up test subscriptions, and see how Rebillia works for your business before committing.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              What support is included?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                All plans include email support. Priority support is available on the Essentials plan and above, with dedicated account managers on Pro plans. Platform+ customers receive 24/7 priority support with guaranteed response times backed by our SLA.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Can I see a demo first?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Absolutely! Book a 30-minute demo and we'll walk you through the entire platform tailored to your specific use case. We'll show you the features most relevant to your industry, answer all your questions, and help you understand how Rebillia can grow your recurring revenue.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Do you offer custom enterprise plans?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, our Pro and Platform+ plans can be fully customized to fit your specific business requirements. This includes custom transaction rates, dedicated infrastructure, SLA guarantees, white-label portals, and tailored onboarding. Contact our sales team for a personalized quote.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.accordion -->
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 5: CTA
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="cta-block cta-block--purple reveal">
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">Ready to Get Started?</h2>
+          <p class="cta-block__text">Start your 14-day free trial today. No credit card required.</p>
+          <div class="cta-block__actions">
+            <a href="signup.html" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="pricing.html" class="btn btn--ghost btn--lg">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h4 class="footer__heading">Solutions</h4>
+          <nav class="footer__links">
+            <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+            <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+            <a href="solutions.html#membership" class="footer__link">Membership</a>
+            <a href="solutions.html#api-first" class="footer__link">API-First</a>
+          </nav>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="footer__heading">Product</h4>
+          <nav class="footer__links">
+            <a href="features.html" class="footer__link">Features</a>
+            <a href="pricing.html" class="footer__link">Pricing</a>
+            <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+          </nav>
+        </div>
+
+        <!-- Developers -->
+        <div>
+          <h4 class="footer__heading">Developers</h4>
+          <nav class="footer__links">
+            <a href="developers.html#api-docs" class="footer__link">API Docs</a>
+            <a href="developers.html#mcp-server" class="footer__link">MCP Server</a>
+            <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
+            <a href="developers.html#sandbox" class="footer__link">Sandbox</a>
+            <a href="status.html" class="footer__link">Status</a>
+          </nav>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="blog.html" class="footer__link">Blog</a>
+            <a href="contact.html" class="footer__link">Contact</a>
+            <a href="careers.html" class="footer__link">Careers</a>
+            <a href="press.html" class="footer__link">Press</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer__bottom">
+        <span>&copy; 2026 Rebillia. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/form-validation.js"></script>
+  <script src="js/accordion.js"></script>
+
+</body>
+</html>

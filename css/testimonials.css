@@ -1,0 +1,199 @@
+/* ==========================================================================
+   TESTIMONIALS — Social proof, stats bar, logo cloud
+   ========================================================================== */
+
+/* ── Stats Bar ──────────────────────────────────────────────────────────── */
+
+.stats-bar {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.stats-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-10) 0;
+}
+
+.stats-bar--dark {
+  background: var(--color-gray-900);
+  border-color: var(--color-gray-800);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat__number {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-white);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stats-bar--dark .stat__number {
+  color: var(--color-white);
+}
+
+.stat__number span {
+  color: var(--color-accent);
+}
+
+.stat__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.stats-bar--dark .stat__label {
+  color: var(--color-gray-400);
+}
+
+/* ── Testimonial Cards ──────────────────────────────────────────────────── */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.testimonial {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+}
+
+.testimonial__stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-4);
+  color: var(--color-warning);
+  font-size: var(--text-lg);
+}
+
+.testimonial__quote {
+  font-size: var(--text-base);
+  color: var(--color-gray-300);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+  font-style: italic;
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.testimonial__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gradient-hero);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.testimonial__name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-white);
+}
+
+.testimonial__role {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+}
+
+/* ── Partnership Callout ────────────────────────────────────────────────── */
+
+.partnership {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.partnership__logos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-shrink: 0;
+}
+
+.partnership__logo {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+}
+
+.partnership__logo--rebillia {
+  background: var(--gradient-hero);
+  color: var(--color-white);
+}
+
+.partnership__logo--gp {
+  background: var(--color-card-bg-hover);
+  color: var(--color-gray-300);
+}
+
+.partnership__divider {
+  font-size: var(--text-3xl);
+  color: var(--color-gray-300);
+  font-weight: var(--font-normal);
+}
+
+.partnership__content h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.partnership__content p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Brand Logo Cloud (enhanced) ────────────────────────────────────────── */
+
+.brand-cloud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  padding: var(--space-6) 0;
+}
+
+.brand-cloud__item {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-gray-300);
+  transition: color var(--transition-base);
+}
+
+.brand-cloud__item:hover {
+  color: var(--color-gray-500);
+}

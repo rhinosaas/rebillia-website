@@ -1,0 +1,174 @@
+/* ==========================================================================
+   TYPOGRAPHY
+   Inter + JetBrains Mono via Google Fonts
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Headings ───────────────────────────────────────────────────────────── */
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+  color: var(--color-white);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.015em;
+  color: var(--color-white);
+}
+
+h5, .h5 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-gray-200);
+}
+
+h6, .h6 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-gray-300);
+}
+
+/* ── Body text ──────────────────────────────────────────────────────────── */
+
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+/* ── Text colors ────────────────────────────────────────────────────────── */
+
+.text-primary   { color: var(--color-primary); }
+.text-accent    { color: var(--color-accent); }
+.text-white     { color: var(--color-white); }
+.text-muted     { color: var(--color-text-secondary); }
+.text-light     { color: var(--color-text-light); }
+
+/* ── Text alignment ─────────────────────────────────────────────────────── */
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+/* ── Font weights ───────────────────────────────────────────────────────── */
+
+.font-normal    { font-weight: var(--font-normal); }
+.font-medium    { font-weight: var(--font-medium); }
+.font-semibold  { font-weight: var(--font-semibold); }
+.font-bold      { font-weight: var(--font-bold); }
+
+/* ── Special text ───────────────────────────────────────────────────────── */
+
+.section-label {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.section-label--light {
+  color: var(--color-teal-400);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-purple-500), var(--color-teal-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* ── Links ──────────────────────────────────────────────────────────────── */
+
+.link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ── Lists in content ───────────────────────────────────────────────────── */
+
+.content-list {
+  padding-left: var(--space-6);
+}
+
+.content-list li {
+  position: relative;
+  padding-left: var(--space-2);
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.content-list li::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-4));
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}

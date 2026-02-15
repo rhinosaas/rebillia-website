@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Plans Starting at $49/mo | Rebillia</title>
+  <meta name="description" content="Transparent subscription billing pricing. From $49/mo for startups to custom enterprise plans. Smart dunning, multi-gateway, customer portal included.">
+  <link rel="canonical" href="https://www.rebillia.com/pricing">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pricing - Plans Starting at $49/mo | Rebillia">
+  <meta property="og:description" content="Transparent subscription billing pricing. From $49/mo for startups to custom enterprise plans. Smart dunning, multi-gateway, customer portal included.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rebillia.com/pricing">
+
+  <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Accordion Inline Styles -->
+  <style>
+    .accordion__item {
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-3);
+      overflow: hidden;
+    }
+    .accordion__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      color: var(--color-gray-200);
+      background: var(--color-card-bg);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    .accordion__trigger:hover {
+      background: var(--color-bg-alt);
+    }
+    .accordion__trigger svg {
+      width: 20px;
+      height: 20px;
+      transition: transform var(--transition-base);
+      flex-shrink: 0;
+      color: var(--color-gray-400);
+    }
+    .accordion__item.open .accordion__trigger svg {
+      transform: rotate(180deg);
+    }
+    .accordion__content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .accordion__content__inner {
+      padding: 0 var(--space-6) var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+  </style>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.rebillia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pricing",
+        "item": "https://www.rebillia.com/pricing"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: SoftwareApplication with Offers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Rebillia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Subscription billing and recurring revenue management platform for ecommerce businesses.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Lite",
+        "price": "49.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        },
+        "description": "Perfect for small stores getting started with subscriptions. Up to 100 active subscriptions with PayFabric gateway."
+      },
+      {
+        "@type": "Offer",
+        "name": "Essentials",
+        "price": "180.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "180.00",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        },
+        "description": "For growing businesses ready to maximize recurring revenue. Unlimited subscriptions with 7 payment gateways."
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "499.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "499.00",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        },
+        "description": "For established businesses with complex subscription needs. Multi-store, multi-currency, and advanced billing logic."
+      },
+      {
+        "@type": "Offer",
+        "name": "Platform+",
+        "price": "1499.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1499.00",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        },
+        "description": "Enterprise-grade subscription infrastructure with full API, MCP server access, and AI-powered billing."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is there a free trial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all plans include a 14-day free trial. No credit card required to start. You get full access to all features included in your chosen plan during the trial period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept all major credit cards including Visa, Mastercard, American Express, and Discover. Enterprise customers can also pay via invoice and ACH bank transfer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll get immediate access to new features with prorated billing. When downgrading, changes take effect at the start of your next billing cycle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are transaction fees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Transaction fees are charged on each successful subscription transaction processed through Rebillia. The Lite and Essentials plans include a 1.5% + 50\u00a2 per transaction fee. Pro and Platform+ plans have custom transaction rates based on volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a specific payment gateway?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Lite plan requires PayFabric as your payment gateway. Essentials and above support 7 major payment gateways including Stripe, Braintree, Authorize.net, PayFabric, and more. Contact us for the full list of supported gateways."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a setup fee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There are no setup fees, no cancellation fees, and no hidden charges. You only pay your monthly platform fee and transaction fees on successful charges. Cancel anytime without penalty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after my trial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your trial converts to a paid subscription at the end of the 14-day period. We'll send you a reminder before your trial ends. If you choose not to continue, your account will be paused and your data preserved for 30 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer custom enterprise pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our Pro and Platform+ plans can be customized to fit your specific business requirements. This includes custom transaction rates, dedicated infrastructure, SLA guarantees, and tailored onboarding. Contact our sales team for a personalized quote."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo.png" alt="Rebillia" width="160" height="46">
+      </a>
+
+      <!-- Navigation -->
+      <div class="navbar__nav">
+
+        <!-- Solutions dropdown -->
+        <div class="navbar__dropdown">
+          <a href="solutions.html" class="navbar__link">
+            Solutions
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2v-2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+              Subscribe &amp; Save
+            </a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+              </span>
+              Subscription Boxes
+            </a>
+            <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </span>
+              Usage-Based Billing
+            </a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+              Recurring Services
+            </a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Membership &amp; Access
+            </a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              API-First Billing
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html#bigcommerce" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </span>
+              BigCommerce
+            </a>
+            <a href="solutions.html#woocommerce" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              </span>
+              WooCommerce
+            </a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+              View All Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <a href="features.html" class="navbar__link">Features</a>
+        <a href="pricing.html" class="navbar__link navbar__link--active">Pricing</a>
+        <a href="integrations.html" class="navbar__link">Integrations</a>
+        <a href="developers.html" class="navbar__link">Developers</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <a href="#" class="navbar__login">Login</a>
+        <a href="#" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button class="navbar__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       PAGE WRAPPER
+       ════════════════════════════════════════════════════════════════════════ -->
+  <main class="page-wrapper">
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 1: HERO
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="hero hero--light hero--center reveal">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">PRICING</span>
+          <h1 class="hero__title">Simple, Transparent Pricing</h1>
+          <p class="hero__subtitle">Start with our Lite plan at $49/mo. Scale as you grow. All plans include a 14-day free trial.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 2: BILLING TOGGLE + PRICING CARDS
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+
+        <!-- Billing Toggle -->
+        <div class="pricing-toggle">
+          <span class="pricing-toggle__label active" data-toggle="monthly">Monthly</span>
+          <div class="pricing-toggle__switch" role="switch" aria-checked="false" aria-label="Toggle annual billing"></div>
+          <span class="pricing-toggle__label" data-toggle="annual">Annual</span>
+          <span class="pricing-toggle__badge">Save 15%</span>
+        </div>
+
+        <!-- Pricing Grid -->
+        <div class="pricing-grid">
+
+          <!-- ── LITE ────────────────────────────────────────────────────── -->
+          <div class="pricing-card">
+            <span class="pricing-card__badge badge--new">NEW</span>
+            <div class="pricing-card__tier">Lite</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount" data-price-monthly="49" data-price-annual="499">49</span>
+              <span class="pricing-card__period" data-period>/mo</span>
+            </div>
+            <div class="pricing-card__transaction">+ 1.5% + 50&cent; per transaction</div>
+            <p class="pricing-card__description">Perfect for small stores getting started with subscriptions.</p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Up to 100 active subscriptions
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                PayFabric gateway (required)
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Subscribe &amp; save
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Basic customer portal
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Email notifications
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Standard support
+              </li>
+            </ul>
+            <div class="pricing-card__cta">
+              <a href="#" class="btn btn--primary btn--full">Start Free Trial</a>
+            </div>
+            <p class="pricing-note mt-4" style="font-size:var(--text-xs); color:var(--color-gray-400);">PayFabric gateway required</p>
+          </div>
+
+          <!-- ── ESSENTIALS (Featured) ───────────────────────────────────── -->
+          <div class="pricing-card pricing-card--featured">
+            <span class="pricing-card__badge badge--popular">MOST POPULAR</span>
+            <div class="pricing-card__tier">Essentials</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount" data-price-monthly="180" data-price-annual="1,836">180</span>
+              <span class="pricing-card__period" data-period>/mo</span>
+            </div>
+            <div class="pricing-card__transaction">+ 1.5% + 50&cent; per transaction</div>
+            <p class="pricing-card__description">For growing businesses ready to maximize recurring revenue.</p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited subscriptions
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                7 payment gateways
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Smart dunning &amp; retry
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Full customer portal
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Subscription analytics
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Subscription boxes
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority support
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                14-day free trial
+              </li>
+            </ul>
+            <div class="pricing-card__cta">
+              <a href="#" class="btn btn--primary btn--full">Start Free Trial</a>
+            </div>
+          </div>
+
+          <!-- ── PRO ─────────────────────────────────────────────────────── -->
+          <div class="pricing-card">
+            <div class="pricing-card__tier">Pro</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency" style="font-size:var(--text-sm); align-self:center; color:var(--color-gray-500);">From</span>
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount" data-price-monthly="499" data-price-annual="Custom">499</span>
+              <span class="pricing-card__period" data-period>/mo</span>
+            </div>
+            <div class="pricing-card__transaction">+ Custom rate</div>
+            <p class="pricing-card__description">For established businesses with complex subscription needs.</p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Everything in Essentials
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Multi-store support
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Multi-currency
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Advanced billing logic
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom workflows
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Usage-based billing
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Dedicated account manager
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                API access
+              </li>
+            </ul>
+            <div class="pricing-card__cta">
+              <a href="#" class="btn btn--secondary btn--full">Contact Sales</a>
+            </div>
+          </div>
+
+          <!-- ── PLATFORM+ ──────────────────────────────────────────────── -->
+          <div class="pricing-card">
+            <div class="pricing-card__tier">Platform+</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency" style="font-size:var(--text-sm); align-self:center; color:var(--color-gray-500);">From</span>
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount" data-price-monthly="1,499" data-price-annual="Custom">1,499</span>
+              <span class="pricing-card__period" data-period>/mo</span>
+            </div>
+            <div class="pricing-card__transaction">+ Custom rate</div>
+            <p class="pricing-card__description">Enterprise-grade subscription infrastructure with full API &amp; AI.</p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Everything in Pro
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                API-first billing
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                MCP server access
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                White-label portal
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                SLA guarantee
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom integrations
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Onboarding &amp; migration
+              </li>
+              <li class="pricing-card__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                24/7 priority support
+              </li>
+            </ul>
+            <div class="pricing-card__cta">
+              <a href="#" class="btn btn--secondary btn--full">Contact Sales</a>
+            </div>
+          </div>
+
+        </div><!-- /.pricing-grid -->
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 4: HOW PRICING WORKS
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section section--alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>How Our Pricing Works</h2>
+        </div>
+        <div class="grid grid-3">
+
+          <!-- Card 1 -->
+          <div class="card card--flat">
+            <div class="card__icon card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+            </div>
+            <h4 class="card__title">Monthly Platform Fee</h4>
+            <p class="card__text">A flat monthly fee based on your plan tier. Covers all platform features.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card card--flat">
+            <div class="card__icon card__icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </div>
+            <h4 class="card__title">Transaction Fees</h4>
+            <p class="card__text">A small percentage + flat fee per successful subscription transaction.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card card--flat">
+            <div class="card__icon card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h4 class="card__title">No Hidden Costs</h4>
+            <p class="card__text">No setup fees. No cancellation fees. Upgrade or downgrade anytime.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 5: COMPARISON TABLE
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Compare Plans</h2>
+          <p class="section-subtitle">See exactly what's included in each plan.</p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Lite</th>
+                <th class="featured">Essentials</th>
+                <th>Pro</th>
+                <th>Platform+</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Category: Subscriptions -->
+              <tr class="category-row">
+                <td colspan="5">Subscriptions</td>
+              </tr>
+              <tr>
+                <td>Active subscription limit</td>
+                <td>100</td>
+                <td class="featured">Unlimited</td>
+                <td>Unlimited</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Subscribe &amp; save</td>
+                <td><span class="check">&check;</span></td>
+                <td class="featured"><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+              <tr>
+                <td>Subscription boxes</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+
+              <!-- Category: Payment -->
+              <tr class="category-row">
+                <td colspan="5">Payment</td>
+              </tr>
+              <tr>
+                <td>Payment gateways</td>
+                <td>1 (PayFabric)</td>
+                <td class="featured">7</td>
+                <td>7+</td>
+                <td>7+</td>
+              </tr>
+              <tr>
+                <td>Smart dunning</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+              <tr>
+                <td>Multi-currency</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="cross">&mdash;</span></td>
+                <td><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+
+              <!-- Category: Customer Experience -->
+              <tr class="category-row">
+                <td colspan="5">Customer Experience</td>
+              </tr>
+              <tr>
+                <td>Customer portal</td>
+                <td>Basic</td>
+                <td class="featured">Full</td>
+                <td>Full</td>
+                <td>White-label</td>
+              </tr>
+              <tr>
+                <td>White-label</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="cross">&mdash;</span></td>
+                <td><span class="cross">&mdash;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+
+              <!-- Category: Analytics -->
+              <tr class="category-row">
+                <td colspan="5">Analytics</td>
+              </tr>
+              <tr>
+                <td>Analytics dashboard</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+              <tr>
+                <td>Multi-store</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="cross">&mdash;</span></td>
+                <td><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+
+              <!-- Category: Developer -->
+              <tr class="category-row">
+                <td colspan="5">Developer</td>
+              </tr>
+              <tr>
+                <td>API access</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="cross">&mdash;</span></td>
+                <td><span class="check">&check;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+              <tr>
+                <td>MCP server</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="cross">&mdash;</span></td>
+                <td><span class="cross">&mdash;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+
+              <!-- Category: Support -->
+              <tr class="category-row">
+                <td colspan="5">Support</td>
+              </tr>
+              <tr>
+                <td>Support level</td>
+                <td>Standard</td>
+                <td class="featured">Priority</td>
+                <td>Dedicated AM</td>
+                <td>24/7 Priority</td>
+              </tr>
+              <tr>
+                <td>SLA</td>
+                <td><span class="cross">&mdash;</span></td>
+                <td class="featured"><span class="cross">&mdash;</span></td>
+                <td><span class="cross">&mdash;</span></td>
+                <td><span class="check">&check;</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 6: FAQ
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="section section--alt reveal">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <h2>Pricing FAQ</h2>
+        </div>
+
+        <div class="accordion">
+
+          <!-- Q1 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Is there a free trial?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, all plans include a 14-day free trial. No credit card required to start. You get full access to all features included in your chosen plan during the trial period.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              What payment methods do you accept?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                We accept all major credit cards including Visa, Mastercard, American Express, and Discover. Enterprise customers can also pay via invoice and ACH bank transfer.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Can I change plans?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll get immediate access to new features with prorated billing. When downgrading, changes take effect at the start of your next billing cycle.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              What are transaction fees?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Transaction fees are charged on each successful subscription transaction processed through Rebillia. The Lite and Essentials plans include a 1.5% + 50&cent; per transaction fee. Pro and Platform+ plans have custom transaction rates based on volume.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Do I need a specific payment gateway?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                The Lite plan requires PayFabric as your payment gateway. Essentials and above support 7 major payment gateways including Stripe, Braintree, Authorize.net, PayFabric, and more. Contact us for the full list of supported gateways.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Is there a setup fee?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                No. There are no setup fees, no cancellation fees, and no hidden charges. You only pay your monthly platform fee and transaction fees on successful charges. Cancel anytime without penalty.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              What happens after my trial?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Your trial converts to a paid subscription at the end of the 14-day period. We'll send you a reminder before your trial ends. If you choose not to continue, your account will be paused and your data preserved for 30 days.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Do you offer custom enterprise pricing?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes, our Pro and Platform+ plans can be customized to fit your specific business requirements. This includes custom transaction rates, dedicated infrastructure, SLA guarantees, and tailored onboarding. Contact our sales team for a personalized quote.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.accordion -->
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────────────────────────────────────
+         SECTION 7: CTA
+         ────────────────────────────────────────────────────────────────────── -->
+    <section class="cta-block cta-block--purple reveal">
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">Start Your Free Trial Today</h2>
+          <p class="cta-block__text">14 days free. No credit card required. Cancel anytime.</p>
+          <div class="cta-block__actions">
+            <a href="#" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="#" class="btn btn--ghost btn--lg">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+          <p>The modern subscription billing platform for ecommerce. Turn one-time buyers into lifelong subscribers.</p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h5 class="footer__heading">Product</h5>
+          <nav class="footer__links">
+            <a href="features.html" class="footer__link">Features</a>
+            <a href="pricing.html" class="footer__link">Pricing</a>
+            <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="developers.html" class="footer__link">Developers</a>
+            <a href="#" class="footer__link">Changelog</a>
+          </nav>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h5 class="footer__heading">Solutions</h5>
+          <nav class="footer__links">
+            <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="footer__link">Usage-Based Billing</a>
+            <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+            <a href="solutions.html#membership" class="footer__link">Membership &amp; Access</a>
+          </nav>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h5 class="footer__heading">Company</h5>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="blog.html" class="footer__link">Blog</a>
+            <a href="#" class="footer__link">Careers</a>
+            <a href="#" class="footer__link">Contact</a>
+            <a href="#" class="footer__link">Partners</a>
+          </nav>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h5 class="footer__heading">Resources</h5>
+          <nav class="footer__links">
+            <a href="#" class="footer__link">Documentation</a>
+            <a href="#" class="footer__link">API Reference</a>
+            <a href="#" class="footer__link">Help Center</a>
+            <a href="#" class="footer__link">Status</a>
+            <a href="#" class="footer__link">Security</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Rebillia. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/pricing-toggle.js"></script>
+  <script src="js/accordion.js"></script>
+
+</body>
+</html>
