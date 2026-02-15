@@ -106,22 +106,6 @@
       background: var(--color-border);
     }
 
-    /* ── Pricing preview grid ──────────────────────────────────────────────── */
-    .pricing-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-6);
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .pricing-preview-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-      }
-    }
-
     /* ── Marketplace rating badge ──────────────────────────────────────────── */
     .marketplace-badge {
       display: inline-flex;
@@ -773,97 +757,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════════════════════
-         7. PRICING PREVIEW
-         ══════════════════════════════════════════════════════════════════════ -->
-    <section class="section section--alt reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">PRICING</span>
-          <h2>Simple Pricing for BigCommerce</h2>
-          <p class="section-subtitle">Start small and scale as you grow. No hidden fees, no long-term contracts.</p>
-        </div>
-
-        <div class="pricing-preview-grid reveal-stagger">
-          <!-- Lite -->
-          <div class="pricing-card">
-            <div class="pricing-card__tier">Lite</div>
-            <div class="pricing-card__price">
-              <span class="pricing-card__currency">$</span>
-              <span class="pricing-card__amount">49</span>
-              <span class="pricing-card__period">/mo</span>
-            </div>
-            <div class="pricing-card__transaction">+ 1% transaction fee</div>
-            <p class="pricing-card__description">Perfect for stores just getting started with subscriptions.</p>
-            <div class="pricing-card__features">
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Up to 200 active subscribers
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Subscribe &amp; Save
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Customer portal
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Basic analytics
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Email support
-              </div>
-            </div>
-            <a href="pricing.html" class="btn btn--ghost-dark btn--full">Get Started</a>
-          </div>
-
-          <!-- Essentials -->
-          <div class="pricing-card pricing-card--featured">
-            <div class="pricing-card__badge badge--popular">MOST POPULAR</div>
-            <div class="pricing-card__tier">Essentials</div>
-            <div class="pricing-card__price">
-              <span class="pricing-card__currency">$</span>
-              <span class="pricing-card__amount">180</span>
-              <span class="pricing-card__period">/mo</span>
-            </div>
-            <div class="pricing-card__transaction">+ 0.75% transaction fee</div>
-            <p class="pricing-card__description">For growing stores with advanced subscription needs.</p>
-            <div class="pricing-card__features">
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Up to 2,000 active subscribers
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                All subscription models
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Smart dunning &amp; retry
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Advanced analytics
-              </div>
-              <div class="pricing-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Priority support
-              </div>
-            </div>
-            <a href="pricing.html" class="btn btn--primary btn--full">Start Free Trial</a>
-          </div>
-        </div>
-
-        <p class="pricing-note mt-8">
-          Need more? We offer Growth and Enterprise plans for high-volume stores.
-          <a href="pricing.html">View All Plans &rarr;</a>
-        </p>
       </div>
     </section>
 
