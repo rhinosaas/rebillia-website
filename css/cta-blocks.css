@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CTA BLOCKS — Full-width + inline banners
+   CTA BLOCKS — Full-width + inline banners (Light theme)
    ========================================================================== */
 
 /* ── Full-Width CTA ─────────────────────────────────────────────────────── */
@@ -12,7 +12,7 @@
 }
 
 .cta-block--gradient {
-  background: var(--gradient-hero);
+  background: var(--gradient-cta);
 }
 
 .cta-block--purple {
@@ -68,7 +68,7 @@
 /* ── Inline CTA (within page content) ───────────────────────────────────── */
 
 .cta-inline {
-  background: var(--gradient-card);
+  background: var(--color-bg-alt);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
   padding: var(--space-12) var(--space-10);
@@ -85,7 +85,7 @@
 .cta-inline__title {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: var(--space-2);
 }
 
@@ -106,11 +106,11 @@
   position: relative;
   border-radius: var(--radius-2xl);
   padding: 2px;
-  background: var(--gradient-hero);
+  background: var(--gradient-cta);
 }
 
 .cta-bordered__inner {
-  background: var(--color-card-bg);
+  background: var(--color-white);
   border-radius: calc(var(--radius-2xl) - 2px);
   padding: var(--space-10);
   text-align: center;
@@ -119,7 +119,7 @@
 .cta-bordered__title {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: var(--space-3);
 }
 
@@ -142,7 +142,7 @@
   flex: 1;
   padding: 12px 20px;
   border: 2px solid rgba(255,255,255,0.2);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-full);
   background: rgba(255,255,255,0.1);
   color: var(--color-white);
   font-size: var(--text-sm);
@@ -155,5 +155,5 @@
 
 .email-cta__input:focus {
   outline: none;
-  border-color: var(--color-teal-400);
+  border-color: rgba(255,255,255,0.5);
 }

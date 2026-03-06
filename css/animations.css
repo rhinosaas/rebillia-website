@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ANIMATIONS — Scroll reveal, hover effects
+   ANIMATIONS — Scroll reveal, hover effects, logo cloud
    ========================================================================== */
 
 /* ── Scroll Reveal ──────────────────────────────────────────────────────── */
@@ -67,8 +67,8 @@
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .hover-glow {
@@ -76,7 +76,7 @@
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 0 4px rgba(92,46,145,0.2), var(--shadow-lg);
+  box-shadow: 0 0 0 4px rgba(92,46,145,0.1), var(--shadow-md);
 }
 
 .hover-scale {
@@ -107,6 +107,24 @@
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+/* ── Float Delay Utilities ──────────────────────────────────────────────── */
+
+.animate-float--delay-1 { animation-delay: 0.5s; }
+.animate-float--delay-2 { animation-delay: 1s; }
+.animate-float--delay-3 { animation-delay: 1.5s; }
+.animate-float--delay-4 { animation-delay: 2s; }
+
+/* ── Rotate Slow ───────────────────────────────────────────────────────── */
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 20s linear infinite;
 }
 
 /* ── Spin ───────────────────────────────────────────────────────────────── */
@@ -140,6 +158,86 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* ── Animated Logo Cloud ────────────────────────────────────────────────── */
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logo-cloud--animated {
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.logo-cloud--animated .logo-cloud__track {
+  display: flex;
+  gap: var(--space-10);
+  animation: scrollLogos 30s linear infinite;
+  width: max-content;
+  align-items: center;
+}
+
+.logo-cloud--animated .logo-cloud__track:hover {
+  animation-play-state: paused;
+}
+
+.logo-cloud--animated .logo-cloud__item {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity var(--transition-base);
+}
+
+.logo-cloud--animated .logo-cloud__item:hover {
+  opacity: 1;
+}
+
+/* ── Video Container ────────────────────────────────────────────────────── */
+
+.video-container {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--color-border);
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+.video-container__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.video-container__play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: var(--shadow-2xl);
+}
+
+.video-container__play svg {
+  width: 28px;
+  height: 28px;
+  color: var(--color-text);
+  margin-left: 3px;
+}
+
 /* ── Reduced motion ─────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
@@ -166,7 +264,12 @@
   .animate-pulse,
   .animate-float,
   .animate-spin,
-  .animate-gradient {
+  .animate-gradient,
+  .animate-rotate-slow {
+    animation: none;
+  }
+
+  .logo-cloud--animated .logo-cloud__track {
     animation: none;
   }
 

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CODE BLOCKS — Developer page code snippets
+   CODE BLOCKS — Developer page code snippets (stays dark — industry standard)
    ========================================================================== */
 
 /* ── Code Block ─────────────────────────────────────────────────────────── */
@@ -158,7 +158,7 @@
 }
 
 .code-tabs__btn.active {
-  color: var(--color-teal-400);
+  color: var(--color-purple-400);
   background: var(--color-gray-800);
 }
 
@@ -176,9 +176,9 @@ code:not([class]) {
   font-family: var(--font-mono);
   font-size: 0.9em;
   padding: 2px 6px;
-  background: var(--color-gray-800);
+  background: var(--color-purple-50);
   border-radius: var(--radius-sm);
-  color: var(--color-purple-300);
+  color: var(--color-purple-700);
 }
 
 /* ── Terminal Prompt ────────────────────────────────────────────────────── */
@@ -208,24 +208,35 @@ code:not([class]) {
 }
 
 .terminal__prompt {
-  color: var(--color-teal-400);
+  color: var(--color-purple-400);
 }
 
 .terminal__comment {
   color: var(--color-gray-600);
 }
 
-/* ── Developer Path Cards ───────────────────────────────────────────────── */
+/* ── Developer Path Cards (light on light theme) ──────────────────────── */
 
 .dev-path {
-  background: var(--color-gray-900);
-  border: 1px solid var(--color-gray-800);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
-  transition: border-color var(--transition-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .dev-path:hover {
+  border-color: rgba(92,46,145,0.2);
+  box-shadow: var(--shadow-card);
+}
+
+/* Dark-section dev paths override */
+.section--dark .dev-path {
+  background: var(--color-gray-900);
+  border-color: var(--color-gray-800);
+}
+
+.section--dark .dev-path:hover {
   border-color: var(--color-gray-700);
 }
 
@@ -238,22 +249,35 @@ code:not([class]) {
   justify-content: center;
   font-size: 1.5rem;
   margin-bottom: var(--space-5);
-  background: rgba(0,163,138,0.15);
-  color: var(--color-teal-400);
+  background: var(--color-purple-50);
+  color: var(--color-primary);
+}
+
+.section--dark .dev-path__icon {
+  background: rgba(92,46,145,0.15);
+  color: var(--color-purple-400);
 }
 
 .dev-path__title {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: var(--space-2);
+}
+
+.section--dark .dev-path__title {
+  color: var(--color-white);
 }
 
 .dev-path__text {
   font-size: var(--text-sm);
-  color: var(--color-gray-400);
+  color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-5);
+}
+
+.section--dark .dev-path__text {
+  color: var(--color-gray-400);
 }
 
 .dev-path__link {
@@ -262,8 +286,12 @@ code:not([class]) {
   gap: var(--space-2);
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  color: var(--color-teal-400);
+  color: var(--color-primary);
   transition: gap var(--transition-fast);
+}
+
+.section--dark .dev-path__link {
+  color: var(--color-purple-400);
 }
 
 .dev-path__link:hover {
@@ -292,7 +320,7 @@ code:not([class]) {
 }
 
 .nl-example__prompt {
-  color: var(--color-teal-400);
+  color: var(--color-purple-400);
   font-weight: var(--font-semibold);
   flex-shrink: 0;
 }

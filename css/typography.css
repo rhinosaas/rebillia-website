@@ -1,6 +1,6 @@
 /* ==========================================================================
    TYPOGRAPHY
-   Inter + JetBrains Mono via Google Fonts
+   Outfit + DM Sans + JetBrains Mono via Google Fonts
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -13,7 +13,7 @@ h1, .h1 {
   font-weight: var(--font-extrabold);
   line-height: var(--leading-tight);
   letter-spacing: -0.03em;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 h2, .h2 {
@@ -22,7 +22,7 @@ h2, .h2 {
   font-weight: var(--font-bold);
   line-height: var(--leading-tight);
   letter-spacing: -0.025em;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 h3, .h3 {
@@ -31,7 +31,7 @@ h3, .h3 {
   font-weight: var(--font-bold);
   line-height: var(--leading-snug);
   letter-spacing: -0.02em;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 h4, .h4 {
@@ -40,7 +40,7 @@ h4, .h4 {
   font-weight: var(--font-semibold);
   line-height: var(--leading-snug);
   letter-spacing: -0.015em;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 h5, .h5 {
@@ -48,7 +48,7 @@ h5, .h5 {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   line-height: var(--leading-snug);
-  color: var(--color-gray-200);
+  color: var(--color-text);
 }
 
 h6, .h6 {
@@ -56,7 +56,7 @@ h6, .h6 {
   font-size: var(--text-lg);
   font-weight: var(--font-semibold);
   line-height: var(--leading-snug);
-  color: var(--color-gray-300);
+  color: var(--color-text-secondary);
 }
 
 /* ── Body text ──────────────────────────────────────────────────────────── */
@@ -114,7 +114,7 @@ p {
 }
 
 .section-label--light {
-  color: var(--color-teal-400);
+  color: var(--color-purple-300);
 }
 
 .section-subtitle {
@@ -126,7 +126,7 @@ p {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-purple-500), var(--color-teal-500));
+  background: linear-gradient(135deg, var(--color-purple-600), var(--color-purple-800));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -170,5 +170,5 @@ p {
   width: 6px;
   height: 6px;
   border-radius: var(--radius-full);
-  background: var(--color-accent);
+  background: var(--color-primary);
 }

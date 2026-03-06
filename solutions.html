@@ -4,21 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscription Solutions for Ecommerce, SaaS, Services &amp; More | Rebillia</title>
-  <meta name="description" content="Explore Rebillia's subscription solutions: subscribe-and-save, subscription boxes, usage-based billing, recurring services, membership programs, and API-first billing for any business.">
+  <meta name="description" content="Rebillia subscription solutions: subscribe-and-save, subscription boxes, usage-based billing, recurring services, memberships, and API-first billing.">
   <link rel="canonical" href="https://www.rebillia.com/solutions">
+
+  <!-- Accordion Inline Styles -->
+  <style>
+    .accordion__item {
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-3);
+      overflow: hidden;
+    }
+    .accordion__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      color: var(--color-text);
+      background: var(--color-card-bg);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    .accordion__trigger:hover {
+      background: var(--color-bg-alt);
+    }
+    .accordion__trigger svg {
+      width: 20px;
+      height: 20px;
+      transition: transform var(--transition-base);
+      flex-shrink: 0;
+      color: var(--color-gray-400);
+    }
+    .accordion__item.open .accordion__trigger svg {
+      transform: rotate(180deg);
+    }
+    .accordion__content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .accordion__content__inner {
+      padding: 0 var(--space-6) var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: var(--leading-relaxed);
+    }
+  </style>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.rebillia.com/solutions">
   <meta property="og:title" content="Subscription Solutions for Ecommerce, SaaS, Services &amp; More | Rebillia">
-  <meta property="og:description" content="Explore Rebillia's subscription solutions: subscribe-and-save, subscription boxes, usage-based billing, recurring services, membership programs, and API-first billing for any business.">
+  <meta property="og:description" content="Rebillia subscription solutions: subscribe-and-save, subscription boxes, usage-based billing, recurring services, memberships, and API-first billing.">
+  <meta property="og:image" content="https://www.rebillia.com/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Rebillia">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Subscription Solutions for Ecommerce, SaaS, Services &amp; More | Rebillia">
-  <meta name="twitter:description" content="Explore Rebillia's subscription solutions: subscribe-and-save, subscription boxes, usage-based billing, recurring services, membership programs, and API-first billing for any business.">
+  <meta name="twitter:description" content="Rebillia subscription solutions: subscribe-and-save, subscription boxes, usage-based billing, recurring services, memberships, and API-first billing.">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -37,6 +88,79 @@
         "position": 2,
         "name": "Solutions",
         "item": "https://www.rebillia.com/solutions"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Rebillia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Subscription billing solutions for ecommerce, SaaS, and services. Subscribe-and-save, subscription boxes, usage-based billing, and API-first billing.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "14-day free trial, no credit card required"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "150"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What types of subscription models does Rebillia support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rebillia supports subscribe-and-save, subscription boxes, usage-based billing, recurring services, membership programs, and API-first billing. You can combine models or create custom billing flows with our flexible platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which industries use Rebillia for subscriptions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rebillia serves ecommerce brands, SaaS companies, professional services, health and wellness, food and beverage, pet supplies, and more. Any business with recurring revenue can benefit from our subscription infrastructure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get started with Rebillia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with a 14-day free trial — no credit card required. Install the Rebillia app on BigCommerce or WooCommerce, configure your subscription products, and start accepting recurring orders. Setup typically takes under 30 minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I offer both one-time and subscription purchases?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Rebillia's subscribe-and-save model lets customers choose between one-time purchases and subscriptions on the same product page. You can set subscription discounts to incentivize recurring orders while keeping one-time purchases available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Rebillia handle failed payments automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Smart dunning is available on Essentials plans and above. It automatically retries failed payments on intelligent schedules, sends pre-dunning email notifications, and provides recovery analytics. Merchants typically recover 25-30% of otherwise-lost revenue."
+        }
       }
     ]
   }
@@ -81,37 +205,53 @@
           </a>
           <div class="navbar__dropdown-menu">
             <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F504;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+              </span>
               Subscribe &amp; Save
             </a>
             <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F4E6;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </span>
               Subscription Boxes
             </a>
             <a href="solutions.html#usage-based" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F4CA;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </span>
               Usage-Based Billing
             </a>
             <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F527;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </span>
               Recurring Services
             </a>
             <a href="solutions.html#membership" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F3AB;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
               Membership &amp; Access
             </a>
             <a href="solutions.html#api-first" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x26A1;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
               API-First Billing
             </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="bigcommerce.html" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F6D2;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              </span>
               BigCommerce
             </a>
             <a href="woocommerce.html" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F6D2;</span>
-              WooCommerce
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              </span>
+              WooCommerce (Coming Soon)
             </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
@@ -125,6 +265,8 @@
         <a href="integrations.html" class="navbar__link">Integrations</a>
         <a href="developers.html" class="navbar__link">Developers</a>
         <a href="about.html" class="navbar__link">About</a>
+        <a href="customers.html" class="navbar__link">Customers</a>
+        <a href="partnerships.html" class="navbar__link">Partnerships</a>
         <a href="blog.html" class="navbar__link">Blog</a>
       </div>
 
@@ -153,9 +295,32 @@
           <span class="hero__label">SOLUTIONS</span>
           <h1 class="hero__title">One Platform, Every Subscription Model</h1>
           <p class="hero__subtitle">From ecommerce subscribe-and-save to API-first usage billing. Rebillia powers recurring revenue across industries and platforms.</p>
+          <p class="hero__answer" style="max-width:640px; margin:var(--space-4) auto 0; font-size:var(--text-base); color:var(--color-text-secondary); line-height:var(--leading-relaxed);">
+            <strong>Rebillia is a subscription billing platform</strong> that helps ecommerce and SaaS businesses launch and manage recurring revenue models — including subscribe-and-save, subscription boxes, usage-based billing, and membership programs — across BigCommerce, WooCommerce, and custom platforms via API.
+          </p>
         </div>
       </div>
     </section>
+
+    <!-- Stats Bar -->
+    <div style="display:flex; justify-content:center; gap:var(--space-10); flex-wrap:wrap; margin:var(--space-8) 0; text-align:center;">
+      <div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">3M+</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">End Users</div>
+      </div>
+      <div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">$500M+</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Revenue Processed</div>
+      </div>
+      <div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">Multi</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Gateway Support</div>
+      </div>
+      <div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">30%</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Failed Payment Recovery</div>
+      </div>
+    </div>
 
 
     <!-- ================================================================
@@ -314,7 +479,7 @@
               </li>
               <li class="solution-card__feature">
                 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Sandbox environment
+                Comprehensive API documentation
               </li>
             </ul>
           </div>
@@ -419,27 +584,27 @@
 
           <!-- BigCommerce -->
           <a href="bigcommerce.html" class="card" style="text-decoration: none; display: block;">
-            <span class="badge badge--popular">TOP 3 APP</span>
+            <span class="badge badge--popular">#1 SUBSCRIPTION APP</span>
             <div class="card__icon card__icon--purple" style="margin-top: var(--space-4);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M3 3h18v18H3V3zm3 3v12h12V6H6z" fill="currentColor"/>
               </svg>
             </div>
             <h3 class="card__title">BigCommerce Subscriptions</h3>
-            <p class="card__text">Deep native integration with BigCommerce. Top-3 rated on the marketplace. Checkout integration, product sync, customer portal.</p>
+            <p class="card__text">Deep native integration with BigCommerce. #1 subscription app on the marketplace. Checkout integration, product sync, customer portal.</p>
             <span class="card__link">Learn More <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
 
           <!-- WooCommerce -->
           <a href="woocommerce.html" class="card" style="text-decoration: none; display: block;">
-            <span class="badge badge--new">NEW</span>
+            <span class="badge badge--dark">COMING SOON</span>
             <div class="card__icon card__icon--teal" style="margin-top: var(--space-4);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 4h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="card__title">WooCommerce Subscriptions</h3>
-            <p class="card__text">WordPress plugin for WooCommerce. Better and more affordable than WooCommerce Subscriptions. Smart dunning, 7 gateways.</p>
+            <h3 class="card__title">WooCommerce Subscriptions (Coming Soon)</h3>
+            <p class="card__text">WordPress plugin for WooCommerce. Better and more affordable than WooCommerce Subscriptions. Smart dunning, multi-gateway support.</p>
             <span class="card__link">Learn More <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
 
@@ -474,8 +639,89 @@
     </section>
 
 
+    <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+    <section class="section section--alt reveal">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <h2>Solutions FAQ</h2>
+        </div>
+
+        <div class="accordion">
+
+          <!-- Q1 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              What types of subscription models does Rebillia support?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Rebillia supports subscribe-and-save, subscription boxes, usage-based billing, recurring services, membership programs, and API-first billing. You can combine models or create custom billing flows with our flexible platform.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Which industries use Rebillia for subscriptions?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Rebillia serves ecommerce brands, SaaS companies, professional services, health and wellness, food and beverage, pet supplies, and more. Any business with recurring revenue can benefit from our subscription infrastructure.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              How do I get started with Rebillia?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Start with a 14-day free trial — no credit card required. Install the Rebillia app on BigCommerce or WooCommerce, configure your subscription products, and start accepting recurring orders. Setup typically takes under 30 minutes.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Can I offer both one-time and subscription purchases?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes. Rebillia's subscribe-and-save model lets customers choose between one-time purchases and subscriptions on the same product page. You can set subscription discounts to incentivize recurring orders while keeping one-time purchases available.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="accordion__item">
+            <button class="accordion__trigger" role="button" tabindex="0" aria-expanded="false">
+              Does Rebillia handle failed payments automatically?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content__inner">
+                Yes. Smart dunning is available on Essentials plans and above. It automatically retries failed payments on intelligent schedules, sends pre-dunning email notifications, and provides recovery analytics. Merchants typically recover 25-30% of otherwise-lost revenue.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.accordion -->
+      </div>
+    </section>
+
   </main>
 
+  <div style="text-align:center; padding:var(--space-6) 0; color:var(--color-gray-500); font-size:var(--text-xs);">
+    <time datetime="2026-02-24">Last updated: February 24, 2026</time>
+  </div>
 
   <!-- ====================================================================
        FOOTER
@@ -512,8 +758,9 @@
             <a href="features.html" class="footer__link">Features</a>
             <a href="pricing.html" class="footer__link">Pricing</a>
             <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="integrations.html#payment-gateways" class="footer__link">Payment Gateways</a>
             <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
-            <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce (Coming Soon)</a>
           </nav>
         </div>
 
@@ -524,7 +771,6 @@
             <a href="developers.html#api-docs" class="footer__link">API Docs</a>
             <a href="developers.html#mcp-server" class="footer__link">MCP Server</a>
             <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
-            <a href="developers.html#sandbox" class="footer__link">Sandbox</a>
             <a href="status.html" class="footer__link">Status</a>
           </nav>
         </div>
@@ -538,6 +784,7 @@
             <a href="contact.html" class="footer__link">Contact</a>
             <a href="careers.html" class="footer__link">Careers</a>
             <a href="press.html" class="footer__link">Press</a>
+            <a href="partnerships.html" class="footer__link">Partners</a>
           </nav>
         </div>
 
@@ -559,6 +806,7 @@
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/accordion.js"></script>
 
 </body>
 </html>

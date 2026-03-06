@@ -4,27 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rebillia - Subscription Billing & Recurring Revenue Platform</title>
-  <meta name="description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, 7 gateways, and AI-ready API.">
+  <meta name="description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, multi-gateway support, and AI-ready API.">
   <link rel="canonical" href="https://www.rebillia.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.rebillia.com/">
   <meta property="og:title" content="Rebillia - Subscription Billing & Recurring Revenue Platform">
-  <meta property="og:description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, 7 gateways, and AI-ready API.">
+  <meta property="og:description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, multi-gateway support, and AI-ready API.">
+  <meta property="og:image" content="https://www.rebillia.com/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Rebillia">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rebillia - Subscription Billing & Recurring Revenue Platform">
-  <meta name="twitter:description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, 7 gateways, and AI-ready API.">
+  <meta name="twitter:description" content="Rebillia powers recurring revenue for businesses of all sizes. Multi-platform subscription billing with smart dunning, customer portal, multi-gateway support, and AI-ready API.">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.rebillia.com/"
+          }
+        ]
+      },
       {
         "@type": "Organization",
         "name": "Rebillia",
@@ -37,7 +51,7 @@
         "name": "Rebillia",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Multi-platform subscription billing with smart dunning, customer portal, 7 payment gateways, and AI-ready API.",
+        "description": "Multi-platform subscription billing with smart dunning, customer portal, multiple payment gateways, and AI-ready API.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -47,7 +61,7 @@
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
-          "ratingCount": "80"
+          "ratingCount": "150"
         }
       }
     ]
@@ -59,6 +73,67 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- Review Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "SoftwareApplication",
+        "name": "Rebillia"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Michael Rodriguez"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Rebillia transformed our subscription business. We saw a 30% increase in recurring revenue within the first quarter. The dunning management alone paid for itself."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "SoftwareApplication",
+        "name": "Rebillia"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Kim"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The BigCommerce integration is seamless. Our subscribers can manage everything from their account portal. Support team is incredibly responsive."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "SoftwareApplication",
+        "name": "Rebillia"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "James Liu"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "We needed a flexible API for our custom billing workflows. Rebillia delivered exactly what we needed, plus the MCP server makes AI integration a breeze."
+    }
+  ]
+  </script>
+
 </head>
 <body>
 
@@ -68,7 +143,7 @@
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
 
-      <!-- Logo -->
+      <!-- Logo (filter: brightness(0) makes white logo dark on light nav) -->
       <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
         <img src="logo.png" alt="Rebillia" width="160" height="46">
       </a>
@@ -93,37 +168,53 @@
           </a>
           <div class="navbar__dropdown-menu">
             <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F504;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+              </span>
               Subscribe &amp; Save
             </a>
             <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F4E6;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </span>
               Subscription Boxes
             </a>
             <a href="solutions.html#usage-based" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F4CA;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </span>
               Usage-Based Billing
             </a>
             <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F527;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </span>
               Recurring Services
             </a>
             <a href="solutions.html#membership" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F3AB;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
               Membership &amp; Access
             </a>
             <a href="solutions.html#api-first" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x26A1;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
               API-First Billing
             </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="bigcommerce.html" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F6D2;</span>
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              </span>
               BigCommerce
             </a>
             <a href="woocommerce.html" class="navbar__dropdown-item">
-              <span class="dropdown-icon">&#x1F6D2;</span>
-              WooCommerce
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              </span>
+              WooCommerce (Coming Soon)
             </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
@@ -137,6 +228,8 @@
         <a href="integrations.html" class="navbar__link">Integrations</a>
         <a href="developers.html" class="navbar__link">Developers</a>
         <a href="about.html" class="navbar__link">About</a>
+        <a href="customers.html" class="navbar__link">Customers</a>
+        <a href="partnerships.html" class="navbar__link">Partnerships</a>
         <a href="blog.html" class="navbar__link">Blog</a>
       </div>
 
@@ -157,12 +250,10 @@
 
 
     <!-- ================================================================
-         1. HERO
+         1. HERO (Light, clean)
          ================================================================ -->
     <section class="hero hero--gradient hero--center">
       <div class="hero__grid-pattern"></div>
-      <div class="hero__orb hero__orb--1"></div>
-      <div class="hero__orb hero__orb--2"></div>
 
       <div class="container">
         <div class="hero__content">
@@ -174,33 +265,256 @@
             <a href="demo.html" class="btn btn--ghost btn--lg">Book a Demo</a>
           </div>
         </div>
+
+        <!-- Browser-frame illustration with floating badges -->
+        <div class="hero-illustration">
+
+          <!-- Floating badge: MRR -->
+          <div class="floating-badge floating-badge--mrr animate-float">
+            <div class="floating-badge__icon floating-badge__icon--purple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="floating-badge__content">
+              <div class="floating-badge__label">MRR</div>
+              <div class="floating-badge__value">$47.2K
+                <svg class="floating-badge__sparkline" width="40" height="16" viewBox="0 0 40 16"><path d="M0,14 Q5,12 10,10 T20,6 T30,3 T40,1" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating badge: Retention -->
+          <div class="floating-badge floating-badge--retention animate-float animate-float--delay-1">
+            <div class="floating-badge__icon floating-badge__icon--green">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="floating-badge__content">
+              <div class="floating-badge__label">Retention</div>
+              <div class="floating-badge__value">94.2%
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="#10B981"><path d="M8 3l5 7H3l5-7z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating badge: Card -->
+          <div class="floating-badge floating-badge--card animate-float animate-float--delay-2">
+            <div class="floating-badge__icon floating-badge__icon--blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <div class="floating-badge__content">
+              <div class="floating-badge__label">Recovered</div>
+              <div class="floating-badge__value">$8.4K</div>
+            </div>
+          </div>
+
+          <!-- Browser frame -->
+          <div class="browser-frame">
+            <div class="browser-frame__bar">
+              <div class="browser-frame__dots">
+                <span class="browser-frame__dot"></span>
+                <span class="browser-frame__dot"></span>
+                <span class="browser-frame__dot"></span>
+              </div>
+              <div class="browser-frame__url">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1.5a1 1 0 00-.71.29l-3.5 3.5a1 1 0 000 1.42l3.5 3.5a1 1 0 001.42-1.42L6.42 8l2.79-2.79A1 1 0 008 2.5z" opacity="0"/><path d="M8 1a5 5 0 100 10A5 5 0 008 1z" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5.5 6.5l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                app.rebillia.com/subscriptions
+              </div>
+            </div>
+            <div class="browser-frame__body">
+              <div class="sub-list">
+                <!-- App header -->
+                <div class="sub-list__header">
+                  <div class="sub-list__header-left">
+                    <div class="sub-list__logo">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>
+                    </div>
+                    <span class="sub-list__title">Rebillia</span>
+                  </div>
+                  <span style="padding: 4px 12px; background: var(--color-purple-50); border-radius: 9999px; font-size: 11px; font-weight: 600; color: var(--color-primary);">Live</span>
+                </div>
+                <!-- Tab nav -->
+                <div class="sub-list__nav">
+                  <span class="sub-list__nav-item">Overview</span>
+                  <span class="sub-list__nav-item sub-list__nav-item--active">Subscriptions</span>
+                  <span class="sub-list__nav-item">Analytics</span>
+                  <span class="sub-list__nav-item">Dunning</span>
+                </div>
+                <!-- Stats row -->
+                <div class="sub-list__stats">
+                  <div class="sub-list__stat">
+                    <div class="sub-list__stat-label">Monthly Revenue</div>
+                    <div class="sub-list__stat-value">$47.2K</div>
+                    <div class="sub-list__stat-change sub-list__stat-change--up">+12.5%</div>
+                  </div>
+                  <div class="sub-list__stat">
+                    <div class="sub-list__stat-label">Active Subscribers</div>
+                    <div class="sub-list__stat-value">2,847</div>
+                    <div class="sub-list__stat-change sub-list__stat-change--up">+186</div>
+                  </div>
+                  <div class="sub-list__stat">
+                    <div class="sub-list__stat-label">Retention Rate</div>
+                    <div class="sub-list__stat-value">94.2%</div>
+                    <div class="sub-list__stat-change sub-list__stat-change--up">+2.1%</div>
+                  </div>
+                  <div class="sub-list__stat">
+                    <div class="sub-list__stat-label">Dunning Recovered</div>
+                    <div class="sub-list__stat-value">$8.4K</div>
+                    <div class="sub-list__stat-change sub-list__stat-change--purple">37 saved</div>
+                  </div>
+                </div>
+                <!-- Table -->
+                <div class="sub-list__table">
+                  <div class="sub-list__table-head">
+                    <span>Subscriber</span>
+                    <span>Status</span>
+                    <span>Plan</span>
+                    <span>Amount</span>
+                    <span>Next Billing</span>
+                  </div>
+                  <div class="sub-list__table-row">
+                    <div class="sub-list__subscriber">
+                      <div class="sub-list__avatar" style="background: #7C3AED;">MR</div>
+                      <div class="sub-list__subscriber-info">
+                        <div class="sub-list__subscriber-name">Michael Rodriguez</div>
+                        <div class="sub-list__subscriber-email">m.rodriguez@freshbean.co</div>
+                      </div>
+                    </div>
+                    <span><span class="sub-list__status sub-list__status--active">Active</span></span>
+                    <span style="color: var(--color-text-secondary); font-size: 13px;">Premium Roast</span>
+                    <span class="sub-list__amount">$49.99/mo</span>
+                    <span class="sub-list__date">Mar 1, 2026</span>
+                  </div>
+                  <div class="sub-list__table-row">
+                    <div class="sub-list__subscriber">
+                      <div class="sub-list__avatar" style="background: #2563EB;">SK</div>
+                      <div class="sub-list__subscriber-info">
+                        <div class="sub-list__subscriber-name">Sarah Kim</div>
+                        <div class="sub-list__subscriber-email">sarah@vitabox.com</div>
+                      </div>
+                    </div>
+                    <span><span class="sub-list__status sub-list__status--active">Active</span></span>
+                    <span style="color: var(--color-text-secondary); font-size: 13px;">Wellness Box</span>
+                    <span class="sub-list__amount">$89.00/mo</span>
+                    <span class="sub-list__date">Mar 5, 2026</span>
+                  </div>
+                  <div class="sub-list__table-row">
+                    <div class="sub-list__subscriber">
+                      <div class="sub-list__avatar" style="background: #DC2626;">JL</div>
+                      <div class="sub-list__subscriber-info">
+                        <div class="sub-list__subscriber-name">James Liu</div>
+                        <div class="sub-list__subscriber-email">james@cloudmetrics.io</div>
+                      </div>
+                    </div>
+                    <span><span class="sub-list__status sub-list__status--trial">Trial</span></span>
+                    <span style="color: var(--color-text-secondary); font-size: 13px;">API Pro</span>
+                    <span class="sub-list__amount">$299.00/mo</span>
+                    <span class="sub-list__date">Mar 8, 2026</span>
+                  </div>
+                  <div class="sub-list__table-row">
+                    <div class="sub-list__subscriber">
+                      <div class="sub-list__avatar" style="background: #059669;">AP</div>
+                      <div class="sub-list__subscriber-info">
+                        <div class="sub-list__subscriber-name">Ana Petrov</div>
+                        <div class="sub-list__subscriber-email">ana@glowbox.co</div>
+                      </div>
+                    </div>
+                    <span><span class="sub-list__status sub-list__status--paused">Paused</span></span>
+                    <span style="color: var(--color-text-secondary); font-size: 13px;">Beauty Box</span>
+                    <span class="sub-list__amount">$39.99/mo</span>
+                    <span class="sub-list__date">&mdash;</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
 
     <!-- ================================================================
-         2. STATS BAR
+         2. ANIMATED LOGO CLOUD
          ================================================================ -->
-    <section class="stats-bar reveal">
+    <section class="section reveal" style="padding-top: var(--space-16); padding-bottom: var(--space-16); background: var(--color-bg-alt);">
       <div class="container">
+        <h2 class="text-center" style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-text); margin-bottom: var(--space-2);">Trusted by Subscription Businesses Everywhere</h2>
+        <p class="text-center text-muted" style="font-size: var(--text-base); margin-bottom: var(--space-10);">Powering recurring revenue for brands across industries</p>
+        <div class="logo-cloud--animated" style="padding: var(--space-6) 0;">
+          <div class="logo-cloud__track">
+            <span class="logo-cloud__item"><img src="logos/fonte-coffee-roasters.png" alt="Fonte Coffee Roasters" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/country-max.png" alt="Country Max" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/andertoons.jpg" alt="Andertoons" class="customer-logo"></span>
+            <span class="logo-cloud__item logo-item"><span class="logo-item__name">Reference87</span></span>
+            <span class="logo-cloud__item"><img src="logos/neat-no.svg" alt="Neat.no" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/amend2-magazines.png" alt="Amend 2 Magazines" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/science-rite.png" alt="Science-Rite" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/desert-spoon.png" alt="Desert Spoon Food Hub" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/warmzilla.png" alt="WarmZilla" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/spirits-network.png" alt="Spirits Network" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/viva-la-bee.png" alt="Viva La Bee" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/big-dipper-wax-works.svg" alt="Big Dipper Wax Works" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/pickleball-central.png" alt="Pickleball Central" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/oesd.png" alt="OESD" class="customer-logo"></span>
+            <!-- Duplicate set for seamless loop -->
+            <span class="logo-cloud__item"><img src="logos/fonte-coffee-roasters.png" alt="Fonte Coffee Roasters" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/country-max.png" alt="Country Max" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/andertoons.jpg" alt="Andertoons" class="customer-logo"></span>
+            <span class="logo-cloud__item logo-item"><span class="logo-item__name">Reference87</span></span>
+            <span class="logo-cloud__item"><img src="logos/neat-no.svg" alt="Neat.no" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/amend2-magazines.png" alt="Amend 2 Magazines" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/science-rite.png" alt="Science-Rite" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/desert-spoon.png" alt="Desert Spoon Food Hub" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/warmzilla.png" alt="WarmZilla" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/spirits-network.png" alt="Spirits Network" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/viva-la-bee.png" alt="Viva La Bee" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/big-dipper-wax-works.svg" alt="Big Dipper Wax Works" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/pickleball-central.png" alt="Pickleball Central" class="customer-logo"></span>
+            <span class="logo-cloud__item"><img src="logos/oesd.png" alt="OESD" class="customer-logo"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         3. STATS BAR
+         ================================================================ -->
+    <section class="stats-bar stats-bar--decorated reveal" style="position: relative; overflow: hidden;">
+      <div class="dot-pattern dot-pattern--subtle" style="position: absolute; inset: 0; pointer-events: none;"></div>
+      <div class="container" style="position: relative;">
         <div class="stats-bar__grid">
           <div class="stat">
-            <div class="stat__number"><span class="counter" data-count="25" data-suffix="%">0%</span></div>
-            <div class="stat__label">Revenue Lift</div>
+            <div class="stat__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="stat__number"><span class="counter" data-count="3" data-suffix="M+">0</span></div>
+            <div class="stat__label">End Users</div>
           </div>
           <div class="stat">
-            <div class="stat__number"><span class="counter" data-count="80" data-suffix="+">0</span></div>
-            <div class="stat__label">Businesses</div>
+            <div class="stat__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="stat__number">$500M+</div>
+            <div class="stat__label">Revenue Processed</div>
           </div>
           <div class="stat">
-            <div class="stat__number"><span class="counter" data-count="3" data-prefix="Top ">0</span></div>
-            <div class="stat__label">BigCommerce App</div>
+            <div class="stat__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 010-5C7 4 7 7 7 7"/><path d="M18 9h1.5a2.5 2.5 0 000-5C17 4 17 7 17 7"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>
+            </div>
+            <div class="stat__number">#1</div>
+            <div class="stat__label">BigCommerce Subscription App</div>
           </div>
           <div class="stat">
-            <div class="stat__number"><span class="counter" data-count="7">0</span></div>
-            <div class="stat__label">Payment Gateways</div>
+            <div class="stat__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <div class="stat__number">Multi-Gateway</div>
+            <div class="stat__label">Payment Support</div>
           </div>
           <div class="stat">
+            <div class="stat__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+            </div>
             <div class="stat__number"><span class="counter" data-count="500" data-suffix="+">0</span></div>
             <div class="stat__label">AI Client Tools</div>
           </div>
@@ -210,7 +524,7 @@
 
 
     <!-- ================================================================
-         3. HOW IT WORKS
+         4. HOW IT WORKS
          ================================================================ -->
     <section class="section section--alt reveal">
       <div class="container">
@@ -220,16 +534,74 @@
         </div>
         <div class="steps reveal-stagger">
           <div class="step">
+            <!-- Step 1 illustration: Two platform blocks linked -->
+            <div class="step__illustration">
+              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="35" width="60" height="70" rx="8" fill="#F7F5FC" stroke="#E5E5EB" stroke-width="1.5"/>
+                <rect x="26" y="50" width="40" height="6" rx="3" fill="#DDD0F4"/>
+                <rect x="26" y="62" width="32" height="4" rx="2" fill="#ECECF0"/>
+                <rect x="26" y="72" width="36" height="4" rx="2" fill="#ECECF0"/>
+                <rect x="26" y="82" width="28" height="4" rx="2" fill="#ECECF0"/>
+                <rect x="124" y="35" width="60" height="70" rx="8" fill="#F7F5FC" stroke="#E5E5EB" stroke-width="1.5"/>
+                <rect x="134" y="50" width="40" height="6" rx="3" fill="#DDD0F4"/>
+                <rect x="134" y="62" width="32" height="4" rx="2" fill="#ECECF0"/>
+                <rect x="134" y="72" width="36" height="4" rx="2" fill="#ECECF0"/>
+                <rect x="134" y="82" width="28" height="4" rx="2" fill="#ECECF0"/>
+                <line x1="76" y1="70" x2="124" y2="70" stroke="#5C2E91" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
+                <circle cx="100" cy="70" r="14" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
+                <path d="M94 70l4 4 8-8" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <div class="step__number">1</div>
             <h3 class="step__title">Connect Your Platform</h3>
             <p class="step__text">Install our native BigCommerce or WooCommerce integration, or connect via our REST API.</p>
           </div>
           <div class="step">
+            <!-- Step 2 illustration: Settings panel with toggles -->
+            <div class="step__illustration">
+              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="20" width="140" height="100" rx="10" fill="#F7F5FC" stroke="#E5E5EB" stroke-width="1.5"/>
+                <rect x="42" y="34" width="56" height="6" rx="3" fill="#DDD0F4"/>
+                <!-- Toggle 1 - on -->
+                <rect x="42" y="50" width="48" height="4" rx="2" fill="#ECECF0"/>
+                <rect x="130" y="48" width="28" height="12" rx="6" fill="#10B981"/>
+                <circle cx="152" cy="54" r="4" fill="white"/>
+                <!-- Toggle 2 - on -->
+                <rect x="42" y="70" width="52" height="4" rx="2" fill="#ECECF0"/>
+                <rect x="130" y="68" width="28" height="12" rx="6" fill="#5C2E91"/>
+                <circle cx="152" cy="74" r="4" fill="white"/>
+                <!-- Dropdown -->
+                <rect x="42" y="90" width="70" height="20" rx="4" fill="white" stroke="#E5E5EB" stroke-width="1"/>
+                <rect x="50" y="97" width="36" height="4" rx="2" fill="#B8B8C2"/>
+                <path d="M102 97l4 4 4-4" stroke="#B8B8C2" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Price field -->
+                <rect x="120" y="90" width="38" height="20" rx="4" fill="white" stroke="#E5E5EB" stroke-width="1"/>
+                <text x="128" y="104" font-size="10" font-weight="600" fill="#5C2E91" font-family="sans-serif">$49</text>
+              </svg>
+            </div>
             <div class="step__number">2</div>
             <h3 class="step__title">Configure Billing</h3>
             <p class="step__text">Set up subscription plans, billing cycles, payment gateways, and customer portal.</p>
           </div>
           <div class="step">
+            <!-- Step 3 illustration: Revenue chart trending up -->
+            <div class="step__illustration">
+              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="20" width="140" height="100" rx="10" fill="#F7F5FC" stroke="#E5E5EB" stroke-width="1.5"/>
+                <!-- Chart bars -->
+                <rect x="50" y="90" width="12" height="20" rx="2" fill="#DDD0F4"/>
+                <rect x="68" y="78" width="12" height="32" rx="2" fill="#DDD0F4"/>
+                <rect x="86" y="70" width="12" height="40" rx="2" fill="#BEAAEB"/>
+                <rect x="104" y="58" width="12" height="52" rx="2" fill="#9A6FDB"/>
+                <rect x="122" y="44" width="12" height="66" rx="2" fill="#7845C4"/>
+                <rect x="140" y="34" width="12" height="76" rx="2" fill="#5C2E91"/>
+                <!-- Trend line -->
+                <path d="M56 86 Q74 76 92 68 T128 50 T146 36" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/>
+                <!-- +25% badge -->
+                <rect x="120" y="22" width="48" height="20" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+                <text x="128" y="36" font-size="10" font-weight="700" fill="#059669" font-family="sans-serif">+25% MRR</text>
+              </svg>
+            </div>
             <div class="step__number">3</div>
             <h3 class="step__title">Grow Recurring Revenue</h3>
             <p class="step__text">Smart dunning, analytics, and automation tools help maximize subscriber lifetime value.</p>
@@ -239,10 +611,17 @@
     </section>
 
 
+    <!-- Section divider -->
+    <div class="section-divider section-divider--alt-to-white"></div>
+
     <!-- ================================================================
-         4. SOLUTION CATEGORIES
+         5. SOLUTION CATEGORIES
          ================================================================ -->
-    <section class="section reveal">
+    <section class="section reveal" style="position: relative; overflow: hidden;">
+      <!-- Decorative dot grid -->
+      <div class="dot-grid-accent" style="top: 40px; right: 5%;"></div>
+      <!-- Gradient blob -->
+      <div class="gradient-blob gradient-blob--lavender" style="width: 400px; height: 400px; top: -100px; left: -150px;"></div>
       <div class="container">
         <div class="section-header">
           <span class="section-label">SOLUTIONS</span>
@@ -250,32 +629,93 @@
         </div>
         <div class="grid grid-3 reveal-stagger">
           <a href="solutions.html#subscribe-save" class="feature-card">
-            <div class="feature-card__icon">&#x1F504;</div>
+            <div class="feature-card__scene">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="6" y="8" width="14" height="16" rx="2" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2"/>
+                <rect x="9" y="12" width="8" height="2" rx="1" fill="#BEAAEB"/>
+                <rect x="9" y="16" width="6" height="2" rx="1" fill="#DDD0F4"/>
+                <path d="M24 12a6 6 0 01-3 5.2M21 8a6 6 0 013 5.2" stroke="#5C2E91" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="24" cy="22" r="5" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+                <text x="22" y="25" font-size="7" font-weight="700" fill="#059669" font-family="sans-serif">%</text>
+              </svg>
+            </div>
             <h3 class="feature-card__title">Subscribe &amp; Save</h3>
             <p class="feature-card__text">Recurring orders with discounts for ecommerce stores</p>
           </a>
           <a href="solutions.html#subscription-boxes" class="feature-card">
-            <div class="feature-card__icon">&#x1F4E6;</div>
+            <div class="feature-card__scene">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M6 12l10-5 10 5v10l-10 5-10-5V12z" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2"/>
+                <path d="M6 12l10 5 10-5" stroke="#5C2E91" stroke-width="1.2"/>
+                <line x1="16" y1="17" x2="16" y2="27" stroke="#5C2E91" stroke-width="1.2"/>
+                <circle cx="12" cy="10" r="2" fill="#BEAAEB"/>
+                <circle cx="20" cy="8" r="1.5" fill="#DDD0F4"/>
+                <path d="M24 4l1.5 1.5M26 2.5l-1.5 1.5M27 5h-2" stroke="#5C2E91" stroke-width="0.8" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3 class="feature-card__title">Subscription Boxes</h3>
             <p class="feature-card__text">Curated product boxes on flexible schedules</p>
           </a>
           <a href="solutions.html#usage-based" class="feature-card">
-            <div class="feature-card__icon">&#x1F4CA;</div>
+            <div class="feature-card__scene">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="6" y="20" width="5" height="6" rx="1" fill="#DDD0F4"/>
+                <rect x="13" y="14" width="5" height="12" rx="1" fill="#BEAAEB"/>
+                <rect x="20" y="8" width="5" height="18" rx="1" fill="#5C2E91"/>
+                <path d="M4 28h24" stroke="#E5E5EB" stroke-width="1"/>
+                <!-- Meter gauge -->
+                <path d="M27 10a4 4 0 00-4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="27" cy="6" r="1.5" fill="#10B981"/>
+              </svg>
+            </div>
             <h3 class="feature-card__title">Usage-Based Billing</h3>
             <p class="feature-card__text">Metered billing for APIs, data, and consumption</p>
           </a>
           <a href="solutions.html#recurring-services" class="feature-card">
-            <div class="feature-card__icon">&#x1F527;</div>
+            <div class="feature-card__scene">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="4" y="4" width="16" height="16" rx="2" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2"/>
+                <line x1="4" y1="10" x2="20" y2="10" stroke="#5C2E91" stroke-width="1.2"/>
+                <rect x="7" y="13" width="3" height="3" rx="0.5" fill="#BEAAEB"/>
+                <rect x="12" y="13" width="3" height="3" rx="0.5" fill="#BEAAEB"/>
+                <path d="M24 10l3 3-3 3" stroke="#5C2E91" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M27 13h-5" stroke="#5C2E91" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="4" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+                <path d="M22.5 24l1.5 1.5 3-3" stroke="#10B981" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="16" cy="24" r="4" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+                <path d="M14.5 24l1.5 1.5 3-3" stroke="#10B981" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3 class="feature-card__title">Recurring Services</h3>
             <p class="feature-card__text">Service subscriptions with auto-invoicing</p>
           </a>
           <a href="solutions.html#membership" class="feature-card">
-            <div class="feature-card__icon">&#x1F3AB;</div>
+            <div class="feature-card__scene">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 4l3.5 7 7.5 1.1-5.4 5.3L22.8 25 16 21.4 9.2 25l1.2-7.6L5 12.1l7.5-1.1L16 4z" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2" stroke-linejoin="round"/>
+                <rect x="10" y="16" width="12" height="8" rx="2" fill="#5C2E91"/>
+                <text x="12" y="22.5" font-size="6" font-weight="800" fill="white" font-family="sans-serif">VIP</text>
+                <circle cx="8" cy="6" r="1" fill="#BEAAEB"/>
+                <circle cx="24" cy="6" r="1" fill="#BEAAEB"/>
+                <circle cx="26" cy="10" r="0.7" fill="#DDD0F4"/>
+              </svg>
+            </div>
             <h3 class="feature-card__title">Membership &amp; Access</h3>
             <p class="feature-card__text">Communities, content, VIP programs</p>
           </a>
           <a href="solutions.html#api-first" class="feature-card">
-            <div class="feature-card__icon feature-card__icon--teal">&#x26A1;</div>
+            <div class="feature-card__scene">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <text x="3" y="20" font-size="16" font-weight="700" fill="#5C2E91" font-family="monospace">&lt;/&gt;</text>
+                <circle cx="26" cy="8" r="3" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1"/>
+                <circle cx="26" cy="20" r="3" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1"/>
+                <circle cx="26" cy="26" r="2" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1"/>
+                <line x1="22" y1="14" x2="23" y2="8" stroke="#BEAAEB" stroke-width="1" stroke-linecap="round"/>
+                <line x1="22" y1="14" x2="23" y2="20" stroke="#BEAAEB" stroke-width="1" stroke-linecap="round"/>
+                <line x1="22" y1="16" x2="24" y2="26" stroke="#BEAAEB" stroke-width="1" stroke-linecap="round"/>
+                <circle cx="22" cy="15" r="2" fill="#5C2E91"/>
+              </svg>
+            </div>
             <h3 class="feature-card__title">API-First Billing</h3>
             <p class="feature-card__text">Build custom subscription experiences with our API</p>
           </a>
@@ -285,9 +725,9 @@
 
 
     <!-- ================================================================
-         5. PLATFORM INTEGRATIONS
+         6. PLATFORM INTEGRATIONS
          ================================================================ -->
-    <section class="section reveal">
+    <section class="section section--alt reveal">
       <div class="container">
         <div class="section-header">
           <span class="section-label">INTEGRATIONS</span>
@@ -297,26 +737,18 @@
 
           <!-- BigCommerce -->
           <a href="bigcommerce.html" class="card">
-            <span class="badge badge--popular">TOP 3</span>
-            <div class="card__icon card__icon--purple" style="margin-top: var(--space-4);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M3 3h18v18H3V3zm3 3v12h12V6H6z" fill="currentColor"/>
-              </svg>
-            </div>
+            <span class="badge badge--popular">#1 SUBSCRIPTION APP</span>
+            <div class="lettermark lettermark--bc" style="margin-top: var(--space-4);">B</div>
             <h3 class="card__title">BigCommerce</h3>
-            <p class="card__text">Deep native integration. Top-3 rated app on the BigCommerce marketplace.</p>
+            <p class="card__text">Deep native integration. #1 subscription app on the BigCommerce marketplace.</p>
             <span class="card__link">Learn more <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
 
           <!-- WooCommerce -->
           <a href="woocommerce.html" class="card">
-            <span class="badge badge--new">NEW</span>
-            <div class="card__icon card__icon--teal" style="margin-top: var(--space-4);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 4h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3 class="card__title">WooCommerce</h3>
+            <span class="badge badge--dark">COMING SOON</span>
+            <div class="lettermark lettermark--woo" style="margin-top: var(--space-4);">W</div>
+            <h3 class="card__title">WooCommerce (Coming Soon)</h3>
             <p class="card__text">WordPress plugin for WooCommerce stores. Full subscription management.</p>
             <span class="card__link">Learn more <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
@@ -324,9 +756,9 @@
           <!-- Direct API -->
           <a href="developers.html" class="card">
             <span class="badge badge--dark">FLEXIBLE</span>
-            <div class="card__icon card__icon--purple" style="margin-top: var(--space-4);">
+            <div class="lettermark lettermark--api" style="margin-top: var(--space-4);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <h3 class="card__title">Direct API</h3>
@@ -336,34 +768,39 @@
 
         </div>
 
-        <!-- Gateway logo cloud -->
+        <!-- Gateway logo cloud with unique brandmarks -->
         <div class="logo-cloud mt-12 reveal">
           <span class="logo-cloud__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="gateway-mark gateway-mark--stripe">S</span>
             Stripe
           </span>
           <span class="logo-cloud__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="gateway-mark gateway-mark--paypal">PP</span>
             PayPal
           </span>
           <span class="logo-cloud__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="gateway-mark gateway-mark--authorize">A</span>
             Authorize.net
           </span>
-          <span class="logo-cloud__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
-            PayFabric
+          <span class="logo-cloud__item" style="opacity: 1; color: var(--color-text);">
+            <span class="gateway-mark gateway-mark--payfabric">PF</span>
+            PayFabric by Global Payments
+            <span style="font-size: 0.65rem; padding: 1px 6px; background: linear-gradient(135deg, #D4A017, #B8860B); color: white; border-radius: 9999px; font-weight: 700; letter-spacing: 0.02em;">PREFERRED</span>
           </span>
           <span class="logo-cloud__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="gateway-mark gateway-mark--square" style="border-radius: 4px;">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="white"><rect x="4" y="4" width="8" height="8" rx="1"/></svg>
+            </span>
             Square
           </span>
           <span class="logo-cloud__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="gateway-mark gateway-mark--braintree">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l8 6-8 6V2z"/></svg>
+            </span>
             Braintree
           </span>
           <span class="logo-cloud__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="gateway-mark gateway-mark--cybersource">CS</span>
             CyberSource
           </span>
         </div>
@@ -371,44 +808,151 @@
     </section>
 
 
+    <!-- Section divider -->
+    <div class="section-divider section-divider--alt-to-white"></div>
+
     <!-- ================================================================
-         6. INDUSTRY VERTICALS
+         7. INDUSTRY VERTICALS
          ================================================================ -->
-    <section class="section section--alt reveal">
+    <section class="section reveal" style="position: relative; overflow: hidden;">
+      <!-- Decorative blob -->
+      <div class="gradient-blob gradient-blob--purple" style="width: 350px; height: 350px; bottom: -100px; right: -100px;"></div>
+      <div class="dot-grid-accent" style="bottom: 60px; left: 5%;"></div>
       <div class="container">
         <div class="section-header">
           <span class="section-label">INDUSTRIES</span>
           <h2>Built for Subscription Businesses</h2>
         </div>
-        <div class="grid grid-5 reveal-stagger">
+        <div class="grid grid-3 reveal-stagger">
           <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x2615;</div>
+            <div class="industry-illustration">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <!-- Cup -->
+                <rect x="18" y="24" width="28" height="28" rx="4" fill="#EEEBF8"/>
+                <path d="M18 24h28v20a8 8 0 01-8 8h-12a8 8 0 01-8-8V24z" fill="#DDD0F4" stroke="#5C2E91" stroke-width="1.5"/>
+                <path d="M46 30h4a6 6 0 010 12h-4" stroke="#5C2E91" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Steam -->
+                <path d="M28 18c0-3 2-4 2-6" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M34 16c0-3 2-4 2-6" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M40 18c0-3 2-4 2-6" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Beans -->
+                <ellipse cx="56" cy="48" rx="4" ry="5" transform="rotate(-30 56 48)" fill="#BEAAEB"/>
+                <ellipse cx="54" cy="56" rx="3" ry="4" transform="rotate(15 54 56)" fill="#DDD0F4"/>
+                <!-- Refresh arrow -->
+                <path d="M56 28a6 6 0 00-6 6" stroke="#5C2E91" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M56 28l-2.5-2 2.5-2" stroke="#5C2E91" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Coffee &amp; Tea</h3>
             <p class="card__text">Fresh roasts delivered on schedule</p>
           </div>
           <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F48A;</div>
+            <div class="industry-illustration">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <!-- Bottle -->
+                <rect x="22" y="18" width="20" height="36" rx="4" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.5"/>
+                <rect x="26" y="12" width="12" height="8" rx="2" fill="#DDD0F4" stroke="#5C2E91" stroke-width="1.2"/>
+                <rect x="26" y="28" width="12" height="3" rx="1.5" fill="#5C2E91"/>
+                <rect x="28" y="34" width="8" height="2" rx="1" fill="#BEAAEB"/>
+                <rect x="28" y="38" width="6" height="2" rx="1" fill="#BEAAEB"/>
+                <!-- Capsules -->
+                <ellipse cx="52" cy="32" rx="5" ry="3" transform="rotate(-30 52 32)" fill="#BEAAEB" stroke="#5C2E91" stroke-width="1"/>
+                <ellipse cx="56" cy="42" rx="5" ry="3" transform="rotate(20 56 42)" fill="#DDD0F4" stroke="#5C2E91" stroke-width="1"/>
+                <!-- Refill indicator -->
+                <path d="M52 52a5 5 0 105-5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M57 47l0 4.5-4 0" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Supplements</h3>
             <p class="card__text">Auto-refill wellness products</p>
           </div>
           <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F43E;</div>
+            <div class="industry-illustration">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <!-- Bowl -->
+                <ellipse cx="28" cy="42" rx="14" ry="6" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.5"/>
+                <path d="M14 42v4c0 3.3 6.3 6 14 6s14-2.7 14-6v-4" stroke="#5C2E91" stroke-width="1.5"/>
+                <ellipse cx="28" cy="39" rx="6" ry="2" fill="#DDD0F4"/>
+                <!-- Paw print -->
+                <ellipse cx="52" cy="22" rx="4" ry="5" fill="#BEAAEB"/>
+                <circle cx="46" cy="16" r="2.5" fill="#BEAAEB"/>
+                <circle cx="52" cy="14" r="2.5" fill="#BEAAEB"/>
+                <circle cx="58" cy="16" r="2.5" fill="#BEAAEB"/>
+                <!-- Delivery box -->
+                <rect x="46" y="38" width="16" height="14" rx="2" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2"/>
+                <line x1="46" y1="44" x2="62" y2="44" stroke="#5C2E91" stroke-width="1.2"/>
+                <line x1="54" y1="38" x2="54" y2="52" stroke="#5C2E91" stroke-width="1.2"/>
+                <path d="M50 55l-2 2h16l-2-2" stroke="#5C2E91" stroke-width="1" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Pet Supplies</h3>
             <p class="card__text">Never run out of pet essentials</p>
           </div>
           <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F484;</div>
+            <div class="industry-illustration">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <!-- Compact -->
+                <rect x="16" y="24" width="32" height="28" rx="14" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.5"/>
+                <circle cx="32" cy="38" r="8" fill="#DDD0F4" stroke="#BEAAEB" stroke-width="1"/>
+                <circle cx="32" cy="38" r="4" fill="#BEAAEB"/>
+                <line x1="16" y1="32" x2="48" y2="32" stroke="#5C2E91" stroke-width="1"/>
+                <!-- Sparkles -->
+                <path d="M54 20l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="#5C2E91"/>
+                <path d="M58 34l0.7 2 2 0.7-2 0.7-0.7 2-0.7-2-2-0.7 2-0.7 0.7-2z" fill="#BEAAEB"/>
+                <path d="M50 44l0.7 2 2 0.7-2 0.7-0.7 2-0.7-2-2-0.7 2-0.7 0.7-2z" fill="#DDD0F4"/>
+                <!-- Lipstick hint -->
+                <rect x="52" y="48" width="6" height="12" rx="3" fill="#BEAAEB" stroke="#5C2E91" stroke-width="1"/>
+                <rect x="53" y="46" width="4" height="4" rx="1" fill="#5C2E91"/>
+              </svg>
+            </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Beauty</h3>
             <p class="card__text">Curated beauty boxes and refills</p>
           </div>
           <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">&#x1F37D;&#xFE0F;</div>
+            <div class="industry-illustration">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <!-- Plate -->
+                <ellipse cx="28" cy="40" rx="18" ry="14" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.5"/>
+                <ellipse cx="28" cy="40" rx="12" ry="9" fill="#DDD0F4"/>
+                <!-- Fork -->
+                <line x1="20" y1="28" x2="20" y2="18" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="24" y1="28" x2="24" y2="18" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="22" y1="28" x2="22" y2="52" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Knife -->
+                <path d="M36 18v10" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="36" y1="28" x2="36" y2="52" stroke="#BEAAEB" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Ingredient boxes -->
+                <rect x="50" y="16" width="12" height="12" rx="2" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2"/>
+                <rect x="53" y="20" width="6" height="2" rx="1" fill="#BEAAEB"/>
+                <rect x="50" y="32" width="12" height="12" rx="2" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2"/>
+                <rect x="53" y="36" width="6" height="2" rx="1" fill="#BEAAEB"/>
+                <rect x="50" y="48" width="12" height="12" rx="2" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.2"/>
+                <rect x="53" y="52" width="6" height="2" rx="1" fill="#BEAAEB"/>
+              </svg>
+            </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Meal Kits</h3>
             <p class="card__text">Weekly meal plans and ingredients</p>
           </div>
+          <div class="card text-center">
+            <div class="industry-illustration">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <!-- Leaf -->
+                <path d="M36 16c-8 0-16 8-16 20s8 20 16 20 16-8 16-20-8-20-16-20z" fill="#EEEBF8" stroke="#5C2E91" stroke-width="1.5"/>
+                <path d="M36 16v40" stroke="#5C2E91" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M36 28c-6 2-10 6-12 12" stroke="#BEAAEB" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M36 28c6 2 10 6 12 12" stroke="#BEAAEB" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M36 36c-4 2-7 5-8 8" stroke="#DDD0F4" stroke-width="1" stroke-linecap="round"/>
+                <path d="M36 36c4 2 7 5 8 8" stroke="#DDD0F4" stroke-width="1" stroke-linecap="round"/>
+                <!-- Droplet -->
+                <path d="M56 36c0 4-3 8-6 8s-6-4-6-8 6-12 6-12 6 8 6 12z" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+              </svg>
+            </div>
+            <h3 class="card__title" style="font-size: var(--text-base);">CBD &amp; Hemp</h3>
+            <p class="card__text">Recurring wellness product delivery</p>
+          </div>
         </div>
         <div class="text-center mt-8 reveal">
-          <p class="text-muted">And many more &mdash; SaaS, professional services, health &amp; wellness, and beyond.</p>
+          <p class="text-muted">And many more &mdash; professional services, health &amp; wellness, and beyond.</p>
           <a href="solutions.html" class="card__link justify-center" style="display: inline-flex;">
             View all solutions
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -419,9 +963,9 @@
 
 
     <!-- ================================================================
-         7. TESTIMONIALS
+         8. TESTIMONIALS
          ================================================================ -->
-    <section class="section reveal">
+    <section class="section section--alt reveal">
       <div class="container">
         <div class="section-header">
           <span class="section-label">SOCIAL PROOF</span>
@@ -430,13 +974,16 @@
         <div class="testimonials-grid reveal-stagger">
 
           <!-- Testimonial 1 -->
-          <div class="testimonial">
+          <div class="testimonial testimonial--decorated">
+            <svg class="testimonial__quote-mark" width="48" height="48" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+              <path d="M14 28c-3.3 0-6-2.7-6-6 0-6.6 5.4-12 12-12v6c-3.3 0-6 2.7-6 6h6v12H8V28h6zm20 0c-3.3 0-6-2.7-6-6 0-6.6 5.4-12 12-12v6c-3.3 0-6 2.7-6 6h6v12H28V28h6z"/>
+            </svg>
             <div class="testimonial__stars" aria-label="5 out of 5 stars">
               &#9733;&#9733;&#9733;&#9733;&#9733;
             </div>
             <p class="testimonial__quote">"Rebillia transformed our subscription business. We saw a 30% increase in recurring revenue within the first quarter. The dunning management alone paid for itself."</p>
             <div class="testimonial__author">
-              <div class="testimonial__avatar">MR</div>
+              <div class="testimonial__avatar testimonial__avatar--ring">MR</div>
               <div>
                 <div class="testimonial__name">Michael Rodriguez</div>
                 <div class="testimonial__role">CEO, FreshBean Coffee Co.</div>
@@ -445,13 +992,16 @@
           </div>
 
           <!-- Testimonial 2 -->
-          <div class="testimonial">
+          <div class="testimonial testimonial--decorated">
+            <svg class="testimonial__quote-mark" width="48" height="48" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+              <path d="M14 28c-3.3 0-6-2.7-6-6 0-6.6 5.4-12 12-12v6c-3.3 0-6 2.7-6 6h6v12H8V28h6zm20 0c-3.3 0-6-2.7-6-6 0-6.6 5.4-12 12-12v6c-3.3 0-6 2.7-6 6h6v12H28V28h6z"/>
+            </svg>
             <div class="testimonial__stars" aria-label="5 out of 5 stars">
               &#9733;&#9733;&#9733;&#9733;&#9733;
             </div>
             <p class="testimonial__quote">"The BigCommerce integration is seamless. Our subscribers can manage everything from their account portal. Support team is incredibly responsive."</p>
             <div class="testimonial__author">
-              <div class="testimonial__avatar">SK</div>
+              <div class="testimonial__avatar testimonial__avatar--ring">SK</div>
               <div>
                 <div class="testimonial__name">Sarah Kim</div>
                 <div class="testimonial__role">Head of Ecommerce, VitaBox</div>
@@ -460,13 +1010,16 @@
           </div>
 
           <!-- Testimonial 3 -->
-          <div class="testimonial">
+          <div class="testimonial testimonial--decorated">
+            <svg class="testimonial__quote-mark" width="48" height="48" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+              <path d="M14 28c-3.3 0-6-2.7-6-6 0-6.6 5.4-12 12-12v6c-3.3 0-6 2.7-6 6h6v12H8V28h6zm20 0c-3.3 0-6-2.7-6-6 0-6.6 5.4-12 12-12v6c-3.3 0-6 2.7-6 6h6v12H28V28h6z"/>
+            </svg>
             <div class="testimonial__stars" aria-label="5 out of 5 stars">
               &#9733;&#9733;&#9733;&#9733;&#9733;
             </div>
             <p class="testimonial__quote">"We needed a flexible API for our custom billing workflows. Rebillia delivered exactly what we needed, plus the MCP server makes AI integration a breeze."</p>
             <div class="testimonial__author">
-              <div class="testimonial__avatar">JL</div>
+              <div class="testimonial__avatar testimonial__avatar--ring">JL</div>
               <div>
                 <div class="testimonial__name">James Liu</div>
                 <div class="testimonial__role">CTO, CloudMetrics</div>
@@ -476,16 +1029,17 @@
 
         </div>
 
-        <!-- Partnership callout -->
-        <div class="partnership mt-12 reveal">
+        <!-- Partnership callout with gradient border -->
+        <div class="partnership partnership--decorated mt-12 reveal" style="border-radius: var(--radius-xl);">
           <div class="partnership__logos">
-            <div class="partnership__logo partnership__logo--rebillia">R</div>
-            <span class="partnership__divider">+</span>
-            <div class="partnership__logo partnership__logo--gp">GP</div>
+            <a href="global-payments.html" class="partnership__logo partnership__logo--gp" style="width:100px; height:100px;">
+              <img src="gp-logo.svg" alt="Global Payments" width="80" height="24">
+            </a>
           </div>
-          <div class="partnership__content">
-            <h3>Rebillia + Global Payments</h3>
-            <p>Our strategic partnership with Global Payments brings enterprise-grade payment processing to subscription businesses of every size. Access preferred rates and dedicated support.</p>
+          <div class="partnership__content" style="position: relative; z-index: 1;">
+            <h3 style="color: #1A1A2E;">Rebillia + Global Payments</h3>
+            <p style="color: #1A1A2E;">Our strategic partnership with Global Payments brings enterprise-grade payment processing to subscription businesses of every size. Access preferred rates and dedicated support.</p>
+            <a href="global-payments.html" style="display:inline-block; margin-top:var(--space-4); color:#1A1A2E; font-size:var(--text-sm); font-weight:var(--font-semibold); text-decoration:underline;">Learn more &rarr;</a>
           </div>
         </div>
       </div>
@@ -493,7 +1047,7 @@
 
 
     <!-- ================================================================
-         8. DEVELOPER / AI TEASER
+         9. DEVELOPER / AI TEASER (stays dark — industry standard)
          ================================================================ -->
     <section class="section section--dark reveal">
       <div class="container">
@@ -501,6 +1055,39 @@
           <span class="section-label section-label--light">FOR DEVELOPERS</span>
           <h2>AI-Ready Subscription Infrastructure</h2>
           <p class="section-subtitle" style="color: var(--color-gray-400);">Our MCP server connects Rebillia to 500+ AI tools. Any developer building AI-powered products can manage subscriptions through Claude, ChatGPT, Cursor, and more.</p>
+        </div>
+
+        <!-- AI Client Logo Pills -->
+        <div class="ai-clients reveal-stagger">
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#D4A574"/><path d="M6 12c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Claude
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#10A37F"/><circle cx="9" cy="9" r="3.5" stroke="white" stroke-width="1.5" fill="none"/></svg>
+            ChatGPT
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" fill="#2563EB"/><path d="M5 9h8M9 5v8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Cursor
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" fill="#06B6D4"/><path d="M5 13l4-8 4 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Windsurf
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="2" fill="#007ACC"/><path d="M6 6l3 3-3 3M10 12h4" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            VS Code
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#8B5CF6"/><path d="M6 9h6M9 6v6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Cline
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#EC4899"/><circle cx="9" cy="9" r="3" fill="white" opacity="0.3"/></svg>
+            Roo Code
+          </span>
+          <span class="ai-client-pill ai-client-pill--more">500+ more</span>
         </div>
 
         <div class="code-block mx-auto" style="max-width: 640px;">
@@ -522,8 +1109,46 @@
           </div>
         </div>
 
+        <!-- Chat Mockup -->
+        <div class="chat-mockup mt-10 reveal">
+          <div class="chat-mockup__header">
+            <div class="chat-mockup__avatar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>
+            </div>
+            <span class="chat-mockup__title">Rebillia MCP Assistant</span>
+          </div>
+          <div class="chat-mockup__body">
+            <div class="chat-bubble chat-bubble--user">Show me failed payments from last week that need attention</div>
+            <div class="chat-bubble chat-bubble--ai">
+              Found 12 failed payments from the last 7 days. Here's the dunning summary:
+              <div class="chat-bubble__data">
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Failed payments</span>
+                  <span class="chat-bubble__data-value">12</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Auto-recovered</span>
+                  <span class="chat-bubble__data-value chat-bubble__data-value--green">8</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Pending retry</span>
+                  <span class="chat-bubble__data-value">3</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Needs manual review</span>
+                  <span class="chat-bubble__data-value">1</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Revenue recovered</span>
+                  <span class="chat-bubble__data-value chat-bubble__data-value--green">$2,847</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="text-center mt-8">
-          <a href="developers.html" class="card__link" style="color: var(--color-teal-400); display: inline-flex;">
+          <a href="developers.html" class="card__link" style="color: var(--color-purple-400); display: inline-flex;">
             Explore Developer Tools &rarr;
           </a>
         </div>
@@ -532,16 +1157,52 @@
 
 
     <!-- ================================================================
-         9. FINAL CTA
+         10. FINAL CTA
          ================================================================ -->
-    <section class="cta-block cta-block--gradient reveal">
-      <div class="container">
+    <section class="cta-block cta-block--gradient reveal" style="position: relative; overflow: hidden;">
+      <!-- Floating decorative SVGs -->
+      <svg class="cta-floating cta-floating--1 animate-float" width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+        <circle cx="30" cy="30" r="28" stroke="white" stroke-width="1.5" stroke-dasharray="8 6"/>
+      </svg>
+      <svg class="cta-floating cta-floating--2 animate-float animate-float--delay-1 animate-rotate-slow" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="6" y="6" width="28" height="28" rx="4" stroke="white" stroke-width="1.5" transform="rotate(15 20 20)"/>
+      </svg>
+      <svg class="cta-floating cta-floating--3 animate-float animate-float--delay-2" width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+      </svg>
+      <svg class="cta-floating cta-floating--4 animate-float animate-float--delay-3" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M18 2l4 8 8 4-8 4-4 8-4-8-8-4 8-4 4-8z" stroke="white" stroke-width="1.5"/>
+      </svg>
+
+      <div class="container" style="position: relative;">
         <div class="cta-block__content">
           <h2 class="cta-block__title">Ready to Build Recurring Revenue?</h2>
           <p class="cta-block__text">Start your 14-day free trial. No credit card required.</p>
           <div class="cta-block__actions">
-            <a href="signup.html" class="btn btn--primary btn--lg">Start Free Trial</a>
-            <a href="contact.html" class="btn btn--ghost btn--lg">Talk to Sales</a>
+            <a href="signup.html" class="btn btn--ghost-light btn--lg" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); color: white;">Start Free Trial</a>
+            <a href="contact.html" class="btn btn--ghost-light btn--lg">Talk to Sales</a>
+          </div>
+
+          <!-- Trust row -->
+          <div class="trust-row">
+            <div class="trust-item">
+              <div class="trust-item__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              PCI-DSS Compliant
+            </div>
+            <div class="trust-item">
+              <div class="trust-item__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              99.9% Uptime
+            </div>
+            <div class="trust-item">
+              <div class="trust-item__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              Multi-Gateway
+            </div>
           </div>
         </div>
       </div>
@@ -552,7 +1213,7 @@
 
 
   <!-- ====================================================================
-       FOOTER
+       FOOTER (stays dark)
        ==================================================================== -->
   <footer class="footer">
     <div class="container">
@@ -586,8 +1247,9 @@
             <a href="features.html" class="footer__link">Features</a>
             <a href="pricing.html" class="footer__link">Pricing</a>
             <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="integrations.html#payment-gateways" class="footer__link">Payment Gateways</a>
             <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
-            <a href="woocommerce.html" class="footer__link">WooCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce (Coming Soon)</a>
           </nav>
         </div>
 
@@ -598,7 +1260,6 @@
             <a href="developers.html#api-docs" class="footer__link">API Docs</a>
             <a href="developers.html#mcp-server" class="footer__link">MCP Server</a>
             <a href="developers.html#webhooks" class="footer__link">Webhooks</a>
-            <a href="developers.html#sandbox" class="footer__link">Sandbox</a>
             <a href="status.html" class="footer__link">Status</a>
           </nav>
         </div>
@@ -612,6 +1273,7 @@
             <a href="contact.html" class="footer__link">Contact</a>
             <a href="careers.html" class="footer__link">Careers</a>
             <a href="press.html" class="footer__link">Press</a>
+            <a href="partnerships.html" class="footer__link">Partners</a>
           </nav>
         </div>
 

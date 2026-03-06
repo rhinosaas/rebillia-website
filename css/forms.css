@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FORMS — Inputs, contact form, validation
+   FORMS — Inputs, contact form, validation (Light theme)
    ========================================================================== */
 
 /* ── Form Layout ────────────────────────────────────────────────────────── */
@@ -27,7 +27,7 @@
 .form-label {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  color: var(--color-gray-300);
+  color: var(--color-text);
 }
 
 .form-label .required {
@@ -43,8 +43,8 @@
   width: 100%;
   padding: 12px 16px;
   font-size: var(--text-sm);
-  color: var(--color-gray-200);
-  background: var(--color-card-bg);
+  color: var(--color-text);
+  background: var(--color-white);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -53,7 +53,7 @@
 .form-input:hover,
 .form-select:hover,
 .form-textarea:hover {
-  border-color: var(--color-gray-600);
+  border-color: var(--color-gray-300);
 }
 
 .form-input:focus,
@@ -61,7 +61,7 @@
 .form-textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(92,46,145,0.2);
+  box-shadow: 0 0 0 3px rgba(92,46,145,0.12);
 }
 
 .form-input::placeholder,
@@ -76,7 +76,7 @@
 
 .form-select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B6B80' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A5A72' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 40px;
@@ -93,7 +93,7 @@
 .form-input.error:focus,
 .form-select.error:focus,
 .form-textarea.error:focus {
-  box-shadow: 0 0 0 3px rgba(239,68,68,0.15);
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.1);
 }
 
 .form-input.success,
@@ -132,7 +132,7 @@
 
 .form-check__label {
   font-size: var(--text-sm);
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
   line-height: var(--leading-normal);
 }
 
@@ -153,7 +153,7 @@
 }
 
 .contact-card:hover {
-  background: var(--color-card-bg-hover);
+  background: var(--color-white);
   box-shadow: var(--shadow-card);
 }
 
@@ -166,14 +166,14 @@
   justify-content: center;
   font-size: 1.5rem;
   margin: 0 auto var(--space-4);
-  background: rgba(92,46,145,0.15);
-  color: var(--color-purple-400);
+  background: var(--color-purple-50);
+  color: var(--color-primary);
 }
 
 .contact-card__title {
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: var(--space-2);
 }
 
@@ -194,8 +194,8 @@
   display: none;
   text-align: center;
   padding: var(--space-10);
-  background: rgba(0,163,138,0.1);
-  border: 1px solid rgba(0,163,138,0.25);
+  background: var(--color-purple-50);
+  border: 1px solid var(--color-purple-100);
   border-radius: var(--radius-xl);
 }
 
@@ -211,7 +211,7 @@
 .form-success__title {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: var(--space-2);
 }
 

@@ -1,6 +1,6 @@
 /* ==========================================================================
    REBILLIA DESIGN TOKENS
-   Modern SaaS aesthetic with purple/teal brand palette
+   Light, enterprise-grade aesthetic — purple accent, clean & airy
    ========================================================================== */
 
 :root {
@@ -54,31 +54,33 @@
   --color-error:    #EF4444;
   --color-info:     #3B82F6;
 
-  --color-text:       var(--color-gray-200);
-  --color-text-secondary: var(--color-gray-400);
-  --color-text-light: var(--color-gray-500);
-  --color-text-on-dark: var(--color-gray-100);
+  /* ── Text — dark charcoal on light backgrounds ────────────────────────── */
+  --color-text:          #1A1A2E;
+  --color-text-secondary: #5A5A72;
+  --color-text-light:    var(--color-gray-500);
+  --color-text-on-dark:  var(--color-gray-100);
   --color-text-on-primary: var(--color-white);
 
-  --color-bg:         #0d0d12;
-  --color-bg-alt:     #13131a;
+  /* ── Backgrounds — white / light lavender ─────────────────────────────── */
+  --color-bg:         #FFFFFF;
+  --color-bg-alt:     #F8F7FC;
   --color-bg-dark:    var(--color-gray-900);
   --color-bg-darker:  var(--color-gray-950);
 
-  --color-card-bg:       #16161e;
-  --color-card-bg-hover: #1c1c26;
+  --color-card-bg:       #FFFFFF;
+  --color-card-bg-hover: #F8F7FC;
 
-  --color-border:     #1e1e2a;
-  --color-border-light: #1a1a26;
+  /* ── Borders — subtle light borders ───────────────────────────────────── */
+  --color-border:      #E5E5EB;
+  --color-border-light: #EDEDF2;
 
   /* ── Gradients ────────────────────────────────────────────────────────── */
-  --gradient-hero:      linear-gradient(145deg, #1B0F30 0%, #3D2272 35%, #5C2E91 60%, #00856E 100%);
+  --gradient-hero:      linear-gradient(145deg, #F8F7FC 0%, #EEEBF8 40%, #E8E2F4 70%, #F8F7FC 100%);
   --gradient-hero-dark: linear-gradient(145deg, #0C0C10 0%, #1B0F30 40%, #2A1750 70%, #151519 100%);
-  --gradient-cta:       linear-gradient(135deg, #00A38A 0%, #00856E 100%);
-  --gradient-card:      linear-gradient(180deg, #16161e 0%, #13131a 100%);
+  --gradient-cta:       linear-gradient(135deg, #7B4DB5 0%, #5C2E91 100%);
+  --gradient-card:      linear-gradient(180deg, #FFFFFF 0%, #F8F7FC 100%);
   --gradient-purple:    linear-gradient(145deg, #5C2E91 0%, #3D2272 50%, #2A1750 100%);
   --gradient-dark:      linear-gradient(180deg, #151519 0%, #0C0C10 100%);
-  --gradient-glass:     linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
 
   /* ── Typography ───────────────────────────────────────────────────────── */
   --font-sans:  'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -127,7 +129,7 @@
   --space-24: 6rem;     /* 96px */
   --space-32: 8rem;     /* 128px */
 
-  --section-py: var(--space-20);
+  --section-py: var(--space-24);
 
   /* ── Border Radius ────────────────────────────────────────────────────── */
   --radius-sm:   4px;
@@ -137,17 +139,17 @@
   --radius-2xl:  24px;
   --radius-full: 9999px;
 
-  /* ── Shadows ──────────────────────────────────────────────────────────── */
-  --shadow-xs:  0 1px 2px rgba(0,0,0,0.2);
-  --shadow-sm:  0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
-  --shadow-md:  0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
-  --shadow-lg:  0 10px 15px -3px rgba(0,0,0,0.35), 0 4px 6px -4px rgba(0,0,0,0.2);
-  --shadow-xl:  0 20px 25px -5px rgba(0,0,0,0.4), 0 8px 10px -6px rgba(0,0,0,0.2);
-  --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.5);
-  --shadow-purple: 0 10px 30px -5px rgba(92,46,145,0.35);
-  --shadow-teal:   0 10px 30px -5px rgba(0,163,138,0.3);
-  --shadow-card:   0 1px 3px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.25);
-  --shadow-card-hover: 0 4px 8px rgba(0,0,0,0.25), 0 16px 40px rgba(0,0,0,0.35);
+  /* ── Shadows — soft for light backgrounds ─────────────────────────────── */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -2px rgba(0,0,0,0.04);
+  --shadow-lg:  0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+  --shadow-xl:  0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.12);
+  --shadow-purple: 0 10px 30px -5px rgba(92,46,145,0.15);
+  --shadow-teal:   0 10px 30px -5px rgba(92,46,145,0.12);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 4px 8px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.08);
 
   /* ── Transitions ──────────────────────────────────────────────────────── */
   --transition-fast:    150ms ease;

@@ -28,9 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
       el.textContent = isAnnual ? '/yr' : '/mo';
     });
 
-    // Show/hide annual savings badge
+    // Show/hide annual savings badges
     document.querySelectorAll('.pricing-card__savings').forEach(el => {
       el.style.display = isAnnual ? 'inline-block' : 'none';
+    });
+    document.querySelectorAll('.pricing-toggle__savings').forEach(el => {
+      el.style.visibility = isAnnual ? 'visible' : 'hidden';
+      el.style.opacity = isAnnual ? '1' : '0';
     });
   }
 

@@ -76,8 +76,8 @@ fieldset {
 }
 
 ::selection {
-  background-color: var(--color-purple-500);
-  color: var(--color-white);
+  background-color: var(--color-purple-100);
+  color: var(--color-purple-800);
 }
 
 /* Screen reader only */

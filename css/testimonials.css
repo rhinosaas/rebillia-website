@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TESTIMONIALS — Social proof, stats bar, logo cloud
+   TESTIMONIALS — Social proof, stats bar, logo cloud (Light theme)
    ========================================================================== */
 
 /* ── Stats Bar ──────────────────────────────────────────────────────────── */
@@ -29,7 +29,7 @@
 .stat__number {
   font-size: var(--text-4xl);
   font-weight: var(--font-extrabold);
-  color: var(--color-white);
+  color: var(--color-text);
   line-height: 1;
   margin-bottom: var(--space-2);
 }
@@ -39,13 +39,13 @@
 }
 
 .stat__number span {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .stat__label {
   font-size: var(--text-xs);
   font-weight: var(--font-medium);
-  color: var(--color-gray-500);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
 }
@@ -63,7 +63,7 @@
 }
 
 .testimonial {
-  background: var(--color-card-bg);
+  background: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
@@ -80,7 +80,7 @@
 
 .testimonial__quote {
   font-size: var(--text-base);
-  color: var(--color-gray-300);
+  color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-6);
   font-style: italic;
@@ -96,7 +96,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--gradient-hero);
+  background: var(--gradient-cta);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,18 +109,18 @@
 .testimonial__name {
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .testimonial__role {
   font-size: var(--text-xs);
-  color: var(--color-gray-500);
+  color: var(--color-text-secondary);
 }
 
 /* ── Partnership Callout ────────────────────────────────────────────────── */
 
 .partnership {
-  background: var(--gradient-card);
+  background: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-xl);
   padding: var(--space-10);
@@ -143,18 +143,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: var(--font-bold);
-  font-size: var(--text-sm);
+  padding: var(--space-2);
+  overflow: hidden;
+}
+
+.partnership__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .partnership__logo--rebillia {
-  background: var(--gradient-hero);
-  color: var(--color-white);
+  background: var(--color-purple-50);
 }
 
 .partnership__logo--gp {
-  background: var(--color-card-bg-hover);
-  color: var(--color-gray-300);
+  background: #1a1f36;
+  border-radius: var(--radius-lg);
 }
 
 .partnership__divider {
@@ -166,7 +171,7 @@
 .partnership__content h3 {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: var(--space-2);
 }
 
@@ -195,5 +200,5 @@
 }
 
 .brand-cloud__item:hover {
-  color: var(--color-gray-500);
+  color: var(--color-text-secondary);
 }
