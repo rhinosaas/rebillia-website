@@ -334,7 +334,7 @@
             <strong>Rebillia's developer platform</strong> provides a REST API, webhooks, and agent-native MCP server — everything developers need to build autonomous monetization workflows where AI agents manage pricing, retention, experiments, and billing lifecycle programmatically.
           </p>
           <div class="hero__actions">
-            <a href="#api-docs" class="btn btn--primary btn--lg">Read API Docs</a>
+            <a href="#api-docs" class="btn btn--primary btn--lg">Explore the API</a>
             <a href="#mcp-server" class="btn btn--ghost btn--lg">Explore MCP Server</a>
           </div>
         </div>
@@ -358,7 +358,7 @@
             </div>
             <h3 class="dev-path__title">REST API</h3>
             <p class="dev-path__text">Full CRUD access to subscriptions, customers, invoices, and payments. RESTful endpoints with JSON responses.</p>
-            <a href="#api-docs" class="dev-path__link">API Reference &rarr;</a>
+            <a href="#api-docs" class="dev-path__link">Explore the API &rarr;</a>
           </div>
 
           <!-- MCP Server -->
@@ -374,7 +374,7 @@
             </div>
             <h3 class="dev-path__title">MCP Server</h3>
             <p class="dev-path__text">Agent-native capability interfaces for 500+ AI clients. Launch pricing experiments, apply retention actions, manage credits through Claude, ChatGPT, Cursor, and more.</p>
-            <a href="#mcp-server" class="dev-path__link">MCP Documentation &rarr;</a>
+            <a href="#mcp-server" class="dev-path__link">Explore MCP Server &rarr;</a>
           </div>
 
           <!-- Webhooks -->
@@ -387,7 +387,7 @@
             </div>
             <h3 class="dev-path__title">Webhooks</h3>
             <p class="dev-path__text">Real-time event notifications for subscription lifecycle events. Reliable delivery with retry logic.</p>
-            <a href="#webhooks" class="dev-path__link">Webhook Events &rarr;</a>
+            <a href="#webhooks" class="dev-path__link">See Webhook Events &rarr;</a>
           </div>
 
         </div>
@@ -690,7 +690,7 @@ subscriptions <span class="token-operator">=</span> response<span class="token-p
           </div>
 
           <!-- REST API Docs -->
-          <div class="card" id="webhooks">
+          <div class="card">
             <div class="card__icon card__icon--purple">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -699,6 +699,18 @@ subscriptions <span class="token-operator">=</span> response<span class="token-p
             </div>
             <h3 class="card__title">REST API Docs</h3>
             <p class="card__text">Comprehensive API documentation with interactive examples, authentication guides, and endpoint references.</p>
+          </div>
+
+          <!-- Webhooks -->
+          <div class="card" id="webhooks">
+            <div class="card__icon card__icon--teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Webhooks</h3>
+            <p class="card__text">Real-time event notifications for the full subscription lifecycle: created, renewed, paused, cancelled, payment succeeded, payment failed, dunning started, and more. HMAC-SHA256 signed for verification.</p>
           </div>
 
           <!-- Postman Collection -->
@@ -760,7 +772,7 @@ subscriptions <span class="token-operator">=</span> response<span class="token-p
           <p class="cta-block__text">Get your API key and start integrating in minutes.</p>
           <div class="cta-block__actions">
             <a href="signup.html" class="btn btn--primary btn--lg">Get API Key</a>
-            <a href="#api-docs" class="btn btn--ghost btn--lg">Read Docs</a>
+            <a href="#api-docs" class="btn btn--ghost btn--lg">See API Examples</a>
           </div>
         </div>
       </div>
@@ -834,9 +846,6 @@ subscriptions <span class="token-operator">=</span> response<span class="token-p
 
   </main>
 
-  <div style="text-align:center; padding:var(--space-6) 0; color:var(--color-gray-500); font-size:var(--text-xs);">
-    <time datetime="2026-02-24">Last updated: February 24, 2026</time>
-  </div>
 
   <!-- ====================================================================
        FOOTER

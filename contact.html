@@ -552,59 +552,7 @@
 
 
     <!-- ──────────────────────────────────────────────────────────────────────
-         SECTION 2: CONTACT CARDS
-         ────────────────────────────────────────────────────────────────────── -->
-    <section class="section section--sm reveal">
-      <div class="container">
-        <div class="contact-cards">
-
-          <!-- Sales -->
-          <div class="contact-card">
-            <div class="contact-card__icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-              </svg>
-            </div>
-            <h3 class="contact-card__title">Talk to Sales</h3>
-            <p class="contact-card__text">Get a personalized demo and pricing for your business.</p>
-            <a href="mailto:sales@rebillia.com" class="contact-card__email">sales@rebillia.com</a>
-          </div>
-
-          <!-- Support -->
-          <div class="contact-card">
-            <div class="contact-card__icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 8a2.5 2.5 0 014 2c0 2-3 3-3 3"/>
-                <circle cx="12" cy="17" r="0.5" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3 class="contact-card__title">Technical Support</h3>
-            <p class="contact-card__text">Need help with your integration? Our support team is ready.</p>
-            <a href="mailto:support@rebillia.com" class="contact-card__email">support@rebillia.com</a>
-          </div>
-
-          <!-- Partnerships -->
-          <div class="contact-card">
-            <div class="contact-card__icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M11 17a4 4 0 01-8 0c0-3 4-7 4-7s4 4 4 7z"/>
-                <path d="M21 17a4 4 0 01-8 0c0-3 4-7 4-7s4 4 4 7z"/>
-                <path d="M12 3C8 7 6 9 6 12M12 3c4 4 6 6 6 9"/>
-              </svg>
-            </div>
-            <h3 class="contact-card__title">Partnerships</h3>
-            <p class="contact-card__text">Interested in partnering with Rebillia?</p>
-            <a href="mailto:partners@rebillia.com" class="contact-card__email">partners@rebillia.com</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ──────────────────────────────────────────────────────────────────────
-         SECTION 3: CONTACT FORM + SIDEBAR
+         SECTION 2: CONTACT FORM + SIDEBAR
          ────────────────────────────────────────────────────────────────────── -->
     <section class="section reveal">
       <div class="container">
@@ -638,14 +586,15 @@
 
               <!-- Company -->
               <div class="form-group">
-                <label for="company">Company Name</label>
-                <input type="text" id="company" name="company" placeholder="Acme Inc.">
+                <label for="company">Company Name <span class="required">*</span></label>
+                <input type="text" id="company" name="company" required placeholder="Acme Inc.">
+                <div class="form-error">Company name is required.</div>
               </div>
 
               <!-- Interest Select -->
               <div class="form-group">
-                <label for="interest">I'm interested in...</label>
-                <select id="interest" name="interest">
+                <label for="interest">I'm interested in... <span class="required">*</span></label>
+                <select id="interest" name="interest" required>
                   <option value="" disabled selected>Select an option</option>
                   <option value="general">General Inquiry</option>
                   <option value="demo">Schedule a Walkthrough</option>

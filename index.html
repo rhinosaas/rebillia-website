@@ -656,11 +656,118 @@
     </section>
 
 
-    <!-- Section divider -->
-    <div class="section-divider section-divider--alt-to-white"></div>
+    <!-- ================================================================
+         5. DEVELOPER / AI (PROGRAMMABLE BILLING)
+         ================================================================ -->
+    <section class="section section--dark reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label section-label--light">PROGRAMMABLE BILLING</span>
+          <h2>Infrastructure for Developers and AI Agents</h2>
+          <p class="section-subtitle" style="color: var(--color-gray-400);">Our MCP server connects Rebillia to 500+ AI tools. Manage subscriptions, modify billing behavior, and respond to customer lifecycle events through Claude, ChatGPT, Cursor, and more.</p>
+        </div>
+
+        <!-- AI Client Logo Pills -->
+        <div class="ai-clients reveal-stagger">
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#D4A574"/><path d="M6 12c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Claude
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#10A37F"/><circle cx="9" cy="9" r="3.5" stroke="white" stroke-width="1.5" fill="none"/></svg>
+            ChatGPT
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" fill="#2563EB"/><path d="M5 9h8M9 5v8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Cursor
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" fill="#06B6D4"/><path d="M5 13l4-8 4 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Windsurf
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="2" fill="#007ACC"/><path d="M6 6l3 3-3 3M10 12h4" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            VS Code
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#8B5CF6"/><path d="M6 9h6M9 6v6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Cline
+          </span>
+          <span class="ai-client-pill">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#EC4899"/><circle cx="9" cy="9" r="3" fill="white" opacity="0.3"/></svg>
+            Roo Code
+          </span>
+          <span class="ai-client-pill ai-client-pill--more">500+ more</span>
+        </div>
+
+        <div class="code-block mx-auto" style="max-width: 640px;">
+          <div class="code-block__header">
+            <div class="code-block__dots">
+              <span class="code-block__dot"></span>
+              <span class="code-block__dot"></span>
+              <span class="code-block__dot"></span>
+            </div>
+            <span class="code-block__title">Terminal</span>
+            <button class="code-block__copy" data-copy="npx rebillia-mcp-server --api-key YOUR_KEY" aria-label="Copy to clipboard">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
+              Copy
+            </button>
+          </div>
+          <div class="code-block__body">
+            <pre><span class="token-comment"># Connect Rebillia to any AI client</span>
+<span class="token-function">npx</span> rebillia-mcp-server <span class="token-operator">--</span>api-key <span class="token-string">YOUR_KEY</span></pre>
+          </div>
+        </div>
+
+        <!-- Chat Mockup -->
+        <div class="chat-mockup mt-10 reveal">
+          <div class="chat-mockup__header">
+            <div class="chat-mockup__avatar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>
+            </div>
+            <span class="chat-mockup__title">Rebillia MCP Assistant</span>
+          </div>
+          <div class="chat-mockup__body">
+            <div class="chat-bubble chat-bubble--user">Show me failed payments from last week that need attention</div>
+            <div class="chat-bubble chat-bubble--ai">
+              Found 12 failed payments from the last 7 days. Here's the dunning summary:
+              <div class="chat-bubble__data">
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Failed payments</span>
+                  <span class="chat-bubble__data-value">12</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Auto-recovered</span>
+                  <span class="chat-bubble__data-value chat-bubble__data-value--green">8</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Pending retry</span>
+                  <span class="chat-bubble__data-value">3</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Needs manual review</span>
+                  <span class="chat-bubble__data-value">1</span>
+                </div>
+                <div class="chat-bubble__data-row">
+                  <span class="chat-bubble__data-label">Revenue recovered</span>
+                  <span class="chat-bubble__data-value chat-bubble__data-value--green">$2,847</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="developers.html" class="card__link" style="color: var(--color-purple-400); display: inline-flex;">
+            Explore Developer Tools &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
 
     <!-- ================================================================
-         5. SOLUTION CATEGORIES
+         6. SOLUTION CATEGORIES
          ================================================================ -->
     <section class="section reveal" style="position: relative; overflow: hidden;">
       <!-- Decorative dot grid -->
@@ -770,7 +877,7 @@
 
 
     <!-- ================================================================
-         6. PLATFORM INTEGRATIONS
+         7. PLATFORM INTEGRATIONS
          ================================================================ -->
     <section class="section section--alt reveal">
       <div class="container">
@@ -857,7 +964,7 @@
     <div class="section-divider section-divider--alt-to-white"></div>
 
     <!-- ================================================================
-         7. INDUSTRY VERTICALS
+         8. INDUSTRY VERTICALS
          ================================================================ -->
     <section class="section reveal" style="position: relative; overflow: hidden;">
       <!-- Decorative blob -->
@@ -1069,116 +1176,6 @@
           <a href="solutions.html" class="card__link justify-center" style="display: inline-flex;">
             View all solutions
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ================================================================
-         8. DEVELOPER / AI (PROGRAMMABLE BILLING)
-         ================================================================ -->
-    <section class="section section--dark reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label section-label--light">PROGRAMMABLE BILLING</span>
-          <h2>Infrastructure for Developers and AI Agents</h2>
-          <p class="section-subtitle" style="color: var(--color-gray-400);">Our MCP server connects Rebillia to 500+ AI tools. Manage subscriptions, modify billing behavior, and respond to customer lifecycle events through Claude, ChatGPT, Cursor, and more.</p>
-        </div>
-
-        <!-- AI Client Logo Pills -->
-        <div class="ai-clients reveal-stagger">
-          <span class="ai-client-pill">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#D4A574"/><path d="M6 12c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
-            Claude
-          </span>
-          <span class="ai-client-pill">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#10A37F"/><circle cx="9" cy="9" r="3.5" stroke="white" stroke-width="1.5" fill="none"/></svg>
-            ChatGPT
-          </span>
-          <span class="ai-client-pill">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" fill="#2563EB"/><path d="M5 9h8M9 5v8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Cursor
-          </span>
-          <span class="ai-client-pill">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="3" fill="#06B6D4"/><path d="M5 13l4-8 4 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Windsurf
-          </span>
-          <span class="ai-client-pill">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="2" fill="#007ACC"/><path d="M6 6l3 3-3 3M10 12h4" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            VS Code
-          </span>
-          <span class="ai-client-pill">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#8B5CF6"/><path d="M6 9h6M9 6v6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Cline
-          </span>
-          <span class="ai-client-pill">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#EC4899"/><circle cx="9" cy="9" r="3" fill="white" opacity="0.3"/></svg>
-            Roo Code
-          </span>
-          <span class="ai-client-pill ai-client-pill--more">500+ more</span>
-        </div>
-
-        <div class="code-block mx-auto" style="max-width: 640px;">
-          <div class="code-block__header">
-            <div class="code-block__dots">
-              <span class="code-block__dot"></span>
-              <span class="code-block__dot"></span>
-              <span class="code-block__dot"></span>
-            </div>
-            <span class="code-block__title">Terminal</span>
-            <button class="code-block__copy" data-copy="npx rebillia-mcp-server --api-key YOUR_KEY" aria-label="Copy to clipboard">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.2"/></svg>
-              Copy
-            </button>
-          </div>
-          <div class="code-block__body">
-            <pre><span class="token-comment"># Connect Rebillia to any AI client</span>
-<span class="token-function">npx</span> rebillia-mcp-server <span class="token-operator">--</span>api-key <span class="token-string">YOUR_KEY</span></pre>
-          </div>
-        </div>
-
-        <!-- Chat Mockup -->
-        <div class="chat-mockup mt-10 reveal">
-          <div class="chat-mockup__header">
-            <div class="chat-mockup__avatar">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>
-            </div>
-            <span class="chat-mockup__title">Rebillia MCP Assistant</span>
-          </div>
-          <div class="chat-mockup__body">
-            <div class="chat-bubble chat-bubble--user">Show me failed payments from last week that need attention</div>
-            <div class="chat-bubble chat-bubble--ai">
-              Found 12 failed payments from the last 7 days. Here's the dunning summary:
-              <div class="chat-bubble__data">
-                <div class="chat-bubble__data-row">
-                  <span class="chat-bubble__data-label">Failed payments</span>
-                  <span class="chat-bubble__data-value">12</span>
-                </div>
-                <div class="chat-bubble__data-row">
-                  <span class="chat-bubble__data-label">Auto-recovered</span>
-                  <span class="chat-bubble__data-value chat-bubble__data-value--green">8</span>
-                </div>
-                <div class="chat-bubble__data-row">
-                  <span class="chat-bubble__data-label">Pending retry</span>
-                  <span class="chat-bubble__data-value">3</span>
-                </div>
-                <div class="chat-bubble__data-row">
-                  <span class="chat-bubble__data-label">Needs manual review</span>
-                  <span class="chat-bubble__data-value">1</span>
-                </div>
-                <div class="chat-bubble__data-row">
-                  <span class="chat-bubble__data-label">Revenue recovered</span>
-                  <span class="chat-bubble__data-value chat-bubble__data-value--green">$2,847</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-8">
-          <a href="developers.html" class="card__link" style="color: var(--color-purple-400); display: inline-flex;">
-            Explore Developer Tools &rarr;
           </a>
         </div>
       </div>
