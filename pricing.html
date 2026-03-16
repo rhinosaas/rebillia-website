@@ -245,18 +245,19 @@
         <img src="logo.png" alt="Rebillia" width="160" height="46">
       </a>
 
-      <!-- Navigation -->
+      <!-- Nav links -->
       <div class="navbar__nav">
 
-        <!-- Solutions dropdown -->
+        <!-- Platform dropdown -->
         <div class="navbar__dropdown">
           <a href="solutions.html" class="navbar__link">
-            Solutions
+            Platform
             <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <div class="navbar__dropdown-menu">
+          <div class="navbar__dropdown-menu" style="min-width: 300px;">
+            <div class="navbar__dropdown-heading">Billing Patterns</div>
             <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
@@ -294,6 +295,7 @@
               API-First Billing
             </a>
             <div class="navbar__dropdown-divider"></div>
+            <div class="navbar__dropdown-heading">Integrations</div>
             <a href="bigcommerce.html" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
@@ -306,20 +308,53 @@
               </span>
               WooCommerce (Coming Soon)
             </a>
+            <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </span>
+              Payment Gateways
+            </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
-              View All Solutions &rarr;
+              View All Platform Capabilities &rarr;
             </a>
           </div>
         </div>
 
-        <a href="features.html" class="navbar__link">Features</a>
-        <a href="pricing.html" class="navbar__link navbar__link--active">Pricing</a>
-        <a href="integrations.html" class="navbar__link">Integrations</a>
+        <a href="features.html" class="navbar__link">Capabilities</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
         <a href="developers.html" class="navbar__link">Developers</a>
         <a href="about.html" class="navbar__link">About</a>
-        <a href="customers.html" class="navbar__link">Customers</a>
-        <a href="partnerships.html" class="navbar__link">Partnerships</a>
+
+        <!-- Resources dropdown -->
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">
+            Resources
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="customers.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Customers &amp; Case Studies
+            </a>
+            <a href="partnerships.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              Partnerships
+            </a>
+            <a href="blog.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+              </span>
+              Blog
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Actions -->
@@ -353,7 +388,7 @@
         <div class="hero__content">
           <span class="hero__label">PRICING</span>
           <h1 class="hero__title">Simple, Transparent Pricing</h1>
-          <p class="hero__subtitle">Start with our Lite plan at $49/mo. Scale as you grow. All plans include a 14-day free trial.</p>
+          <p class="hero__subtitle">Start with the components you need. Add capabilities as your billing evolves.</p>
         </div>
       </div>
     </section>
@@ -388,7 +423,7 @@
               <span class="pricing-card__period" data-period>/mo</span>
             </div>
             <div class="pricing-card__transaction">+ 1.5% + 50&cent; per transaction</div>
-            <p class="pricing-card__description">Perfect for small stores getting started with subscriptions.</p>
+            <p class="pricing-card__description">Core billing components for straightforward subscriptions</p>
             <ul class="pricing-card__features">
               <li class="pricing-card__feature">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -438,7 +473,7 @@
               <span class="pricing-card__period" data-period>/mo</span>
             </div>
             <div class="pricing-card__transaction">+ 1.5% + 50&cent; per transaction</div>
-            <p class="pricing-card__description">For growing businesses ready to maximize recurring revenue.</p>
+            <p class="pricing-card__description">Lifecycle management with smart dunning and analytics</p>
             <ul class="pricing-card__features">
               <li class="pricing-card__feature">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -492,7 +527,7 @@
               <span class="pricing-card__period" data-period>/mo</span>
             </div>
             <div class="pricing-card__transaction">+ Custom rate</div>
-            <p class="pricing-card__description">For established businesses with complex subscription needs.</p>
+            <p class="pricing-card__description">Full API access, programmable billing, and advanced intelligence</p>
             <ul class="pricing-card__features">
               <li class="pricing-card__feature">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -550,7 +585,7 @@
               <span class="pricing-card__period" data-period>/mo</span>
             </div>
             <div class="pricing-card__transaction">+ Custom rate</div>
-            <p class="pricing-card__description">Enterprise-grade subscription infrastructure with full API &amp; AI.</p>
+            <p class="pricing-card__description">Enterprise-grade infrastructure with custom components and SLAs</p>
             <ul class="pricing-card__features">
               <li class="pricing-card__feature">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -982,7 +1017,7 @@
           <div class="footer__brand-name">
             <img src="logo.png" alt="Rebillia" width="140" height="40">
           </div>
-          <p>The modern subscription billing platform for ecommerce. Turn one-time buyers into lifelong subscribers.</p>
+          <p>Agent-native monetization infrastructure. Programmable pricing, autonomous retention, AI-driven experiments.</p>
         </div>
 
         <!-- Product -->

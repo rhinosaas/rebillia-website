@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Tools - Subscription Billing API &amp; MCP Server | Rebillia</title>
-  <meta name="description" content="Build with Rebillia: REST API, MCP server for AI, webhooks. Subscription billing infrastructure for developers. Code examples in curl, Node.js, Python, PHP.">
+  <title>Developer Tools - Agent-Native Monetization API &amp; MCP Server | Rebillia</title>
+  <meta name="description" content="Build with Rebillia: REST API, agent-native MCP server, webhooks. Autonomous monetization workflows for AI agents. Dynamic pricing, retention, and experiment APIs.">
   <link rel="canonical" href="https://www.rebillia.com/developers">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.rebillia.com/developers">
-  <meta property="og:title" content="Developer Tools - Subscription Billing API &amp; MCP Server | Rebillia">
-  <meta property="og:description" content="Build with Rebillia: REST API, MCP server for AI, webhooks. Subscription billing infrastructure for developers. Code examples in curl, Node.js, Python, PHP.">
+  <meta property="og:title" content="Developer Tools - Agent-Native Monetization API &amp; MCP Server | Rebillia">
+  <meta property="og:description" content="Build with Rebillia: REST API, agent-native MCP server, webhooks. Autonomous monetization workflows for AI agents. Dynamic pricing, retention, and experiment APIs.">
   <meta property="og:image" content="https://www.rebillia.com/og-default.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -20,8 +20,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Developer Tools - Subscription Billing API &amp; MCP Server | Rebillia">
-  <meta name="twitter:description" content="Build with Rebillia: REST API, MCP server for AI, webhooks. Subscription billing infrastructure for developers. Code examples in curl, Node.js, Python, PHP.">
+  <meta name="twitter:title" content="Developer Tools - Agent-Native Monetization API &amp; MCP Server | Rebillia">
+  <meta name="twitter:description" content="Build with Rebillia: REST API, agent-native MCP server, webhooks. Autonomous monetization workflows for AI agents. Dynamic pricing, retention, and experiment APIs.">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -53,7 +53,7 @@
     "name": "Rebillia",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Developer platform with REST API, MCP server for AI integrations, and webhooks for subscription billing automation.",
+    "description": "Agent-native monetization infrastructure with REST API, MCP server for autonomous AI workflows, and webhooks for pricing, retention, and experiment automation.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -77,7 +77,7 @@
       {"@type":"Question","name":"What are the API rate limits?","acceptedAnswer":{"@type":"Answer","text":"Pro plans include 1,000 requests per minute. Platform+ plans offer custom rate limits based on your needs. All plans include burst allowances for short traffic spikes. Rate limit headers are included in every API response."}},
       {"@type":"Question","name":"How does API authentication work?","acceptedAnswer":{"@type":"Answer","text":"Rebillia uses OAuth 2.0 Bearer token authentication. Generate API keys from your dashboard, include them in the Authorization header, and authenticate against api.rebillia.com/v1. All API traffic is encrypted via TLS 1.3."}},
       {"@type":"Question","name":"What webhook events are available?","acceptedAnswer":{"@type":"Answer","text":"Rebillia supports webhook events for the full subscription lifecycle: subscription created, renewed, paused, cancelled, payment succeeded, payment failed, dunning started, and more. Webhooks use HMAC-SHA256 signatures for verification."}},
-      {"@type":"Question","name":"What is the MCP server?","acceptedAnswer":{"@type":"Answer","text":"Rebillia's MCP (Model Context Protocol) server lets AI assistants like Claude and GPT manage subscriptions through natural language. Install with a single npx command and connect to any MCP-compatible AI client for automated billing operations."}}
+      {"@type":"Question","name":"What is the MCP server?","acceptedAnswer":{"@type":"Answer","text":"Rebillia's MCP (Model Context Protocol) server provides agent-native capability interfaces — not just API endpoints, but higher-level business actions like launch_pricing_experiment, apply_retention_action, and grant_credits. Install with a single npx command and connect to any MCP-compatible AI client for autonomous monetization workflows."}}
     ]
   }
   </script>
@@ -195,15 +195,16 @@
       <!-- Nav links -->
       <div class="navbar__nav">
 
-        <!-- Solutions dropdown -->
+        <!-- Platform dropdown -->
         <div class="navbar__dropdown">
           <a href="solutions.html" class="navbar__link">
-            Solutions
+            Platform
             <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <div class="navbar__dropdown-menu">
+          <div class="navbar__dropdown-menu" style="min-width: 300px;">
+            <div class="navbar__dropdown-heading">Billing Patterns</div>
             <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
@@ -241,6 +242,7 @@
               API-First Billing
             </a>
             <div class="navbar__dropdown-divider"></div>
+            <div class="navbar__dropdown-heading">Integrations</div>
             <a href="bigcommerce.html" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
@@ -253,20 +255,53 @@
               </span>
               WooCommerce (Coming Soon)
             </a>
+            <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </span>
+              Payment Gateways
+            </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
-              View All Solutions &rarr;
+              View All Platform Capabilities &rarr;
             </a>
           </div>
         </div>
 
-        <a href="features.html" class="navbar__link">Features</a>
+        <a href="features.html" class="navbar__link">Capabilities</a>
         <a href="pricing.html" class="navbar__link">Pricing</a>
-        <a href="integrations.html" class="navbar__link">Integrations</a>
-        <a href="developers.html" class="navbar__link navbar__link--active">Developers</a>
+        <a href="developers.html" class="navbar__link">Developers</a>
         <a href="about.html" class="navbar__link">About</a>
-        <a href="customers.html" class="navbar__link">Customers</a>
-        <a href="partnerships.html" class="navbar__link">Partnerships</a>
+
+        <!-- Resources dropdown -->
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">
+            Resources
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="customers.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Customers &amp; Case Studies
+            </a>
+            <a href="partnerships.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              Partnerships
+            </a>
+            <a href="blog.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+              </span>
+              Blog
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Actions -->
@@ -292,11 +327,11 @@
 
       <div class="container">
         <div class="hero__content">
-          <span class="hero__label">DEVELOPER TOOLS</span>
-          <h1 class="hero__title">Build with <span>Rebillia</span></h1>
-          <p class="hero__subtitle">Subscription billing infrastructure for developers. REST API, MCP server, webhooks. Build any recurring revenue product.</p>
+          <span class="hero__label">DEVELOPER PLATFORM</span>
+          <h1 class="hero__title">Agent-Native Monetization Infrastructure</h1>
+          <p class="hero__subtitle">REST API, agent-native MCP server, webhooks. Build autonomous monetization workflows. AI agents manage pricing, retention, experiments, and lifecycle actions programmatically.</p>
           <p class="hero__answer" style="max-width:640px; margin:var(--space-4) auto 0; font-size:var(--text-base); color:var(--color-text-secondary); line-height:var(--leading-relaxed);">
-            <strong>Rebillia's developer platform</strong> provides a REST API, webhooks, and MCP server for AI integrations — everything developers need to build, automate, and scale subscription billing workflows programmatically.
+            <strong>Rebillia's developer platform</strong> provides a REST API, webhooks, and agent-native MCP server — everything developers need to build autonomous monetization workflows where AI agents manage pricing, retention, experiments, and billing lifecycle programmatically.
           </p>
           <div class="hero__actions">
             <a href="#api-docs" class="btn btn--primary btn--lg">Read API Docs</a>
@@ -338,7 +373,7 @@
               </svg>
             </div>
             <h3 class="dev-path__title">MCP Server</h3>
-            <p class="dev-path__text">Connect Rebillia to 500+ AI clients. Manage subscriptions through Claude, ChatGPT, Cursor, and more. 80+ tools.</p>
+            <p class="dev-path__text">Agent-native capability interfaces for 500+ AI clients. Launch pricing experiments, apply retention actions, manage credits through Claude, ChatGPT, Cursor, and more.</p>
             <a href="#mcp-server" class="dev-path__link">MCP Documentation &rarr;</a>
           </div>
 
@@ -366,9 +401,9 @@
     <section class="section reveal" id="mcp-server">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">AI-READY INFRASTRUCTURE</span>
-          <h2>AI-Ready Subscription Infrastructure</h2>
-          <p class="section-subtitle">The Rebillia MCP Server gives any AI assistant the power to manage subscriptions, customers, invoices, and billing. 80+ tools that work with Claude, ChatGPT, Cursor, Windsurf, and 500+ other AI clients.</p>
+          <span class="section-label">AGENT-NATIVE INFRASTRUCTURE</span>
+          <h2>Agent-Native Monetization Workflows</h2>
+          <p class="section-subtitle">The Rebillia MCP Server provides agent-native capability interfaces — not just API endpoints, but higher-level business actions. AI agents launch pricing experiments, apply retention actions, manage credit systems, and run monetization workflows autonomously.</p>
         </div>
 
         <!-- Use Cases -->
@@ -376,23 +411,23 @@
           <div style="display: flex; flex-direction: column; gap: var(--space-4);">
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p style="color: var(--color-gray-600); margin: 0;">Build an AI customer support agent that can look up subscriptions and process refunds</p>
+              <p style="color: var(--color-gray-600); margin: 0;">AI agent detects churn risk → automatically offers discounts, extends trials, adjusts billing cycles</p>
             </div>
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p style="color: var(--color-gray-600); margin: 0;">Create an AI sales assistant that creates customers and sets up subscriptions</p>
+              <p style="color: var(--color-gray-600); margin: 0;">AI agent monitors demand → creates pricing experiments, tests variants, promotes winning price points</p>
             </div>
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p style="color: var(--color-gray-600); margin: 0;">Power a chatbot that answers billing questions and manages payment methods</p>
+              <p style="color: var(--color-gray-600); margin: 0;">AI agent manages credit wallets → grants credits, adjusts balances, modifies usage policies</p>
             </div>
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p style="color: var(--color-gray-600); margin: 0;">Automate subscription operations with AI-driven workflows</p>
+              <p style="color: var(--color-gray-600); margin: 0;">AI agent runs the revenue engine → dynamic pricing, autonomous retention, continuous experimentation</p>
             </div>
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M13.5 4.5l-7 7L3 8" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p style="color: var(--color-gray-600); margin: 0;">Build AI-powered billing dashboards that query real-time subscription data</p>
+              <p style="color: var(--color-gray-600); margin: 0;">AI agent operates billing end-to-end → acquires customers, manages subscriptions, triggers billing events</p>
             </div>
           </div>
         </div>
@@ -483,23 +518,23 @@
         <div class="nl-examples mx-auto reveal" style="max-width: 640px;">
           <div class="nl-example">
             <span class="nl-example__prompt">&gt;</span>
-            List all active subscriptions
+            Launch a pricing experiment: test $49, $69, $89 for the Pro plan
           </div>
           <div class="nl-example">
             <span class="nl-example__prompt">&gt;</span>
-            Create a monthly subscription for customer #42
+            Apply retention actions for all at-risk subscribers this month
           </div>
           <div class="nl-example">
             <span class="nl-example__prompt">&gt;</span>
-            Refund the last transaction for customer #123
+            Grant 500 credits to accounts with usage above 80%
           </div>
           <div class="nl-example">
             <span class="nl-example__prompt">&gt;</span>
-            Show me MRR for this quarter
+            Show experiment results and promote the winning variant
           </div>
           <div class="nl-example">
             <span class="nl-example__prompt">&gt;</span>
-            Pause subscription #789 and notify the customer
+            Run autonomous lifecycle actions for churning cohort
           </div>
         </div>
 
@@ -685,6 +720,37 @@ subscriptions <span class="token-operator">=</span> response<span class="token-p
 
 
     <!-- ================================================================
+         USE CASES
+         ================================================================ -->
+    <section class="section section--dark reveal">
+      <div class="container">
+        <div class="section-header" style="margin-top: var(--space-16);">
+          <span class="section-label section-label--light">USE CASES</span>
+          <h2>What You Can Build</h2>
+        </div>
+        <div class="grid grid-2 reveal-stagger">
+          <div class="card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <h3 class="card__title" style="color: white;">AI-Managed Subscriptions</h3>
+            <p class="card__text" style="color: var(--color-gray-400);">Let AI agents handle subscription modifications, dunning responses, and lifecycle management autonomously.</p>
+          </div>
+          <div class="card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <h3 class="card__title" style="color: white;">Custom Billing Workflows</h3>
+            <p class="card__text" style="color: var(--color-gray-400);">Build complex billing logic with webhooks, API calls, and event-driven automation.</p>
+          </div>
+          <div class="card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <h3 class="card__title" style="color: white;">Platform Integrations</h3>
+            <p class="card__text" style="color: var(--color-gray-400);">Connect Rebillia to any ecommerce platform, CRM, or business system via REST API.</p>
+          </div>
+          <div class="card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <h3 class="card__title" style="color: white;">Hybrid Billing Models</h3>
+            <p class="card__text" style="color: var(--color-gray-400);">Combine recurring charges, usage metering, and one-time fees in a single subscription.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
          6. CTA
          ================================================================ -->
     <section class="cta-block cta-block--purple reveal">
@@ -757,7 +823,7 @@ subscriptions <span class="token-operator">=</span> response<span class="token-p
             </button>
             <div class="accordion__content">
               <div class="accordion__content__inner">
-                Rebillia's MCP (Model Context Protocol) server lets AI assistants like Claude and GPT manage subscriptions through natural language. Install with a single npx command and connect to any MCP-compatible AI client for automated billing operations.
+                Rebillia's MCP (Model Context Protocol) server provides agent-native capability interfaces — not just API endpoints, but higher-level business actions like launch_pricing_experiment, apply_retention_action, and grant_credits. Install with a single npx command and connect to any MCP-compatible AI client for autonomous monetization workflows.
               </div>
             </div>
           </div>
@@ -784,7 +850,7 @@ subscriptions <span class="token-operator">=</span> response<span class="token-p
           <div class="footer__brand-name">
             <img src="logo.png" alt="Rebillia" width="140" height="40">
           </div>
-          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+          <p>Adaptive billing infrastructure for the AI era. Component-based, lifecycle-aware, programmable.</p>
         </div>
 
         <!-- Solutions -->

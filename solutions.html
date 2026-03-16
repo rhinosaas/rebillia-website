@@ -195,15 +195,16 @@
       <!-- Nav links -->
       <div class="navbar__nav">
 
-        <!-- Solutions dropdown -->
+        <!-- Platform dropdown -->
         <div class="navbar__dropdown">
-          <a href="solutions.html" class="navbar__link navbar__link--active">
-            Solutions
+          <a href="solutions.html" class="navbar__link">
+            Platform
             <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <div class="navbar__dropdown-menu">
+          <div class="navbar__dropdown-menu" style="min-width: 300px;">
+            <div class="navbar__dropdown-heading">Billing Patterns</div>
             <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
@@ -241,6 +242,7 @@
               API-First Billing
             </a>
             <div class="navbar__dropdown-divider"></div>
+            <div class="navbar__dropdown-heading">Integrations</div>
             <a href="bigcommerce.html" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
@@ -253,20 +255,53 @@
               </span>
               WooCommerce (Coming Soon)
             </a>
+            <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </span>
+              Payment Gateways
+            </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
-              View All Solutions &rarr;
+              View All Platform Capabilities &rarr;
             </a>
           </div>
         </div>
 
-        <a href="features.html" class="navbar__link">Features</a>
+        <a href="features.html" class="navbar__link">Capabilities</a>
         <a href="pricing.html" class="navbar__link">Pricing</a>
-        <a href="integrations.html" class="navbar__link">Integrations</a>
         <a href="developers.html" class="navbar__link">Developers</a>
         <a href="about.html" class="navbar__link">About</a>
-        <a href="customers.html" class="navbar__link">Customers</a>
-        <a href="partnerships.html" class="navbar__link">Partnerships</a>
+
+        <!-- Resources dropdown -->
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">
+            Resources
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="customers.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Customers &amp; Case Studies
+            </a>
+            <a href="partnerships.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              Partnerships
+            </a>
+            <a href="blog.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+              </span>
+              Blog
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Actions -->
@@ -292,32 +327,61 @@
       <div class="container">
         <div class="hero__content">
           <span class="hero__label">SOLUTIONS</span>
-          <h1 class="hero__title">One Platform, Every Subscription Model</h1>
-          <p class="hero__subtitle">From ecommerce subscribe-and-save to API-first usage billing. Rebillia powers recurring revenue across industries and platforms.</p>
+          <h1 class="hero__title">Monetization Patterns for Every Business Model</h1>
+          <p class="hero__subtitle">Rebillia's agent-native architecture supports any monetization pattern — from simple recurring orders to autonomous AI-operated pricing, retention, and experimentation workflows.</p>
           <p class="hero__answer" style="max-width:640px; margin:var(--space-4) auto 0; font-size:var(--text-base); color:var(--color-text-secondary); line-height:var(--leading-relaxed);">
-            <strong>Rebillia is a subscription billing platform</strong> that helps ecommerce and SaaS businesses launch and manage recurring revenue models — including subscribe-and-save, subscription boxes, usage-based billing, and membership programs — across BigCommerce, WooCommerce, and custom platforms via API.
+            <strong>Rebillia is agent-native monetization infrastructure</strong> that helps ecommerce, SaaS, and AI-operated businesses launch and manage revenue models — including subscribe-and-save, subscription boxes, usage-based billing, dynamic pricing, and autonomous lifecycle management — across BigCommerce, WooCommerce, and custom platforms via API.
           </p>
         </div>
+
+        <div class="grid grid-3 reveal-stagger" style="margin-bottom: var(--space-16);">
+          <div class="card">
+            <div class="card__icon card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h3 class="card__title">Billing Components</h3>
+            <p class="card__text">Every subscription is built from composable parts: charges, schedules, rules, entitlements.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="card__title">Lifecycle Engine</h3>
+            <p class="card__text">AI agents respond to lifecycle events — activation, pause, upgrade, churn risk — with autonomous retention actions, pricing adjustments, and credit grants.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon card__icon--purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="card__title">Shared Control</h3>
+            <p class="card__text">Customers, merchants, and AI agents all participate in monetization — agents run experiments and retention actions within governance boundaries you define.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- Stats Bar -->
     <div style="display:flex; justify-content:center; gap:var(--space-10); flex-wrap:wrap; margin:var(--space-8) 0; text-align:center;">
       <div>
-        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">3M+</div>
-        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">End Users</div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">7+</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Payment Gateways</div>
       </div>
       <div>
-        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">$500M+</div>
-        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Revenue Processed</div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">Multi-Platform</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">BigCommerce, WooCommerce, API</div>
       </div>
       <div>
-        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">Multi</div>
-        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Gateway Support</div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">500+</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">AI Client Tools</div>
       </div>
       <div>
-        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">30%</div>
-        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Failed Payment Recovery</div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">99.9%</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Uptime</div>
+      </div>
+      <div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">Since 2020</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">&nbsp;</div>
       </div>
     </div>
 
@@ -329,7 +393,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">SUBSCRIPTION TYPES</span>
-          <h2>Choose Your Subscription Model</h2>
+          <h2>Choose Your Monetization Model</h2>
         </div>
         <div class="grid grid-3 reveal-stagger">
 
@@ -337,7 +401,7 @@
           <div class="solution-card" id="subscribe-save">
             <div class="solution-card__icon">&#x1F504;</div>
             <h3 class="solution-card__title">Subscribe &amp; Save</h3>
-            <p class="solution-card__text">Ecommerce recurring orders with discount incentives. Customers subscribe to products they buy regularly. Auto-ship on flexible schedules.</p>
+            <p class="solution-card__text">Recurring orders with lifecycle-aware flexibility</p>
             <ul class="solution-card__features">
               <li class="solution-card__feature">
                 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -362,7 +426,7 @@
           <div class="solution-card" id="subscription-boxes">
             <div class="solution-card__icon">&#x1F4E6;</div>
             <h3 class="solution-card__title">Subscription Boxes</h3>
-            <p class="solution-card__text">Curated product boxes delivered on a schedule. Support for quiz-based personalization, seasonal rotations, gift subscriptions, add-on marketplaces.</p>
+            <p class="solution-card__text">Curated fulfillment with component-based scheduling</p>
             <ul class="solution-card__features">
               <li class="solution-card__feature">
                 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -387,7 +451,7 @@
           <div class="solution-card" id="usage-based">
             <div class="solution-card__icon">&#x1F4CA;</div>
             <h3 class="solution-card__title">Usage-Based Billing</h3>
-            <p class="solution-card__text">Metered billing for API calls, data usage, consumption-based services. Tiered pricing, per-unit pricing, and hybrid models.</p>
+            <p class="solution-card__text">Metered billing for APIs, consumption, and AI workloads</p>
             <ul class="solution-card__features">
               <li class="solution-card__feature">
                 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -412,7 +476,7 @@
           <div class="solution-card" id="recurring-services">
             <div class="solution-card__icon">&#x1F527;</div>
             <h3 class="solution-card__title">Recurring Services</h3>
-            <p class="solution-card__text">Subscription billing for professional services, maintenance contracts, consulting retainers, cleaning services, fitness memberships.</p>
+            <p class="solution-card__text">Service billing with automated invoicing and lifecycle rules</p>
             <ul class="solution-card__features">
               <li class="solution-card__feature">
                 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -437,7 +501,7 @@
           <div class="solution-card" id="membership">
             <div class="solution-card__icon">&#x1F3AB;</div>
             <h3 class="solution-card__title">Membership &amp; Access</h3>
-            <p class="solution-card__text">Access-based subscriptions: communities, premium content, VIP programs, loyalty clubs. Tiered membership levels with different feature access.</p>
+            <p class="solution-card__text">Access control, tiers, and programmatic entitlements</p>
             <ul class="solution-card__features">
               <li class="solution-card__feature">
                 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -458,11 +522,36 @@
             </ul>
           </div>
 
+          <!-- AI-Operated Monetization -->
+          <div class="solution-card" id="ai-monetization">
+            <div class="solution-card__icon">&#x1F916;</div>
+            <h3 class="solution-card__title">AI-Operated Monetization</h3>
+            <p class="solution-card__text">Autonomous pricing, retention, and experimentation for AI-native businesses</p>
+            <ul class="solution-card__features">
+              <li class="solution-card__feature">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Dynamic pricing by AI agents
+              </li>
+              <li class="solution-card__feature">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Autonomous retention actions
+              </li>
+              <li class="solution-card__feature">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Pricing experimentation framework
+              </li>
+              <li class="solution-card__feature">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Credit wallets &amp; usage metering
+              </li>
+            </ul>
+          </div>
+
           <!-- API-First Billing -->
           <div class="solution-card" id="api-first">
             <div class="solution-card__icon">&#x26A1;</div>
             <h3 class="solution-card__title">API-First Billing</h3>
-            <p class="solution-card__text">Build custom subscription experiences with Rebillia's REST API. Full programmatic control over subscriptions, invoicing, payments, and customer management.</p>
+            <p class="solution-card__text">Build any billing experience with programmable components</p>
             <ul class="solution-card__features">
               <li class="solution-card__feature">
                 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -655,7 +744,7 @@
             </button>
             <div class="accordion__content">
               <div class="accordion__content__inner">
-                Rebillia supports subscribe-and-save, subscription boxes, usage-based billing, recurring services, membership programs, and API-first billing. You can combine models or create custom billing flows with our flexible platform.
+                Rebillia supports subscribe-and-save, subscription boxes, usage-based billing, recurring services, membership programs, and API-first billing. You can combine models or create custom billing flows with our agent-native monetization infrastructure.
               </div>
             </div>
           </div>
@@ -668,7 +757,7 @@
             </button>
             <div class="accordion__content">
               <div class="accordion__content__inner">
-                Rebillia serves ecommerce brands, SaaS companies, professional services, health and wellness, food and beverage, pet supplies, and more. Any business with recurring revenue can benefit from our subscription infrastructure.
+                Rebillia serves ecommerce brands, SaaS companies, professional services, health and wellness, food and beverage, pet supplies, and more. Any business with recurring revenue can benefit from our billing infrastructure.
               </div>
             </div>
           </div>
@@ -734,7 +823,7 @@
           <div class="footer__brand-name">
             <img src="logo.png" alt="Rebillia" width="140" height="40">
           </div>
-          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+          <p>Agent-native monetization infrastructure. Programmable pricing, autonomous retention, AI-driven experiments.</p>
         </div>
 
         <!-- Solutions -->

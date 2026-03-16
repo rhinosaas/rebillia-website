@@ -158,15 +158,16 @@
       <!-- Nav links -->
       <div class="navbar__nav">
 
-        <!-- Solutions dropdown -->
+        <!-- Platform dropdown -->
         <div class="navbar__dropdown">
           <a href="solutions.html" class="navbar__link">
-            Solutions
+            Platform
             <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <div class="navbar__dropdown-menu">
+          <div class="navbar__dropdown-menu" style="min-width: 300px;">
+            <div class="navbar__dropdown-heading">Billing Patterns</div>
             <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
@@ -204,6 +205,7 @@
               API-First Billing
             </a>
             <div class="navbar__dropdown-divider"></div>
+            <div class="navbar__dropdown-heading">Integrations</div>
             <a href="bigcommerce.html" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
@@ -216,20 +218,53 @@
               </span>
               WooCommerce (Coming Soon)
             </a>
+            <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </span>
+              Payment Gateways
+            </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
-              View All Solutions &rarr;
+              View All Platform Capabilities &rarr;
             </a>
           </div>
         </div>
 
-        <a href="features.html" class="navbar__link">Features</a>
+        <a href="features.html" class="navbar__link">Capabilities</a>
         <a href="pricing.html" class="navbar__link">Pricing</a>
-        <a href="integrations.html" class="navbar__link">Integrations</a>
         <a href="developers.html" class="navbar__link">Developers</a>
-        <a href="about.html" class="navbar__link navbar__link--active">About</a>
-        <a href="customers.html" class="navbar__link">Customers</a>
-        <a href="partnerships.html" class="navbar__link">Partnerships</a>
+        <a href="about.html" class="navbar__link">About</a>
+
+        <!-- Resources dropdown -->
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">
+            Resources
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="customers.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Customers &amp; Case Studies
+            </a>
+            <a href="partnerships.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              Partnerships
+            </a>
+            <a href="blog.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+              </span>
+              Blog
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Actions -->
@@ -255,10 +290,10 @@
       <div class="container">
         <div class="hero__content">
           <span class="hero__label">ABOUT US</span>
-          <h1 class="hero__title">Making Subscription Billing Accessible to Every Business</h1>
-          <p class="hero__subtitle">We believe recurring revenue shouldn't require enterprise budgets or engineering teams. Rebillia makes subscription billing simple, powerful, and affordable.</p>
+          <h1 class="hero__title">From Ecommerce Roots to Agent-Native Monetization</h1>
+          <p class="hero__subtitle">We started by solving subscription billing for BigCommerce merchants. We're building agent-native monetization infrastructure — the financial operating layer for AI-driven businesses.</p>
           <p class="hero__answer" style="max-width:640px; margin:var(--space-4) auto 0; font-size:var(--text-base); color:var(--color-text-secondary); line-height:var(--leading-relaxed);">
-            <strong>Rebillia is a subscription infrastructure company</strong> founded in 2020 that powers recurring revenue for businesses of all sizes across BigCommerce, WooCommerce, and custom platforms. We partner with Global Payments, BigCommerce, and IntuitSolutions to deliver enterprise-grade billing solutions.
+            <strong>Rebillia is an agent-native monetization infrastructure company</strong> founded in 2020 that powers autonomous revenue operations for ecommerce, SaaS, and AI-operated businesses across BigCommerce, WooCommerce, and custom platforms. We partner with Global Payments, BigCommerce, and IntuitSolutions to deliver enterprise-grade monetization solutions.
           </p>
         </div>
       </div>
@@ -266,12 +301,12 @@
 
     <div style="display:flex; justify-content:center; gap:var(--space-10); flex-wrap:wrap; margin:var(--space-8) 0; text-align:center;">
       <div>
-        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">3M+</div>
-        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">End Users</div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">99.9%</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Uptime</div>
       </div>
       <div>
-        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">4.9/5</div>
-        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">Merchant Rating</div>
+        <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">500+</div>
+        <div style="font-size:var(--text-sm); color:var(--color-gray-400);">AI Client Tools</div>
       </div>
       <div>
         <div style="font-size:var(--text-3xl); font-weight:var(--font-bold); color:var(--color-white);">2020</div>
@@ -287,24 +322,20 @@
       <div class="container">
         <div class="stats-bar__grid">
           <div class="stat">
-            <div class="stat__number"><span class="counter" data-count="3" data-suffix="M+">0</span></div>
-            <div class="stat__label">End Users</div>
-          </div>
-          <div class="stat">
-            <div class="stat__number">#1</div>
-            <div class="stat__label">BigCommerce Subscription App</div>
-          </div>
-          <div class="stat">
-            <div class="stat__number">Multi-Gateway</div>
-            <div class="stat__label">Payment Support</div>
+            <div class="stat__number"><span class="counter" data-count="99.9" data-suffix="%" data-decimals="1">0%</span></div>
+            <div class="stat__label">Uptime</div>
           </div>
           <div class="stat">
             <div class="stat__number"><span class="counter" data-count="500" data-suffix="+">0</span></div>
             <div class="stat__label">AI Client Tools</div>
           </div>
           <div class="stat">
-            <div class="stat__number"><span class="counter" data-count="99.9" data-suffix="%" data-decimals="1">0%</span></div>
-            <div class="stat__label">Uptime</div>
+            <div class="stat__number">Since 2020</div>
+            <div class="stat__label">Founded</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">7+</div>
+            <div class="stat__label">Payment Gateways</div>
           </div>
         </div>
       </div>
@@ -321,15 +352,15 @@
           <!-- Left: Story text -->
           <div>
             <span class="section-label">OUR STORY</span>
-            <h2 style="margin-top: var(--space-4);">From BigCommerce App to Subscription Infrastructure</h2>
+            <h2 style="margin-top: var(--space-4);">From BigCommerce App to Agent-Native Monetization</h2>
             <p style="margin-top: var(--space-6); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-              Rebillia started with a simple observation: BigCommerce merchants needed subscription billing, and existing solutions were either too expensive, too complex, or too limited.
+              Rebillia started in 2020 with a conviction: subscription billing was broken. Rigid. Built for a world where humans managed every pricing decision and billing change manually. We started by building a better subscription app for BigCommerce — and quickly became the top-rated app on the marketplace.
             </p>
             <p style="margin-top: var(--space-4); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-              We built a native BigCommerce subscription app that quickly became one of the top-rated on the marketplace. But we didn't stop there.
+              But we saw something bigger. Billing isn't just payment collection — it's the control layer of the customer relationship. Every pause, upgrade, swap, and cancellation is a signal. Every billing cycle is a decision point. We rebuilt our platform around this insight.
             </p>
             <p style="margin-top: var(--space-4); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-              Today, Rebillia is evolving into a multi-platform subscription infrastructure company. We support BigCommerce, WooCommerce, and direct API integrations. Our MCP server connects subscription management to 500+ AI tools. And we're just getting started.
+              Today, Rebillia is agent-native monetization infrastructure. Programmable pricing engines, autonomous lifecycle automation, monetization experimentation frameworks, and credit systems — all designed to be operated by AI agents. Built on real ecommerce experience, designed for the era where software agents run the revenue layer of digital businesses.
             </p>
           </div>
 
@@ -343,8 +374,8 @@
                 </svg>
               </div>
               <div>
-                <h4 class="card__title" style="margin-bottom: var(--space-1);">Merchant-First</h4>
-                <p class="card__text" style="margin: 0;">Every feature is designed to help merchants grow recurring revenue.</p>
+                <h4 class="card__title" style="margin-bottom: var(--space-1);">Agent-Native by Design</h4>
+                <p class="card__text" style="margin: 0;">Monetization infrastructure designed for AI operators, not just human configuration.</p>
               </div>
             </div>
 
@@ -355,8 +386,8 @@
                 </svg>
               </div>
               <div>
-                <h4 class="card__title" style="margin-bottom: var(--space-1);">Simplicity</h4>
-                <p class="card__text" style="margin: 0;">Powerful technology that's easy to set up and manage.</p>
+                <h4 class="card__title" style="margin-bottom: var(--space-1);">Component-Based</h4>
+                <p class="card__text" style="margin: 0;">Every billing relationship is unique. Our architecture reflects that.</p>
               </div>
             </div>
 
@@ -367,8 +398,8 @@
                 </svg>
               </div>
               <div>
-                <h4 class="card__title" style="margin-bottom: var(--space-1);">Flexibility</h4>
-                <p class="card__text" style="margin: 0;">Every subscription model, every gateway, every platform.</p>
+                <h4 class="card__title" style="margin-bottom: var(--space-1);">Infrastructure-Grade</h4>
+                <p class="card__text" style="margin: 0;">99.9% uptime. Multi-gateway redundancy. Built for reliability.</p>
               </div>
             </div>
 
@@ -379,8 +410,8 @@
                 </svg>
               </div>
               <div>
-                <h4 class="card__title" style="margin-bottom: var(--space-1);">Innovation</h4>
-                <p class="card__text" style="margin: 0;">AI-ready infrastructure that keeps you ahead of the curve.</p>
+                <h4 class="card__title" style="margin-bottom: var(--space-1);">Programmable</h4>
+                <p class="card__text" style="margin: 0;">API-first, agent-native. AI agents manage pricing, retention, experiments, and lifecycle actions autonomously.</p>
               </div>
             </div>
 
@@ -598,7 +629,7 @@
           <div class="footer__brand-name">
             <img src="logo.png" alt="Rebillia" width="140" height="40">
           </div>
-          <p>Multi-platform subscription billing infrastructure for modern businesses. Power recurring revenue with smart dunning, flexible billing, and AI-ready tools.</p>
+          <p>Agent-native monetization infrastructure. Programmable pricing, autonomous retention, AI-driven experiments.</p>
         </div>
 
         <!-- Solutions -->

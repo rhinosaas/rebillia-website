@@ -342,16 +342,19 @@
         <img src="logo.png" alt="Rebillia" width="160" height="46">
       </a>
 
-      <div class="navbar__nav" role="menubar">
-        <!-- Solutions Dropdown -->
+      <!-- Nav links -->
+      <div class="navbar__nav">
+
+        <!-- Platform dropdown -->
         <div class="navbar__dropdown">
           <a href="solutions.html" class="navbar__link">
-            Solutions
+            Platform
             <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <div class="navbar__dropdown-menu">
+          <div class="navbar__dropdown-menu" style="min-width: 300px;">
+            <div class="navbar__dropdown-heading">Billing Patterns</div>
             <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
@@ -389,6 +392,7 @@
               API-First Billing
             </a>
             <div class="navbar__dropdown-divider"></div>
+            <div class="navbar__dropdown-heading">Integrations</div>
             <a href="bigcommerce.html" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
@@ -401,20 +405,53 @@
               </span>
               WooCommerce (Coming Soon)
             </a>
+            <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </span>
+              Payment Gateways
+            </a>
             <div class="navbar__dropdown-divider"></div>
             <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
-              View All Solutions &rarr;
+              View All Platform Capabilities &rarr;
             </a>
           </div>
         </div>
 
-        <a href="features.html" class="navbar__link">Features</a>
+        <a href="features.html" class="navbar__link">Capabilities</a>
         <a href="pricing.html" class="navbar__link">Pricing</a>
-        <a href="integrations.html" class="navbar__link">Integrations</a>
         <a href="developers.html" class="navbar__link">Developers</a>
         <a href="about.html" class="navbar__link">About</a>
-        <a href="customers.html" class="navbar__link">Customers</a>
-        <a href="partnerships.html" class="navbar__link">Partnerships</a>
+
+        <!-- Resources dropdown -->
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">
+            Resources
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="customers.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </span>
+              Customers &amp; Case Studies
+            </a>
+            <a href="partnerships.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              Partnerships
+            </a>
+            <a href="blog.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+              </span>
+              Blog
+            </a>
+          </div>
+        </div>
       </div>
 
       <div class="navbar__actions">
@@ -450,9 +487,9 @@
             BIGCOMMERCE PARTNER
           </div>
 
-          <h1 class="hero__title">The Subscription App BigCommerce <span>Merchants Trust</span></h1>
+          <h1 class="hero__title">Agent-Native Subscription Billing for BigCommerce</h1>
 
-          <p class="hero__subtitle">#1 subscription app on the BigCommerce App Marketplace. Add subscribe-and-save, subscription boxes, and smart recurring billing to your store in minutes.</p>
+          <p class="hero__subtitle">The most capable subscription infrastructure on BigCommerce. Component-based billing, smart dunning, lifecycle management, and AI-ready API — natively integrated.</p>
 
           <div class="hero__actions">
             <a href="#" class="btn btn--primary btn--lg">
@@ -461,22 +498,22 @@
             </a>
             <a href="#" class="btn btn--ghost btn--lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Book a Demo
+              Schedule a Walkthrough
             </a>
           </div>
 
           <div class="hero__trust">
             <div class="hero__trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              #1 BigCommerce Subscription App
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Native Integration
             </div>
             <div class="hero__trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              3M+ End Users
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              99.9% Uptime
             </div>
             <div class="hero__trust-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-              All Major Gateways
+              Multi-Gateway
             </div>
           </div>
         </div>
@@ -490,24 +527,24 @@
       <div class="container">
         <div class="stats-bar__grid">
           <div class="stat">
-            <div class="stat__number">Top <span data-count="3" data-prefix="">3</span></div>
-            <div class="stat__label">Rated App</div>
+            <div class="stat__number">7+</div>
+            <div class="stat__label">Payment Gateways</div>
           </div>
           <div class="stat">
-            <div class="stat__number"><span data-count="3" data-suffix="M+">3M+</span></div>
-            <div class="stat__label">End Users</div>
+            <div class="stat__number">Multi-Platform</div>
+            <div class="stat__label">Architecture</div>
           </div>
           <div class="stat">
-            <div class="stat__number">$500M+</div>
-            <div class="stat__label">Revenue Processed</div>
-          </div>
-          <div class="stat">
-            <div class="stat__number">Multi-Gateway</div>
-            <div class="stat__label">Payment Support</div>
+            <div class="stat__number">500+</div>
+            <div class="stat__label">AI Client Tools</div>
           </div>
           <div class="stat">
             <div class="stat__number"><span data-count="99" data-suffix=".9%">99.9%</span></div>
             <div class="stat__label">Uptime</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">Since 2020</div>
+            <div class="stat__label">In Production</div>
           </div>
         </div>
       </div>
@@ -914,7 +951,7 @@
             </a>
             <a href="#" class="btn btn--ghost btn--lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Book a Demo
+              Schedule a Walkthrough
             </a>
           </div>
         </div>
@@ -932,7 +969,7 @@
             <div class="footer__brand-name">
             <img src="logo.png" alt="Rebillia" width="140" height="40">
           </div>
-            <p>The subscription billing platform built for ecommerce. Power recurring revenue on BigCommerce and WooCommerce.</p>
+            <p>Agent-native monetization infrastructure. Programmable pricing, autonomous retention, AI-driven experiments.</p>
           </div>
 
           <!-- Solutions Column -->

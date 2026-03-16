@@ -182,6 +182,16 @@
     font-size: var(--text-xs);
   }
 
+  /* Stack hero mockup columns on tablet/mobile */
+  .hero-illustration [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-illustration [style*="border-right"] {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
   .trust-row {
     gap: var(--space-4);
   }
