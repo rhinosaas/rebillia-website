@@ -240,6 +240,12 @@
 
 /* ── Typewriter ─────────────────────────────────────────────────────────── */
 
+.typewriter-container {
+  display: inline-block;
+  text-align: left;
+  min-width: 10ch;
+}
+
 .typewriter-word {
   color: var(--color-teal-400);
   border-bottom: 3px solid var(--color-teal-500);
