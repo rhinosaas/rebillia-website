@@ -238,6 +238,26 @@
   margin-left: 3px;
 }
 
+/* ── Typewriter ─────────────────────────────────────────────────────────── */
+
+.typewriter-word {
+  color: var(--color-teal-400);
+  border-bottom: 3px solid var(--color-teal-500);
+  padding-bottom: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor {
+  animation: blink 0.7s step-end infinite;
+  color: var(--color-teal-400);
+  font-weight: 300;
+  margin-left: 1px;
+}
+
 /* ── Reduced motion ─────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
@@ -271,6 +291,11 @@
 
   .logo-cloud--animated .logo-cloud__track {
     animation: none;
+  }
+
+  .typewriter-cursor {
+    animation: none;
+    opacity: 1;
   }
 
   * {
