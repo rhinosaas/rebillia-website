@@ -132,6 +132,20 @@ p {
   background-clip: text;
 }
 
+.text-highlight {
+  font-weight: var(--font-bold);
+  background: linear-gradient(120deg, rgba(0,163,138,0.15) 0%, rgba(92,46,145,0.15) 100%);
+  padding: 0.05em 0.25em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.section--dark .text-highlight,
+.hero .text-highlight {
+  background: linear-gradient(120deg, rgba(0,201,167,0.2) 0%, rgba(154,111,219,0.2) 100%);
+}
+
 .mono {
   font-family: var(--font-mono);
 }
