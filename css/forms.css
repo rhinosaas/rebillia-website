@@ -61,7 +61,7 @@
 .form-textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(92,46,145,0.12);
+  box-shadow: 0 0 0 3px rgba(51,107,214,0.12);
 }
 
 .form-input::placeholder,

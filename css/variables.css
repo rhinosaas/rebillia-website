@@ -1,42 +1,43 @@
 /* ==========================================================================
    REBILLIA DESIGN TOKENS
-   Light, enterprise-grade aesthetic — purple accent, clean & airy
+   Modern, enterprise-grade — Rebillia Blue + Dark Navy, clean & professional
+   Brand Guide: Rebillia_color_plate.jpeg / Rebillia_logos.pdf
    ========================================================================== */
 
 :root {
-  /* ── Brand Colors — refined purple + vibrant teal ─────────────────────── */
-  --color-purple-900: #1B0F30;
-  --color-purple-800: #2A1750;
-  --color-purple-700: #3D2272;
-  --color-purple-600: #5C2E91;
-  --color-purple-500: #7845C4;
-  --color-purple-400: #9A6FDB;
-  --color-purple-300: #BEAAEB;
-  --color-purple-200: #DDD0F4;
-  --color-purple-100: #EEEBF8;
-  --color-purple-50:  #F7F5FC;
+  /* ── Brand Colors — Rebillia Blue + Dark Navy ──────────────────────────── */
+  --color-purple-900: #060B1E;
+  --color-purple-800: #0F1742;
+  --color-purple-700: #1A2B5C;
+  --color-purple-600: #336BD6;
+  --color-purple-500: #4A7DE0;
+  --color-purple-400: #6B96E8;
+  --color-purple-300: #94B4F0;
+  --color-purple-200: #C4D5F7;
+  --color-purple-100: #E4ECFB;
+  --color-purple-50:  #F0F4FD;
 
-  --color-teal-900: #003D33;
-  --color-teal-800: #00614F;
-  --color-teal-700: #00856E;
-  --color-teal-600: #00A38A;
-  --color-teal-500: #00C9A7;
-  --color-teal-400: #2DE5C9;
-  --color-teal-300: #6AEEDA;
-  --color-teal-200: #A8F5EB;
-  --color-teal-100: #D2FAF3;
-  --color-teal-50:  #EDFCF9;
+  --color-teal-900: #003D29;
+  --color-teal-800: #00614A;
+  --color-teal-700: #00856A;
+  --color-teal-600: #1AB671;
+  --color-teal-500: #24D685;
+  --color-teal-400: #4AE69E;
+  --color-teal-300: #7AEDB8;
+  --color-teal-200: #A8F5D4;
+  --color-teal-100: #D2FAE9;
+  --color-teal-50:  #EDFCF5;
 
-  /* ── Neutrals — warmer, less purple-cast ────────────────────────────── */
-  --color-gray-950: #0C0C10;
-  --color-gray-900: #151519;
-  --color-gray-800: #1F1F26;
-  --color-gray-700: #323240;
-  --color-gray-600: #51515E;
-  --color-gray-500: #71717A;
-  --color-gray-400: #9393A0;
-  --color-gray-300: #B8B8C2;
-  --color-gray-200: #D9D9E0;
+  /* ── Neutrals — clean, modern ──────────────────────────────────────────── */
+  --color-gray-950: #0A0E1A;
+  --color-gray-900: #0F1424;
+  --color-gray-800: #1A1F30;
+  --color-gray-700: #2E3446;
+  --color-gray-600: #4A5068;
+  --color-gray-500: #6B7185;
+  --color-gray-400: #9298A8;
+  --color-gray-300: #B8BCC8;
+  --color-gray-200: #D9DCE2;
   --color-gray-100: #ECECF0;
   --color-gray-50:  #F7F7F8;
   --color-white:    #FFFFFF;
@@ -44,43 +45,43 @@
   /* ── Semantic Colors ──────────────────────────────────────────────────── */
   --color-primary:    var(--color-purple-600);
   --color-primary-hover: var(--color-purple-700);
-  --color-primary-light: rgba(92,46,145,0.15);
+  --color-primary-light: rgba(51,107,214,0.15);
   --color-accent:     var(--color-teal-600);
   --color-accent-hover: var(--color-teal-700);
-  --color-accent-light: rgba(0,163,138,0.1);
+  --color-accent-light: rgba(26,182,113,0.1);
 
-  --color-success:  #10B981;
+  --color-success:  #1AB671;
   --color-warning:  #F59E0B;
   --color-error:    #EF4444;
-  --color-info:     #3B82F6;
+  --color-info:     #336BD6;
 
-  /* ── Text — dark charcoal on light backgrounds ────────────────────────── */
-  --color-text:          #1A1A2E;
-  --color-text-secondary: #5A5A72;
+  /* ── Text — dark on light backgrounds ─────────────────────────────────── */
+  --color-text:          #0F1742;
+  --color-text-secondary: #4A5068;
   --color-text-light:    var(--color-gray-500);
   --color-text-on-dark:  var(--color-gray-100);
   --color-text-on-primary: var(--color-white);
 
-  /* ── Backgrounds — white / light lavender ─────────────────────────────── */
+  /* ── Backgrounds — white / light blue ─────────────────────────────────── */
   --color-bg:         #FFFFFF;
-  --color-bg-alt:     #F8F7FC;
-  --color-bg-dark:    var(--color-gray-900);
-  --color-bg-darker:  var(--color-gray-950);
+  --color-bg-alt:     #EEF0F7;
+  --color-bg-dark:    #0F1742;
+  --color-bg-darker:  #060B1E;
 
   --color-card-bg:       #FFFFFF;
-  --color-card-bg-hover: #F8F7FC;
+  --color-card-bg-hover: #F0F4FD;
 
   /* ── Borders — subtle light borders ───────────────────────────────────── */
-  --color-border:      #E5E5EB;
-  --color-border-light: #EDEDF2;
+  --color-border:      #D9DCE2;
+  --color-border-light: #E4ECFB;
 
   /* ── Gradients ────────────────────────────────────────────────────────── */
-  --gradient-hero:      linear-gradient(145deg, #F8F7FC 0%, #EEEBF8 40%, #E8E2F4 70%, #F8F7FC 100%);
-  --gradient-hero-dark: linear-gradient(145deg, #0C0C10 0%, #1B0F30 40%, #2A1750 70%, #151519 100%);
-  --gradient-cta:       linear-gradient(135deg, #7B4DB5 0%, #5C2E91 100%);
-  --gradient-card:      linear-gradient(180deg, #FFFFFF 0%, #F8F7FC 100%);
-  --gradient-purple:    linear-gradient(145deg, #5C2E91 0%, #3D2272 50%, #2A1750 100%);
-  --gradient-dark:      linear-gradient(180deg, #151519 0%, #0C0C10 100%);
+  --gradient-hero:      linear-gradient(145deg, #F0F4FD 0%, #E4ECFB 40%, #D6E2F8 70%, #F0F4FD 100%);
+  --gradient-hero-dark: linear-gradient(145deg, #060B1E 0%, #0F1742 40%, #1A2B5C 70%, #0F1424 100%);
+  --gradient-cta:       linear-gradient(135deg, #4A7DE0 0%, #336BD6 100%);
+  --gradient-card:      linear-gradient(180deg, #FFFFFF 0%, #F0F4FD 100%);
+  --gradient-purple:    linear-gradient(145deg, #336BD6 0%, #1A2B5C 50%, #0F1742 100%);
+  --gradient-dark:      linear-gradient(180deg, #0F1424 0%, #060B1E 100%);
 
   /* ── Typography ───────────────────────────────────────────────────────── */
   --font-sans:  'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -146,8 +147,8 @@
   --shadow-lg:  0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
   --shadow-xl:  0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.12);
-  --shadow-purple: 0 10px 30px -5px rgba(92,46,145,0.15);
-  --shadow-teal:   0 10px 30px -5px rgba(92,46,145,0.12);
+  --shadow-purple: 0 10px 30px -5px rgba(51,107,214,0.2);
+  --shadow-teal:   0 10px 30px -5px rgba(26,182,113,0.15);
   --shadow-card:   0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
   --shadow-card-hover: 0 4px 8px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.08);
 

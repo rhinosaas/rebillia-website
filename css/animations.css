@@ -76,7 +76,7 @@
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 0 4px rgba(92,46,145,0.1), var(--shadow-md);
+  box-shadow: 0 0 0 4px rgba(51,107,214,0.1), var(--shadow-md);
 }
 
 .hover-scale {

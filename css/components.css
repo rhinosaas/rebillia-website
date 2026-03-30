@@ -40,9 +40,9 @@
 }
 
 .navbar__logo img {
-  height: 28px;
+  height: 56px;
   width: auto;
-  filter: brightness(0);
+  filter: none;
 }
 
 .navbar__logo-icon {
@@ -458,7 +458,7 @@
 }
 
 .footer__brand-name img {
-  height: 26px;
+  height: 72px;
   width: auto;
   filter: none;
 }

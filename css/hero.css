@@ -109,7 +109,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(92,46,145,0.04), transparent),
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(51,107,214,0.04), transparent),
     radial-gradient(ellipse 60% 50% at 20% 80%, rgba(123,77,181,0.03), transparent);
   pointer-events: none;
 }
@@ -169,7 +169,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(92,46,145,0.25), transparent),
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(51,107,214,0.25), transparent),
     radial-gradient(ellipse 40% 40% at 80% 70%, rgba(123,77,181,0.15), transparent);
   pointer-events: none;
 }
@@ -260,7 +260,7 @@
 .hero__orb--2 {
   width: 300px;
   height: 300px;
-  background: rgba(92,46,145,0.06);
+  background: rgba(51,107,214,0.06);
   bottom: 0;
   left: -80px;
 }

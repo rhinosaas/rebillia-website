@@ -226,7 +226,7 @@ code:not([class]) {
 }
 
 .dev-path:hover {
-  border-color: rgba(92,46,145,0.2);
+  border-color: rgba(51,107,214,0.2);
   box-shadow: var(--shadow-card);
 }
 
@@ -254,7 +254,7 @@ code:not([class]) {
 }
 
 .section--dark .dev-path__icon {
-  background: rgba(92,46,145,0.15);
+  background: rgba(51,107,214,0.15);
   color: var(--color-purple-400);
 }
 
