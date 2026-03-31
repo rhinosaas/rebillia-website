@@ -74,11 +74,11 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Which payment gateways does Rebillia support?","acceptedAnswer":{"@type":"Answer","text":"Rebillia supports multiple payment gateways: Stripe, PayPal, Authorize.net, PayFabric by Global Payments, Square, Braintree, and CyberSource. The Lite plan requires PayFabric; Essentials and above support all major gateways."}},
+      {"@type":"Question","name":"Which payment gateways does Rebillia support?","acceptedAnswer":{"@type":"Answer","text":"Rebillia supports multiple payment gateways: Stripe, PayPal, Authorize.net, RebilliaPay by Global Payments, Square, Braintree, and CyberSource. The Lite plan requires RebilliaPay; Essentials and above support all major gateways."}},
       {"@type":"Question","name":"Can I switch payment gateways without losing subscribers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Rebillia's multi-gateway architecture lets you switch between supported gateways with no disruption to active subscriptions. Payment tokens are managed securely so your subscribers experience zero downtime."}},
       {"@type":"Question","name":"Do I need technical skills to set up integrations?","acceptedAnswer":{"@type":"Answer","text":"No. BigCommerce and WooCommerce integrations install with one click and require no coding. For custom platforms, our REST API and developer documentation make integration straightforward for development teams."}},
       {"@type":"Question","name":"Does Rebillia offer API access for custom integrations?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pro and Platform+ plans include full REST API access, webhooks, and the MCP server for AI integrations. You can build custom subscription workflows, automate billing operations, and integrate with any platform."}},
-      {"@type":"Question","name":"What is the Global Payments partnership?","acceptedAnswer":{"@type":"Answer","text":"Rebillia is a strategic partner of Global Payments, one of the world's largest payment technology companies processing over $50 billion in transactions across 170+ countries. Through PayFabric, merchants get enterprise-grade processing with preferred rates."}}
+      {"@type":"Question","name":"What is the Global Payments partnership?","acceptedAnswer":{"@type":"Answer","text":"Rebillia is a strategic partner of Global Payments, one of the world's largest payment technology companies processing over $50 billion in transactions across 170+ countries. Through RebilliaPay (powered by Global Payments' PayFabric), merchants get world-class processing with preferred rates."}}
     ]
   }
   </script>
@@ -532,8 +532,8 @@
 
       <!-- Actions -->
       <div class="navbar__actions">
-        <a href="login.html" class="navbar__login">Login</a>
-        <a href="signup.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+        <a href="https://admin.rebillia.com" class="navbar__login">Login</a>
+        <a href="pricing.html" class="btn btn--primary btn--sm">Start Free Trial</a>
       </div>
 
     </div>
@@ -556,7 +556,7 @@
           <h1 class="hero__title">Connect to Your Entire Stack</h1>
           <p class="hero__subtitle">Native platform integrations, leading payment gateways, AI agent platforms, and a REST API for custom connections. Rebillia fits into your existing workflow.</p>
           <p class="hero__answer" style="max-width:640px; margin:var(--space-4) auto 0; font-size:var(--text-base); color:var(--color-text-secondary); line-height:var(--leading-relaxed);">
-            <strong>Rebillia integrates with BigCommerce, WooCommerce, and any custom platform via REST API</strong>, connecting to all major payment gateways — Stripe, PayPal, Authorize.net, PayFabric by Global Payments, Square, Braintree, and CyberSource — for seamless subscription billing across your tech stack.
+            <strong>Rebillia integrates with BigCommerce, WooCommerce, and any custom platform via REST API</strong>, connecting to all major payment gateways - Stripe, PayPal, Authorize.net, RebilliaPay by Global Payments, Square, Braintree, and CyberSource - for seamless subscription billing across your tech stack.
           </p>
         </div>
       </div>
@@ -727,7 +727,7 @@
           </span>
           <span class="logo-cloud__item" style="opacity: 1; color: var(--color-text);">
             <span class="gateway-mark gateway-mark--payfabric">PF</span>
-            PayFabric by Global Payments
+            RebilliaPay by Global Payments
             <span style="font-size: 0.65rem; padding: 1px 6px; background: linear-gradient(135deg, #D4A017, #B8860B); color: white; border-radius: 9999px; font-weight: 700; letter-spacing: 0.02em;">PREFERRED</span>
           </span>
           <span class="logo-cloud__item">
@@ -759,12 +759,12 @@
         <div class="partnership">
           <div class="partnership__logos">
             <a href="global-payments.html" class="partnership__logo partnership__logo--gp" style="width:100px; height:100px;">
-              <img src="gp-logo.svg" alt="Global Payments" width="80" height="24">
+              <img src="logos/global-payments-dark.svg" alt="Global Payments" width="80" height="24">
             </a>
           </div>
           <div class="partnership__content">
             <h3>Strategic Partnership with Global Payments</h3>
-            <p>Rebillia is a proud Global Payments partner. Our integration with PayFabric provides enterprise-grade payment processing, fraud prevention, and global reach for subscription businesses of all sizes.</p>
+            <p>Rebillia is a proud Global Payments partner. Our integration with RebilliaPay provides world-class payment processing, fraud prevention, and global reach for subscription businesses of all sizes.</p>
             <a href="global-payments.html" style="display:inline-block; margin-top:var(--space-4); color:var(--color-accent); font-size:var(--text-sm); font-weight:var(--font-semibold);">Learn more &rarr;</a>
           </div>
         </div>
@@ -780,7 +780,7 @@
         <div class="section-header">
           <span class="section-label">GATEWAY ROUTING</span>
           <h2>Flexible Gateway Configuration</h2>
-          <p class="section-subtitle">Control exactly which payment gateway processes each transaction — route by store, by region, or consolidate everything through a single gateway.</p>
+          <p class="section-subtitle">Control exactly which payment gateway processes each transaction - route by store, by region, or consolidate everything through a single gateway.</p>
         </div>
 
         <div class="grid grid-2 reveal-stagger" style="max-width: 800px; margin: 0 auto;">
@@ -795,7 +795,7 @@
               </svg>
             </div>
             <h3 class="routing-card__title">Route by Store</h3>
-            <p class="routing-card__text">Assign a specific gateway to each store. Transactions from Store A go to Gateway A, Store B goes to Gateway C — you control the mapping.</p>
+            <p class="routing-card__text">Assign a specific gateway to each store. Transactions from Store A go to Gateway A, Store B goes to Gateway C - you control the mapping.</p>
           </div>
 
           <!-- Unified Gateway -->
@@ -824,7 +824,7 @@
           <h2 class="cta-block__title">Connect Your Payment Stack</h2>
           <p class="cta-block__text">Start your 14-day free trial and integrate in minutes.</p>
           <div class="cta-block__actions">
-            <a href="signup.html" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="pricing.html" class="btn btn--primary btn--lg">Start Free Trial</a>
             <a href="pricing.html" class="btn btn--ghost btn--lg">View All Gateways</a>
           </div>
         </div>
@@ -847,7 +847,7 @@
             </button>
             <div class="accordion__content">
               <div class="accordion__body">
-                Rebillia supports multiple payment gateways: Stripe, PayPal, Authorize.net, PayFabric by Global Payments, Square, Braintree, and CyberSource. The Lite plan requires PayFabric; Essentials and above support all major gateways.
+                Rebillia supports multiple payment gateways: Stripe, PayPal, Authorize.net, RebilliaPay by Global Payments, Square, Braintree, and CyberSource. The Lite plan requires RebilliaPay; Essentials and above support all major gateways.
               </div>
             </div>
           </div>
@@ -891,7 +891,7 @@
             </button>
             <div class="accordion__content">
               <div class="accordion__body">
-                Rebillia is a strategic partner of Global Payments, one of the world's largest payment technology companies processing over $50 billion in transactions across 170+ countries. Through PayFabric, merchants get enterprise-grade processing with preferred rates.
+                Rebillia is a strategic partner of Global Payments, one of the world's largest payment technology companies processing over $50 billion in transactions across 170+ countries. Through RebilliaPay (powered by Global Payments' PayFabric), merchants get world-class processing with preferred rates.
               </div>
             </div>
           </div>
@@ -960,7 +960,7 @@
           <h4 class="footer__heading">Company</h4>
           <nav class="footer__links">
             <a href="about.html" class="footer__link">About</a>
-            <a href="contact.html" class="footer__link">Contact</a>
+            <a href="pricing.html" class="footer__link">Contact</a>
             <a href="careers.html" class="footer__link">Careers</a>
             <a href="press.html" class="footer__link">Press</a>
             <a href="partnerships.html" class="footer__link">Partners</a>
@@ -986,5 +986,8 @@
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
 
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45175284.js"></script>
+<!-- End of HubSpot Embed Code -->
 </body>
 </html>
