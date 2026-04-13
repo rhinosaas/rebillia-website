@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 2 — Strong Opinion</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #080a10;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px;
+  height: 1200px;
+  background: #0a0e1a;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stripe gradient mesh */
+.gradient-mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 65% 30%, rgba(59,130,246,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 30% 70%, rgba(0,201,167,0.05) 0%, transparent 50%);
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 2;
+  padding: 72px 80px 40px;
+}
+
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3B82F6;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  max-width: 700px;
+}
+
+.title .muted { color: rgba(255,255,255,0.25); }
+.title .accent {
+  background: linear-gradient(135deg, #60A5FA, #818CF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dashboard mockup */
+.dashboard {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  padding: 10px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Dashboard top bar */
+.dash-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+}
+
+.dash-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dash-dot-green { background: #00C9A7; box-shadow: 0 0 8px rgba(0,201,167,0.4); }
+.dash-dot-blue { background: #3B82F6; box-shadow: 0 0 8px rgba(59,130,246,0.4); }
+
+.dash-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+.dash-status strong { color: #00C9A7; }
+
+.dash-spacer { flex: 1; }
+
+.dash-badge {
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+  color: #60A5FA;
+}
+
+/* Main dashboard grid */
+.dash-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+}
+
+/* Metric cards */
+.metric-card {
+  padding: 28px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+}
+
+.metric-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 12px;
+}
+
+.metric-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.metric-change {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.metric-up { color: #00C9A7; }
+.metric-down { color: #EF4444; opacity: 0.6; }
+
+/* Mini chart */
+.mini-chart {
+  margin-top: auto;
+  padding-top: 16px;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.chart-bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  min-height: 4px;
+  transition: all 0.3s;
+}
+
+.chart-bar-blue { background: rgba(59,130,246,0.4); }
+.chart-bar-teal { background: rgba(0,201,167,0.4); }
+.chart-bar-active { background: #3B82F6; box-shadow: 0 0 10px rgba(59,130,246,0.3); }
+.chart-bar-teal-active { background: #00C9A7; box-shadow: 0 0 10px rgba(0,201,167,0.3); }
+
+/* Wide chart card */
+.chart-card {
+  grid-column: 1 / -1;
+  padding: 28px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.chart-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+
+.legend-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* SVG line chart */
+.line-chart {
+  flex: 1;
+  width: 100%;
+}
+
+/* Roles overlay */
+.roles-strip {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 12px;
+  padding: 0 80px 20px;
+}
+
+.role-chip {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+}
+
+.role-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.role-icon svg { width: 18px; height: 18px; }
+
+.ri-ai { background: rgba(0,201,167,0.08); border: 1px solid rgba(0,201,167,0.12); }
+.ri-biz { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.12); }
+.ri-pay { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.12); }
+
+.role-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+.role-text strong { color: #fff; font-weight: 600; }
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 80px 56px;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-x {
+  font-size: 16px;
+  color: rgba(255,255,255,0.12);
+  font-weight: 200;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="gradient-mesh"></div>
+
+  <div class="header">
+    <div class="label">AI-Era Architecture</div>
+    <div class="title">
+      <span class="muted">Static Billing + Enterprise Payments = Friction.</span><br>
+      <span class="accent">Adaptive Billing = Intelligence.</span>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <!-- Status bar -->
+    <div class="dash-bar">
+      <div class="dash-dot dash-dot-green"></div>
+      <div class="dash-status"><strong>Live</strong> &mdash; Subscription Control Plane</div>
+      <div class="dash-spacer"></div>
+      <div class="dash-badge">Rebillia + PayFabric</div>
+    </div>
+
+    <div class="dash-grid">
+      <!-- Metric 1: Recovery Rate -->
+      <div class="metric-card">
+        <div class="metric-label">Recovery Rate</div>
+        <div class="metric-value">94.2%</div>
+        <div class="metric-change metric-up">+12.3% vs legacy</div>
+        <div class="mini-chart">
+          <div class="chart-bar chart-bar-blue" style="height:30%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:40%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:35%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:55%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:50%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:65%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:70%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:75%"></div>
+          <div class="chart-bar chart-bar-blue" style="height:80%"></div>
+          <div class="chart-bar chart-bar-active" style="height:94%"></div>
+        </div>
+      </div>
+
+      <!-- Metric 2: Churn Prevention -->
+      <div class="metric-card">
+        <div class="metric-label">Involuntary Churn</div>
+        <div class="metric-value">0.8%</div>
+        <div class="metric-change metric-up">-67% reduction</div>
+        <div class="mini-chart">
+          <div class="chart-bar chart-bar-teal" style="height:90%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:80%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:70%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:55%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:45%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:30%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:20%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:12%"></div>
+          <div class="chart-bar chart-bar-teal" style="height:10%"></div>
+          <div class="chart-bar chart-bar-teal-active" style="height:8%"></div>
+        </div>
+      </div>
+
+      <!-- Line chart -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">Subscription Lifecycle Events</div>
+          <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#3B82F6"></div>Adaptive</div>
+            <div class="legend-item"><div class="legend-dot" style="background:rgba(255,255,255,0.15)"></div>Legacy</div>
+          </div>
+        </div>
+        <svg class="line-chart" viewBox="0 0 960 200" preserveAspectRatio="none">
+          <!-- Grid lines -->
+          <line x1="0" y1="50" x2="960" y2="50" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+          <line x1="0" y1="100" x2="960" y2="100" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+          <line x1="0" y1="150" x2="960" y2="150" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+          <!-- Legacy line (flat, mediocre) -->
+          <polyline points="0,120 100,118 200,122 300,125 400,120 500,123 600,125 700,122 800,124 960,122"
+            fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-linecap="round"/>
+
+          <!-- Adaptive line (growing) with gradient fill -->
+          <defs>
+            <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(59,130,246,0.2)"/>
+              <stop offset="100%" stop-color="rgba(59,130,246,0)"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,140 C100,135 200,120 300,100 C400,80 500,55 600,45 C700,35 800,28 960,20 L960,200 L0,200 Z"
+            fill="url(#blueGrad)"/>
+          <path d="M0,140 C100,135 200,120 300,100 C400,80 500,55 600,45 C700,35 800,28 960,20"
+            fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!-- Endpoint dot -->
+          <circle cx="960" cy="20" r="5" fill="#3B82F6">
+            <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="960" cy="20" r="12" fill="none" stroke="rgba(59,130,246,0.3)" stroke-width="1">
+            <animate attributeName="r" values="10;16;10" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Role strip -->
+  <div class="roles-strip">
+    <div class="role-chip">
+      <div class="role-icon ri-ai">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2DE5C9" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><path d="M12 4V2" stroke-linecap="round" opacity="0.5"/></svg>
+      </div>
+      <div class="role-text"><strong>AI</strong> optimizes</div>
+    </div>
+    <div class="role-chip">
+      <div class="role-icon ri-biz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="role-text"><strong>Business</strong> governs</div>
+    </div>
+    <div class="role-chip">
+      <div class="role-icon ri-pay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+      </div>
+      <div class="role-text"><strong>Payments</strong> execute</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logos">
+      <img src="../logo.png" alt="Rebillia" style="height: 30px;">
+      <div class="footer-x">+</div>
+      <img src="../gp-logo.svg" alt="Global Payments" style="height: 26px;">
+    </div>
+    <div class="footer-tagline">Subscription behavior powered by enterprise payments</div>
+  </div>
+</div>
+
+</body>
+</html>

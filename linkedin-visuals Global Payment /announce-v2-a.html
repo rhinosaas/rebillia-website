@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V2-A — Light Premium / Apple Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #e8e8ed; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px;
+  background: #FFFFFF;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 100px;
+}
+
+/* Soft gradient orb in background */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+}
+.orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+  top: -150px; right: -100px;
+}
+.orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,201,167,0.06) 0%, transparent 70%);
+  bottom: -100px; left: -80px;
+}
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  width: 100%;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; border-radius: 100px;
+  background: rgba(59,130,246,0.06);
+  margin-bottom: 48px;
+}
+
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #3B82F6;
+}
+
+.badge-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: #3B82F6;
+}
+
+/* Logo lockup - SINGLE ROW, tight */
+.logo-row {
+  display: flex; align-items: center; gap: 24px;
+  margin-bottom: 56px;
+}
+
+.logo-row img { height: 42px; }
+
+.logo-row .plus {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px; font-weight: 300; color: #c0c0c8;
+}
+
+/* Headline */
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 54px; font-weight: 800;
+  color: #1a1a2e; line-height: 1.1;
+  margin-bottom: 24px; letter-spacing: -1.5px;
+}
+
+.headline span {
+  background: linear-gradient(135deg, #3B82F6, #6366F1);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.desc {
+  font-size: 18px; color: #6b7280; line-height: 1.7;
+  max-width: 580px; margin-bottom: 56px;
+}
+
+/* Feature cards - horizontal */
+.features {
+  display: flex; gap: 16px;
+}
+
+.feat {
+  flex: 1; padding: 28px 24px;
+  background: #f8f9fb;
+  border: 1px solid #eef0f4;
+  border-radius: 16px; text-align: center;
+}
+
+.feat-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.feat-icon svg { width: 22px; height: 22px; }
+
+.fi-1 { background: rgba(0,201,167,0.08); }
+.fi-2 { background: rgba(59,130,246,0.08); }
+.fi-3 { background: rgba(245,158,11,0.08); }
+.fi-4 { background: rgba(99,102,241,0.08); }
+
+.feat-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 700; color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.feat-desc {
+  font-size: 12px; color: #9ca3af;
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="content">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      <div class="badge-text">Partnership Announcement</div>
+    </div>
+
+    <div class="logo-row">
+      <img src="../logo-dark.png" alt="Rebillia">
+      <div class="plus">+</div>
+      <img src="../gp-logo.svg" alt="Global Payments" style="filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(500%) hue-rotate(200deg);">
+    </div>
+
+    <div class="headline">Native Integration.<br><span>Now Live.</span></div>
+
+    <div class="desc">Rebillia's adaptive subscription platform now integrates natively with Global Payments through PayFabric — enterprise-grade processing meets AI-ready billing.</div>
+
+    <div class="features">
+      <div class="feat">
+        <div class="feat-icon fi-1"><svg viewBox="0 0 24 24" fill="none" stroke="#00A38A" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="feat-title">Tokenized Vaulting</div>
+        <div class="feat-desc">Secure credential storage</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon fi-2"><svg viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
+        <div class="feat-title">Multi-Currency</div>
+        <div class="feat-desc">Global payment models</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon fi-3"><svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="feat-title">Real-Time Fraud</div>
+        <div class="feat-desc">Active threat detection</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon fi-4"><svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="feat-title">AI Governance</div>
+        <div class="feat-desc">Shared control framework</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

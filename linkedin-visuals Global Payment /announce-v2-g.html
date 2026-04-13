@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V2-G — Geometric / Bauhaus</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #111; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px;
+  background: #fefefe;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 80px;
+}
+
+/* Geometric shapes - Bauhaus inspired */
+.geo {
+  position: absolute;
+}
+
+/* Large blue circle */
+.geo-circle {
+  width: 500px; height: 500px; border-radius: 50%;
+  background: #3B82F6;
+  top: -120px; right: -80px;
+  opacity: 0.9;
+}
+
+/* Teal half-circle */
+.geo-half {
+  width: 300px; height: 150px;
+  background: #00C9A7;
+  border-radius: 300px 300px 0 0;
+  bottom: 100px; left: -40px;
+  opacity: 0.85;
+}
+
+/* Small yellow circle */
+.geo-dot {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: #F59E0B;
+  bottom: 320px; right: 120px;
+  opacity: 0.8;
+}
+
+/* Indigo rectangle */
+.geo-rect {
+  width: 200px; height: 80px;
+  background: #6366F1;
+  bottom: 60px; right: 200px;
+  border-radius: 8px;
+  transform: rotate(-3deg);
+  opacity: 0.85;
+}
+
+/* Small circle */
+.geo-sm {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #1e1b4b;
+  top: 400px; left: 100px;
+  opacity: 0.5;
+}
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  height: 100%;
+}
+
+/* Logo row */
+.logo-row {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 48px;
+}
+
+.logo-row .plus {
+  font-size: 18px; color: #c0c0c8; font-weight: 300;
+}
+
+/* Massive headline */
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 80px; font-weight: 800;
+  color: #1e1b4b; line-height: 0.95;
+  letter-spacing: -4px;
+  margin-bottom: auto;
+  max-width: 650px;
+}
+
+/* Bottom area */
+.bottom {
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+
+.bottom-left {
+  max-width: 500px;
+}
+
+.bottom-desc {
+  font-size: 18px; color: #6b7280;
+  line-height: 1.7; margin-bottom: 28px;
+}
+
+.bottom-pills {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+
+.bp {
+  padding: 10px 18px; border-radius: 100px;
+  background: #f3f4f6;
+  font-size: 13px; font-weight: 600; color: #4b5563;
+}
+
+.bottom-right {
+  text-align: right;
+}
+
+.br-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: #9ca3af; margin-bottom: 4px;
+}
+
+.br-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 600;
+  color: #1e1b4b;
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <!-- Geometric shapes -->
+  <div class="geo geo-circle"></div>
+  <div class="geo geo-half"></div>
+  <div class="geo geo-dot"></div>
+  <div class="geo geo-rect"></div>
+  <div class="geo geo-sm"></div>
+
+  <div class="content">
+    <div class="logo-row">
+      <img src="../logo-dark.png" alt="Rebillia" style="height: 32px;">
+      <div class="plus">+</div>
+      <img src="../gp-logo.svg" alt="Global Payments" style="height: 28px; filter: brightness(0) saturate(100%) invert(15%) sepia(20%) saturate(400%) hue-rotate(200deg);">
+    </div>
+
+    <div class="headline">Now integrated. Natively.</div>
+
+    <div class="bottom">
+      <div class="bottom-left">
+        <div class="bottom-desc">Enterprise-grade payment processing through Global Payments, embedded directly into Rebillia's adaptive subscription control plane.</div>
+        <div class="bottom-pills">
+          <div class="bp">Tokenized Vaulting</div>
+          <div class="bp">Multi-Currency</div>
+          <div class="bp">Real-Time Fraud</div>
+          <div class="bp">AI Governance</div>
+        </div>
+      </div>
+      <div class="bottom-right">
+        <div class="br-label">Via</div>
+        <div class="br-value">PayFabric</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

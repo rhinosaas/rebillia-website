@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partnership Announcement — Final</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #111; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px;
+  background: #0f172a;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 80px;
+}
+
+/* Large colored accent blocks */
+.block {
+  position: absolute; border-radius: 32px;
+}
+.block-1 {
+  width: 500px; height: 500px;
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  top: -200px; right: -100px;
+  transform: rotate(15deg);
+  opacity: 0.15;
+}
+.block-2 {
+  width: 350px; height: 350px;
+  background: linear-gradient(135deg, #00C9A7, #059669);
+  bottom: -120px; left: -60px;
+  transform: rotate(-10deg);
+  opacity: 0.12;
+}
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  height: 100%;
+}
+
+/* Top: badge + logos in one line */
+.top-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.badge {
+  padding: 10px 20px; border-radius: 10px;
+  background: rgba(59,130,246,0.15);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: #60A5FA; letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo-row {
+  display: flex; align-items: center; gap: 16px;
+}
+.logo-row img { height: 30px; }
+.logo-row .plus {
+  font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.2);
+}
+
+/* Headline */
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 64px; font-weight: 800;
+  color: #fff; line-height: 1.0;
+  letter-spacing: -3px;
+  margin-bottom: 48px;
+}
+
+.headline .blue { color: #60A5FA; }
+.headline .teal { color: #2DD4BF; }
+
+/* Two-column split */
+.split {
+  display: flex; gap: 40px;
+  flex: 1;
+}
+
+.col {
+  flex: 1; display: flex; flex-direction: column;
+}
+
+.col-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.col-label-teal { color: #2DD4BF; }
+.col-label-blue { color: #60A5FA; }
+
+.col-divider {
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,0.08), transparent);
+  flex-shrink: 0;
+}
+
+/* Feature list */
+.features {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.feat {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 20px; border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+}
+
+.feat-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+
+.fd-teal { background: #00C9A7; box-shadow: 0 0 8px rgba(0,201,167,0.4); }
+.fd-blue { background: #3B82F6; box-shadow: 0 0 8px rgba(59,130,246,0.4); }
+
+.feat-text {
+  font-size: 15px; font-weight: 600;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Bottom stats */
+.stats {
+  display: flex; gap: 2px;
+  margin-top: 48px;
+}
+
+.stat {
+  flex: 1; padding: 24px;
+  background: rgba(255,255,255,0.04);
+  text-align: center;
+}
+
+.stat:first-child { border-radius: 14px 0 0 14px; }
+.stat:last-child { border-radius: 0 14px 14px 0; }
+
+.stat-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 700; color: #fff;
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="block block-1"></div>
+  <div class="block block-2"></div>
+
+  <div class="content">
+    <!-- Top row: badge + logos -->
+    <div class="top-row">
+      <div class="badge">New Partnership</div>
+      <div class="logo-row">
+        <img src="../logo.png" alt="Rebillia">
+        <div class="plus">+</div>
+        <img src="../gp-logo.svg" alt="Global Payments">
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <div class="headline">
+      Now Natively Integrated.<br>
+      <span class="blue">Built for the AI Era.</span>
+    </div>
+
+    <!-- Two-column split -->
+    <div class="split">
+      <!-- Left: Rebillia -->
+      <div class="col">
+        <div class="col-label col-label-teal">Rebillia — Adaptive Subscription Control Plane</div>
+        <div class="features">
+          <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">Component-Based Billing</div></div>
+          <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">AI-Ready Orchestration</div></div>
+          <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">Lifecycle Management</div></div>
+          <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">Shared Governance</div></div>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <!-- Right: Global Payments -->
+      <div class="col">
+        <div class="col-label col-label-blue">Global Payments — World-Class Payments via PayFabric</div>
+        <div class="features">
+          <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">Tokenized Vaulting</div></div>
+          <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">Multi-Currency Processing</div></div>
+          <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">Real-Time Fraud Detection</div></div>
+          <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">World-Class Security</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Vaulting</div>
+        <div class="stat-value">Tokenized</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Currencies</div>
+        <div class="stat-value">100+ supported</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Fraud</div>
+        <div class="stat-value">Real-time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Governance</div>
+        <div class="stat-value">AI-ready</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

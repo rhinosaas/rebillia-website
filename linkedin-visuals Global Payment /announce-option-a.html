@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcement Option A — Clean & Bold</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #060810; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px; background: #0a0e1a;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+/* Stripe-style gradient mesh */
+.mesh {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(59,130,246,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 30% 70%, rgba(0,201,167,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 75% 60%, rgba(129,140,248,0.04) 0%, transparent 50%);
+}
+
+/* Subtle dot grid */
+.canvas::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 80px;
+  width: 100%;
+}
+
+/* Announcement badge */
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 100px;
+  margin-bottom: 48px;
+}
+
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px rgba(59,130,246,0.5);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 0.7; } 50% { opacity: 1; }
+}
+
+.badge-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: #60A5FA;
+}
+
+/* Logos */
+.logos {
+  display: flex; align-items: center; gap: 48px;
+  margin-bottom: 56px;
+}
+
+.logo-card {
+  width: 220px; height: 140px; border-radius: 24px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(20px); position: relative;
+}
+
+.logo-card::before {
+  content: '';
+  position: absolute; inset: 0; border-radius: 24px; padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent 50%, rgba(255,255,255,0.03));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+
+.lc-rebillia {
+  background: linear-gradient(135deg, rgba(0,201,167,0.06), rgba(0,201,167,0.02));
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 0 60px rgba(0,201,167,0.05);
+}
+
+.lc-gp {
+  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(59,130,246,0.02));
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 0 60px rgba(59,130,246,0.05);
+}
+
+.logo-plus {
+  font-family: 'Outfit', sans-serif;
+  font-size: 36px; font-weight: 200;
+  color: rgba(255,255,255,0.12);
+}
+
+/* Headline */
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 52px; font-weight: 800;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 24px; max-width: 800px;
+}
+
+.headline span {
+  background: linear-gradient(135deg, #60A5FA, #818CF8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.subheadline {
+  font-size: 18px; color: rgba(255,255,255,0.4);
+  line-height: 1.6; max-width: 640px; margin-bottom: 56px;
+}
+
+/* Capability pills */
+.pills {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+}
+
+.pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: 100px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px; font-weight: 500;
+  color: rgba(255,255,255,0.6);
+}
+
+.pill-icon { width: 16px; height: 16px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="mesh"></div>
+  <div class="content">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      <div class="badge-text">New Partnership</div>
+    </div>
+
+    <div class="logos">
+      <div class="logo-card lc-rebillia">
+        <img src="../logo.png" alt="Rebillia" style="height: 44px;">
+      </div>
+      <div class="logo-plus">+</div>
+      <div class="logo-card lc-gp">
+        <img src="../gp-logo.svg" alt="Global Payments" style="height: 38px;">
+      </div>
+    </div>
+
+    <div class="headline">Adaptive Billing Meets<br><span>Enterprise Payments</span></div>
+    <div class="subheadline">Rebillia's programmable subscription platform now integrates natively with Global Payments through PayFabric — bringing enterprise-grade processing to AI-ready billing.</div>
+
+    <div class="pills">
+      <div class="pill">
+        <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="#2DE5C9" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Tokenized Vaulting
+      </div>
+      <div class="pill">
+        <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+        Multi-Currency
+      </div>
+      <div class="pill">
+        <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Real-Time Fraud
+      </div>
+      <div class="pill">
+        <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Enterprise Governance
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

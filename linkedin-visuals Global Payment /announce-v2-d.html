@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V2-D — Soft Blush / Warm Modern</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #e5e5e5; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px;
+  background: linear-gradient(160deg, #e8f4fd 0%, #c4dff6 40%, #a8d4f0 70%, #d0ecf9 100%);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 100px;
+}
+
+/* Organic blob shapes */
+.blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(60px);
+}
+.blob-1 {
+  width: 500px; height: 500px;
+  background: rgba(59,130,246,0.12);
+  top: -100px; right: -50px;
+}
+.blob-2 {
+  width: 400px; height: 400px;
+  background: rgba(59,130,246,0.1);
+  bottom: -60px; left: -30px;
+}
+.blob-3 {
+  width: 300px; height: 300px;
+  background: rgba(0,201,167,0.1);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+}
+
+/* Logo row */
+.logo-row {
+  display: flex; align-items: center; gap: 24px;
+  margin-bottom: 52px;
+  padding: 24px 40px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+
+.logo-row .plus {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px; font-weight: 300; color: #c0c0cc;
+}
+
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 56px; font-weight: 800;
+  color: #0f2b5b; line-height: 1.08;
+  margin-bottom: 24px; letter-spacing: -2px;
+}
+
+.headline span {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.desc {
+  font-size: 18px; color: #6b7280; line-height: 1.7;
+  max-width: 560px; margin-bottom: 52px;
+}
+
+/* Feature cards - glass */
+.features {
+  display: flex; gap: 16px;
+}
+
+.feat {
+  flex: 1; padding: 28px 22px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.feat-emoji {
+  font-size: 32px; margin-bottom: 12px;
+  /* Using CSS shapes instead of actual emoji */
+  width: 48px; height: 48px; margin: 0 auto 14px;
+  border-radius: 14px; display: flex;
+  align-items: center; justify-content: center;
+}
+
+.feat-emoji svg { width: 24px; height: 24px; }
+
+.fe-1 { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+.fe-2 { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+.fe-3 { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+.fe-4 { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+
+.feat-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 700; color: #0f2b5b;
+  margin-bottom: 4px;
+}
+
+.feat-desc {
+  font-size: 12px; color: #9ca3af; line-height: 1.4;
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="content">
+    <div class="logo-row">
+      <img src="../logo-dark.png" alt="Rebillia" style="height: 38px; filter: brightness(0);">
+      <div class="plus">+</div>
+      <img src="../gp-logo.svg" alt="Global Payments" style="height: 34px; filter: brightness(0);">
+    </div>
+
+    <div class="headline">Partnership<br><span>Announcement</span></div>
+
+    <div class="desc">Rebillia's adaptive subscription platform now integrates natively with Global Payments through PayFabric — bringing enterprise-grade processing to AI-ready billing.</div>
+
+    <div class="features">
+      <div class="feat">
+        <div class="feat-emoji fe-1"><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="feat-title">Tokenized Vaulting</div>
+        <div class="feat-desc">Secure credential storage</div>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji fe-2"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
+        <div class="feat-title">Multi-Currency</div>
+        <div class="feat-desc">Global payment processing</div>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji fe-3"><svg viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="feat-title">Real-Time Fraud</div>
+        <div class="feat-desc">Active threat detection</div>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji fe-4"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="feat-title">AI Governance</div>
+        <div class="feat-desc">Shared control framework</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

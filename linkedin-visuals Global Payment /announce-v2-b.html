@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V2-B — Warm Gradient / Character Feel</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #1a1a2e; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px;
+  background: linear-gradient(145deg, #0c2d6b 0%, #1e56a0 40%, #3b82f6 100%);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 80px;
+}
+
+/* Abstract character shapes */
+.shape {
+  position: absolute; border-radius: 50%;
+}
+.shape-1 {
+  width: 300px; height: 300px;
+  background: rgba(255,255,255,0.08);
+  top: -60px; right: -40px;
+}
+.shape-2 {
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.06);
+  top: 180px; right: 100px;
+}
+.shape-3 {
+  width: 400px; height: 400px;
+  background: rgba(255,255,255,0.04);
+  bottom: -80px; left: -80px;
+}
+.shape-4 {
+  width: 150px; height: 150px;
+  background: rgba(255,255,255,0.07);
+  bottom: 300px; left: 60px;
+}
+/* Floating rounded rectangles - "character" elements */
+.float-rect {
+  position: absolute; border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+.fr-1 { width: 120px; height: 80px; top: 120px; right: 60px; transform: rotate(12deg); }
+.fr-2 { width: 90px; height: 60px; bottom: 200px; right: 180px; transform: rotate(-8deg); }
+.fr-3 { width: 100px; height: 70px; top: 300px; left: 40px; transform: rotate(5deg); }
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  height: 100%; justify-content: center;
+}
+
+/* Logo row */
+.logo-row {
+  display: flex; align-items: center; gap: 20px;
+  margin-bottom: 48px;
+}
+
+.logo-row img { height: 36px; }
+
+.logo-row .plus {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px; font-weight: 300; color: rgba(255,255,255,0.4);
+}
+
+/* Headline */
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 60px; font-weight: 800;
+  color: #fff; line-height: 1.05;
+  margin-bottom: 28px; letter-spacing: -2px;
+  max-width: 700px;
+}
+
+.desc {
+  font-size: 20px; color: rgba(255,255,255,0.7);
+  line-height: 1.7; max-width: 550px;
+  margin-bottom: 56px;
+}
+
+/* Pill features */
+.pills {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+
+.pill {
+  padding: 14px 24px; border-radius: 100px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  font-size: 15px; font-weight: 600; color: #fff;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.pill-check {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.pill-check svg { width: 12px; height: 12px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+  <div class="shape shape-4"></div>
+  <div class="float-rect fr-1"></div>
+  <div class="float-rect fr-2"></div>
+  <div class="float-rect fr-3"></div>
+
+  <div class="content">
+    <div class="logo-row">
+      <img src="../logo.png" alt="Rebillia">
+      <div class="plus">+</div>
+      <img src="../gp-logo.svg" alt="Global Payments">
+    </div>
+
+    <div class="headline">We just partnered with Global Payments.</div>
+
+    <div class="desc">Enterprise-grade payment processing now embedded directly into Rebillia's adaptive subscription control plane, through PayFabric.</div>
+
+    <div class="pills">
+      <div class="pill">
+        <div class="pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg></div>
+        Tokenized Vaulting
+      </div>
+      <div class="pill">
+        <div class="pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg></div>
+        Multi-Currency
+      </div>
+      <div class="pill">
+        <div class="pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg></div>
+        Real-Time Fraud
+      </div>
+      <div class="pill">
+        <div class="pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg></div>
+        AI Governance
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

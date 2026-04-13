@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcement Option D — Network / Constellation</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #060810; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px; background: #0a0e1a;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+.mesh {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(59,130,246,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 25% 35%, rgba(0,201,167,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 30% at 75% 65%, rgba(129,140,248,0.04) 0%, transparent 50%);
+}
+
+/* Network constellation SVG */
+.network-bg {
+  position: absolute; inset: 0; z-index: 1;
+}
+
+/* Header */
+.header {
+  position: relative; z-index: 2;
+  padding: 72px 80px 0;
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
+
+.header-left { max-width: 600px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: 100px;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.15);
+  margin-bottom: 28px;
+}
+
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #00C9A7; box-shadow: 0 0 8px rgba(0,201,167,0.5);
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.badge-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: #60A5FA;
+}
+
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 44px; font-weight: 800;
+  color: #fff; line-height: 1.12;
+}
+
+.headline span {
+  background: linear-gradient(135deg, #60A5FA, #818CF8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.header-logos {
+  display: flex; align-items: center; gap: 16px;
+  padding-top: 16px;
+}
+
+.hl-card {
+  padding: 16px 24px; border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.hl-x {
+  font-size: 16px; color: rgba(255,255,255,0.12); font-weight: 200;
+}
+
+/* Center - constellation network */
+.center {
+  position: relative; z-index: 2;
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 20px 80px;
+}
+
+.constellation {
+  width: 100%; height: 100%; position: relative;
+}
+
+.constellation svg { width: 100%; height: 100%; }
+
+/* Node labels */
+.node-label {
+  position: absolute;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  padding: 8px 16px;
+  background: rgba(10,14,26,0.8);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+.nl-center {
+  top: 50%; left: 50%;
+  font-size: 16px; font-weight: 700;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(0,201,167,0.1));
+  border-color: rgba(59,130,246,0.2);
+  padding: 12px 24px;
+  color: #fff;
+}
+
+.nl-1 { top: 18%; left: 30%; }
+.nl-2 { top: 18%; left: 72%; }
+.nl-3 { top: 50%; left: 12%; }
+.nl-4 { top: 50%; left: 88%; }
+.nl-5 { top: 82%; left: 28%; }
+.nl-6 { top: 82%; left: 72%; }
+
+/* Bottom */
+.bottom {
+  position: relative; z-index: 2;
+  padding: 0 80px 60px;
+  text-align: center;
+}
+
+.bottom-text {
+  font-size: 17px; color: rgba(255,255,255,0.35);
+  line-height: 1.6; max-width: 640px; margin: 0 auto;
+}
+
+.bottom-text strong { color: rgba(255,255,255,0.6); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="mesh"></div>
+
+  <div class="header">
+    <div class="header-left">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        <div class="badge-text">Now Live</div>
+      </div>
+      <div class="headline">A New Standard for<br><span>Subscription Infrastructure</span></div>
+    </div>
+    <div class="header-logos">
+      <div class="hl-card"><img src="../logo.png" alt="Rebillia" style="height: 30px;"></div>
+      <div class="hl-x">+</div>
+      <div class="hl-card"><img src="../gp-logo.svg" alt="Global Payments" style="height: 26px;"></div>
+    </div>
+  </div>
+
+  <div class="center">
+    <div class="constellation">
+      <svg viewBox="0 0 1040 600" preserveAspectRatio="xMidYMid meet">
+        <!-- Connection lines -->
+        <line x1="520" y1="300" x2="310" y2="108" stroke="rgba(59,130,246,0.12)" stroke-width="1"/>
+        <line x1="520" y1="300" x2="750" y2="108" stroke="rgba(59,130,246,0.12)" stroke-width="1"/>
+        <line x1="520" y1="300" x2="125" y2="300" stroke="rgba(0,201,167,0.12)" stroke-width="1"/>
+        <line x1="520" y1="300" x2="915" y2="300" stroke="rgba(0,201,167,0.12)" stroke-width="1"/>
+        <line x1="520" y1="300" x2="290" y2="492" stroke="rgba(129,140,248,0.12)" stroke-width="1"/>
+        <line x1="520" y1="300" x2="750" y2="492" stroke="rgba(129,140,248,0.12)" stroke-width="1"/>
+
+        <!-- Cross connections -->
+        <line x1="310" y1="108" x2="125" y2="300" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <line x1="750" y1="108" x2="915" y2="300" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <line x1="125" y1="300" x2="290" y2="492" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <line x1="915" y1="300" x2="750" y2="492" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <line x1="310" y1="108" x2="750" y2="108" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+        <line x1="290" y1="492" x2="750" y2="492" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+
+        <!-- Animated data particles along lines -->
+        <circle r="3" fill="#3B82F6">
+          <animateMotion dur="4s" repeatCount="indefinite" path="M520,300 L310,108"/>
+        </circle>
+        <circle r="3" fill="#00C9A7">
+          <animateMotion dur="5s" repeatCount="indefinite" path="M520,300 L915,300"/>
+        </circle>
+        <circle r="2.5" fill="#818CF8">
+          <animateMotion dur="4.5s" repeatCount="indefinite" path="M520,300 L750,492"/>
+        </circle>
+        <circle r="2.5" fill="#3B82F6">
+          <animateMotion dur="3.5s" repeatCount="indefinite" path="M520,300 L125,300"/>
+        </circle>
+        <circle r="2" fill="#00C9A7">
+          <animateMotion dur="5.5s" repeatCount="indefinite" path="M520,300 L290,492"/>
+        </circle>
+        <circle r="2" fill="#818CF8">
+          <animateMotion dur="4.2s" repeatCount="indefinite" path="M520,300 L750,108"/>
+        </circle>
+
+        <!-- Center hub -->
+        <circle cx="520" cy="300" r="28" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.2)" stroke-width="1"/>
+        <circle cx="520" cy="300" r="8" fill="#3B82F6">
+          <animate attributeName="r" values="6;10;6" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="520" cy="300" r="18" fill="none" stroke="rgba(59,130,246,0.15)" stroke-width="1">
+          <animate attributeName="r" values="16;22;16" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Outer nodes -->
+        <circle cx="310" cy="108" r="5" fill="rgba(0,201,167,0.6)"/>
+        <circle cx="750" cy="108" r="5" fill="rgba(59,130,246,0.6)"/>
+        <circle cx="125" cy="300" r="5" fill="rgba(245,158,11,0.6)"/>
+        <circle cx="915" cy="300" r="5" fill="rgba(0,201,167,0.6)"/>
+        <circle cx="290" cy="492" r="5" fill="rgba(129,140,248,0.6)"/>
+        <circle cx="750" cy="492" r="5" fill="rgba(59,130,246,0.6)"/>
+      </svg>
+
+      <!-- Node labels -->
+      <div class="node-label nl-center">Rebillia + PayFabric</div>
+      <div class="node-label nl-1">Tokenized Vaulting</div>
+      <div class="node-label nl-2">Multi-Currency</div>
+      <div class="node-label nl-3">AI Governance</div>
+      <div class="node-label nl-4">Fraud Detection</div>
+      <div class="node-label nl-5">Lifecycle Billing</div>
+      <div class="node-label nl-6">Smart Dunning</div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-text">
+      <strong>Adaptive subscription logic</strong> meets <strong>enterprise payment infrastructure</strong>.<br>
+      One native integration. Infinite lifecycle possibilities.
+    </div>
+  </div>
+</div>
+</body>
+</html>

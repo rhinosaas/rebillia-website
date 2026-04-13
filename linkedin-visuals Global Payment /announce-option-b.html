@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcement Option B — Handshake / Bridge</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #060810; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px; background: #0a0e1a;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+.mesh {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 45%, rgba(59,130,246,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 20% 30%, rgba(0,201,167,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 80% 30%, rgba(59,130,246,0.05) 0%, transparent 50%);
+}
+
+/* Top section */
+.top {
+  position: relative; z-index: 2;
+  padding: 72px 80px 0;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; border-radius: 100px;
+  background: linear-gradient(135deg, rgba(0,201,167,0.1), rgba(59,130,246,0.1));
+  border: 1px solid rgba(59,130,246,0.15);
+  margin-bottom: 40px;
+}
+
+.badge-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #00C9A7, #60A5FA);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 48px; font-weight: 800;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.sub {
+  font-size: 17px; color: rgba(255,255,255,0.35);
+  line-height: 1.6; max-width: 600px; margin: 0 auto;
+}
+
+/* Center - Bridge visual */
+.bridge-section {
+  position: relative; z-index: 2;
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 0 80px;
+}
+
+.bridge {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  position: relative; gap: 0;
+}
+
+/* Logo blocks */
+.b-logo {
+  width: 260px; display: flex; flex-direction: column;
+  align-items: center; gap: 20px; position: relative; z-index: 3;
+}
+
+.b-logo-card {
+  width: 200px; height: 130px; border-radius: 24px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(20px);
+}
+
+.b-logo-card::before {
+  content: ''; position: absolute; inset: 0; border-radius: 24px; padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent 50%, rgba(255,255,255,0.03));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+
+.blc-left {
+  background: linear-gradient(135deg, rgba(0,201,167,0.08), rgba(0,201,167,0.02));
+  border: 1px solid rgba(0,201,167,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 50px rgba(0,201,167,0.05);
+  position: relative;
+}
+
+.blc-right {
+  background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(59,130,246,0.02));
+  border: 1px solid rgba(59,130,246,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 50px rgba(59,130,246,0.05);
+  position: relative;
+}
+
+.b-logo-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,0.5); text-align: center;
+}
+
+.b-logo-sublabel {
+  font-size: 11px; color: rgba(255,255,255,0.25);
+  text-align: center; max-width: 200px; line-height: 1.4;
+}
+
+/* Bridge connector */
+.bridge-connector {
+  width: 300px; height: 120px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Animated beam */
+.beam {
+  position: absolute; top: 50%; left: 0; right: 0;
+  height: 2px; transform: translateY(-50%);
+  background: linear-gradient(90deg,
+    rgba(0,201,167,0.4),
+    rgba(59,130,246,0.6),
+    rgba(129,140,248,0.6),
+    rgba(59,130,246,0.6),
+    rgba(0,201,167,0.4));
+  border-radius: 1px;
+}
+
+/* Traveling particle */
+.beam-particle {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 2px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  border-radius: 1px;
+  animation: travelRight 3s ease-in-out infinite;
+}
+
+.beam-particle-2 {
+  animation: travelLeft 3.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes travelRight {
+  0% { left: -40px; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 300px; opacity: 0; }
+}
+
+@keyframes travelLeft {
+  0% { right: -40px; left: auto; opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { right: 300px; left: auto; opacity: 0; }
+}
+
+/* Vertical data lines on beam */
+.beam-tick {
+  position: absolute; top: -20px;
+  width: 1px; height: 40px;
+  background: rgba(59,130,246,0.15);
+}
+
+.bridge-label {
+  position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.2); white-space: nowrap;
+}
+
+/* Bottom capabilities */
+.bottom {
+  position: relative; z-index: 2;
+  padding: 0 80px 64px;
+}
+
+.cap-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.cap {
+  padding: 24px; border-radius: 16px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.cap-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px; font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.cn-1 { color: #00C9A7; }
+.cn-2 { color: #3B82F6; }
+.cn-3 { color: #818CF8; }
+.cn-4 { color: #F59E0B; }
+
+.cap-label {
+  font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,0.5);
+}
+
+.cap-detail {
+  font-size: 11px; color: rgba(255,255,255,0.25);
+  margin-top: 4px;
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="mesh"></div>
+
+  <div class="top">
+    <div class="badge">
+      <div class="badge-text">Partnership Announcement</div>
+    </div>
+    <div class="headline">Now Integrated. Natively.</div>
+    <div class="sub">Rebillia's adaptive subscription platform now connects directly with Global Payments through PayFabric.</div>
+  </div>
+
+  <div class="bridge-section">
+    <div class="bridge">
+      <div class="b-logo">
+        <div class="b-logo-card blc-left">
+          <img src="../logo.png" alt="Rebillia" style="height: 40px;">
+        </div>
+        <div class="b-logo-label">Rebillia</div>
+        <div class="b-logo-sublabel">Adaptive Subscription Control Plane</div>
+      </div>
+
+      <div class="bridge-connector">
+        <div class="beam"></div>
+        <div class="beam-particle"></div>
+        <div class="beam-particle beam-particle-2"></div>
+        <div class="beam-tick" style="left: 25%"></div>
+        <div class="beam-tick" style="left: 50%"></div>
+        <div class="beam-tick" style="left: 75%"></div>
+        <div class="bridge-label">Native Integration</div>
+      </div>
+
+      <div class="b-logo">
+        <div class="b-logo-card blc-right">
+          <img src="../gp-logo.svg" alt="Global Payments" style="height: 36px;">
+        </div>
+        <div class="b-logo-label">Global Payments</div>
+        <div class="b-logo-sublabel">Enterprise Payment Infrastructure via PayFabric</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="cap-row">
+      <div class="cap">
+        <div class="cap-num cn-1">100+</div>
+        <div class="cap-label">Currencies</div>
+        <div class="cap-detail">Global processing</div>
+      </div>
+      <div class="cap">
+        <div class="cap-num cn-2">6</div>
+        <div class="cap-label">Dimensions</div>
+        <div class="cap-detail">Component-based billing</div>
+      </div>
+      <div class="cap">
+        <div class="cap-num cn-3">0ms</div>
+        <div class="cap-label">Cancellations</div>
+        <div class="cap-detail">Evolve, don't cancel</div>
+      </div>
+      <div class="cap">
+        <div class="cap-num cn-4">24/7</div>
+        <div class="cap-label">Fraud Detection</div>
+        <div class="cap-detail">Real-time monitoring</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

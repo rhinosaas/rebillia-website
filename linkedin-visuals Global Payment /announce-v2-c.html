@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V2-C — Bold Blocky / Startup Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #111; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px;
+  background: #0f172a;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 80px;
+}
+
+/* Large colored accent blocks */
+.block {
+  position: absolute; border-radius: 32px;
+}
+.block-1 {
+  width: 500px; height: 500px;
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  top: -200px; right: -100px;
+  transform: rotate(15deg);
+  opacity: 0.15;
+}
+.block-2 {
+  width: 350px; height: 350px;
+  background: linear-gradient(135deg, #00C9A7, #059669);
+  bottom: -120px; left: -60px;
+  transform: rotate(-10deg);
+  opacity: 0.12;
+}
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  height: 100%;
+}
+
+/* Top: badge + logos in one line */
+.top-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: auto;
+}
+
+.badge {
+  padding: 10px 20px; border-radius: 10px;
+  background: rgba(59,130,246,0.15);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: #60A5FA; letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo-row {
+  display: flex; align-items: center; gap: 16px;
+}
+.logo-row img { height: 30px; }
+.logo-row .plus {
+  font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.2);
+}
+
+/* Center: massive headline */
+.center {
+  display: flex; flex-direction: column;
+  justify-content: center; flex: 1;
+}
+
+.headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 72px; font-weight: 800;
+  color: #fff; line-height: 1.0;
+  letter-spacing: -3px;
+  margin-bottom: 32px;
+}
+
+.headline .blue {
+  color: #60A5FA;
+}
+
+.headline .teal {
+  color: #2DD4BF;
+}
+
+.desc {
+  font-size: 20px; color: rgba(255,255,255,0.45);
+  line-height: 1.6; max-width: 600px;
+}
+
+/* Bottom: 4 stat blocks */
+.stats {
+  display: flex; gap: 2px;
+  margin-top: auto;
+}
+
+.stat {
+  flex: 1; padding: 28px;
+  background: rgba(255,255,255,0.04);
+  text-align: center;
+}
+
+.stat:first-child { border-radius: 16px 0 0 16px; }
+.stat:last-child { border-radius: 0 16px 16px 0; }
+
+.stat-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 700; color: #fff;
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="block block-1"></div>
+  <div class="block block-2"></div>
+
+  <div class="content">
+    <div class="top-row">
+      <div class="badge">New Partnership</div>
+      <div class="logo-row">
+        <img src="../logo.png" alt="Rebillia">
+        <div class="plus">+</div>
+        <img src="../gp-logo.svg" alt="Global Payments">
+      </div>
+    </div>
+
+    <div class="center">
+      <div class="headline">
+        <span class="blue">Adaptive</span> billing.<br>
+        <span class="teal">World-class</span> payments.<br>
+        One integration.
+      </div>
+      <div class="desc">Rebillia + Global Payments through PayFabric. Programmable subscription infrastructure meets world-class payment processing.</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Vaulting</div>
+        <div class="stat-value">Tokenized</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Currencies</div>
+        <div class="stat-value">100+ supported</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Fraud</div>
+        <div class="stat-value">Real-time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Governance</div>
+        <div class="stat-value">AI-ready</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

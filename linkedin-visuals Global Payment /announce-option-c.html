@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcement Option C — Minimal / Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #060810; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px;
+  background: linear-gradient(180deg, #0a0e1a 0%, #0d1225 40%, #0a0e1a 100%);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+
+/* Very subtle ambient glow */
+.glow {
+  position: absolute;
+  width: 800px; height: 800px;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 60%);
+  border-radius: 50%;
+}
+
+/* Thin horizontal rules for structure */
+.h-rule {
+  position: absolute; left: 80px; right: 80px;
+  height: 1px; background: rgba(255,255,255,0.04);
+}
+.h-rule-1 { top: 200px; }
+.h-rule-2 { bottom: 280px; }
+
+.content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  padding: 80px;
+}
+
+/* Tiny label */
+.micro-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  margin-bottom: 64px;
+}
+
+/* Logo lockup - large, centered, breathing room */
+.lockup {
+  display: flex; align-items: center; gap: 40px;
+  margin-bottom: 72px;
+}
+
+.lockup-logo {
+  padding: 36px 48px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.lockup-x {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px; font-weight: 300;
+  color: rgba(255,255,255,0.15);
+}
+
+/* Big statement */
+.statement {
+  font-family: 'Outfit', sans-serif;
+  font-size: 56px; font-weight: 800;
+  color: #fff; line-height: 1.1;
+  margin-bottom: 28px;
+  letter-spacing: -1px;
+}
+
+.statement em {
+  font-style: normal;
+  background: linear-gradient(135deg, #3B82F6 0%, #818CF8 50%, #3B82F6 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.desc {
+  font-size: 18px; color: rgba(255,255,255,0.35);
+  line-height: 1.7; max-width: 580px;
+  margin-bottom: 64px;
+}
+
+/* Bottom detail line */
+.detail-line {
+  display: flex; align-items: center; gap: 32px;
+}
+
+.detail-item {
+  display: flex; align-items: center; gap: 10px;
+}
+
+.detail-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+}
+
+.dd-teal { background: #00C9A7; box-shadow: 0 0 8px rgba(0,201,167,0.4); }
+.dd-blue { background: #3B82F6; box-shadow: 0 0 8px rgba(59,130,246,0.4); }
+.dd-purple { background: #818CF8; box-shadow: 0 0 8px rgba(129,140,248,0.4); }
+.dd-amber { background: #F59E0B; box-shadow: 0 0 8px rgba(245,158,11,0.4); }
+
+.detail-text {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.4);
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="glow"></div>
+  <div class="h-rule h-rule-1"></div>
+  <div class="h-rule h-rule-2"></div>
+
+  <div class="content">
+    <div class="micro-label">Partnership Announcement</div>
+
+    <div class="lockup">
+      <div class="lockup-logo">
+        <img src="../logo.png" alt="Rebillia" style="height: 48px;">
+      </div>
+      <div class="lockup-x">+</div>
+      <div class="lockup-logo">
+        <img src="../gp-logo.svg" alt="Global Payments" style="height: 42px;">
+      </div>
+    </div>
+
+    <div class="statement">Native Integration.<br><em>Now Live.</em></div>
+
+    <div class="desc">Enterprise-grade payment processing through Global Payments, embedded directly into Rebillia's adaptive subscription control plane.</div>
+
+    <div class="detail-line">
+      <div class="detail-item">
+        <div class="detail-dot dd-teal"></div>
+        <div class="detail-text">Tokenized Vaulting</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-dot dd-blue"></div>
+        <div class="detail-text">Multi-Currency</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-dot dd-amber"></div>
+        <div class="detail-text">Real-Time Fraud</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-dot dd-purple"></div>
+        <div class="detail-text">AI-Ready Governance</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

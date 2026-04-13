@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcement Option E — Split Reveal</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #060810; font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px; height: 1200px; background: #0a0e1a;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+/* Two-tone background */
+.bg-left {
+  position: absolute; top: 0; left: 0; bottom: 0; width: 50%;
+  background:
+    linear-gradient(180deg, rgba(0,201,167,0.03) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(0,201,167,0.02) 0%, transparent 40%);
+}
+
+.bg-right {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 50%;
+  background:
+    linear-gradient(180deg, rgba(59,130,246,0.03) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(59,130,246,0.02) 0%, transparent 40%);
+}
+
+/* Center divider */
+.divider {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(255,255,255,0.06) 20%,
+    rgba(59,130,246,0.15) 50%,
+    rgba(255,255,255,0.06) 80%,
+    transparent 100%);
+  z-index: 3;
+}
+
+/* Divider glow */
+.divider::after {
+  content: '';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 80px; height: 80px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+}
+
+/* Top badge */
+.top-badge {
+  position: relative; z-index: 4;
+  display: flex; justify-content: center;
+  padding-top: 64px; padding-bottom: 24px;
+}
+
+.badge-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 24px; border-radius: 100px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.badge-live {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #00C9A7; box-shadow: 0 0 10px rgba(0,201,167,0.5);
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.5; } 50% { opacity: 1; }
+}
+
+.badge-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+}
+
+/* Split content */
+.split {
+  position: relative; z-index: 2;
+  flex: 1; display: flex;
+}
+
+.half {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 60px;
+}
+
+/* Logo boxes */
+.logo-box {
+  width: 180px; height: 120px; border-radius: 24px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 32px; position: relative;
+}
+
+.lb-left {
+  background: linear-gradient(135deg, rgba(0,201,167,0.06), rgba(0,201,167,0.02));
+  border: 1px solid rgba(0,201,167,0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 40px rgba(0,201,167,0.04);
+}
+
+.lb-right {
+  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(59,130,246,0.02));
+  border: 1px solid rgba(59,130,246,0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 40px rgba(59,130,246,0.04);
+}
+
+.half-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px; font-weight: 700;
+  color: #fff; margin-bottom: 12px;
+}
+
+.half-role {
+  font-size: 14px; color: rgba(255,255,255,0.35);
+  text-align: center; line-height: 1.5;
+  max-width: 280px; margin-bottom: 36px;
+}
+
+/* Feature list */
+.features {
+  display: flex; flex-direction: column; gap: 12px;
+  width: 100%; max-width: 300px;
+}
+
+.feat {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px; border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.feat-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+
+.fd-teal { background: #00C9A7; box-shadow: 0 0 6px rgba(0,201,167,0.4); }
+.fd-blue { background: #3B82F6; box-shadow: 0 0 6px rgba(59,130,246,0.4); }
+
+.feat-text {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Bottom center headline */
+.bottom {
+  position: relative; z-index: 4;
+  text-align: center;
+  padding: 24px 80px 64px;
+}
+
+.bottom-headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 40px; font-weight: 800;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.bottom-headline span {
+  background: linear-gradient(135deg, #00C9A7, #3B82F6, #60A5FA);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: gradShift 5s ease-in-out infinite;
+}
+
+@keyframes gradShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.bottom-sub {
+  font-size: 15px; color: rgba(255,255,255,0.3);
+}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="bg-left"></div>
+  <div class="bg-right"></div>
+  <div class="divider"></div>
+
+  <div class="top-badge">
+    <div class="badge-pill">
+      <div class="badge-live"></div>
+      <div class="badge-label">Partnership Announcement</div>
+    </div>
+  </div>
+
+  <div class="split">
+    <!-- Left: Rebillia -->
+    <div class="half">
+      <div class="logo-box lb-left">
+        <img src="../logo.png" alt="Rebillia" style="height: 38px;">
+      </div>
+      <div class="half-name">Rebillia</div>
+      <div class="half-role">Adaptive Subscription<br>Control Plane</div>
+      <div class="features">
+        <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">Component-Based Billing</div></div>
+        <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">AI-Ready Orchestration</div></div>
+        <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">Lifecycle Management</div></div>
+        <div class="feat"><div class="feat-dot fd-teal"></div><div class="feat-text">Shared Governance</div></div>
+      </div>
+    </div>
+
+    <!-- Right: Global Payments -->
+    <div class="half">
+      <div class="logo-box lb-right">
+        <img src="../gp-logo.svg" alt="Global Payments" style="height: 34px;">
+      </div>
+      <div class="half-name">Global Payments</div>
+      <div class="half-role">World-Class Payment<br>Infrastructure via PayFabric</div>
+      <div class="features">
+        <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">Tokenized Vaulting</div></div>
+        <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">Multi-Currency Processing</div></div>
+        <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">Real-Time Fraud Detection</div></div>
+        <div class="feat"><div class="feat-dot fd-blue"></div><div class="feat-text">World-Class Security</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-headline">Now Natively Integrated.<br><span>Built for the AI Era.</span></div>
+    <div class="bottom-sub">rebillia.com</div>
+  </div>
+</div>
+</body>
+</html>

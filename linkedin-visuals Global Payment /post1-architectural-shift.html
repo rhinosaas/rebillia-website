@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 1 — Architectural Shift</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0a0f;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.canvas {
+  width: 1200px;
+  height: 1200px;
+  background: #0a0e1a;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stripe-style gradient mesh */
+.gradient-mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(59,130,246,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(0,201,167,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(99,102,241,0.04) 0%, transparent 50%);
+}
+
+/* Content */
+.top-section {
+  position: relative;
+  z-index: 2;
+  padding: 72px 80px 0;
+}
+
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3B82F6;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  max-width: 600px;
+}
+
+.title span {
+  background: linear-gradient(135deg, #60A5FA, #818CF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Isometric 3D architecture */
+.iso-scene {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 80px;
+}
+
+.iso-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: perspective(1200px) rotateX(12deg) rotateY(-8deg);
+  transform-style: preserve-3d;
+}
+
+/* Top platform - Rebillia */
+.platform {
+  position: absolute;
+  border-radius: 20px;
+  padding: 32px 36px;
+  backdrop-filter: blur(20px);
+}
+
+.platform-top {
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  background: linear-gradient(135deg, rgba(0,201,167,0.12) 0%, rgba(0,201,167,0.04) 100%);
+  border: 1px solid rgba(0,201,167,0.2);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(0,201,167,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  transform: translateZ(60px);
+}
+
+.platform-bottom {
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0.04) 100%);
+  border: 1px solid rgba(59,130,246,0.2);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(59,130,246,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  transform: translateZ(0px);
+}
+
+.plat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.platform-top .plat-label { color: rgba(0,201,167,0.7); }
+.platform-bottom .plat-label { color: rgba(96,165,250,0.7); }
+
+.plat-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.platform-top .pill {
+  background: rgba(0,201,167,0.1);
+  border: 1px solid rgba(0,201,167,0.15);
+  color: rgba(0,201,167,0.9);
+}
+
+.platform-bottom .pill {
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.15);
+  color: rgba(96,165,250,0.9);
+}
+
+.pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.platform-top .pill-dot { background: #00C9A7; }
+.platform-bottom .pill-dot { background: #3B82F6; }
+
+/* Connector beams between platforms */
+.connectors {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(30px);
+  display: flex;
+  gap: 60px;
+}
+
+.connector {
+  width: 2px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+  background: rgba(255,255,255,0.04);
+}
+
+.connector::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, transparent, #3B82F6, transparent);
+  animation: dataFlow 2s ease-in-out infinite;
+}
+
+.connector:nth-child(2)::after { animation-delay: 0.5s; background: linear-gradient(180deg, transparent, #00C9A7, transparent); }
+.connector:nth-child(3)::after { animation-delay: 1s; }
+.connector:nth-child(4)::after { animation-delay: 1.5s; background: linear-gradient(180deg, transparent, #818CF8, transparent); }
+
+@keyframes dataFlow {
+  0% { top: -50%; }
+  100% { top: 150%; }
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px 60px;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-x {
+  font-size: 18px;
+  color: rgba(255,255,255,0.15);
+  font-weight: 200;
+}
+
+.footer-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.3);
+}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="gradient-mesh"></div>
+
+  <div class="top-section">
+    <div class="label">Architectural Shift</div>
+    <div class="title">Enterprise Payments Meet<br><span>Adaptive Subscription Logic</span></div>
+  </div>
+
+  <div class="iso-scene">
+    <div class="iso-container">
+      <!-- Top: Rebillia control plane -->
+      <div class="platform platform-top">
+        <div class="plat-label">Adaptive Subscription Control Plane</div>
+        <div class="plat-title">Rebillia</div>
+        <div class="pills">
+          <div class="pill"><div class="pill-dot"></div>Address</div>
+          <div class="pill"><div class="pill-dot"></div>Money</div>
+          <div class="pill"><div class="pill-dot"></div>Product</div>
+          <div class="pill"><div class="pill-dot"></div>Customer</div>
+          <div class="pill"><div class="pill-dot"></div>Channel</div>
+          <div class="pill"><div class="pill-dot"></div>Time</div>
+        </div>
+      </div>
+
+      <!-- Data flow connectors -->
+      <div class="connectors">
+        <div class="connector"></div>
+        <div class="connector"></div>
+        <div class="connector"></div>
+        <div class="connector"></div>
+      </div>
+
+      <!-- Bottom: Global Payments -->
+      <div class="platform platform-bottom">
+        <div class="plat-label">Enterprise Payment Infrastructure</div>
+        <div class="plat-title">Global Payments via PayFabric</div>
+        <div class="pills">
+          <div class="pill"><div class="pill-dot"></div>Tokenized Vaulting</div>
+          <div class="pill"><div class="pill-dot"></div>Multi-Currency</div>
+          <div class="pill"><div class="pill-dot"></div>Real-Time Fraud</div>
+          <div class="pill"><div class="pill-dot"></div>Governance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logos">
+      <img src="../logo.png" alt="Rebillia" style="height: 34px;">
+      <div class="footer-x">+</div>
+      <img src="../gp-logo.svg" alt="Global Payments" style="height: 30px;">
+    </div>
+    <div class="footer-tagline">The AI era demands adaptive infrastructure</div>
+  </div>
+</div>
+
+</body>
+</html>
