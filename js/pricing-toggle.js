@@ -28,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
       el.textContent = isAnnual ? '/yr' : '/mo';
     });
 
+    document.querySelectorAll('[data-plan-monthly][data-plan-annual]').forEach(el => {
+      const planId = isAnnual
+        ? el.getAttribute('data-plan-annual')
+        : el.getAttribute('data-plan-monthly');
+      const href = el.getAttribute('href');
+      if (href) {
+        el.setAttribute('href', href.replace(/plan_id=\d+/, 'plan_id=' + planId));
+      }
+    });
+
     // Show/hide annual savings badges
     document.querySelectorAll('.pricing-card__savings').forEach(el => {
       el.style.display = isAnnual ? 'inline-block' : 'none';
