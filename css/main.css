@@ -18,3 +18,9 @@
 @import url('illustrations.css');
 @import url('animations.css');
 @import url('responsive.css');
+
+/* Hide links to pages that aren't ready yet. Remove this block to restore. */
+a[href="bigcommerce.html"],
+a[href="blog.html"] {
+  display: none !important;
+}
