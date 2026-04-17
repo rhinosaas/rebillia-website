@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News &amp; Press - Every Mention of Rebillia | Rebillia</title>
+  <meta name="description" content="A complete index of press releases, articles, podcasts, case studies, reviews, and media mentions about Rebillia - the adaptive subscription billing infrastructure.">
+  <link rel="canonical" href="https://www.rebillia.com/news">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rebillia.com/news">
+  <meta property="og:title" content="News &amp; Press - Every Mention of Rebillia">
+  <meta property="og:description" content="Press releases, podcasts, interviews, case studies, and reviews featuring Rebillia.">
+  <meta property="og:image" content="https://www.rebillia.com/og-default.png">
+  <meta property="og:site_name" content="Rebillia">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="News &amp; Press - Every Mention of Rebillia">
+  <meta name="twitter:description" content="Press releases, podcasts, interviews, case studies, and reviews featuring Rebillia.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.rebillia.com/"},
+      {"@type":"ListItem","position":2,"name":"News","item":"https://www.rebillia.com/news"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    /* ── News Card ─────────────────────────────────────────────────────── */
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      text-decoration: none;
+      color: inherit;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+      height: 100%;
+    }
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: rgba(92,46,145,0.25);
+    }
+    .news-card__source {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-3);
+    }
+    .news-card__source-dot {
+      width: 6px; height: 6px; border-radius: 9999px; background: var(--color-primary);
+    }
+    .news-card__title {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      color: var(--color-text);
+      line-height: 1.35;
+      margin-bottom: var(--space-3);
+    }
+    .news-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-4);
+      flex: 1;
+    }
+    .news-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--color-primary);
+    }
+    .news-card__type-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 9999px;
+      background: rgba(92,46,145,0.12);
+      color: var(--color-primary);
+      margin-left: auto;
+    }
+    .news-section-header {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    .news-section-header h2 {
+      margin: 0;
+    }
+    .news-section-header__count {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    /* ── Card Overlay Preview (hover fills the card) ───────────────────── */
+    .news-card { position: relative; overflow: hidden; }
+    .news-card__preview {
+      position: absolute;
+      inset: 0;
+      background: #0b0b14;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .news-card:hover .news-card__preview { opacity: 1; }
+    .news-card__preview img.news-card__preview-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .news-card__preview--logo {
+      background: #ffffff;
+    }
+    .news-card__preview--logo img.news-card__preview-img {
+      object-fit: contain;
+      padding: 10%;
+    }
+    /* Hide the domain fallback when a custom logo is used, so it doesn't sit behind a partially-transparent logo. */
+    .news-card__preview--logo .news-card__preview-fallback { display: none; }
+    .news-card__preview--video::after {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 60px; height: 60px;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 9999px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M8 5v14l11-7z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: 58% 50%;
+      background-size: 26px 26px;
+      z-index: 3;
+    }
+    .news-card__preview-fallback {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.92);
+      padding: 20px;
+      z-index: 1;
+    }
+    .news-card__preview-fallback img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+      border-radius: 14px;
+      margin: 0 auto 12px;
+      display: block;
+    }
+    .news-card__preview-fallback-domain {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    @media (hover: none), (max-width: 768px) {
+      .news-card__preview { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+        <img src="logo-dark.png" alt="Rebillia" width="160" height="46">
+      </a>
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar__nav">
+        <div class="navbar__dropdown">
+          <a href="solutions.html" class="navbar__link">
+            Platform
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" style="min-width: 300px;">
+            <div class="navbar__dropdown-heading">Billing Patterns</div>
+            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="navbar__dropdown-item">Usage-Based Billing</a>
+            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">Recurring Services</a>
+            <a href="solutions.html#membership" class="navbar__dropdown-item">Membership &amp; Access</a>
+            <a href="solutions.html#api-first" class="navbar__dropdown-item">API-First Billing</a>
+            <div class="navbar__dropdown-divider"></div>
+            <div class="navbar__dropdown-heading">Integrations</div>
+            <a href="bigcommerce.html" class="navbar__dropdown-item">BigCommerce</a>
+            <a href="woocommerce.html" class="navbar__dropdown-item">WooCommerce (Coming Soon)</a>
+            <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">Payment Gateways</a>
+            <div class="navbar__dropdown-divider"></div>
+            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">View All Platform Capabilities &rarr;</a>
+          </div>
+        </div>
+        <a href="features.html" class="navbar__link">Capabilities</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="developers.html" class="navbar__link">Developers</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">
+            Resources
+            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="customers.html" class="navbar__dropdown-item">Customers &amp; Case Studies</a>
+            <a href="partnerships.html" class="navbar__dropdown-item">Partnerships</a>
+            <a href="news.html" class="navbar__dropdown-item">News &amp; Press</a>
+            <a href="blog.html" class="navbar__dropdown-item">Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class="navbar__actions">
+        <a href="https://admin.rebillia.com" class="navbar__login" target="_blank" rel="noopener">Login</a>
+        <a href="pricing.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="page-wrapper">
+
+    <!-- HERO -->
+    <section class="hero hero--light hero--center">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">NEWS &amp; PRESS</span>
+          <h1 class="hero__title">Every Mention of Rebillia, in One Place</h1>
+          <p class="hero__subtitle">Press releases, articles, podcasts, case studies, and independent reviews about Rebillia and the people building it. If we missed one, <a href="contact.html" style="color:var(--color-primary); font-weight:600;">let us know</a>.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── PRESS RELEASES ────────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="news-section-header">
+          <span class="section-label">PRESS RELEASES</span>
+          <h2>Press Releases</h2>
+          <span class="news-section-header__count">2 releases</span>
+        </div>
+        <div class="grid grid-2 reveal-stagger">
+
+          <a href="https://www.wfxg.com/online_features/press_releases/rebillia-and-global-payments-join-forces-to-power-ai-subscription-billing/article_57922d59-ddf5-5e24-96f4-71158b8ca808.html" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              WFXG &middot; April 2026
+              <span class="news-card__type-badge">Press Release</span>
+            </div>
+            <h3 class="news-card__title">Rebillia and Global Payments Join Forces to Power AI-Subscription Billing</h3>
+            <p class="news-card__text">Rebillia announces a strategic partnership with Global Payments, launching RebilliaPay - the preferred payment gateway powered by Global Payments' PayFabric - creating a single turnkey solution for subscription revenue.</p>
+            <span class="news-card__cta">Read on WFXG &rarr;</span>
+          </a>
+
+          <a href="https://markets.financialcontent.com/stocks/article/prunderground-2026-4-1-rebillia-and-global-payments-join-forces-to-power-ai-subscription-billing" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              FinancialContent &middot; April 2026
+              <span class="news-card__type-badge">Press Release</span>
+            </div>
+            <h3 class="news-card__title">Rebillia and Global Payments Join Forces to Power AI-Subscription Billing</h3>
+            <p class="news-card__text">Syndicated coverage of the Rebillia × Global Payments partnership announcement across the FinancialContent network of business and finance publications.</p>
+            <span class="news-card__cta">Read on FinancialContent &rarr;</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CASE STUDIES ──────────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="news-section-header">
+          <span class="section-label">CASE STUDIES</span>
+          <h2>Case Studies</h2>
+          <span class="news-section-header__count">2 studies</span>
+        </div>
+        <div class="grid grid-2 reveal-stagger">
+
+          <a href="https://www.insureshield.com/us/en/resources/customer-stories/rebillia-platform-strategic-partnership-case-study.html" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              InsureShield (UPS Capital)
+              <span class="news-card__type-badge">Case Study</span>
+            </div>
+            <h3 class="news-card__title">Rebillia Platform Strategic Partnership Case Study</h3>
+            <p class="news-card__text">How Rebillia connected with InsureShield through FinTech Atlanta's "Run it by the Buyers" program and built an API integration that embeds multi-carrier shipping insurance directly into the Rebillia subscription workflow.</p>
+            <span class="news-card__cta">Read on InsureShield &rarr;</span>
+          </a>
+
+          <a href="https://fintechatlanta.org/wp-content/uploads/2025/01/FTA-Case-Study-UPS-Capital-x-Rebillia-01-07-25.pdf" target="_blank" rel="noopener noreferrer" class="news-card" data-preview-image="logos/ups.svg">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              FinTech Atlanta &middot; January 2025
+              <span class="news-card__type-badge">Case Study (PDF)</span>
+            </div>
+            <h3 class="news-card__title">FTA Case Study: UPS Capital × Rebillia</h3>
+            <p class="news-card__text">Official FinTech Atlanta case study documenting the UPS Capital × Rebillia partnership story - from "Run it by the Buyers" pitch to a production API integration delivering embedded shipping insurance to subscription merchants.</p>
+            <span class="news-card__cta">Download the PDF &rarr;</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── PODCASTS & VIDEOS ─────────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="news-section-header">
+          <span class="section-label">PODCASTS &amp; VIDEOS</span>
+          <h2>Podcasts and Videos</h2>
+          <span class="news-section-header__count">16 entries</span>
+        </div>
+        <div class="grid grid-3 reveal-stagger">
+
+          <a href="https://www.youtube.com/watch?v=RNQX98VqLho" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Predictable Revenue
+              <span class="news-card__type-badge">Podcast Video</span>
+            </div>
+            <h3 class="news-card__title">Built from Frustration with Moran Mizrahi | Predictable Revenue Podcast</h3>
+            <p class="news-card__text">The video version of Predictable Revenue Podcast Ep. 385 - Moran Mizrahi shares Rebillia's origin story and how merchant-side frustration shaped an adaptive subscription billing platform.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://youtu.be/SsdZN_9QEHM" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube
+              <span class="news-card__type-badge">Founder Video</span>
+            </div>
+            <h3 class="news-card__title">Inside Rebillia Platform with Moran Mizrahi and Miles Hischier</h3>
+            <p class="news-card__text">An inside look at the Rebillia platform with COO Moran Mizrahi and Miles Hischier - product walk-through, philosophy, and where the platform is going.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://youtu.be/eAPMlZbGHb0" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube
+              <span class="news-card__type-badge">Podcast Video</span>
+            </div>
+            <h3 class="news-card__title">#05 - The Subscription Model Is Dead - Here's What Comes Next, Ft. Moran Mizrahi</h3>
+            <p class="news-card__text">Moran Mizrahi makes the case that the static subscription model is over, and explains what adaptive, AI-driven monetization looks like for the next generation of recurring-revenue businesses.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=J-MqnWBDUA8" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube
+              <span class="news-card__type-badge">Founder Video</span>
+            </div>
+            <h3 class="news-card__title">AI, Agility, and the Subscription Economy - Moran Mizrahi on Building Rebillia</h3>
+            <p class="news-card__text">Moran Mizrahi on building Rebillia - exploring how AI agility and the subscription economy intersect to define the next chapter of monetization infrastructure.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=2mEWfh-vnJw" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube
+              <span class="news-card__type-badge">Talk</span>
+            </div>
+            <h3 class="news-card__title">Stop the Churn! Your Subscription Model Might Be Killing Growth.</h3>
+            <p class="news-card__text">A talk on why static subscription models stall growth - and how adaptive billing, smart dunning, and AI-driven retention can reverse churn for subscription businesses.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=2shf6khRCrA" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Bruce Wong
+              <span class="news-card__type-badge">Podcast Video</span>
+            </div>
+            <h3 class="news-card__title">Ep 40: Moran Mizrahi, Co-Founder &amp; COO, Rebillia Platform</h3>
+            <p class="news-card__text">Episode 40 of Bruce Wong's podcast - a conversation with Rebillia Co-Founder and COO Moran Mizrahi about building adaptive subscription infrastructure and the realities of scaling a platform company.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=jRIH-cC8bRA" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Boost Numbers
+              <span class="news-card__type-badge">Podcast Video</span>
+            </div>
+            <h3 class="news-card__title">Boost Numbers Episode 6 - Moran Mizrahi, Rebillia Platform</h3>
+            <p class="news-card__text">Boost Numbers Ep. 6 with host Bill Bockman - Moran Mizrahi on Rebillia Platform, the subscription commerce landscape, and the operating metrics that actually matter for recurring-revenue businesses.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=9DRBOv-5hwU" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Alexander Mihalcea
+              <span class="news-card__type-badge">Podcast Video</span>
+            </div>
+            <h3 class="news-card__title">Automating Growth &amp; Acquiring 100 New Clients | Podcast with Moran Mizrahi #2</h3>
+            <p class="news-card__text">Part two of Alexander Mihalcea's podcast series with Moran Mizrahi - automating growth, acquiring the first 100 clients, and the systems behind scalable subscription businesses.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=_cXvrHxXlL8&t=880s" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; The Future-Proof Leader
+              <span class="news-card__type-badge">Podcast Video</span>
+            </div>
+            <h3 class="news-card__title">The "Anti-Perfectionist" COO: How Knowing Your Weakness Drives Success w/ Moran Mizrahi</h3>
+            <p class="news-card__text">The Future-Proof Leader podcast with Moran Mizrahi - on the "anti-perfectionist" approach to being a COO and how self-awareness about weaknesses becomes a driver of leadership and operational success.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/shorts/-mqN8JKNpq0" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Miles Hischier
+              <span class="news-card__type-badge">Short</span>
+            </div>
+            <h3 class="news-card__title">Moran Mizrahi on Building a Strong Team at Rebillia Platform</h3>
+            <p class="news-card__text">A short clip from Miles Hischier's series with Moran Mizrahi on what it takes to build and lead a strong team at Rebillia Platform.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/shorts/RuVwQl61XSM" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Predictable Revenue
+              <span class="news-card__type-badge">Short</span>
+            </div>
+            <h3 class="news-card__title">Check out The Predictable Revenue Podcast</h3>
+            <p class="news-card__text">A short promo for The Predictable Revenue Podcast featuring Moran Mizrahi and the conversation about building Rebillia from real merchant frustration.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/shorts/9rkEfT1tq2A" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Miles Hischier
+              <span class="news-card__type-badge">Short</span>
+            </div>
+            <h3 class="news-card__title">Moran Mizrahi's Journey as COO at Rebillia Platform</h3>
+            <p class="news-card__text">Miles Hischier and Moran Mizrahi in a short clip on the COO journey at Rebillia Platform - leadership lessons and the path through building adaptive subscription infrastructure.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/shorts/9Kqzo8lYgWk" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Enhance AI Partners
+              <span class="news-card__type-badge">Short</span>
+            </div>
+            <h3 class="news-card__title">The Subscription Problem No One Talks About | Moran Mizrahi (Rebillia)</h3>
+            <p class="news-card__text">Enhance AI Partners clip with Moran Mizrahi on the subscription problem no one talks about - and how Rebillia's adaptive, AI-driven approach solves it.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/shorts/hOtqAXkNfI4" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Miles Hischier
+              <span class="news-card__type-badge">Short</span>
+            </div>
+            <h3 class="news-card__title">How to Follow Rebillia &amp; New Job Openings</h3>
+            <p class="news-card__text">A short from Miles Hischier featuring Moran Mizrahi on how to follow Rebillia's work and a look at the latest job openings on the team.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://www.youtube.com/shorts/AOQOxWuijoI" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              YouTube &middot; Cypher
+              <span class="news-card__type-badge">Short</span>
+            </div>
+            <h3 class="news-card__title">Today's Customers Break Your Subscription Model</h3>
+            <p class="news-card__text">A short clip from Cypher featuring Moran Mizrahi on why today's customers break traditional subscription models - and what adaptive, AI-driven billing looks like in response.</p>
+            <span class="news-card__cta">Watch on YouTube &rarr;</span>
+          </a>
+
+          <a href="https://music.amazon.co.jp/podcasts/51028eb6-655b-41d0-8b07-5522d4c6f807/episodes/5df3a0d8-7a54-46bf-8bc2-480e112d4696/the-predictable-revenue-podcast-385-built-from-frustration-with-moran-mizrahi" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              The Predictable Revenue Podcast
+              <span class="news-card__type-badge">Podcast (Audio)</span>
+            </div>
+            <h3 class="news-card__title">385: Built from Frustration with Moran Mizrahi - The Predictable Revenue Podcast</h3>
+            <p class="news-card__text">The Predictable Revenue Podcast interviews outbound sales leaders so listeners can learn directly from the people on the front lines. In Ep. 385, Moran Mizrahi joins to share Rebillia's origin story and the lessons of building a platform from real merchant frustration.</p>
+            <span class="news-card__cta">Listen on Amazon Music &rarr;</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── ARTICLES & MAGAZINES ──────────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="news-section-header">
+          <span class="section-label">ARTICLES &amp; MAGAZINES</span>
+          <h2>Articles &amp; Magazines</h2>
+          <span class="news-section-header__count">6 features</span>
+        </div>
+        <div class="grid grid-2 reveal-stagger">
+
+          <a href="https://voyageatl.com/interview/exploring-life-business-with-moran-mizrahi-of-rebillia/" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              VoyageATL
+              <span class="news-card__type-badge">Interview</span>
+            </div>
+            <h3 class="news-card__title">Exploring Life &amp; Business with Moran Mizrahi of Rebillia</h3>
+            <p class="news-card__text">A long-form VoyageATL interview with Moran Mizrahi covering Rebillia's journey, lessons from building in subscription commerce, and life as a founder in Atlanta.</p>
+            <span class="news-card__cta">Read the VoyageATL interview &rarr;</span>
+          </a>
+
+          <a href="https://www.atlantamagazine.com/article/charged-up/" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              Atlanta Magazine
+              <span class="news-card__type-badge">Magazine Feature</span>
+            </div>
+            <h3 class="news-card__title">Charged Up - Atlanta Magazine</h3>
+            <p class="news-card__text">Atlanta Magazine feature spotlighting Rebillia among the companies powering Atlanta's growing fintech and subscription-commerce scene.</p>
+            <span class="news-card__cta">Read in Atlanta Magazine &rarr;</span>
+          </a>
+
+          <a href="https://fintechatlanta.org/" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              FinTech Atlanta
+              <span class="news-card__type-badge">Program Feature</span>
+            </div>
+            <h3 class="news-card__title">FinTech Atlanta &middot; Run it by the Buyers</h3>
+            <p class="news-card__text">Rebillia presented at FinTech Atlanta's "Run it by the Buyers" program at UPS HQ - the program that catalyzed the Rebillia × InsureShield strategic partnership.</p>
+            <span class="news-card__cta">Visit FinTech Atlanta &rarr;</span>
+          </a>
+
+          <a href="https://livinginpeachtreecorners.com/2022/business/french-american-chamber/" target="_blank" rel="noopener noreferrer" class="news-card" data-preview="fallback">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              Peachtree Corners Magazine &middot; 2022
+              <span class="news-card__type-badge">Magazine Feature</span>
+            </div>
+            <h3 class="news-card__title">The French-American Chamber of Commerce Heads into its Second Year in Peachtree Corners</h3>
+            <p class="news-card__text">Peachtree Corners Magazine covers the France-Atlanta Evening in Tech at Georgia Tech, where Rebillia Platform pitched its adaptive subscription management software alongside the La French Tech startup community.</p>
+            <span class="news-card__cta">Read in Peachtree Corners Magazine &rarr;</span>
+          </a>
+
+          <a href="https://www.liftoffcompany.com/subscription-billing-moran-mizrahi/" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              Liftoff with Jeanniey Walden &middot; March 2026
+              <span class="news-card__type-badge">Interview</span>
+            </div>
+            <h3 class="news-card__title">How Moran Mizrahi and Rebillia Are Transforming Subscription Billing with AI</h3>
+            <p class="news-card__text">Liftoff Leading Voices interview by Jeanniey Walden with Moran Mizrahi on how Rebillia uses AI and adaptive logic to optimize revenue operations, reduce churn, and personalize customer experiences for SaaS, eCommerce, and AI-driven businesses.</p>
+            <span class="news-card__cta">Read on Liftoff &rarr;</span>
+          </a>
+
+          <a href="https://www.avalara.com/us/en/products/integrations/rebillia.html" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              Avalara
+              <span class="news-card__type-badge">Partner Listing</span>
+            </div>
+            <h3 class="news-card__title">Implement Avalara with Rebillia: fast, efficient, easy as 1-2-3</h3>
+            <p class="news-card__text">Avalara's official integration listing for Rebillia - centralize compliance obligations across every tax type, geography, and business model directly from Rebillia, with a three-step self-service onboarding flow.</p>
+            <span class="news-card__cta">View on Avalara &rarr;</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SOCIAL MEDIA & LINKEDIN ───────────────────────────────────────── -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="news-section-header">
+          <span class="section-label">SOCIAL &amp; LINKEDIN</span>
+          <h2>Social &amp; LinkedIn Mentions</h2>
+          <span class="news-section-header__count">7 posts</span>
+        </div>
+        <div class="grid grid-3 reveal-stagger">
+
+          <a href="https://www.linkedin.com/videos/cristina-talle_ecommerce-subscriptions-businessgrowth-activity-7308162179315216384-algw/" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              LinkedIn &middot; Cristina Talle
+              <span class="news-card__type-badge">Video Post</span>
+            </div>
+            <h3 class="news-card__title">Cristina Talle on Rebillia, Ecommerce &amp; Subscriptions</h3>
+            <p class="news-card__text">Cristina Talle's LinkedIn video discussing ecommerce, subscriptions, and business growth - with Rebillia featured in the conversation.</p>
+            <span class="news-card__cta">Watch on LinkedIn &rarr;</span>
+          </a>
+
+          <a href="https://www.linkedin.com/posts/enhance-ai-partners_ai-agility-and-the-subscription-economy-activity-7391215177054126081-KqDL" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              LinkedIn &middot; Enhance AI Partners
+              <span class="news-card__type-badge">Post</span>
+            </div>
+            <h3 class="news-card__title">AI Agility and the Subscription Economy</h3>
+            <p class="news-card__text">Enhance AI Partners' LinkedIn post on AI agility and the subscription economy, featuring Rebillia and the conversation with Yohan.</p>
+            <span class="news-card__cta">View on LinkedIn &rarr;</span>
+          </a>
+
+          <a href="https://x.com/onechrishanson/status/1785818181380063233" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              X (Twitter) &middot; Chris Hanson
+              <span class="news-card__type-badge">Post</span>
+            </div>
+            <h3 class="news-card__title">Chris Hanson on Rebillia</h3>
+            <p class="news-card__text">Chris Hanson's X post mentioning Rebillia and its role in the modern subscription / payments stack.</p>
+            <span class="news-card__cta">View on X &rarr;</span>
+          </a>
+
+          <a href="https://lnkd.in/p/eUMVFmDj" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              LinkedIn
+              <span class="news-card__type-badge">Post</span>
+            </div>
+            <h3 class="news-card__title">LinkedIn Mention &middot; eUMVFmDj</h3>
+            <p class="news-card__text">LinkedIn post mentioning Rebillia from a contact in the subscription / fintech community.</p>
+            <span class="news-card__cta">View on LinkedIn &rarr;</span>
+          </a>
+
+          <a href="https://lnkd.in/p/eUJSsajb" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              LinkedIn
+              <span class="news-card__type-badge">Post</span>
+            </div>
+            <h3 class="news-card__title">LinkedIn Mention &middot; eUJSsajb</h3>
+            <p class="news-card__text">LinkedIn post referencing Rebillia within the subscription billing and ecommerce conversation.</p>
+            <span class="news-card__cta">View on LinkedIn &rarr;</span>
+          </a>
+
+          <a href="https://lnkd.in/p/eix4wsmn" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              LinkedIn
+              <span class="news-card__type-badge">Post</span>
+            </div>
+            <h3 class="news-card__title">LinkedIn Mention &middot; eix4wsmn</h3>
+            <p class="news-card__text">LinkedIn post highlighting Rebillia in the context of subscription growth and recurring revenue best practices.</p>
+            <span class="news-card__cta">View on LinkedIn &rarr;</span>
+          </a>
+
+          <a href="https://lnkd.in/p/esVmcnGz" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-card__source">
+              <span class="news-card__source-dot"></span>
+              LinkedIn
+              <span class="news-card__type-badge">Post</span>
+            </div>
+            <h3 class="news-card__title">LinkedIn Mention &middot; esVmcnGz</h3>
+            <p class="news-card__text">LinkedIn post mentioning Rebillia from a partner, customer, or commentator in the subscription space.</p>
+            <span class="news-card__cta">View on LinkedIn &rarr;</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CTA ───────────────────────────────────────────────────────────── -->
+    <section class="cta-block cta-block--gradient reveal">
+      <div class="container">
+        <div class="cta-block__content">
+          <h2 class="cta-block__title">Writing about Rebillia?</h2>
+          <p class="cta-block__text">Press, podcasts, and analysts - reach out for executive interviews, demo access, partnership stories, or product details.</p>
+          <div class="cta-block__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg">Contact Press</a>
+            <a href="about.html" class="btn btn--ghost btn--lg">About Rebillia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <img src="logo.png" alt="Rebillia" width="140" height="40">
+          </div>
+          <p>Agent-native monetization infrastructure. Programmable pricing, autonomous retention, AI-driven experiments.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Solutions</h4>
+          <nav class="footer__links">
+            <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+            <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+            <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+            <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+            <a href="solutions.html#membership" class="footer__link">Membership</a>
+            <a href="solutions.html#api-first" class="footer__link">API-First</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__heading">Product</h4>
+          <nav class="footer__links">
+            <a href="features.html" class="footer__link">Features</a>
+            <a href="pricing.html" class="footer__link">Pricing</a>
+            <a href="integrations.html" class="footer__link">Integrations</a>
+            <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+            <a href="woocommerce.html" class="footer__link">WooCommerce (Coming Soon)</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__heading">Resources</h4>
+          <nav class="footer__links">
+            <a href="customers.html" class="footer__link">Customers</a>
+            <a href="partnerships.html" class="footer__link">Partnerships</a>
+            <a href="news.html" class="footer__link">News &amp; Press</a>
+            <a href="blog.html" class="footer__link">Blog</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="pricing.html" class="footer__link">Contact</a>
+            <a href="partnerships.html" class="footer__link">Partners</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Rebillia. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      function extractYouTubeId(href) {
+        var m = href.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([A-Za-z0-9_-]{11})/);
+        return m ? m[1] : null;
+      }
+
+      function getDomain(href) {
+        try { return new URL(href).hostname.replace(/^www\./, ''); }
+        catch (e) { return ''; }
+      }
+
+      function buildPreview(href) {
+        var yt = extractYouTubeId(href);
+        if (yt) {
+          return { url: 'https://img.youtube.com/vi/' + yt + '/hqdefault.jpg', kind: 'video' };
+        }
+        var clean = href.replace(/^https?:\/\//, '');
+        return { url: 'https://image.thum.io/get/width/600/crop/400/noanimate/https://' + clean, kind: 'article' };
+      }
+
+      var cards = document.querySelectorAll('.news-card');
+      cards.forEach(function (card, i) {
+        var href = card.getAttribute('href');
+        if (!href) return;
+        var info = buildPreview(href);
+        if (!info) return;
+
+        // Per-card overrides:
+        //  - data-preview="fallback"     → skip screenshot, show favicon+domain card
+        //  - data-preview-image="<url>"  → use a specific image (e.g. partner logo)
+        var previewMode  = card.getAttribute('data-preview');
+        var previewImage = card.getAttribute('data-preview-image');
+        var domain = getDomain(href);
+
+        var overlay = document.createElement('div');
+        overlay.className = 'news-card__preview' + (info.kind === 'video' ? ' news-card__preview--video' : '');
+
+        // Fallback (shown while the real thumbnail is still loading, or if it fails)
+        var fallback = document.createElement('div');
+        fallback.className = 'news-card__preview-fallback';
+        if (domain) {
+          var fav = document.createElement('img');
+          fav.src = 'https://www.google.com/s2/favicons?domain=' + domain + '&sz=128';
+          fav.alt = '';
+          fav.referrerPolicy = 'no-referrer';
+          fallback.appendChild(fav);
+          var label = document.createElement('div');
+          label.className = 'news-card__preview-fallback-domain';
+          label.textContent = domain;
+          fallback.appendChild(label);
+        }
+        overlay.appendChild(fallback);
+
+        // Real thumbnail image (hidden until loaded so it appears instantly on hover)
+        var img = document.createElement('img');
+        img.className = 'news-card__preview-img';
+        img.alt = '';
+        img.referrerPolicy = 'no-referrer';
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 150ms ease';
+        img.addEventListener('load', function () { img.style.opacity = '1'; });
+        img.addEventListener('error', function () { img.remove(); });
+        overlay.appendChild(img);
+
+        card.appendChild(overlay);
+
+        if (previewImage) {
+          overlay.classList.add('news-card__preview--logo');
+          img.src = previewImage;
+          return;
+        }
+
+        if (previewMode === 'fallback') return;
+
+        // Stagger loads so we don't hammer the screenshot service and the page stays responsive.
+        var delay = info.kind === 'video' ? i * 40 : 300 + i * 180;
+        setTimeout(function () { img.src = info.url; }, delay);
+      });
+    })();
+  </script>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45175284.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

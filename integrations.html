@@ -508,6 +508,12 @@
               </span>
               Partnerships
             </a>
+            <a href="news.html" class="navbar__dropdown-item">
+              <span class="dropdown-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg>
+              </span>
+              News &amp; Press
+            </a>
             <a href="blog.html" class="navbar__dropdown-item">
               <span class="dropdown-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
@@ -697,41 +703,31 @@
           <p class="section-subtitle">Route transactions through the best gateway for each customer. Multi-gateway support reduces declines and increases authorization rates.</p>
         </div>
 
-        <!-- Gateway logo cloud (matches homepage) -->
-        <div class="logo-cloud reveal" style="justify-content:center;">
-          <span class="logo-cloud__item">
-            <span class="gateway-mark gateway-mark--stripe">S</span>
-            Stripe
+        <!-- Row 1: RebilliaPay (Preferred) - larger to stand out -->
+        <div style="display:flex; flex-direction:column; align-items:center; gap:18px; margin-bottom:var(--space-12);">
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;">
+            <span style="font-size:2.75rem; font-weight:800; letter-spacing:-0.02em; color:var(--color-text); line-height:1;">RebilliaPay</span>
+            <span style="font-size:0.75rem; padding:5px 14px; background:linear-gradient(135deg,#D4A017,#B8860B); color:#fff; border-radius:9999px; font-weight:700; letter-spacing:0.06em;">PREFERRED</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px;">
+            <span style="font-size:var(--text-lg); color:var(--color-text-secondary);">by</span>
+            <img src="logos/global-payments-dark.svg" alt="Global Payments" style="height:54px; width:auto; display:block;">
+          </div>
+        </div>
+
+        <!-- Row 2: All other gateways - wraps to two lines if needed, uniform logo height -->
+        <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:40px 48px; max-width:1200px; margin:0 auto;">
+          <img src="logos/stripe.svg" alt="Stripe" style="height:36px; width:auto; display:block; object-fit:contain;">
+          <img src="logos/cybersource.svg" alt="CyberSource" style="height:36px; width:auto; display:block; object-fit:contain;">
+          <img src="logos/authorize-net.svg" alt="Authorize.net" style="height:36px; width:auto; display:block; object-fit:contain;">
+          <span style="display:inline-flex; align-items:center; gap:8px; height:36px;">
+            <img src="logos/square.svg" alt="Square" style="height:32px; width:auto; display:block;">
+            <span style="font-weight:700; font-size:1.5rem; color:#1a1a1a; line-height:1;">Square</span>
           </span>
-          <span class="logo-cloud__item">
-            <span class="gateway-mark gateway-mark--paypal">PP</span>
-            PayPal
-          </span>
-          <span class="logo-cloud__item">
-            <span class="gateway-mark gateway-mark--authorize">A</span>
-            Authorize.net
-          </span>
-          <span class="logo-cloud__item" style="opacity: 1; color: var(--color-text);">
-            <span class="gateway-mark gateway-mark--payfabric">PF</span>
-            RebilliaPay by Global Payments
-            <span style="font-size: 0.65rem; padding: 1px 6px; background: linear-gradient(135deg, #D4A017, #B8860B); color: white; border-radius: 9999px; font-weight: 700; letter-spacing: 0.02em;">PREFERRED</span>
-          </span>
-          <span class="logo-cloud__item">
-            <span class="gateway-mark gateway-mark--square" style="border-radius: 4px;">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="white"><rect x="4" y="4" width="8" height="8" rx="1"/></svg>
-            </span>
-            Square
-          </span>
-          <span class="logo-cloud__item">
-            <span class="gateway-mark gateway-mark--braintree">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l8 6-8 6V2z"/></svg>
-            </span>
-            Braintree
-          </span>
-          <span class="logo-cloud__item">
-            <span class="gateway-mark gateway-mark--cybersource">CS</span>
-            CyberSource
-          </span>
+          <img src="logos/braintree.png" alt="Braintree" style="height:28px; width:auto; display:block; object-fit:contain;">
+          <img src="logos/paypal.svg" alt="PayPal" style="height:36px; width:auto; display:block; object-fit:contain;">
+          <img src="logos/payfabric.png" alt="PayFabric" style="height:34px; width:auto; display:block; object-fit:contain;">
+          <img src="logos/usaepay-white.png" alt="USAePay" style="height:34px; width:auto; display:block; object-fit:contain; filter:brightness(0);">
         </div>
       </div>
     </section>
