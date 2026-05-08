@@ -41,13 +41,16 @@
   }
 
   /* Mobile nav — white bg */
+  /* Note: .navbar has backdrop-filter, which makes it the containing block
+     for fixed children, so we use an explicit height instead of bottom: 0. */
   .navbar__nav {
     display: none;
     position: fixed;
     top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 72px);
+    height: calc(100dvh - 72px);
     flex-direction: column;
     align-items: stretch;
     padding: var(--space-6);
