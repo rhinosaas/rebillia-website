@@ -48,6 +48,35 @@ a[href="blog.html"] {
   }
 }
 
+/* Homepage feature-pillar stats bar (text labels, not numbers) — readable mobile layout */
+@media (max-width: 480px) {
+  .stats-bar--decorated .stat {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "icon number" "icon label";
+    align-items: center;
+    gap: 2px 14px;
+  }
+
+  .stats-bar--decorated .stat__icon {
+    grid-area: icon;
+  }
+
+  .stats-bar--decorated .stat__number {
+    grid-area: number;
+    font-size: var(--text-lg);
+    line-height: 1.2;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .stats-bar--decorated .stat__label {
+    grid-area: label;
+    font-size: var(--text-xs);
+    line-height: 1.3;
+  }
+}
+
 /* About page stats — 3-column variant (overrides default 5-col) */
 .stats-bar__grid--3col {
   grid-template-columns: repeat(3, 1fr);
