@@ -24,3 +24,37 @@ a[href="bigcommerce.html"],
 a[href="blog.html"] {
   display: none !important;
 }
+
+/* ==========================================================================
+   Mobile responsiveness fixes
+   ========================================================================== */
+
+/* Homepage NO-RESET LIFECYCLE feature tiles (6 cards) */
+.lifecycle-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .lifecycle-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .lifecycle-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About page stats — 3-column variant (overrides default 5-col) */
+.stats-bar__grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 480px) {
+  .stats-bar__grid--3col {
+    grid-template-columns: 1fr;
+  }
+}
