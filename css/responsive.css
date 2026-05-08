@@ -89,6 +89,14 @@
     flex-direction: column;
   }
 
+  /* Override desktop hover transform that would shift the static menu off-screen */
+  .navbar__dropdown:hover .navbar__dropdown-menu,
+  .navbar__dropdown.open .navbar__dropdown-menu {
+    transform: none;
+    left: auto;
+    min-width: 0;
+  }
+
   .navbar__dropdown-item {
     padding: var(--space-2) var(--space-3);
   }
