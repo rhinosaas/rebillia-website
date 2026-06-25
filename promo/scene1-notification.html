@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebillia Promo · Scene 1 — Renewing Soon (Gmail)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F1742; --navy2:#1A2B5C; --blue:#336BD6; --green:#10B981;
+    --muted:#9CA7B6; --sub:#4A5068; --border:#E7ECF6;
+    --g-line:#EAECEF; --g-text:#202124; --g-sub:#5F6368;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--navy);
+    display:flex; align-items:center; justify-content:center; min-height:100vh;
+    background:transparent;
+  }
+  .stage{position:relative; width:1280px; height:720px; max-width:100vw; max-height:100vh;
+    overflow:hidden; display:flex; align-items:center; justify-content:center}
+  .stage::before{content:''; position:absolute; width:400px; height:400px; top:-110px; right:-80px;
+    border-radius:50%; filter:blur(8px); background:radial-gradient(circle,rgba(51,107,214,.18),transparent 70%)}
+
+  /* caption */
+  .caption{position:absolute; left:177px; top:50%; transform:translateY(-50%); width:380px;
+    opacity:0; animation:capIn .9s ease-out .4s forwards}
+  @keyframes capIn{from{opacity:0} to{opacity:1}}
+  .caption__eyebrow{display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:9999px;
+    background:rgba(51,107,214,.1); font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--blue)}
+  .caption__eyebrow i{width:7px; height:7px; border-radius:50%; background:var(--green)}
+  .caption__big{font-family:'Outfit',sans-serif; font-size:64px; font-weight:800; letter-spacing:-.025em; line-height:1.04; margin-top:14px; color:var(--navy)}
+  .caption__big span{background:linear-gradient(135deg,var(--blue),var(--navy2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+
+  /* Gmail card */
+  .gcard{position:absolute; right:177px; top:50%; width:496px;
+    background:#fff; border-radius:20px; border:1px solid var(--g-line);
+    box-shadow:0 44px 110px rgba(15,23,66,.22), 0 8px 24px rgba(15,23,66,.10);
+    overflow:hidden; opacity:0; animation:cardIn 7.5s cubic-bezier(.2,.8,.3,1) infinite}
+  @keyframes cardIn{
+    0%{opacity:0; transform:translateY(-50%) translateX(26px) scale(.985)}
+    7%{opacity:1; transform:translateY(-50%) translateX(0) scale(1)}
+    88%{opacity:1; transform:translateY(-50%) translateX(0) scale(1)}
+    97%,100%{opacity:0; transform:translateY(-50%) translateX(0) scale(.99)}}
+
+  /* gmail top bar */
+  .gtop{display:flex; align-items:center; gap:12px; padding:13px 18px; border-bottom:1px solid var(--g-line)}
+  .glogo{display:flex; align-items:center; gap:9px}
+  .glogo svg{display:block}
+  .glogo b{font-size:18px; font-weight:500; color:#5F6368; letter-spacing:-.01em; font-family:'DM Sans',sans-serif}
+  .gsearch{flex:1; height:34px; border-radius:9px; background:#F1F3F4; display:flex; align-items:center; gap:9px; padding:0 13px; color:#80868B; font-size:13px}
+  .gsearch svg{flex:none}
+  .gavatar{width:30px; height:30px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--navy2));
+    color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; flex:none}
+
+  /* email */
+  .gmail{padding:20px 22px 22px}
+  .gsubj{display:flex; align-items:center; gap:10px; margin-bottom:16px}
+  .gsubj h1{font-size:20px; font-weight:600; color:var(--g-text); line-height:1.25; letter-spacing:-.01em}
+  .glabel{font-size:11px; font-weight:600; color:var(--g-sub); background:#F1F3F4; padding:3px 9px; border-radius:6px; white-space:nowrap}
+  .gstar{margin-left:auto; color:#F4B400; font-size:19px; flex:none}
+
+  .gfrom{display:flex; align-items:center; gap:12px; margin-bottom:16px}
+  .gfrom__av{width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--navy2));
+    color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Outfit',sans-serif; font-weight:800; font-size:17px; flex:none}
+  .gfrom__n{font-size:14px; font-weight:700; color:var(--g-text)}
+  .gfrom__n span{font-weight:400; color:var(--g-sub); font-size:13px}
+  .gfrom__n small{display:block; font-weight:400; font-size:12.5px; color:var(--g-sub)}
+  .gfrom__time{margin-left:auto; font-size:12.5px; color:var(--g-sub); font-weight:500; display:flex; align-items:center; gap:7px}
+  .gfrom__time i{width:7px; height:7px; border-radius:50%; background:var(--green)}
+
+  .gbody{font-size:14.5px; line-height:1.6; color:#3C4043}
+  .gbody p{margin-bottom:11px}
+  .gbody b{color:var(--navy); font-weight:700}
+  .gchip{display:inline-flex; align-items:center; gap:8px; margin:6px 0 18px; padding:11px 15px; border-radius:11px;
+    background:rgba(51,107,214,.07); border:1px solid rgba(51,107,214,.16); font-size:14px; color:var(--navy)}
+  .gchip b{font-family:'Outfit',sans-serif}
+
+  .gacts{display:flex; align-items:center; gap:14px}
+  .gbtn{padding:11px 22px; border-radius:9999px; font-size:14px; font-weight:700; color:#fff;
+    background:linear-gradient(135deg,var(--blue),var(--navy2)); box-shadow:0 8px 20px rgba(51,107,214,.28);
+    transition:transform .2s ease, filter .2s ease}
+  .gbtn.press{transform:scale(.96); filter:brightness(.93)}
+  .glink{font-size:14px; font-weight:700; color:var(--blue)}
+
+  /* animated cursor + click ripple */
+  .cursor{position:absolute; left:0; top:0; width:22px; height:22px; z-index:50; pointer-events:none;
+    transition:left .7s cubic-bezier(.5,0,.3,1), top .7s cubic-bezier(.5,0,.3,1); opacity:0; filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+  .cursor.show{opacity:1}
+  .cursor.click{animation:tap .4s ease}
+  @keyframes tap{0%,100%{transform:scale(1)}45%{transform:scale(.82)}}
+  .ripple{position:absolute; z-index:49; width:14px; height:14px; border-radius:50%; background:rgba(51,107,214,.4);
+    transform:translate(-50%,-50%) scale(0); pointer-events:none}
+  .ripple.go{animation:rip .55s ease-out}
+  @keyframes rip{0%{transform:translate(-50%,-50%) scale(0); opacity:.55}100%{transform:translate(-50%,-50%) scale(5); opacity:0}}
+  .stage::before,.stage::after{display:none}/*flat*/
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="caption">
+      <span class="caption__eyebrow"><i></i>Today's clients are smart</span>
+      <div class="caption__big">They stay only when they're <span>happy.</span></div>
+    </div>
+
+    <div class="gcard">
+      <div class="gtop">
+        <div class="glogo">
+          <svg width="34" height="26" viewBox="0 0 52 40" aria-label="Gmail">
+            <path fill="#4285F4" d="M3.64 40h7.27V22.18L0 13.64v22.72C0 38.36 1.63 40 3.64 40z"/>
+            <path fill="#34A853" d="M41.09 40h7.27c2.01 0 3.64-1.64 3.64-3.64V13.64L41.09 22.18z"/>
+            <path fill="#FBBC04" d="M41.09 7.27v14.91L52 13.64V9.09c0-4.21-4.81-6.61-8.18-4.09z"/>
+            <path fill="#EA4335" d="M10.91 22.18V7.27L26 18.59 41.09 7.27v14.91L26 33.5z"/>
+            <path fill="#C5221F" d="M0 9.09v4.55l10.91 8.54V7.27L8.18 5C4.81 2.48 0 4.88 0 9.09z"/>
+          </svg>
+          <b>Gmail</b>
+        </div>
+        <div class="gsearch">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#80868B" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="#80868B" stroke-width="2" stroke-linecap="round"/></svg>
+          Search mail
+        </div>
+        <div class="gavatar">M</div>
+      </div>
+
+      <div class="gmail">
+        <div class="gsubj">
+          <h1>Your Little Ones Diaper Box renews in 3 days</h1>
+          <span class="glabel">Inbox</span>
+          <span class="gstar">&#9733;</span>
+        </div>
+
+        <div class="gfrom">
+          <div class="gfrom__av">R</div>
+          <div class="gfrom__n">Rebillia <span>&lt;billing@rebillia.com&gt;</span><small>to me</small></div>
+          <div class="gfrom__time"><i></i>9:41 AM (now)</div>
+        </div>
+
+        <div class="gbody">
+          <p>Hi Maya, a quick heads-up, your <b>Little Ones Diaper Box</b> renews in <b>3 days</b>.</p>
+          <div class="gchip"><b>$39.99</b>/box &middot; Visa &bull;&bull;&bull;&bull; 4242</div>
+          <p>Want to make a change first? You can update, swap, skip, or pause anytime, no contract, no phone call.</p>
+        </div>
+
+        <div class="gacts">
+          <span class="gbtn" id="manageBtn">Manage subscription</span>
+        </div>
+      </div>
+
+      <div class="ripple" id="ripple"></div>
+      <div class="cursor" id="cursor">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M2 2 L2 17 L6.2 13 L9 19.5 L11.6 18.4 L8.9 12 L14 12 Z" fill="#fff" stroke="#15245A" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+<script src="pausable.js"></script>
+<script>
+  var gcard=document.querySelector('.gcard');
+  var cursor=document.getElementById('cursor'), ripple=document.getElementById('ripple');
+  var btn=document.getElementById('manageBtn');
+
+  function moveTo(el){
+    var pr=gcard.getBoundingClientRect(), r=el.getBoundingClientRect();
+    var x=r.left-pr.left+r.width/2, y=r.top-pr.top+r.height/2;
+    cursor.style.left=(x-3)+'px'; cursor.style.top=(y-2)+'px'; return {x:x,y:y};
+  }
+  function clickFx(pt){
+    cursor.classList.remove('click'); void cursor.offsetWidth; cursor.classList.add('click');
+    ripple.style.left=pt.x+'px'; ripple.style.top=pt.y+'px';
+    ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go');
+  }
+  function run(){
+    cursor.classList.remove('show'); btn.classList.remove('press');
+    cursor.style.left='420px'; cursor.style.top='150px';           // parked, off the button
+    setTimeout(function(){ cursor.classList.add('show'); }, 500);   // appear, then hold ~2s
+    setTimeout(function(){ moveTo(btn); }, 2500);                   // glide to the button after the pause
+    setTimeout(function(){     // click "Manage subscription"
+      var p=moveTo(btn); clickFx(p); btn.classList.add('press');
+      // if running inside the combined player, hand off to Scene 2 right after the press
+      if(window.top!==window.self){
+        setTimeout(function(){ try{ window.parent.postMessage('rebillia:scene1-cta','*'); }catch(e){} }, 360);
+      }
+    }, 3500);
+    setTimeout(function(){ btn.classList.remove('press'); }, 3850);
+    setTimeout(function(){ cursor.classList.remove('show'); }, 6500);             // fade out before loop (standalone)
+  }
+  run();
+  setInterval(run, 7500);
+</script>
+<script>if(window.self===window.top){document.documentElement.style.background="linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%)";}</script>
+</body>
+</html>

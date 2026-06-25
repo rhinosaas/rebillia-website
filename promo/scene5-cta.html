@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebillia Promo · Scene 5 — Logo + CTA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0F1742; --blue:#336BD6; --green:#10B981; --sub:#4A5068}
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--navy);
+    display:flex; align-items:center; justify-content:center; min-height:100vh;
+    background:transparent;
+  }
+  .stage{position:relative; width:1280px; height:720px; max-width:100vw; max-height:100vh;
+    overflow:hidden; display:flex; align-items:center; justify-content:center}
+
+  .card{display:flex; flex-direction:column; align-items:center; text-align:center;
+    animation:cardCycle 6s ease infinite}
+  @keyframes cardCycle{0%{opacity:0}4%{opacity:1}82%{opacity:1}95%,100%{opacity:0}}
+
+  .glow{position:absolute; width:560px; height:560px; border-radius:50%; filter:blur(20px);
+    background:radial-gradient(circle, rgba(51,107,214,.16), transparent 65%); z-index:0;
+    animation:glowCycle 6s ease infinite}
+  @keyframes glowCycle{0%{opacity:0; transform:scale(.9)}10%{opacity:1; transform:scale(1)}82%{opacity:1}95%,100%{opacity:0}}
+
+  .logo{position:relative; z-index:1; width:340px; height:auto; display:block;
+    animation:logoIn 6s cubic-bezier(.2,.8,.3,1) infinite}
+  @keyframes logoIn{0%{opacity:0; transform:translateY(18px) scale(.96)}7%{opacity:1; transform:none}100%{opacity:1; transform:none}}
+
+  .tag{position:relative; z-index:1; font-family:'Outfit',sans-serif; font-size:23px; font-weight:600;
+    letter-spacing:-.01em; color:var(--navy); margin-top:26px;
+    animation:rise 6s ease infinite; animation-delay:0s}
+  .tag b{background:linear-gradient(135deg,var(--blue),#1A2B5C); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-weight:700}
+
+  .url{position:relative; z-index:1; display:inline-flex; align-items:center; gap:9px; margin-top:24px;
+    font-size:15px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--blue);
+    padding:11px 22px; border-radius:9999px; background:#fff; border:1px solid rgba(51,107,214,.18);
+    box-shadow:0 12px 30px rgba(15,23,66,.10); animation:rise2 6s ease infinite}
+  .url .dot{width:8px; height:8px; border-radius:50%; background:var(--green)}
+
+  @keyframes rise{0%,4%{opacity:0; transform:translateY(14px)}13%{opacity:1; transform:none}100%{opacity:1; transform:none}}
+  @keyframes rise2{0%,9%{opacity:0; transform:translateY(12px)}18%{opacity:1; transform:none}100%{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="glow"></div>
+    <div class="card">
+      <img class="logo" src="/logo-dark.png" alt="Rebillia">
+      <div class="tag">Adaptive subscription infrastructure. <b>Your rules, their control.</b></div>
+      <div class="url"><span class="dot"></span>rebillia.com</div>
+    </div>
+  </div>
+<script src="pausable.js"></script>
+<script>if(window.self===window.top){document.documentElement.style.background="linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%)";}</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebillia Promo · Scene 4 — Merchant Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F1742; --navy2:#1A2B5C; --blue:#336BD6; --green:#10B981; --green-d:#0A8F65;
+    --muted:#9CA7B6; --sub:#4A5068; --border:#E7ECF6; --bg-alt:#F5F8FE;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--navy);
+    display:flex; align-items:center; justify-content:center; min-height:100vh;
+    background:transparent;
+  }
+  .stage{position:relative; width:1280px; height:720px; max-width:100vw; max-height:100vh;
+    overflow:hidden; display:flex; align-items:center; justify-content:center}
+  .stage::before{content:''; position:absolute; width:440px; height:440px; top:-130px; right:-100px;
+    border-radius:50%; filter:blur(8px); background:radial-gradient(circle,rgba(51,107,214,.18),transparent 70%)}
+
+  /* caption */
+  .caption{position:absolute; left:115px; top:50%; transform:translateY(-50%); width:320px; z-index:3}
+  .caption__eyebrow{display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:9999px;
+    background:rgba(51,107,214,.1); font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--blue)}
+  .caption__eyebrow i{width:7px; height:7px; border-radius:50%; background:var(--green)}
+  .caption__big{position:relative; font-family:'Outfit',sans-serif; font-size:52px; font-weight:800; letter-spacing:-.025em; line-height:1.08; margin-top:16px; color:var(--navy); min-height:180px}
+  .caption__big span{background:linear-gradient(135deg,var(--blue),var(--navy2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+  .cap-line{position:absolute; top:0; left:0; right:0; opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
+  .cap-line.on{opacity:1; transform:none}
+
+  /* dashboard window */
+  .dash{position:absolute; right:115px; top:50%; width:680px;
+    background:#fff; border-radius:22px; border:1px solid var(--border);
+    box-shadow:0 44px 110px rgba(15,23,66,.22), 0 8px 24px rgba(15,23,66,.10);
+    overflow:hidden; opacity:0; transform:translateY(-50%) translateX(34px);
+    animation:dashIn 11s ease infinite}
+  @keyframes dashIn{0%{opacity:0; transform:translateY(-50%) translateX(34px)} 6%,90%{opacity:1; transform:translateY(-50%) translateX(0)} 98%,100%{opacity:0; transform:translateY(-50%) translateX(34px)}}
+
+  .dbar{display:flex; align-items:center; gap:10px; padding:14px 20px; border-bottom:1px solid var(--border); background:var(--bg-alt)}
+  .dbar__av{width:26px; height:26px; border-radius:7px; background:linear-gradient(135deg,var(--blue),var(--navy2));
+    color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Outfit',sans-serif; font-weight:800; font-size:13px}
+  .dbar__t{font-weight:700; font-size:13.5px; color:var(--navy)}
+  .dbar__t small{color:var(--muted); font-weight:500}
+  .dbar__live{margin-left:auto; display:flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green-d)}
+  .dbar__live .dot{width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.45)}70%{box-shadow:0 0 0 7px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+
+  .dbody{padding:20px}
+  .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+  .kpi{border:1px solid var(--border); border-radius:14px; padding:13px 14px; background:#fff}
+  .kpi__l{font-size:11px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; color:var(--muted)}
+  .kpi__v{font-family:'Outfit',sans-serif; font-size:25px; font-weight:800; color:var(--navy); margin:6px 0 5px; letter-spacing:-.02em; line-height:1}
+  .chip{display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; padding:2px 8px; border-radius:9999px}
+  .chip.up{color:var(--green-d); background:rgba(16,185,129,.12)}
+  .chip.blue{color:var(--blue); background:rgba(51,107,214,.10)}
+
+  .chartcard{margin-top:14px; border:1px solid var(--border); border-radius:16px; padding:16px 18px 8px}
+  .chartcard__h{display:flex; align-items:baseline; gap:10px; margin-bottom:6px}
+  .chartcard__h .t{font-size:13px; font-weight:700; color:var(--navy)}
+  .chartcard__h .v{margin-left:auto; font-family:'Outfit',sans-serif; font-size:18px; font-weight:800; color:var(--navy)}
+  .chartcard__h .c{font-size:11.5px}
+  svg.chart{display:block; width:100%; height:138px; overflow:visible}
+  .cline{fill:none; stroke:url(#g1); stroke-width:3; stroke-linecap:round; stroke-linejoin:round}
+  .carea{fill:url(#g2); opacity:0; transition:opacity 1s ease .3s}
+  .carea.on{opacity:1}
+  .cdot{fill:#fff; stroke:var(--blue); stroke-width:3; opacity:0; transition:opacity .4s ease 1s}
+  .cdot.on{opacity:1}
+  .axis{font-size:10px; fill:var(--muted); font-family:'DM Sans',sans-serif}
+
+  /* cursor not needed; auto dashboard */
+  .stage::before,.stage::after{display:none}/*flat*/
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="caption">
+      <span class="caption__eyebrow"><i></i>The result for you</span>
+      <div class="caption__big">
+        <span class="cap-line on" data-cap="0">MRR holding <span>steady.</span></span>
+        <span class="cap-line" data-cap="1">Churn <span>staying low.</span></span>
+        <span class="cap-line" data-cap="2">Happy clients stay. <span>Revenue grows.</span></span>
+      </div>
+    </div>
+
+    <div class="dash" id="dash">
+      <div class="dbar">
+        <div class="dbar__av">R</div>
+        <div class="dbar__t">Rebillia <small>· Revenue overview</small></div>
+        <div class="dbar__live"><span class="dot"></span>Live</div>
+      </div>
+
+      <div class="dbody">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="kpi__l">MRR</div>
+            <div class="kpi__v" id="kMrr">$0</div>
+            <span class="chip up">▲ 6.4% MoM</span>
+          </div>
+          <div class="kpi">
+            <div class="kpi__l">Active subs</div>
+            <div class="kpi__v" id="kSubs">0</div>
+            <span class="chip up">▲ 48 net</span>
+          </div>
+          <div class="kpi">
+            <div class="kpi__l">Churn</div>
+            <div class="kpi__v" id="kChurn">0%</div>
+            <span class="chip up">▼ low</span>
+          </div>
+          <div class="kpi">
+            <div class="kpi__l">Dunning recovered</div>
+            <div class="kpi__v" id="kRec">0%</div>
+            <span class="chip up">$3,120 saved</span>
+          </div>
+        </div>
+
+        <div class="chartcard">
+          <div class="chartcard__h">
+            <span class="t">Monthly recurring revenue</span>
+            <span class="v" id="kMrr2">$48,250</span>
+            <span class="c"><span class="chip up">▲ 6.4%</span></span>
+          </div>
+          <svg class="chart" viewBox="0 0 600 138" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#336BD6"/><stop offset="1" stop-color="#10B981"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="rgba(51,107,214,.22)"/><stop offset="1" stop-color="rgba(51,107,214,0)"/>
+              </linearGradient>
+            </defs>
+            <path id="area" class="carea" d="M0,108 L75,104 L150,96 L225,98 L300,82 L375,76 L450,62 L525,52 L600,38 L600,138 L0,138 Z"/>
+            <path id="line" class="cline" d="M0,108 L75,104 L150,96 L225,98 L300,82 L375,76 L450,62 L525,52 L600,38"/>
+            <circle id="dot" class="cdot" cx="600" cy="38" r="5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="pausable.js"></script>
+<script>
+  function caption(n){
+    var lines=document.querySelectorAll('.cap-line');
+    for(var i=0;i<lines.length;i++) lines[i].classList.toggle('on', lines[i].getAttribute('data-cap')==String(n));
+  }
+  function countUp(el, to, dur, fmt){
+    var steps=Math.max(1, Math.round(dur/30)), i=0;
+    var iv=setInterval(function(){
+      i++; var p=Math.min(1, i/steps); var e=1-Math.pow(1-p,3); // easeOutCubic
+      el.textContent=fmt(to*e);
+      if(p>=1){ el.textContent=fmt(to); clearInterval(iv); }
+    }, 30);
+  }
+  var fMoney=function(v){return '$'+Math.round(v).toLocaleString();};
+  var fInt=function(v){return Math.round(v).toLocaleString();};
+  var fPct1=function(v){return v.toFixed(1)+'%';};
+  var fPct0=function(v){return Math.round(v)+'%';};
+
+  var line=document.getElementById('line'), area=document.getElementById('area'), dot=document.getElementById('dot');
+  var len=line.getTotalLength();
+  function drawChart(){
+    line.style.transition='none';
+    line.style.strokeDasharray=len; line.style.strokeDashoffset=len;
+    area.classList.remove('on'); dot.classList.remove('on');
+    void line.getBoundingClientRect();
+    line.style.transition='stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1)';
+    line.style.strokeDashoffset='0';
+    area.classList.add('on'); dot.classList.add('on');
+  }
+
+  function run(){
+    caption(0);
+    document.getElementById('kMrr').textContent='$0';
+    document.getElementById('kSubs').textContent='0';
+    document.getElementById('kChurn').textContent='0%';
+    document.getElementById('kRec').textContent='0%';
+
+    setTimeout(function(){
+      drawChart();
+      countUp(document.getElementById('kMrr'), 48250, 1400, fMoney);
+      countUp(document.getElementById('kSubs'), 1284, 1400, fInt);
+      countUp(document.getElementById('kChurn'), 1.8, 1400, fPct1);
+      countUp(document.getElementById('kRec'), 92, 1400, fPct0);
+    }, 700);
+
+    setTimeout(function(){ caption(1); }, 3000);
+    setTimeout(function(){ caption(2); }, 5400);
+  }
+  run();
+  setInterval(run, 11000);
+</script>
+<script>if(window.self===window.top){document.documentElement.style.background="linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%)";}</script>
+</body>
+</html>

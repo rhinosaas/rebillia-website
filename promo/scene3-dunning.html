@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebillia Promo · Scene 3 — Smart Dunning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F1742; --navy2:#1A2B5C; --night:#060B1E;
+    --blue:#336BD6; --green:#10B981; --green-d:#0A8F65;
+    --red:#E5484D; --amber:#F5A623;
+    --muted:#9CA7B6; --sub:#4A5068; --border:#E7ECF6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--navy);
+    display:flex; align-items:center; justify-content:center; min-height:100vh;
+    background:transparent;
+  }
+  .stage{position:relative; width:1280px; height:720px; max-width:100vw; max-height:100vh;
+    overflow:hidden; display:flex; align-items:center; justify-content:center}
+  .stage::before{content:''; position:absolute; width:420px; height:420px; top:-120px; right:-90px;
+    border-radius:50%; filter:blur(8px); background:radial-gradient(circle,rgba(51,107,214,.18),transparent 70%)}
+
+  /* ── caption ── */
+  .caption{position:absolute; left:177px; top:50%; transform:translateY(-50%); width:400px}
+  .caption__eyebrow{display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:9999px;
+    background:rgba(51,107,214,.1); font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--blue)}
+  .caption__eyebrow i{width:7px; height:7px; border-radius:50%; background:var(--green)}
+  .caption__big{position:relative; font-family:'Outfit',sans-serif; font-size:54px; font-weight:800; letter-spacing:-.025em; line-height:1.08; margin-top:16px; color:var(--navy); min-height:185px}
+  .caption__big span{background:linear-gradient(135deg,var(--blue),var(--navy2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+  .cap-line{position:absolute; top:0; left:0; right:0; opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
+  .cap-line.on{opacity:1; transform:none}
+
+  /* ── email card ── */
+  .mail{position:absolute; right:177px; top:50%; transform:translateY(-50%); width:496px;
+    background:#fff; border-radius:24px; border:1px solid var(--border);
+    box-shadow:0 40px 100px rgba(15,23,66,.20), 0 8px 24px rgba(15,23,66,.10);
+    padding:24px; overflow:hidden}
+
+  /* persistent status strip — stays Active the whole time */
+  .status{display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700;
+    color:var(--green-d); background:rgba(16,185,129,.10); border:1px solid rgba(16,185,129,.22);
+    padding:7px 12px; border-radius:9999px; margin-bottom:18px; width:max-content}
+  .status .dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 0 rgba(16,185,129,.5); animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.45)}70%{box-shadow:0 0 0 7px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+
+  .mhead{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+  .mhead__av{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg,var(--blue),var(--navy2));
+    color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Outfit',sans-serif; font-weight:800; font-size:18px}
+  .mhead__who{font-weight:700; font-size:15px; color:var(--navy); line-height:1.2}
+  .mhead__who small{display:block; font-weight:500; font-size:12px; color:var(--muted)}
+  .mhead__now{margin-left:auto; font-size:11.5px; color:var(--muted); font-weight:500}
+
+  .alert{display:flex; align-items:center; gap:9px; font-size:13px; font-weight:700; padding:9px 12px; border-radius:11px;
+    background:rgba(229,72,77,.09); color:#C0322F; border:1px solid rgba(229,72,77,.20); transition:.45s}
+  .alert .ic{width:18px; height:18px; border-radius:50%; background:var(--red); color:#fff; flex:none;
+    display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; transition:.45s}
+  .alert.ok{background:rgba(16,185,129,.10); color:var(--green-d); border-color:rgba(16,185,129,.22)}
+  .alert.ok .ic{background:var(--green)}
+
+  .subj{font-size:16px; font-weight:700; color:var(--navy); margin:16px 0 8px}
+  .body{font-size:13.5px; line-height:1.55; color:var(--sub)}
+  .body b{color:var(--navy); font-weight:600}
+
+  .retry{margin-top:18px; width:100%; padding:14px 0; border-radius:13px; border:0; cursor:pointer;
+    font-family:'DM Sans',sans-serif; font-size:14.5px; font-weight:700; color:#fff;
+    background:linear-gradient(135deg,var(--blue),var(--navy2)); display:flex; align-items:center; justify-content:center; gap:9px;
+    box-shadow:0 10px 24px rgba(51,107,214,.30); transition:.4s}
+  .retry.done{background:linear-gradient(135deg,#12B886,var(--green-d)); box-shadow:0 10px 24px rgba(16,185,129,.30)}
+  .spin{width:16px; height:16px; border-radius:50%; border:2.4px solid rgba(255,255,255,.45); border-top-color:#fff;
+    animation:spin .7s linear infinite; display:none}
+  .retry.loading .spin{display:inline-block}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .recovered{margin-top:12px; font-size:13px; color:var(--sub); text-align:center;
+    opacity:0; max-height:0; overflow:hidden; transition:.4s}
+  .recovered.on{opacity:1; max-height:40px}
+  .recovered b{color:var(--green-d)}
+
+  /* cursor + ripple */
+  .cursor{position:absolute; left:0; top:0; width:22px; height:22px; z-index:50; pointer-events:none;
+    transition:left .7s cubic-bezier(.5,0,.3,1), top .7s cubic-bezier(.5,0,.3,1); opacity:0; filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+  .cursor.show{opacity:1}
+  .cursor.click{animation:tap .4s ease}
+  @keyframes tap{0%,100%{transform:scale(1)}45%{transform:scale(.82)}}
+  .ripple{position:absolute; z-index:49; width:14px; height:14px; border-radius:50%; background:rgba(51,107,214,.4);
+    transform:translate(-50%,-50%) scale(0); pointer-events:none}
+  .ripple.go{animation:rip .55s ease-out}
+  @keyframes rip{0%{transform:translate(-50%,-50%) scale(0); opacity:.55}100%{transform:translate(-50%,-50%) scale(5); opacity:0}}
+  .stage::before,.stage::after{display:none}/*flat*/
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="caption">
+      <span class="caption__eyebrow"><i></i>Recover lost revenue</span>
+      <div class="caption__big">
+        <span class="cap-line on" data-cap="0">A card <span>fails.</span></span>
+        <span class="cap-line" data-cap="1">You recover it, <span>automatically.</span></span>
+        <span class="cap-line" data-cap="2">A failed card isn't <span>a lost client.</span></span>
+      </div>
+    </div>
+
+    <div class="mail" id="mail">
+      <div class="ripple" id="ripple"></div>
+
+      <div class="status"><span class="dot"></span>Subscription &middot; Active</div>
+
+      <div class="mhead">
+        <div class="mhead__av">R</div>
+        <div class="mhead__who">Rebillia<small>to Maya R. &middot; Billing</small></div>
+        <div class="mhead__now">now</div>
+      </div>
+
+      <div class="alert" id="alert"><span class="ic" id="alertIc">!</span><span id="alertTxt">Payment couldn't be processed &middot; Visa &bull;&bull;&bull;&bull; 4242</span></div>
+
+      <div class="subj">Quick fix for your Little Ones Diaper Box</div>
+      <div class="body">Hi Maya, your last payment didn't go through, it happens. <b>No need to do anything drastic</b>, just tap below to update and keep your box coming.</div>
+
+      <button class="retry" id="retry"><span class="spin"></span><span id="retryTxt">Retry payment in one click</span></button>
+      <div class="recovered" id="recovered"><b>Payment recovered.</b> Subscription stays active, no interruption.</div>
+
+      <div class="cursor" id="cursor">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M2 2 L2 17 L6.2 13 L9 19.5 L11.6 18.4 L8.9 12 L14 12 Z" fill="#fff" stroke="#15245A" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+<script src="pausable.js"></script>
+<script>
+  var mail=document.getElementById('mail'), cursor=document.getElementById('cursor'), ripple=document.getElementById('ripple');
+  var alert=document.getElementById('alert'), alertIc=document.getElementById('alertIc'), alertTxt=document.getElementById('alertTxt');
+  var retry=document.getElementById('retry'), retryTxt=document.getElementById('retryTxt'), recovered=document.getElementById('recovered');
+
+  function caption(n){
+    var lines=document.querySelectorAll('.cap-line');
+    for(var i=0;i<lines.length;i++) lines[i].classList.toggle('on', lines[i].getAttribute('data-cap')==String(n));
+  }
+  function moveTo(el){
+    var pr=mail.getBoundingClientRect(), r=el.getBoundingClientRect();
+    var x=r.left-pr.left+r.width/2, y=r.top-pr.top+r.height/2;
+    cursor.style.left=(x-3)+'px'; cursor.style.top=(y-2)+'px'; return {x:x,y:y};
+  }
+  function clickFx(pt){
+    cursor.classList.remove('click'); void cursor.offsetWidth; cursor.classList.add('click');
+    ripple.style.left=pt.x+'px'; ripple.style.top=pt.y+'px';
+    ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go');
+  }
+  function reset(){
+    alert.classList.remove('ok'); alertIc.textContent='!';
+    alertTxt.innerHTML='Payment couldn’t be processed &middot; Visa &bull;&bull;&bull;&bull; 4242';
+    retry.classList.remove('loading','done'); retryTxt.textContent='Retry payment in one click';
+    recovered.classList.remove('on'); caption(0); cursor.classList.remove('show');
+  }
+
+  function run(){
+    reset();
+    cursor.style.left='200px'; cursor.style.top='300px';          // parked
+    setTimeout(function(){ cursor.classList.add('show'); }, 500);  // appear, then hold ~2s before moving
+    setTimeout(function(){ moveTo(retry); }, 2800);
+    setTimeout(function(){ caption(1); }, 3900);
+    setTimeout(function(){ var p=moveTo(retry); clickFx(p); retry.classList.add('loading'); retryTxt.textContent='Retrying payment…'; }, 5000);
+    setTimeout(function(){
+      retry.classList.remove('loading'); retry.classList.add('done'); retryTxt.textContent='✓ Payment recovered';
+      alert.classList.add('ok'); alertIc.textContent='✓'; alertTxt.innerHTML='Recovered on retry &middot; Visa &bull;&bull;&bull;&bull; 4242';
+      recovered.classList.add('on'); caption(2);
+    }, 6300);
+    setTimeout(function(){ cursor.classList.remove('show'); }, 11000);
+  }
+  run();
+  setInterval(run, 12500);
+</script>
+<script>if(window.self===window.top){document.documentElement.style.background="linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%)";}</script>
+</body>
+</html>

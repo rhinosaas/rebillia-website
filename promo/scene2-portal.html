@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebillia Promo · Scene 2 — Self-Service Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F1742; --navy2:#1A2B5C;
+    --blue:#336BD6; --green:#10B981; --green-d:#0A8F65;
+    --muted:#9CA7B6; --sub:#4A5068; --border:#E7ECF6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--navy);
+    display:flex; align-items:center; justify-content:center; min-height:100vh;
+    background:transparent;
+  }
+  .stage{position:relative; width:1280px; height:720px; max-width:100vw; max-height:100vh;
+    overflow:hidden; display:flex; align-items:center; justify-content:center}
+  .stage::before{content:''; position:absolute; width:420px; height:420px; top:-120px; right:-90px;
+    border-radius:50%; filter:blur(8px); background:radial-gradient(circle,rgba(51,107,214,.18),transparent 70%)}
+
+  /* ── caption (left) ── */
+  .caption{position:absolute; left:177px; top:50%; transform:translateY(-50%); width:360px}
+  .caption__eyebrow{display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:9999px;
+    background:rgba(51,107,214,.1); font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--blue)}
+  .caption__eyebrow i{width:7px; height:7px; border-radius:50%; background:var(--green)}
+  .caption__big{position:relative; font-family:'Outfit',sans-serif; font-size:54px; font-weight:800; letter-spacing:-.025em; line-height:1.07; margin-top:16px; color:var(--navy); min-height:185px}
+  .caption__big span{background:linear-gradient(135deg,var(--blue),var(--navy2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+  .cap-line{position:absolute; top:0; left:0; right:0; opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
+  .cap-line.on{opacity:1; transform:none}
+
+  /* ── portal card (right) ── */
+  .portal{position:absolute; right:177px; top:50%; transform:translateY(-50%); width:496px;
+    background:#fff; border-radius:24px; border:1px solid var(--border);
+    box-shadow:0 40px 100px rgba(15,23,66,.20), 0 8px 24px rgba(15,23,66,.10);
+    padding:22px; overflow:hidden}
+  .pf{display:flex; align-items:center; gap:12px}
+  .pf__avatar{width:40px; height:40px; border-radius:11px; background:linear-gradient(135deg,var(--blue),var(--navy2));
+    color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Outfit',sans-serif; font-weight:800; font-size:17px}
+  .pf__name{font-weight:700; font-size:15px; color:var(--navy); line-height:1.15}
+  .pf__name small{display:block; font-weight:500; font-size:12px; color:var(--muted)}
+  .badge{margin-left:auto; font-size:11px; font-weight:700; padding:5px 10px; border-radius:9999px;
+    background:rgba(16,185,129,.12); color:var(--green-d); white-space:nowrap}
+
+  /* sale banner */
+  .sale{display:flex; align-items:center; gap:12px; margin-top:16px; padding:12px 14px; border-radius:14px;
+    background:linear-gradient(135deg,rgba(51,107,214,.08),rgba(16,185,129,.10)); border:1px solid rgba(51,107,214,.18);
+    box-shadow:0 0 0 0 rgba(51,107,214,.18); animation:saleGlow 2.4s ease-in-out infinite}
+  @keyframes saleGlow{0%,100%{box-shadow:0 0 0 0 rgba(51,107,214,.18)}50%{box-shadow:0 0 0 6px rgba(51,107,214,0)}}
+  .sale__tag{font-size:9.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--blue)}
+  .sale__t{font-size:13.5px; font-weight:700; color:var(--navy); line-height:1.2}
+  .sale__off{display:inline-block; margin-left:7px; font-size:10.5px; font-weight:800; color:#fff; background:var(--green); padding:2px 7px; border-radius:9999px; vertical-align:middle}
+  .sale__btn{margin-left:auto; font-size:12.5px; font-weight:700; color:#fff; background:linear-gradient(135deg,var(--blue),var(--navy2));
+    padding:8px 16px; border-radius:10px; white-space:nowrap; box-shadow:0 6px 16px rgba(51,107,214,.28); transition:.35s}
+  .sale.added .sale__btn{background:rgba(16,185,129,.14); color:var(--green-d); box-shadow:none}
+
+  .sec{margin-top:16px}
+  .sec__label{font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin-bottom:9px}
+
+  .item{display:flex; align-items:center; gap:11px}
+  .item__ic{width:44px; height:44px; border-radius:11px; background:#F1F4FB; overflow:hidden; flex:none; box-shadow:inset 0 0 0 1px rgba(15,23,66,.06)}
+  .item__ic img{width:100%; height:100%; object-fit:cover; display:block}
+  .item__n{font-size:14px; font-weight:700; color:var(--navy)}
+  .item__n small{display:block; font-weight:500; font-size:12px; color:var(--muted)}
+
+  /* size segmented */
+  .seg{position:relative; display:inline-grid; grid-template-columns:repeat(3,52px); margin-left:auto; background:#F1F4FB; border-radius:10px; padding:3px}
+  .seg__pill{position:absolute; top:3px; bottom:3px; left:3px; width:52px; border-radius:8px; background:#fff;
+    box-shadow:0 2px 7px rgba(15,23,66,.12); transition:transform .42s cubic-bezier(.5,1.4,.5,1)}
+  .seg.s2 .seg__pill{transform:translateX(52px)}
+  .seg__o{position:relative; z-index:1; text-align:center; padding:7px 0; font-size:12.5px; font-weight:700; color:var(--sub); transition:color .3s}
+  .seg:not(.s2) .seg__o.o1{color:var(--blue)} .seg.s2 .seg__o.o2{color:var(--blue)}
+
+  /* added bundle row (reveals when the monthly sale is taken) */
+  .swap{display:flex; align-items:center; gap:11px; opacity:0; max-height:0; overflow:hidden; transform:translateY(6px); margin-top:0;
+    transition:opacity .45s ease, max-height .45s ease, transform .45s ease, margin-top .45s ease}
+  .swap.on{opacity:1; max-height:64px; transform:none; margin-top:12px}
+  .price{margin-left:auto; text-align:right; white-space:nowrap}
+  .price .now{font-weight:700; font-size:14px; color:var(--navy)}
+  .price .was{font-size:11.5px; color:var(--muted); text-decoration:line-through; margin-left:6px}
+  .price .off{display:block; font-size:10.5px; font-weight:800; color:var(--green-d)}
+
+  /* quantity + address rows */
+  .row{display:flex; align-items:center; gap:11px; padding:13px 0; border-top:1px solid var(--border)}
+  .row__l{font-size:13.5px; font-weight:600; color:var(--navy)}
+  .row__l small{display:block; font-weight:500; font-size:11.5px; color:var(--muted)}
+  .stepper{margin-left:auto; display:flex; align-items:center; gap:0; border:1px solid var(--border); border-radius:10px; overflow:hidden}
+  .stepper b{width:34px; text-align:center; font-family:'Outfit',sans-serif; font-weight:800; font-size:15px; color:var(--navy)}
+  .stepper span{width:34px; height:34px; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:700; color:var(--blue); background:#F7F9FE}
+  #qtyPlus{color:#fff; background:linear-gradient(135deg,var(--blue),var(--navy2))}
+
+  /* shipping address (improved: map-pin icon + label + styled action) */
+  .addr-pin{width:44px; height:44px; border-radius:11px; flex:none; overflow:hidden;
+    box-shadow:inset 0 0 0 1px rgba(15,23,66,.06)}
+  .addr-pin svg{display:block; width:100%; height:100%}
+  .addr{position:relative; flex:1; min-width:0}
+  .addr__label{font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+  .addr__stack{position:relative; min-height:36px}
+  .addr__row{position:absolute; left:0; right:0; transition:opacity .4s, transform .4s}
+  .addr__old{opacity:1}
+  .addr__new{opacity:0; transform:translateY(7px)}
+  .addr.new .addr__old{opacity:0; transform:translateY(-7px)} .addr.new .addr__new{opacity:1; transform:none}
+  .addr__row b{font-size:14.5px; font-weight:700; color:var(--navy); display:block}
+  .addr__row small{font-size:12px; color:var(--muted)}
+  .chg{margin-left:auto; align-self:center; font-size:12.5px; font-weight:700; color:var(--blue); white-space:nowrap;
+    padding:8px 16px; border-radius:9999px; background:rgba(51,107,214,.08); transition:.3s}
+  .chg.done{background:rgba(16,185,129,.14); color:#0A8F65}
+
+  /* cursor + ripple */
+  .cursor{position:absolute; left:0; top:0; width:22px; height:22px; z-index:50; pointer-events:none;
+    transition:left .7s cubic-bezier(.5,0,.3,1), top .7s cubic-bezier(.5,0,.3,1); opacity:0; filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+  .cursor.show{opacity:1}
+  .cursor.click{animation:tap .4s ease}
+  @keyframes tap{0%,100%{transform:scale(1)}45%{transform:scale(.82)}}
+  .ripple{position:absolute; z-index:49; width:14px; height:14px; border-radius:50%; background:rgba(51,107,214,.4);
+    transform:translate(-50%,-50%) scale(0); pointer-events:none}
+  .ripple.go{animation:rip .55s ease-out}
+  @keyframes rip{0%{transform:translate(-50%,-50%) scale(0); opacity:.55}100%{transform:translate(-50%,-50%) scale(5); opacity:0}}
+  .stage::before,.stage::after{display:none}/*flat*/
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="caption">
+      <span class="caption__eyebrow"><i></i>Your rules. Their freedom.</span>
+      <div class="caption__big">
+        <span class="cap-line on" data-cap="0">Smart clients <span>know what they want.</span></span>
+        <span class="cap-line" data-cap="1">They choose the options <span>you set.</span></span>
+        <span class="cap-line" data-cap="2">It adapts to <span>fit their life.</span></span>
+        <span class="cap-line" data-cap="3">Always chasing <span>what they need.</span></span>
+        <span class="cap-line" data-cap="4">Wherever they go, <span>it follows.</span></span>
+        <span class="cap-line" data-cap="5">Happy clients <span>stay.</span></span>
+      </div>
+    </div>
+
+    <div class="portal" id="portal">
+      <div class="ripple" id="ripple"></div>
+
+      <div class="pf">
+        <div class="pf__avatar">M</div>
+        <div class="pf__name">Maya R.<small>Little Ones Diaper Box</small></div>
+        <div class="badge">Active</div>
+      </div>
+
+      <!-- new monthly sale -->
+      <div class="sale" id="sale">
+        <div>
+          <div class="sale__tag">New this month</div>
+          <div class="sale__t">Baby Wipes Bundle<span class="sale__off">10% OFF</span></div>
+        </div>
+        <div class="sale__btn" id="addBundle">Add</div>
+      </div>
+
+      <div class="sec">
+        <div class="sec__label">Your box</div>
+        <div class="item">
+          <div class="item__ic"><img src="img/diaper.svg" alt="Diapers"></div>
+          <div class="item__n">Diapers<small id="sizeSub">Size 1 · newborn</small></div>
+          <div class="seg" id="seg">
+            <span class="seg__pill"></span>
+            <div class="seg__o o1">Size 1</div>
+            <div class="seg__o o2" id="size2">Size 2</div>
+            <div class="seg__o o3">Size 3</div>
+          </div>
+        </div>
+
+        <div class="swap" id="swap">
+          <div class="item__ic"><img src="img/wipes.jpg" alt="Baby Wipes"></div>
+          <div class="item__n">Baby Wipes<small>New bundle</small></div>
+          <div class="price"><span class="now">$5.39</span><span class="was">$5.99</span><span class="off">10% off applied</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row__l">Boxes per delivery<small>How many ship each cycle</small></div>
+        <div class="stepper"><span>−</span><b id="qtyVal">1</b><span id="qtyPlus">+</span></div>
+      </div>
+
+      <div class="row">
+        <div class="addr-pin">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" fill="#EAF0FC"/>
+            <g stroke="rgba(51,107,214,.12)" stroke-width="1"><line x1="0" y1="14" x2="44" y2="14"/><line x1="0" y1="30" x2="44" y2="30"/><line x1="14" y1="0" x2="14" y2="44"/><line x1="30" y1="0" x2="30" y2="44"/></g>
+            <path d="M-2 41 L46 9" stroke="rgba(16,185,129,.30)" stroke-width="3" fill="none"/>
+            <path d="M22 10.5c-4.4 0-8 3.5-8 7.9 0 5.6 8 13.1 8 13.1s8-7.5 8-13.1c0-4.4-3.6-7.9-8-7.9z" fill="#336BD6"/>
+            <circle cx="22" cy="18.4" r="3.1" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="addr" id="addr">
+          <div class="addr__label">Shipping address</div>
+          <div class="addr__stack">
+            <div class="addr__row addr__old"><b>123 Oak St</b><small>Austin, TX 78701</small></div>
+            <div class="addr__row addr__new"><b>500 Pine Ave</b><small>Denver, CO 80202</small></div>
+          </div>
+        </div>
+        <div class="chg" id="addrChange">Change</div>
+      </div>
+
+      <div class="cursor" id="cursor">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M2 2 L2 17 L6.2 13 L9 19.5 L11.6 18.4 L8.9 12 L14 12 Z" fill="#fff" stroke="#15245A" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+<script src="pausable.js"></script>
+<script>
+  var portal=document.getElementById('portal'), cursor=document.getElementById('cursor'), ripple=document.getElementById('ripple');
+  var sale=document.getElementById('sale'), addBundle=document.getElementById('addBundle');
+  var swap=document.getElementById('swap'), seg=document.getElementById('seg'), sizeSub=document.getElementById('sizeSub');
+  var size2=document.getElementById('size2'), qtyPlus=document.getElementById('qtyPlus'), qtyVal=document.getElementById('qtyVal');
+  var addr=document.getElementById('addr'), addrChange=document.getElementById('addrChange');
+
+  function caption(n){
+    var lines=document.querySelectorAll('.cap-line');
+    for(var i=0;i<lines.length;i++) lines[i].classList.toggle('on', lines[i].getAttribute('data-cap')==String(n));
+  }
+  function moveTo(el){
+    var pr=portal.getBoundingClientRect(), r=el.getBoundingClientRect();
+    var x=r.left-pr.left+r.width/2, y=r.top-pr.top+r.height/2;
+    cursor.style.left=(x-3)+'px'; cursor.style.top=(y-2)+'px'; return {x:x,y:y};
+  }
+  function clickFx(pt){
+    cursor.classList.remove('click'); void cursor.offsetWidth; cursor.classList.add('click');
+    ripple.style.left=pt.x+'px'; ripple.style.top=pt.y+'px';
+    ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go');
+  }
+  function reset(){
+    sale.classList.remove('added'); addBundle.textContent='Add';
+    swap.classList.remove('on');
+    seg.classList.remove('s2'); sizeSub.textContent='Size 1 · newborn';
+    qtyVal.textContent='1';
+    addr.classList.remove('new'); addrChange.textContent='Change'; addrChange.classList.remove('done');
+    caption(0); cursor.classList.remove('show');
+  }
+
+  function run(){
+    reset();
+    cursor.style.left='200px'; cursor.style.top='430px';          // parked, lower area
+    setTimeout(function(){ cursor.classList.add('show'); }, 500);  // appear, then hold ~2s before moving
+
+    // 1 — take the new bundle (10% off)
+    setTimeout(function(){ moveTo(addBundle); }, 2500);
+    setTimeout(function(){
+      var p=moveTo(addBundle); clickFx(p);
+      sale.classList.add('added'); addBundle.textContent='Added ✓';
+      swap.classList.add('on'); caption(1);
+    }, 4000);
+
+    // 2 — change Size 1 -> Size 2
+    setTimeout(function(){ moveTo(size2); }, 5500);
+    setTimeout(function(){
+      var p=moveTo(size2); clickFx(p);
+      seg.classList.add('s2'); sizeSub.textContent='Size 2 · 12–18 lb'; caption(2);
+    }, 6200);
+
+    // 3 — bump quantity 1 -> 2
+    setTimeout(function(){ moveTo(qtyPlus); }, 7700);
+    setTimeout(function(){
+      var p=moveTo(qtyPlus); clickFx(p);
+      qtyVal.textContent='2'; caption(3);
+    }, 8400);
+
+    // 4 — change shipping address
+    setTimeout(function(){ moveTo(addrChange); }, 9900);
+    setTimeout(function(){
+      var p=moveTo(addrChange); clickFx(p);
+      addr.classList.add('new'); addrChange.textContent='Updated ✓'; addrChange.classList.add('done');
+      caption(4);
+    }, 10600);
+
+    // hold on the reason, then loop
+    setTimeout(function(){ caption(5); }, 12200);
+    setTimeout(function(){ cursor.classList.remove('show'); }, 15800);
+  }
+  run();
+  setInterval(run, 17500);
+</script>
+<script>if(window.self===window.top){document.documentElement.style.background="linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%)";}</script>
+</body>
+</html>

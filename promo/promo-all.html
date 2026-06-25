@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebillia — Full Promo</title>
+<style>
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%; overflow:hidden; background:transparent}
+  .viewport{position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    background:transparent}
+  .frame{position:relative; flex:none; width:1280px; height:720px; transform-origin:center center; overflow:hidden;
+    background:transparent}
+
+  .layer{position:absolute; inset:0; width:1280px; height:720px; border:0; opacity:0;
+    transition:opacity .65s ease}
+
+  /* player chrome (lives inside the frame so it's captured if you record this region) */
+  .chrome{position:absolute; left:0; right:0; bottom:22px; display:flex; flex-direction:column;
+    align-items:center; gap:11px; z-index:15; pointer-events:none}
+  .chrome .row{display:flex; align-items:center; gap:14px}
+  .navbtn{pointer-events:auto; width:30px; height:30px; border-radius:50%; background:#fff;
+    box-shadow:0 4px 12px rgba(15,23,66,.16); border:1px solid rgba(15,23,66,.08);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; color:#15245A; padding:0; transition:transform .15s}
+  .navbtn:hover{transform:scale(1.08)}
+  .dots{display:flex; gap:9px; pointer-events:auto}
+  .dots b{width:7px; height:7px; border-radius:50%; background:rgba(15,23,66,.18); transition:.3s; cursor:pointer}
+  .dots b.on{background:#336BD6; width:22px; border-radius:9999px}
+  .track{width:300px; height:3px; border-radius:9999px; background:rgba(15,23,66,.12); overflow:hidden}
+  .track i{display:block; height:100%; width:0; border-radius:9999px;
+    background:linear-gradient(90deg,#336BD6,#10B981)}
+
+  /* click-to-pause overlay + controls */
+  .ovl{position:absolute; inset:0; z-index:12; cursor:pointer; background:transparent; transition:background .2s}
+  .frame.paused .ovl{background:rgba(11,20,48,.05)}
+  .pausebadge{position:absolute; left:50%; top:50%; z-index:14; width:90px; height:90px; border-radius:50%;
+    background:rgba(15,23,66,.40); display:flex; align-items:center; justify-content:center; pointer-events:none;
+    opacity:0; transform:translate(-50%,-50%) scale(.9); transition:opacity .2s ease, transform .2s ease}
+  .frame.paused .pausebadge{opacity:1; transform:translate(-50%,-50%) scale(1)}
+  .pbtn{position:absolute; right:22px; bottom:20px; z-index:14; width:40px; height:40px; border-radius:50%;
+    background:#fff; box-shadow:0 6px 16px rgba(15,23,66,.18); border:1px solid rgba(15,23,66,.08);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; color:#15245A; padding:0}
+  .pbtn .i-play{display:none}
+  .frame.paused .pbtn .i-pause{display:none}
+  .frame.paused .pbtn .i-play{display:flex}
+</style>
+</head>
+<body>
+  <div class="viewport">
+    <div class="frame" id="frame">
+      <iframe class="layer" id="a" scrolling="no"></iframe>
+      <iframe class="layer" id="b" scrolling="no"></iframe>
+
+      <div class="ovl" id="ovl"></div>
+      <div class="pausebadge">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <button class="pbtn" id="pbtn" aria-label="Play / Pause">
+        <span class="i-pause" style="display:flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></span>
+        <span class="i-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+
+      <div class="chrome">
+        <div class="row">
+          <button class="navbtn" id="prev" aria-label="Previous scene"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <div class="dots" id="dots"><b></b><b></b><b></b><b></b><b></b></div>
+          <button class="navbtn" id="next" aria-label="Next scene"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+        <div class="track"><i id="bar"></i></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // durations scaled ~1.2x to match the slower scene timers (see SPEED in pausable.js)
+  var scenes=[
+    {src:'scene1-notification.html', dur:6600},
+    {src:'scene2-portal.html',       dur:17040},
+    {src:'scene3-dunning.html',      dur:10800},
+    {src:'scene4-dashboard.html',    dur:9120},
+    {src:'scene5-cta.html',          dur:5520}
+  ];
+
+  var layers=[document.getElementById('a'), document.getElementById('b')];
+  var bar=document.getElementById('bar');
+  var dots=document.getElementById('dots').children;
+  var frame=document.getElementById('frame');
+
+  var front=1;       // index of layer currently on top (start: neither, fade scene 0 in)
+  var idx=0, cycle=0, timer=null, seq=0, userNavigated=false;
+  var paused=false, sceneDur=0, sceneRemaining=0, sceneStart=0;
+
+  function fit(){
+    var s=Math.min(window.innerWidth/1280, window.innerHeight/720);
+    frame.style.transform='scale('+s+')';
+  }
+  window.addEventListener('resize', fit); fit();
+
+  function setDots(i){
+    for(var k=0;k<dots.length;k++) dots[k].className = (k===i)?'on':'';
+  }
+  // progress bar: animate from a starting fraction to 100% over `dur` ms
+  function setBar(fromFrac, dur){
+    bar.style.transition='none'; bar.style.width=(fromFrac*100)+'%';
+    void bar.offsetWidth;
+    bar.style.transition='width '+dur+'ms linear'; bar.style.width='100%';
+  }
+
+  function present(i){
+    var cur=layers[front], nxt=layers[front^1];
+    nxt.onload=function(){
+      nxt.onload=null;
+      requestAnimationFrame(function(){
+        nxt.style.opacity=1;
+        cur.style.opacity=0;
+      });
+    };
+    // unique query forces a fresh load so each scene's animation restarts from frame 0
+    nxt.src = scenes[i].src + '?p=' + cycle + '_' + i + '_' + (seq++);
+    front ^= 1;
+
+    setDots(i);
+    sceneDur=scenes[i].dur; sceneRemaining=sceneDur; sceneStart=now();
+    setBar(0, sceneDur);
+    clearTimeout(timer);
+    timer=setTimeout(next, sceneDur);
+  }
+
+  function next(){
+    idx++;
+    if(idx>=scenes.length){ idx=0; cycle++; }
+    present(idx);
+  }
+
+  function now(){ return (window.performance&&performance.now)?performance.now():(+new Date()); }
+  function msg(m){ for(var k=0;k<layers.length;k++){ try{ layers[k].contentWindow.postMessage(m,'*'); }catch(e){} } }
+
+  function pause(){
+    if(paused) return; paused=true;
+    frame.classList.add('paused');
+    clearTimeout(timer);
+    sceneRemaining=Math.max(0, sceneRemaining-(now()-sceneStart));
+    var done=sceneDur?((sceneDur-sceneRemaining)/sceneDur):0;     // freeze the bar where it is
+    bar.style.transition='none'; bar.style.width=(done*100)+'%';
+    msg('rebillia:pause');
+  }
+  function resume(){
+    if(!paused) return; paused=false;
+    frame.classList.remove('paused');
+    sceneStart=now();
+    timer=setTimeout(next, sceneRemaining);
+    var done=sceneDur?((sceneDur-sceneRemaining)/sceneDur):0;
+    setBar(done, sceneRemaining);
+    msg('rebillia:resume');
+  }
+  function toggle(){ paused?resume():pause(); }
+
+  // manual scene navigation — jump to a scene and play from there
+  function goTo(i){
+    var N=scenes.length;
+    idx=((i%N)+N)%N;
+    userNavigated=true;                 // stop scene-1 from auto-skipping once the user takes control
+    if(paused){ paused=false; frame.classList.remove('paused'); }
+    present(idx);
+  }
+
+  document.getElementById('ovl').addEventListener('click', toggle);
+  document.getElementById('pbtn').addEventListener('click', function(e){ e.stopPropagation(); toggle(); });
+  document.getElementById('prev').addEventListener('click', function(e){ e.stopPropagation(); goTo(idx-1); });
+  document.getElementById('next').addEventListener('click', function(e){ e.stopPropagation(); goTo(idx+1); });
+  for(var k=0;k<dots.length;k++){ (function(j){ dots[j].addEventListener('click', function(e){ e.stopPropagation(); goTo(j); }); })(k); }
+  window.addEventListener('keydown', function(e){
+    if(e.code==='Space'||e.key===' '){ e.preventDefault(); toggle(); }
+    else if(e.key==='ArrowLeft'){ e.preventDefault(); goTo(idx-1); }
+    else if(e.key==='ArrowRight'){ e.preventDefault(); goTo(idx+1); }
+  });
+
+  // Scene 1 tells us when "Manage subscription" is pressed — jump straight to Scene 2.
+  window.addEventListener('message', function(e){
+    if(e.data==='rebillia:scene1-cta' && idx===0 && !paused && !userNavigated){
+      clearTimeout(timer);
+      next();
+    }
+  });
+
+  present(0);
+</script>
+<script>if(window.self===window.top){document.documentElement.style.background="linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%)";}</script>
+</body>
+</html>
