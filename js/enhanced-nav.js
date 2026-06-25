@@ -40,7 +40,7 @@
     var nav = document.querySelector(".navbar__nav");
     if (nav && !nav.querySelector("[data-bob-home]")) {
       var home = document.createElement("a");
-      home.href = "/index-best-of-both.html";
+      home.href = "/index.html";
       home.className = "navbar__link";
       home.textContent = "Home";
       home.setAttribute("data-bob-home", "");
