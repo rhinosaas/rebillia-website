@@ -2,7 +2,7 @@
    MAIN.JS — Navbar toggle, smooth scroll, scroll animations
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initSiteNavigation() {
 
   // ── Navbar scroll effect ────────────────────────────────────────────────
   const navbar = document.querySelector('.navbar');
@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.navbar__toggle');
   const nav = document.querySelector('.navbar__nav');
 
-  if (toggle && nav) {
+  if (toggle && nav && !toggle.dataset.navBound) {
+    toggle.dataset.navBound = 'true';
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('active');
       nav.classList.toggle('open');
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Mobile dropdown toggle ──────────────────────────────────────────────
   document.querySelectorAll('.navbar__dropdown > .navbar__link').forEach(btn => {
+    if (btn.dataset.dropdownBound) return;
+    btn.dataset.dropdownBound = 'true';
     btn.addEventListener('click', (e) => {
       if (window.innerWidth <= 1024) {
         e.preventDefault();
@@ -45,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Smooth scroll for anchor links ──────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    if (anchor.dataset.smoothScrollBound) return;
+    anchor.dataset.smoothScrollBound = 'true';
     anchor.addEventListener('click', (e) => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
@@ -59,10 +64,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Active nav link highlighting ────────────────────────────────────────
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.navbar__link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
+    const href = link.getAttribute('href') || '';
+    const normalizedHref = href.replace(/^\//, '');
+    const normalizedPage = currentPage.replace(/^\//, '');
+    if (normalizedHref === normalizedPage || (normalizedHref === 'pricing' && normalizedPage === 'pricing.html')) {
       link.classList.add('navbar__link--active');
+    } else {
+      link.classList.remove('navbar__link--active');
     }
   });
+}
 
+window.initSiteNavigation = initSiteNavigation;
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (!document.getElementById('site-header')) {
+    initSiteNavigation();
+  }
 });

@@ -1,0 +1,191 @@
+/* ==========================================================================
+   ENHANCED-POLISH.CSS
+   Visual polish for the best-of-both pages. Linked AFTER main.css and scoped
+   to `body.enhanced-polish` + `.bob-*` classes so it never affects originals.
+   Uses existing design tokens for brand consistency.
+   ========================================================================== */
+
+/* ---- Section eyebrow accent (gives new sections a finished, branded label) ---- */
+body.enhanced-polish .bob-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--color-primary);
+  background:var(--color-primary-light);
+  padding:6px 14px;border-radius:9999px;margin-bottom:var(--space-4);
+}
+body.enhanced-polish .bob-eyebrow::before{
+  content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--color-primary);
+}
+
+/* ---- Polished comparison table (replaces ad-hoc inline-styled tables) ---- */
+body.enhanced-polish .bob-table-wrap{
+  max-width:860px;margin:var(--space-8) auto 0;
+  border:1px solid var(--color-border-light);
+  border-radius:var(--radius-xl);
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(15,23,66,.08);
+  background:#fff;
+}
+body.enhanced-polish .bob-table{
+  width:100%;border-collapse:collapse;font-size:14.5px;
+}
+body.enhanced-polish .bob-table th,
+body.enhanced-polish .bob-table td{
+  padding:15px 20px;text-align:left;
+  border-bottom:1px solid var(--color-border-light);
+}
+body.enhanced-polish .bob-table thead th{
+  font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--color-text-secondary);
+  background:var(--color-bg-alt);
+}
+/* highlighted "Rebillia" column */
+body.enhanced-polish .bob-table th.bob-col-feature{
+  color:#fff;background:linear-gradient(135deg,var(--color-purple-700),var(--color-purple-600));
+}
+body.enhanced-polish .bob-table td.bob-col-feature{
+  background:rgba(51,107,214,.06);
+  font-weight:600;color:var(--color-text);
+}
+body.enhanced-polish .bob-table tbody tr:last-child td{border-bottom:0}
+body.enhanced-polish .bob-table tbody tr:hover td{background:rgba(51,107,214,.035)}
+body.enhanced-polish .bob-table td.bob-col-feature,
+body.enhanced-polish .bob-table tbody tr:hover td.bob-col-feature{background:rgba(51,107,214,.10)}
+body.enhanced-polish .bob-table .bob-rowlabel{font-weight:600;color:var(--color-text)}
+
+/* check / cross cells */
+body.enhanced-polish .bob-yes,
+body.enhanced-polish .bob-no{padding-left:30px;position:relative}
+body.enhanced-polish .bob-yes::before{
+  content:"";position:absolute;left:18px;top:50%;width:14px;height:8px;
+  border-left:2.5px solid var(--color-green,#10B981);border-bottom:2.5px solid var(--color-green,#10B981);
+  transform:translateY(-65%) rotate(-45deg);
+}
+body.enhanced-polish .bob-no::before{
+  content:"\00d7";position:absolute;left:18px;top:50%;transform:translateY(-50%);
+  color:#9aa1b2;font-size:18px;font-weight:700;line-height:1;
+}
+
+/* ---- Callout band for need->plan / agent-native inserts ---- */
+body.enhanced-polish .bob-callout{
+  max-width:900px;margin:var(--space-8) auto 0;
+  background:linear-gradient(135deg,rgba(92,46,145,.05),rgba(51,107,214,.06));
+  border:1px solid rgba(51,107,214,.14);
+  border-radius:var(--radius-xl);
+  padding:var(--space-8);
+}
+
+/* ---- Gradient hairline divider between new sections ---- */
+body.enhanced-polish .bob-divider{
+  height:1px;border:0;max-width:1080px;margin:var(--space-12) auto;
+  background:linear-gradient(90deg,transparent,rgba(51,107,214,.25),transparent);
+}
+
+/* ---- Slightly lift cards inside polished sections (subtle, brand-consistent) ---- */
+body.enhanced-polish .bob-section .card,
+body.enhanced-polish .bob-section .feature-card{
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+body.enhanced-polish .bob-section .card:hover,
+body.enhanced-polish .bob-section .feature-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 40px rgba(15,23,66,.10);
+}
+
+/* responsive: let wide tables scroll instead of breaking */
+@media(max-width:680px){
+  body.enhanced-polish .bob-table-wrap{overflow-x:auto}
+  body.enhanced-polish .bob-table{min-width:560px}
+}
+
+/* ---- Tighter vertical rhythm: less airy, more intentional (96px -> 80px) ---- */
+body.enhanced-polish{ --section-py: var(--space-20); }
+
+/* ---- Safety net: media/code never force horizontal overflow on narrow screens ---- */
+body.enhanced-polish img,
+body.enhanced-polish video,
+body.enhanced-polish pre{ max-width:100%; }
+
+/* ---- Center the nav menu on desktop (enhanced pages only) ---- */
+@media (min-width: 1025px){
+  body.enhanced-polish .navbar__nav{ flex:1; justify-content:center; }
+}
+
+/* ---- Social proof: 2 items centered (grid is 3-col by default) ---- */
+@media (min-width: 769px){
+  body.enhanced-polish .testimonials-grid.bob-2col-center{
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 920px;
+    margin: 0 auto;
+  }
+}
+
+/* ---- Homepage stats bar with 6 items — clean 3x2 grid ---- */
+@media (min-width: 1025px){
+  body.enhanced-polish .stats-bar__grid.bob-stats6{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 769px) and (max-width: 1024px){
+  body.enhanced-polish .stats-bar__grid.bob-stats6{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ==========================================================================
+   PLATFORM TABS — ported from pricing-cards.css (enhanced pages only)
+   ========================================================================== */
+
+/* ── Platform Tabs ──────────────────────────────────────────────────────── */
+
+.platform-tabs-wrap {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.platform-tabs {
+  display: inline-flex;
+  gap: var(--space-1);
+  padding: 5px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-full);
+}
+
+.platform-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.platform-tab:hover {
+  color: var(--color-text);
+}
+
+.platform-tab.is-active {
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Pricing Panel (per-platform card set) ──────────────────────────────── */
+
+.pricing-panel[hidden] {
+  display: none;
+}
+
+.pricing-panel:not([hidden]) {
+  animation: pricing-panel-fade 0.3s ease;
+}
+
+@keyframes pricing-panel-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
