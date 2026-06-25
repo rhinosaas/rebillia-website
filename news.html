@@ -33,6 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/enhanced-polish.css">
 
   <style>
     /* ── News Card ─────────────────────────────────────────────────────── */
@@ -189,67 +190,10 @@
     }
   </style>
 </head>
-<body>
+<body class="enhanced-polish">
 
   <!-- NAVBAR -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
-        <img src="logo-dark.png" alt="Rebillia" width="160" height="46">
-      </a>
-      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="navbar__nav">
-        <div class="navbar__dropdown">
-          <a href="solutions.html" class="navbar__link">
-            Platform
-            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <div class="navbar__dropdown-menu" style="min-width: 300px;">
-            <div class="navbar__dropdown-heading">Billing Patterns</div>
-            <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">Subscribe &amp; Save</a>
-            <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">Subscription Boxes</a>
-            <a href="solutions.html#usage-based" class="navbar__dropdown-item">Usage-Based Billing</a>
-            <a href="solutions.html#recurring-services" class="navbar__dropdown-item">Recurring Services</a>
-            <a href="solutions.html#membership" class="navbar__dropdown-item">Membership &amp; Access</a>
-            <a href="solutions.html#api-first" class="navbar__dropdown-item">API-First Billing</a>
-            <div class="navbar__dropdown-divider"></div>
-            <div class="navbar__dropdown-heading">Integrations</div>
-            <a href="bigcommerce.html" class="navbar__dropdown-item">BigCommerce</a>
-            <a href="woocommerce.html" class="navbar__dropdown-item">WooCommerce (Coming Soon)</a>
-            <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">Payment Gateways</a>
-            <div class="navbar__dropdown-divider"></div>
-            <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">View All Platform Capabilities &rarr;</a>
-          </div>
-        </div>
-        <a href="features.html" class="navbar__link">Capabilities</a>
-        <a href="pricing.html" class="navbar__link">Pricing</a>
-        <a href="developers.html" class="navbar__link">Developers</a>
-        <a href="about.html" class="navbar__link">About</a>
-        <div class="navbar__dropdown">
-          <a href="#" class="navbar__link">
-            Resources
-            <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <div class="navbar__dropdown-menu">
-            <a href="customers.html" class="navbar__dropdown-item">Customers &amp; Case Studies</a>
-            <a href="partnerships.html" class="navbar__dropdown-item">Partnerships</a>
-            <a href="news.html" class="navbar__dropdown-item">News &amp; Press</a>
-            <a href="blog.html" class="navbar__dropdown-item">Blog</a>
-          </div>
-        </div>
-      </div>
-      <div class="navbar__actions">
-        <a href="https://admin.rebillia.com" class="navbar__login" target="_blank" rel="noopener">Login</a>
-        <a href="pricing.html" class="btn btn--primary btn--sm">Start Free Trial</a>
-      </div>
-    </div>
-  </nav>
+  <div id="site-header"></div>
 
 
   <main class="page-wrapper">
@@ -880,5 +824,6 @@
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45175284.js"></script>
   <!-- End of HubSpot Embed Code -->
+  <script src="js/layout-loader.js" defer></script>
 </body>
 </html>
