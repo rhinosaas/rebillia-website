@@ -95,6 +95,15 @@
   ]
   </script>
 
+  <!-- Mobile fix: blue canvas (no white side-edges) + clamp horizontal overflow -->
+  <style>
+    html, body { overflow-x: hidden; max-width: 100%; }
+    html { background-color: #EAF0FC !important; }
+    @media (max-width: 820px) {
+      html, body { background: linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%) !important; }
+      .hero-illustration, .hero-promo, .hero-promo iframe { max-width: 100% !important; }
+    }
+  </style>
 </head>
 <body class="enhanced-polish">
 
