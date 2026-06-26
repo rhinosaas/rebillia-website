@@ -471,3 +471,20 @@
     max-width: 1600px;
   }
 }
+
+
+/* ====================================================================
+   MOBILE OVERFLOW FIXES (phone, vertical)
+   Collapse multi-column sections to ONE column on phones so content
+   never runs off the right edge or clips. Inline grid-template-columns
+   cannot be reflowed by class-based media queries, so target them with
+   an attribute selector + !important.
+   ==================================================================== */
+@media (max-width: 768px) {
+  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  .stats-bar__grid,
+  .grid, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6 { grid-template-columns: 1fr !important; }
+  html, body { overflow-x: hidden; }
+  .card, .feature-card, .partnership, .stat, section, .container { max-width: 100%; }
+  .container { overflow-x: hidden; }
+}
