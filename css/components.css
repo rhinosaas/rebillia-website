@@ -606,3 +606,21 @@
 .page-wrapper {
   padding-top: 72px; /* navbar height */
 }
+
+/* Resources mega-menu: Industries (left) + Resources (right) */
+@media (min-width: 769px) {
+  .navbar__dropdown-menu.navbar__mega {
+    left: auto;
+    right: -48px;
+    transform: translateY(8px);
+    width: 660px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 2px 0;
+    padding: var(--space-4) var(--space-5);
+  }
+  .navbar__dropdown:hover .navbar__dropdown-menu.navbar__mega { transform: translateY(0); }
+  .navbar__mega-col { display: flex; flex-direction: column; min-width: 0; }
+  .navbar__mega-col:first-child { padding-right: var(--space-6); }
+  .navbar__mega-col:last-child { padding-left: var(--space-6); border-left: 1px solid var(--color-border); }
+}
