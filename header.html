@@ -1,0 +1,166 @@
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar__inner">
+
+    <!-- Logo (filter: brightness(0) makes white logo dark on light nav) -->
+    <a href="/index.html" class="navbar__logo" aria-label="Rebillia home">
+      <img src="/logo-dark.png" alt="Rebillia" width="160" height="46">
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Nav links -->
+    <div class="navbar__nav">
+
+      <a href="/index.html" class="navbar__link">Home</a>
+
+      <!-- Platform dropdown -->
+      <div class="navbar__dropdown">
+        <a href="/solutions.html" class="navbar__link">
+          Platform
+          <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="navbar__dropdown-menu" style="min-width: 300px;">
+          <div class="navbar__dropdown-heading">Billing Patterns</div>
+          <a href="/solutions.html#subscribe-save" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            </span>
+            Subscribe &amp; Save
+          </a>
+          <a href="/solutions.html#subscription-boxes" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </span>
+            Subscription Boxes
+          </a>
+          <a href="/solutions.html#usage-based" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </span>
+            Usage-Based Billing
+          </a>
+          <a href="/solutions.html#recurring-services" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            Recurring Services
+          </a>
+          <a href="/solutions.html#membership" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </span>
+            Membership &amp; Access
+          </a>
+          <a href="/solutions.html#api-first" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            API-First Billing
+          </a>
+          <div class="navbar__dropdown-divider"></div>
+          <div class="navbar__dropdown-heading">Integrations</div>
+          <a href="/bigcommerce.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            </span>
+            BigCommerce
+          </a>
+          <a href="/integrations.html#payment-gateways" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            Payment Gateways
+          </a>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="/solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+            View All Platform Capabilities &rarr;
+          </a>
+        </div>
+      </div>
+
+      <a href="/features.html" class="navbar__link">Capabilities</a>
+      <a href="/pricing" class="navbar__link">Pricing</a>
+      <a href="/developers.html" class="navbar__link">Developers</a>
+      <a href="/about.html" class="navbar__link">About</a>
+
+      <!-- Resources mega-menu: Industries + Resources -->
+      <div class="navbar__dropdown">
+        <a href="#" class="navbar__link">
+          Resources
+          <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="navbar__dropdown-menu navbar__mega">
+          <div class="navbar__mega-col">
+            <div class="navbar__dropdown-heading">By Industry</div>
+          <a href="/beauty" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #C02772; background: #FBE9F2;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l1.8 5L19 9l-5.2 1.5L12 15.5l-1.8-5L5 9l5.2-1.5z"/><path d="M18.4 14.6l.85 2.05 2.05.85-2.05.85-.85 2.05-.85-2.05L15.5 17.5l2.05-.85z"/></svg></span>
+            Beauty
+          </a>
+          <a href="/foodbeverage" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #B45309; background: #FBEEDD;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+            Food &amp; Beverage
+          </a>
+          <a href="/healthwellness" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #0B7C6B; background: #E2F4F0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 019.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+            Health &amp; Wellness
+          </a>
+          <a href="/petproducts" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #7C3AED; background: #F2EAFB;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><ellipse cx="6" cy="12.5" rx="1.9" ry="2.4"/><ellipse cx="9.7" cy="8.5" rx="1.9" ry="2.4"/><ellipse cx="14.3" cy="8.5" rx="1.9" ry="2.4"/><ellipse cx="18" cy="12.5" rx="1.9" ry="2.4"/><path d="M12 13c-2.6 0-4.7 2-4.7 4.1 0 1.4 1.1 2.4 2.5 2.4.9 0 1.5-.4 2.2-.4s1.3.4 2.2.4c1.4 0 2.5-1 2.5-2.4C16.7 15 14.6 13 12 13z"/></svg></span>
+            Pet Products
+          </a>
+          </div>
+          <div class="navbar__mega-col">
+            <div class="navbar__dropdown-heading">Resources</div>
+          <a href="/customers.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+            Customer Stories
+          </a>
+          <a href="/partnerships.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            Partnerships
+          </a>
+          <a href="/news.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></span>
+            News &amp; Press
+          </a>
+          <a href="/blog.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></span>
+            Blog
+          </a>
+          <a href="/videos" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></span>
+            Videos
+          </a>
+          <a href="https://docs.rebillia.com" class="navbar__dropdown-item" target="_blank" rel="noopener">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg></span>
+            Documentation
+          </a>
+          <a href="https://apiguide.rebillia.com" class="navbar__dropdown-item" target="_blank" rel="noopener">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><path d="M14.5 4l-5 16"/></svg></span>
+            API Documentation
+          </a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- Actions -->
+    <div class="navbar__actions">
+      <a href="https://admin.rebillia.com" class="navbar__login" target="_blank" rel="noopener">Login</a>
+      <a href="/pricing" class="btn btn--primary btn--sm">Start Free Trial</a>
+    </div>
+
+  </div>
+</nav>
