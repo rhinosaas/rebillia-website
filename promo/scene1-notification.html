@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script>if(/dark/.test(location.hash+location.search)){document.documentElement.classList.add("dk");}</script>
 <style>
   :root{
     --navy:#0F1742; --navy2:#1A2B5C; --blue:#336BD6; --green:#10B981;
@@ -97,6 +98,10 @@
   .ripple.go{animation:rip .55s ease-out}
   @keyframes rip{0%{transform:translate(-50%,-50%) scale(0); opacity:.55}100%{transform:translate(-50%,-50%) scale(5); opacity:0}}
   .stage::before,.stage::after{display:none}/*flat*/
+
+  html.dk .caption__big, html.dk .cap-line{color:#EAF3FF}
+  html.dk .caption__big span{background:linear-gradient(135deg,#86AEFF,#C3D5FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  html.dk .caption__eyebrow{background:rgba(255,255,255,.10);color:#B7CCFF}
 </style>
 </head>
 <body>

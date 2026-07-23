@@ -68,8 +68,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/enhanced-polish.css?v=3">
-  <link rel="stylesheet" href="css/hero-demo.css">
 
   <!-- Review Structured Data -->
   <script type="application/ld+json">
@@ -95,22 +93,179 @@
   ]
   </script>
 
-  <!-- Mobile fix: blue canvas (no white side-edges) + clamp horizontal overflow -->
-  <style>
-    html, body { overflow-x: hidden; max-width: 100%; }
-    html { background-color: #EAF0FC !important; }
-    @media (max-width: 820px) {
-      html, body { background: linear-gradient(145deg,#F0F4FD 0%,#E4ECFB 40%,#D6E2F8 70%,#F0F4FD 100%) !important; }
-      .hero-illustration, .hero-promo, .hero-promo iframe { max-width: 100% !important; }
-    }
-  </style>
 </head>
-<body class="enhanced-polish">
+<body>
 
   <!-- ====================================================================
        NAVBAR
        ==================================================================== -->
-  <div id="site-header"></div>
+  <div class="static-site-header"><nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar__inner">
+
+    <!-- Logo (filter: brightness(0) makes white logo dark on light nav) -->
+    <a href="index.html" class="navbar__logo" aria-label="Rebillia home">
+      <img src="logo-dark.png" alt="Rebillia" width="160" height="46">
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Nav links -->
+    <div class="navbar__nav">
+
+      <a href="index.html" class="navbar__link">Home</a>
+
+      <!-- Platform dropdown -->
+      <div class="navbar__dropdown">
+        <a href="solutions.html" class="navbar__link">
+          Platform
+          <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="navbar__dropdown-menu" style="min-width: 300px;">
+          <div class="navbar__dropdown-heading">Billing Patterns</div>
+          <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            </span>
+            Subscribe &amp; Save
+          </a>
+          <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </span>
+            Subscription Boxes
+          </a>
+          <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </span>
+            Usage-Based Billing
+          </a>
+          <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            Recurring Services
+          </a>
+          <a href="solutions.html#membership" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </span>
+            Membership &amp; Access
+          </a>
+          <a href="solutions.html#api-first" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            API-First Billing
+          </a>
+          <div class="navbar__dropdown-divider"></div>
+          <div class="navbar__dropdown-heading">Integrations</div>
+          <a href="bigcommerce.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            </span>
+            BigCommerce
+          </a>
+          <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            Payment Gateways
+          </a>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+            View All Platform Capabilities &rarr;
+          </a>
+        </div>
+      </div>
+
+      <a href="features.html" class="navbar__link">Capabilities</a>
+      <a href="pricing.html" class="navbar__link">Pricing</a>
+      <a href="developers.html" class="navbar__link">Developers</a>
+      <a href="about.html" class="navbar__link">About</a>
+
+      <!-- Resources mega-menu: Industries + Resources -->
+      <div class="navbar__dropdown">
+        <a href="#" class="navbar__link">
+          Resources
+          <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="navbar__dropdown-menu navbar__mega">
+          <div class="navbar__mega-col">
+            <div class="navbar__dropdown-heading">By Industry</div>
+          <a href="beauty.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #C02772; background: #FBE9F2;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l1.8 5L19 9l-5.2 1.5L12 15.5l-1.8-5L5 9l5.2-1.5z"/><path d="M18.4 14.6l.85 2.05 2.05.85-2.05.85-.85 2.05-.85-2.05L15.5 17.5l2.05-.85z"/></svg></span>
+            Beauty
+          </a>
+          <a href="foodbeverage.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #B45309; background: #FBEEDD;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+            Food &amp; Beverage
+          </a>
+          <a href="healthwellness.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #0B7C6B; background: #E2F4F0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 019.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+            Health &amp; Wellness
+          </a>
+          <a href="petproducts.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #7C3AED; background: #F2EAFB;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><ellipse cx="6" cy="12.5" rx="1.9" ry="2.4"/><ellipse cx="9.7" cy="8.5" rx="1.9" ry="2.4"/><ellipse cx="14.3" cy="8.5" rx="1.9" ry="2.4"/><ellipse cx="18" cy="12.5" rx="1.9" ry="2.4"/><path d="M12 13c-2.6 0-4.7 2-4.7 4.1 0 1.4 1.1 2.4 2.5 2.4.9 0 1.5-.4 2.2-.4s1.3.4 2.2.4c1.4 0 2.5-1 2.5-2.4C16.7 15 14.6 13 12 13z"/></svg></span>
+            Pet Products
+          </a>
+          </div>
+          <div class="navbar__mega-col">
+            <div class="navbar__dropdown-heading">Resources</div>
+          <a href="customers.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+            Customer Stories
+          </a>
+          <a href="partnerships.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            Partnerships
+          </a>
+          <a href="news.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></span>
+            News &amp; Press
+          </a>
+          <a href="blog.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></span>
+            Blog
+          </a>
+          <a href="videos.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></span>
+            Videos
+          </a>
+          <a href="https://docs.rebillia.com" class="navbar__dropdown-item" target="_blank" rel="noopener">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg></span>
+            Documentation
+          </a>
+          <a href="https://apiguide.rebillia.com" class="navbar__dropdown-item" target="_blank" rel="noopener">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><path d="M14.5 4l-5 16"/></svg></span>
+            API Documentation
+          </a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- Actions -->
+    <div class="navbar__actions">
+      <a href="https://admin.rebillia.com" class="navbar__login" target="_blank" rel="noopener">Login</a>
+      <a href="pricing.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+    </div>
+
+  </div>
+</nav>
+</div>
 
 
   <!-- ====================================================================
@@ -121,33 +276,166 @@
   <!-- ================================================================
          1. HERO (Light, clean)
          ================================================================ -->
-    <section class="hero hero--gradient hero--center">
+    <section class="hero hero--dark hero--center" style="padding-top: var(--space-10); padding-bottom: var(--space-12); background: linear-gradient(180deg, #EEF0FA 0%, #E7EAF6 100%);">
       <div class="hero__grid-pattern"></div>
 
       <div class="container">
-        <div class="hero__content">
-          <span class="hero__label">SUBSCRIPTION INFRASTRUCTURE</span>
-          <h1 class="hero__title">The subscription layer that <span>adapts with your business</span></h1>
-          <p class="hero__subtitle">Launch, manage, and grow recurring revenue, from ecommerce and subscription boxes to SaaS and AI-powered products. Rebillia's agent-native architecture supports any monetization pattern, from simple recurring orders to autonomous AI-operated pricing, retention, and experimentation workflows.</p>
-          <p class="hero__subtitle" style="font-weight: 600; color: var(--color-heading); margin-top: var(--space-3);">Change prices. Swap products. Try new ways to charge. <span style="color: var(--color-purple-600);">All without starting over.</span></p>
+        <div class="hero__content" style="margin-bottom: var(--space-7);">
+          <span class="hero__label">AGENT-NATIVE SUBSCRIPTION INFRASTRUCTURE</span>
+          <h1 class="hero__title">The subscription layer that <span>grows with your business.</span></h1>
+          <p class="hero__subtitle" style="max-width: 730px; margin-left:auto; margin-right:auto;">Launch, manage, and optimize recurring revenue across ecommerce, SaaS, and AI-powered products. As your business evolves, Rebillia evolves with you, making it easy to introduce new pricing, products, and revenue models without disruption.</p>
           <div class="hero__actions">
-            <a href="/pricing" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="pricing.html" class="btn btn--primary btn--lg">Start Free Trial</a>
             <a href="#how-it-works" class="btn btn--ghost btn--lg">See How It Works</a>
           </div>
         </div>
 
-        <!-- Hero product mockup: Subscriber Portal -->
-        <div class="hero-illustration">
-
-          <!-- Swipeable product demo carousel, both scenes are replicas of the
-               real Rebillia app (DashboardHTML capture + OBS flow recording),
-               animated by js/hero-demo.js -->
-          <div class="hero-promo" style="max-width:940px; margin:0 auto;">
-            <iframe src="promo/promo-all.html" title="Rebillia promo video" scrolling="no" style="width:100%; aspect-ratio:16 / 9; height:auto; border:0; display:block; background:transparent;"></iframe>
-            <p style="text-align:center; margin-top:var(--space-5); font-size:var(--text-lg); color:var(--color-text-secondary);">From renewal to retention, the whole journey</p>
+        <!-- Promo journey gallery: 5 selectable parts + full viewer -->
+        <style>
+          .promo-gallery{ max-width:1120px; margin:var(--space-10) auto 0; position:relative; }
+          .promo-gallery > *{ position:relative; z-index:1; }
+          /* soft backlight behind the promo */
+          .promo-gallery::before{ content:""; position:absolute; z-index:0; pointer-events:none; left:50%; top:64%; transform:translate(-50%,-50%); width:1180px; height:680px; max-width:122%; background:radial-gradient(ellipse at center, rgba(100,145,240,.24) 0%, rgba(74,106,205,.11) 44%, transparent 70%); filter:blur(26px); }
+          .pg-tabs{ position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:16px; }
+          /* pipeline connector running through the tiles */
+          .pg-tabs::before{ content:""; position:absolute; top:54px; left:9%; right:9%; height:2px; z-index:0;
+            background:linear-gradient(90deg, transparent, rgba(245,158,11,.5), rgba(51,107,214,.5), rgba(14,163,113,.5), rgba(124,58,237,.5), rgba(236,72,153,.5), transparent); }
+          .pg-tab{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:14px;
+            padding:24px 16px 20px; border-radius:18px; cursor:pointer; overflow:hidden; font-family:inherit; min-height:190px;
+            background:linear-gradient(160deg,#151D45 0%,#0B1230 100%); border:1px solid rgba(255,255,255,.09);
+            box-shadow:0 12px 32px rgba(8,14,40,.34); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+          /* circuit-grid texture */
+          .pg-tab::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.6;
+            background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+            background-size:22px 22px; -webkit-mask-image:radial-gradient(120% 80% at 50% 0%,#000 40%,transparent 100%); mask-image:radial-gradient(120% 80% at 50% 0%,#000 40%,transparent 100%); }
+          /* accent glow */
+          .pg-tab::after{ content:""; position:absolute; top:-46px; left:50%; transform:translateX(-50%); width:130px; height:130px; border-radius:50%;
+            background:var(--c); opacity:.16; filter:blur(34px); pointer-events:none; transition:opacity .2s; }
+          .pg-tab:hover{ transform:translateY(-6px); border-color:color-mix(in srgb, var(--c) 60%, transparent); box-shadow:0 26px 54px rgba(8,14,40,.46); }
+          .pg-tab:hover::after{ opacity:.34; }
+          .pg-tab.active{ border-color:var(--c); box-shadow:0 22px 50px color-mix(in srgb, var(--c) 28%, rgba(8,14,40,.42)); }
+          .pg-tab.active::after{ opacity:.42; }
+          .pg-tab__num{ position:absolute; top:14px; right:16px; z-index:2; font-family:'JetBrains Mono',ui-monospace,monospace; font-weight:600; font-size:12px; letter-spacing:.06em; color:var(--c); opacity:.55; }
+          .pg-tab.active .pg-tab__num{ opacity:1; }
+          .pg-tab__ic{ position:relative; z-index:2; width:60px; height:60px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+            color:var(--c); background:color-mix(in srgb, var(--c) 15%, #0B1230); border:1px solid color-mix(in srgb, var(--c) 45%, transparent);
+            box-shadow:0 0 0 4px color-mix(in srgb, var(--c) 8%, transparent), 0 8px 22px color-mix(in srgb, var(--c) 30%, transparent);
+            transition:transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease; }
+          .pg-tab:hover .pg-tab__ic{ transform:scale(1.08) translateY(-1px); }
+          .pg-tab.active .pg-tab__ic{ background:var(--c); color:#0B1230; box-shadow:0 0 26px color-mix(in srgb, var(--c) 65%, transparent); }
+          .pg-tab__title{ position:relative; z-index:2; font-family:'Outfit',sans-serif; font-weight:800; font-size:17px; color:#101736; line-height:1.16; letter-spacing:-.015em; text-shadow:none; }
+          .pg-tab__sub{ position:relative; z-index:2; font-size:12.5px; font-weight:500; color:#5A6478; line-height:1.34; font-family:'JetBrains Mono',ui-monospace,monospace; letter-spacing:.015em; }
+          .pg-tab.active .pg-tab__title{ color:#101736; text-shadow:none; }
+          .pg-tab.active .pg-tab__sub{ color:#5A6478; }
+          .pg-stage{ margin-top:12px; position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; }
+          .pg-stage iframe{ position:absolute; top:0; left:0; width:1280px; height:720px; border:0; display:block; background:transparent; transform-origin:top left; }
+          @media (max-width:860px){ .pg-tabs{ grid-template-columns:repeat(2,1fr); } .pg-tabs::before{ display:none; } .pg-tab{ min-height:0; } }
+          @media (max-width:460px){ .pg-tabs{ grid-template-columns:1fr; } }
+          /* dark-blue hero adjustments */
+          .hero--dark .hero__actions .btn--primary{ background:#0A0D16; color:#fff; border-color:transparent; }
+          .hero--dark .hero__actions .btn--primary:hover{ background:#1B2133; }
+          .hero--dark .hero__actions .btn--ghost{ color:#1B2340; border-color:rgba(20,30,66,.24); background:transparent; }
+          .hero--dark .hero__actions .btn--ghost:hover{ background:rgba(20,30,66,.05); }
+          .hero--dark::after{ display:none; }
+          /* promo viewer as a bright product "screen" on the dark hero */
+          .pg-stage{ background:transparent; border:none; box-shadow:none; }
+          /* carousel nav (arrows + dots) */
+          .pg-nav{ display:flex; align-items:center; justify-content:center; gap:22px; margin-top:24px; }
+          .pg-arrow{ width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; background:#fff; border:1px solid rgba(15,23,66,.14); color:#3D6FE0; box-shadow:0 4px 14px rgba(15,23,66,.12); transition:background .18s, border-color .18s, transform .12s, color .18s; }
+          .pg-arrow:hover{ background:#F1F4FD; border-color:rgba(61,111,224,.42); color:#2E5CC8; }
+          .pg-arrow:active{ transform:scale(.93); }
+          .pg-dots{ display:flex; align-items:center; gap:9px; }
+          .pg-dot{ width:9px; height:9px; border-radius:50%; border:0; padding:0; cursor:pointer; background:rgba(15,23,66,.22); transition:width .22s ease, background .22s ease; }
+          .pg-dot:hover{ background:rgba(15,23,66,.38); }
+          .pg-dot.active{ width:28px; border-radius:5px; background:linear-gradient(90deg,#3D6FE0,#6E5AE0); }
+          /* techy hero headline */
+          .hero--dark .hero__title{ color:#0A0D16; text-shadow:none; }
+          .hero--dark .hero__title span{
+            background:none; -webkit-background-clip:border-box; background-clip:border-box;
+            -webkit-text-fill-color:#0A0D16; color:#0A0D16;
+            filter:none; animation:none;
+          }
+          @keyframes heroShine{ to{ background-position:220% center; } }
+          @media (prefers-reduced-motion: reduce){ .hero--dark .hero__title span{ animation:none; } }
+          .hero--dark .hero__grid-pattern{ display:none; }
+          /* blend elements into the near-black hero */
+          .hero--dark .hero__subtitle{ color:#5A6478; }
+          .hero--dark .hero__label{ background:rgba(61,111,224,.08); border-color:rgba(61,111,224,.18); color:#2E5CC8; }
+          .pg-tab{ background:linear-gradient(165deg,#FFFFFF 0%,#F2F5FD 100%); border-color:rgba(61,111,224,.16); box-shadow:0 14px 34px rgba(15,23,66,.10); }
+          .pg-tabs::before{ opacity:.7; }
+        </style>
+        <div class="promo-gallery">
+          <div class="pg-tabs" role="tablist" aria-label="Explore the subscription journey">
+            <button class="pg-tab active" role="tab" aria-selected="true" data-src="promo/scene1-notification.html" style="--c:#F59E0B; --ct:#FEF4E4;">
+              <span class="pg-tab__num">01</span>
+              <span class="pg-tab__ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
+              <span class="pg-tab__title">Save them before they slip</span>
+              <span class="pg-tab__sub">Subscription billing built for the AI era</span>
+            </button>
+            <button class="pg-tab" role="tab" aria-selected="false" data-src="promo/scene2-portal.html" style="--c:#336BD6; --ct:#EAF1FE;">
+              <span class="pg-tab__num">02</span>
+              <span class="pg-tab__ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="10" cy="8" r="2.7" fill="currentColor" stroke="none"/><line x1="4" y1="16" x2="20" y2="16"/><circle cx="15" cy="16" r="2.7" fill="currentColor" stroke="none"/></svg></span>
+              <span class="pg-tab__title">Change with your client</span>
+              <span class="pg-tab__sub">Your clients evolve. Their subscriptions should too.</span>
+            </button>
+            <button class="pg-tab" role="tab" aria-selected="false" data-src="promo/scene3-dunning.html" style="--c:#0EA371; --ct:#E3F6EC;">
+              <span class="pg-tab__num">03</span>
+              <span class="pg-tab__ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>
+              <span class="pg-tab__title">Recover revenue. Eliminate churn.</span>
+              <span class="pg-tab__sub">Smart payment recovery and flexible subscriptions.</span>
+            </button>
+            <button class="pg-tab" role="tab" aria-selected="false" data-src="promo/scene4-dashboard.html" style="--c:#7C3AED; --ct:#F1E9FC;">
+              <span class="pg-tab__num">04</span>
+              <span class="pg-tab__ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="4.5" height="9" rx="1.2" fill="currentColor" stroke="none"/><rect x="9.75" y="6" width="4.5" height="14" rx="1.2" fill="currentColor" stroke="none"/><rect x="16.5" y="3" width="4.5" height="17" rx="1.2" fill="currentColor" stroke="none"/></svg></span>
+              <span class="pg-tab__title">Revenue command center</span>
+              <span class="pg-tab__sub">Live MRR, churn, retention, and growth.</span>
+            </button>
+            <button class="pg-tab" role="tab" aria-selected="false" data-src="promo/scene5-cta.html" style="--c:#EC4899; --ct:#FCEAF3;">
+              <span class="pg-tab__num">05</span>
+              <span class="pg-tab__ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" stroke="none"/></svg></span>
+              <span class="pg-tab__title">Live in minutes</span>
+              <span class="pg-tab__sub">No migration required.</span>
+            </button>
           </div>
-
+          <div class="pg-stage">
+            <iframe id="pgFrame" src="promo/scene1-notification.html" title="Rebillia subscription journey" scrolling="no" allowtransparency="true" style="background:transparent;"></iframe>
+          </div>
+          <div class="pg-nav">
+            <button class="pg-arrow" id="pgPrev" type="button" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="pg-dots" id="pgDots">
+              <button class="pg-dot active" data-i="0" type="button" aria-label="Go to part 1"></button>
+              <button class="pg-dot" data-i="1" type="button" aria-label="Go to part 2"></button>
+              <button class="pg-dot" data-i="2" type="button" aria-label="Go to part 3"></button>
+              <button class="pg-dot" data-i="3" type="button" aria-label="Go to part 4"></button>
+              <button class="pg-dot" data-i="4" type="button" aria-label="Go to part 5"></button>
+            </div>
+            <button class="pg-arrow" id="pgNext" type="button" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
         </div>
+        <script>
+          (function(){
+            var frame=document.getElementById('pgFrame');
+            var stage=frame.parentElement;
+            var tabs=Array.prototype.slice.call(document.querySelectorAll('.pg-tab'));
+            var dots=Array.prototype.slice.call(document.querySelectorAll('.pg-dot'));
+            var prev=document.getElementById('pgPrev'), next=document.getElementById('pgNext');
+            var current=0, N=tabs.length;
+            function fitStage(){ frame.style.transform='scale('+(stage.clientWidth/1280)+')'; }
+            window.addEventListener('resize', fitStage);
+            window.addEventListener('load', fitStage);
+            if(document.readyState!=='loading') fitStage(); else document.addEventListener('DOMContentLoaded', fitStage);
+            function setActive(i){
+              current=((i%N)+N)%N;
+              tabs.forEach(function(t,k){ var on=k===current; t.classList.toggle('active',on); t.setAttribute('aria-selected',on?'true':'false'); });
+              dots.forEach(function(d,k){ d.classList.toggle('active',k===current); });
+              frame.src=tabs[current].getAttribute('data-src');
+            }
+            tabs.forEach(function(t,i){ t.addEventListener('click', function(){ setActive(i); }); });
+            dots.forEach(function(d,i){ d.addEventListener('click', function(){ setActive(i); }); });
+            prev.addEventListener('click', function(){ setActive(current-1); });
+            next.addEventListener('click', function(){ setActive(current+1); });
+          })();
+        </script>
 
       </div>
     </section>
@@ -156,11 +444,16 @@
     <!-- ================================================================
          2. ANIMATED LOGO CLOUD
          ================================================================ -->
-    <section class="section reveal" style="padding-top: var(--space-16); padding-bottom: var(--space-16); background: var(--color-bg-alt);">
+    <section class="section section--dark reveal" style="padding-top: var(--space-16); padding-bottom: var(--space-16); background: #0F1424;">
+      <style>
+        .logo-cloud--dark .logo-cloud__item{ background:#fff; border-radius:12px; padding:14px 22px; min-width:150px; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(0,0,0,.22); }
+        .logo-cloud--dark .customer-logo{ filter:none; opacity:1; }
+        .logo-cloud--dark .logo-item__name{ color:#101736; font-weight:700; }
+      </style>
       <div class="container">
-        <h2 class="text-center" style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-text); margin-bottom: var(--space-2);">Trusted Across Industries and Platforms</h2>
-        <p class="text-center text-muted" style="font-size: var(--text-base); margin-bottom: var(--space-10);">From specialty ecommerce to SaaS to AI-powered applications</p>
-        <div class="logo-cloud--animated" style="padding: var(--space-6) 0;">
+        <h2 class="text-center" style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: #ffffff; margin-bottom: var(--space-2);">Trusted Across Industries and Platforms</h2>
+        <p class="text-center" style="font-size: var(--text-base); color: rgba(232,238,252,.72); margin-bottom: var(--space-10);">From specialty ecommerce to SaaS to AI-powered applications</p>
+        <div class="logo-cloud--animated logo-cloud--dark" style="padding: var(--space-6) 0;">
           <div class="logo-cloud__track">
             <span class="logo-cloud__item"><img src="logos/fonte-coffee-roasters.png" alt="Fonte Coffee Roasters" class="customer-logo"></span>
             <span class="logo-cloud__item"><img src="logos/country-max.png" alt="Country Max" class="customer-logo"></span>
@@ -176,7 +469,6 @@
             <span class="logo-cloud__item"><img src="logos/big-dipper-wax-works.svg" alt="Big Dipper Wax Works" class="customer-logo"></span>
             <span class="logo-cloud__item"><img src="logos/pickleball-central.png" alt="Pickleball Central" class="customer-logo"></span>
             <span class="logo-cloud__item"><img src="logos/oesd.png" alt="OESD" class="customer-logo"></span>
-            <span class="logo-cloud__item"><img src="logos/ups.svg" alt="UPS Capital" class="customer-logo"></span>
             <!-- Duplicate set for seamless loop -->
             <span class="logo-cloud__item"><img src="logos/fonte-coffee-roasters.png" alt="Fonte Coffee Roasters" class="customer-logo"></span>
             <span class="logo-cloud__item"><img src="logos/country-max.png" alt="Country Max" class="customer-logo"></span>
@@ -192,7 +484,6 @@
             <span class="logo-cloud__item"><img src="logos/big-dipper-wax-works.svg" alt="Big Dipper Wax Works" class="customer-logo"></span>
             <span class="logo-cloud__item"><img src="logos/pickleball-central.png" alt="Pickleball Central" class="customer-logo"></span>
             <span class="logo-cloud__item"><img src="logos/oesd.png" alt="OESD" class="customer-logo"></span>
-            <span class="logo-cloud__item"><img src="logos/ups.svg" alt="UPS Capital" class="customer-logo"></span>
           </div>
         </div>
       </div>
@@ -202,10 +493,19 @@
     <!-- ================================================================
          3. STATS BAR
          ================================================================ -->
-    <section class="stats-bar stats-bar--decorated reveal" style="position: relative; overflow: hidden;">
+    <section class="stats-bar stats-bar--decorated reveal" style="position: relative; overflow: hidden; background: #0F1424;">
+      <style>
+        .stats-bar--decorated{ border-top:0 !important; border-bottom:0 !important; margin-top:-1px; }
+        .stats-bar--decorated .dot-pattern{ display:none !important; }
+        .stats-bar--decorated .stats-bar__grid{ grid-template-columns:repeat(3,1fr) !important; row-gap:var(--space-12); }
+        @media (max-width:720px){ .stats-bar--decorated .stats-bar__grid{ grid-template-columns:repeat(2,1fr) !important; } }
+        .stats-bar--decorated .stat__number{ color:#ffffff !important; }
+        .stats-bar--decorated .stat__label{ color:rgba(232,238,252,.68) !important; }
+        .stats-bar--decorated .stat__icon{ background:rgba(255,255,255,.12) !important; color:#BFD3FF !important; }
+      </style>
       <div class="dot-pattern dot-pattern--subtle" style="position: absolute; inset: 0; pointer-events: none;"></div>
       <div class="container" style="position: relative;">
-        <div class="stats-bar__grid bob-stats6">
+        <div class="stats-bar__grid">
           <div class="stat">
             <div class="stat__icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -217,7 +517,7 @@
             <div class="stat__icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
             </div>
-            <div class="stat__number" data-count="7" data-suffix="+">7+</div>
+            <div class="stat__number">7+</div>
             <div class="stat__label">Payment gateways</div>
           </div>
           <div class="stat">
@@ -229,7 +529,7 @@
           </div>
           <div class="stat">
             <div class="stat__icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div class="stat__number">Multi-Currency</div>
             <div class="stat__label">Smart money routing</div>
@@ -263,9 +563,8 @@
         <div class="section-header">
           <span class="section-label section-label--light">PROGRAMMABLE SUBSCRIPTIONS</span>
           <h2>Infrastructure for <span class="typewriter-container"><span id="typewriter-text" class="typewriter-word"></span><span class="typewriter-cursor">|</span></span></h2>
-          <p class="section-subtitle" style="color: var(--color-gray-400);">Connect Rebillia to AI tools like Claude, ChatGPT, and Cursor through an MCP server (a secure bridge that lets AI tools act in Rebillia), and run billing in plain conversation. It doesn't just pass commands, it does the real work: tune pricing, prevent churn, win back customers, and surface your revenue.</p>
-          <p class="section-subtitle" style="color: var(--color-gray-400); margin-top: var(--space-3); font-weight: var(--font-semibold);">Rebillia works the way you do.</p>
-          <p class="section-subtitle" style="color: var(--color-gray-400); margin-top: var(--space-3);">No code required, whether you're a developer or a founder running on AI tools.</p>
+          <p class="section-subtitle" style="color: var(--color-gray-400);">Rebillia's MCP server isn't an API wrapper. It's a workflow layer with built-in business logic, pricing optimization, churn prevention, retention actions, and revenue intelligence. Use it from Claude, ChatGPT, Cursor, or any AI tool.</p>
+          <p class="section-subtitle" style="color: var(--color-gray-400); margin-top: var(--space-3);">No code required. Whether you're a developer building integrations or a founder using AI tools to run your business, Rebillia works the way you do.</p>
         </div>
 
         <!-- AI Client Logo Pills -->
@@ -369,7 +668,7 @@
               <div style="color: rgba(255,255,255,0.5); padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: 6px;">update_subscription</div>
               <div style="color: rgba(255,255,255,0.5); padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: 6px;">list_invoices</div>
             </div>
-            <div style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: var(--space-3);">Basic commands only. You have to figure out the rest.</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: var(--space-3);">Raw API calls. You build the logic.</div>
           </div>
           <!-- Rebillia MCP -->
           <div style="background: rgba(51,107,214,0.1); border: 1px solid rgba(51,107,214,0.3); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6);">
@@ -379,7 +678,7 @@
               <div style="color: #94B4F0; padding: 6px 10px; background: rgba(51,107,214,0.15); border-radius: 6px;">apply_retention_action</div>
               <div style="color: #94B4F0; padding: 6px 10px; background: rgba(51,107,214,0.15); border-radius: 6px;">get_revenue_intelligence</div>
             </div>
-            <div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: var(--space-3);">Knows how to do the work. Just describe what you need.</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: var(--space-3);">Business logic built in. Just describe what you need.</div>
           </div>
         </div>
 
@@ -395,7 +694,7 @@
     <!-- ================================================================
          6. SOLUTION CATEGORIES
          ================================================================ -->
-    <section class="section reveal bob-section" style="position: relative; overflow: hidden;">
+    <section class="section reveal" style="position: relative; overflow: hidden;">
 
   <!-- Decorative dot grid -->
       <div class="dot-grid-accent" style="top: 40px; right: 5%;"></div>
@@ -404,7 +703,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">SOLUTIONS</span>
-          <h2>Every Way to Charge Customers, in One System</h2>
+          <h2>Every Monetization Pattern, One Infrastructure</h2>
         </div>
         <div class="grid grid-3 reveal-stagger">
           <a href="solutions.html#multi-business" class="feature-card">
@@ -431,21 +730,8 @@
                 <path d="M14.5 20l1.5 1.5 3-3" stroke="#10B981" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="feature-card__title">Multi-Business</h3>
-            <p class="feature-card__text">Run multiple brands, partnerships, and sales channels from one system, shared customers, cross-selling, and unified reporting.</p>
-          </a>
-          <a href="solutions.html" class="feature-card">
-            <div class="feature-card__scene">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="12" cy="13" r="8" fill="#E4ECFB" stroke="#336BD6" stroke-width="1.2"/>
-                <text x="9" y="17" font-size="10" font-weight="700" fill="#336BD6" font-family="sans-serif">$</text>
-                <circle cx="22" cy="20" r="7" fill="#ECFDF5" stroke="#10B981" stroke-width="1.2"/>
-                <text x="19" y="23.5" font-size="9" font-weight="700" fill="#059669" font-family="sans-serif">&#8364;</text>
-                <path d="M15 9h5a2 2 0 012 2v3" stroke="#94B4F0" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
-              </svg>
-            </div>
-            <h3 class="feature-card__title">Multi-Currency</h3>
-            <p class="feature-card__text">Smart money routing.</p>
+            <h3 class="feature-card__title">Multi-Business Monetization</h3>
+            <p class="feature-card__text">Run multiple brands from one system. Shared customers, cross-selling, unified analytics.</p>
           </a>
           <a href="solutions.html#usage-based" class="feature-card">
             <div class="feature-card__scene">
@@ -460,7 +746,7 @@
               </svg>
             </div>
             <h3 class="feature-card__title">Usage-Based Billing</h3>
-            <p class="feature-card__text">Charge based on how much a customer actually uses, for APIs, consumption, and AI workloads</p>
+            <p class="feature-card__text">Metered billing for APIs, consumption, and AI workloads</p>
           </a>
           <a href="solutions.html#recurring-services" class="feature-card">
             <div class="feature-card__scene">
@@ -478,7 +764,7 @@
               </svg>
             </div>
             <h3 class="feature-card__title">Recurring Services</h3>
-            <p class="feature-card__text">Bill for ongoing services with automatic invoices and rules that adjust as the customer's needs change</p>
+            <p class="feature-card__text">Service billing with automated invoicing and lifecycle rules</p>
           </a>
           <a href="solutions.html#membership" class="feature-card">
             <div class="feature-card__scene">
@@ -492,7 +778,7 @@
               </svg>
             </div>
             <h3 class="feature-card__title">Membership &amp; Access</h3>
-            <p class="feature-card__text">Control who can access what, with membership tiers that automatically unlock the right perks</p>
+            <p class="feature-card__text">Access control, tiers, and programmatic entitlements</p>
           </a>
           <a href="solutions.html#api-first" class="feature-card">
             <div class="feature-card__scene">
@@ -508,7 +794,7 @@
               </svg>
             </div>
             <h3 class="feature-card__title">API-First Billing</h3>
-            <p class="feature-card__text">Build any billing setup you want from flexible building blocks your developers can connect to</p>
+            <p class="feature-card__text">Build any billing experience with programmable components</p>
           </a>
           <a href="solutions.html#subscribe-save" class="feature-card">
             <div class="feature-card__scene">
@@ -522,7 +808,7 @@
               </svg>
             </div>
             <h3 class="feature-card__title">Subscribe &amp; Save</h3>
-            <p class="feature-card__text">Recurring orders customers can adjust as their needs change</p>
+            <p class="feature-card__text">Recurring orders with lifecycle-aware flexibility</p>
           </a>
           <a href="solutions.html#subscription-boxes" class="feature-card">
             <div class="feature-card__scene">
@@ -536,7 +822,7 @@
               </svg>
             </div>
             <h3 class="feature-card__title"><span class="text-highlight">Subscription</span> Boxes</h3>
-            <p class="feature-card__text">Curated boxes shipped on flexible schedules you control</p>
+            <p class="feature-card__text">Curated fulfillment with component-based scheduling</p>
           </a>
           <a href="solutions.html#dunning" class="feature-card">
             <div class="feature-card__scene">
@@ -550,7 +836,7 @@
               </svg>
             </div>
             <h3 class="feature-card__title">Smart Dunning &amp; Recovery</h3>
-            <p class="feature-card__text">Automatically retry failed payments and remind customers, so you recover revenue you'd otherwise lose (also known as "dunning")</p>
+            <p class="feature-card__text">Automatically retry and recover failed payments before they become lost revenue</p>
           </a>
           <a href="solutions.html#self-service" class="feature-card">
             <div class="feature-card__scene">
@@ -573,74 +859,81 @@
     <!-- ================================================================
          7. NO-RESET LIFECYCLE, Features
          ================================================================ -->
-    <section class="section reveal" style="position: relative; overflow: hidden;">
-      <div class="gradient-blob gradient-blob--purple" style="width: 500px; height: 500px; top: -150px; right: -200px; opacity: 0.08;"></div>
+    <section class="section section--dark reveal" style="position: relative; overflow: hidden;">
+      <div class="gradient-blob gradient-blob--purple" style="width: 500px; height: 500px; top: -150px; right: -200px; opacity: 0.15;"></div>
       <div class="container">
         <div class="section-header">
-          <span class="section-label">NO-RESET LIFECYCLE</span>
+          <span class="section-label section-label--light">NO-RESET LIFECYCLE</span>
           <h2>Modify Subscriptions Without Breaking Them</h2>
-          <p class="section-subtitle">Your client is dynamic. You should be too. Let customers skip, pause, swap, upgrade, add products, or pick up new deals without canceling and signing up again. Fewer walk away.</p>
+          <p class="section-subtitle" style="color: var(--color-gray-400);">Customers change their mind. Rebillia lets them act on it, skip, pause, swap, upgrade, add products, without canceling and re-subscribing. Continuity preserved. Churn reduced.</p>
         </div>
 
         <div class="reveal-stagger" style="max-width: 800px; margin: 0 auto;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(51,107,214,0.15); border: 1px solid rgba(51,107,214,0.3); border-radius: 9999px; margin-bottom: var(--space-6);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94B4F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            <span style="font-size: 12px; font-weight: 600; color: #94B4F0; letter-spacing: 0.03em;">NATIVE ECOMMERCE APP</span>
+          </div>
+          <h3 style="color: white; font-size: var(--text-2xl); font-weight: var(--font-bold); margin-bottom: var(--space-3); line-height: 1.3;">Native Subscription Management for BigCommerce</h3>
+          <p style="color: var(--color-gray-400); font-size: var(--text-base); line-height: 1.7; margin-bottom: var(--space-8);">Install once and unlock the most advanced subscription engine available. Your customers get a self-service portal where they control everything, no support tickets needed.</p>
+
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
-            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: 10px;">
+            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
               <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(16,185,129,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
               </div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: var(--color-text);">Skip & Pause</div>
-                <div style="font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; margin-top: 2px;">Skip deliveries or pause anytime</div>
+                <div style="font-size: 13px; font-weight: 600; color: white;">Skip & Pause</div>
+                <div style="font-size: 11px; color: var(--color-gray-400); line-height: 1.4; margin-top: 2px;">Skip deliveries or pause anytime</div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: 10px;">
+            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
               <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(51,107,214,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94B4F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
               </div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: var(--color-text);">Upgrade & Downgrade</div>
-                <div style="font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; margin-top: 2px;">Switch plans seamlessly</div>
+                <div style="font-size: 13px; font-weight: 600; color: white;">Upgrade & Downgrade</div>
+                <div style="font-size: 11px; color: var(--color-gray-400); line-height: 1.4; margin-top: 2px;">Switch plans seamlessly</div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: 10px;">
+            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
               <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(245,158,11,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
               </div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: var(--color-text);">Swap Products</div>
-                <div style="font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; margin-top: 2px;">Change items within a subscription</div>
+                <div style="font-size: 13px; font-weight: 600; color: white;">Swap Products</div>
+                <div style="font-size: 11px; color: var(--color-gray-400); line-height: 1.4; margin-top: 2px;">Change items within a subscription</div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: 10px;">
+            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
               <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(59,130,246,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: var(--color-text);">Ship Anywhere</div>
-                <div style="font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; margin-top: 2px;">Update the shipping address anytime during the subscription &mdash; for a single delivery or going forward</div>
+                <div style="font-size: 13px; font-weight: 600; color: white;">Ship Anywhere</div>
+                <div style="font-size: 11px; color: var(--color-gray-400); line-height: 1.4; margin-top: 2px;">Different address per delivery</div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: 10px;">
+            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
               <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(16,185,129,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: var(--color-text);">Temporary Add-Ons</div>
-                <div style="font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; margin-top: 2px;">Add products for a few months, then auto-stop</div>
+                <div style="font-size: 13px; font-weight: 600; color: white;">Temporary Add-Ons</div>
+                <div style="font-size: 11px; color: var(--color-gray-400); line-height: 1.4; margin-top: 2px;">Add products for a few months, then auto-stop</div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: 10px;">
+            <div style="display: flex; align-items: start; gap: 10px; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
               <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(51,107,214,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94B4F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
               </div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: var(--color-text);">Multi-User Plans</div>
-                <div style="font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; margin-top: 2px;">Multiple users on a single subscription</div>
+                <div style="font-size: 13px; font-weight: 600; color: white;">Multi-User Plans</div>
+                <div style="font-size: 11px; color: var(--color-gray-400); line-height: 1.4; margin-top: 2px;">Multiple users on a single subscription</div>
               </div>
             </div>
           </div>
@@ -652,13 +945,13 @@
     <!-- ================================================================
          8. RETAIN MORE CUSTOMERS
          ================================================================ -->
-    <section class="section reveal bob-section" style="position: relative; overflow: hidden;">
+    <section class="section reveal" style="position: relative; overflow: hidden;">
       <div class="gradient-blob gradient-blob--lavender" style="width: 400px; height: 400px; bottom: -100px; left: -150px; opacity: 0.2;"></div>
       <div class="container">
         <div class="section-header">
           <span class="section-label">RETENTION</span>
           <h2>Retain More Customers, Automatically</h2>
-          <p class="section-subtitle">Most lost subscription revenue comes from preventable cancellations. Rebillia fights back on every front, smarter cancel flows, win-back offers, backup ways to charge a declined card, and early action on at-risk customers.</p>
+          <p class="section-subtitle">Most subscription revenue is lost to preventable churn. Rebillia fights back on every front, smart cancel flows, win-back offers, payment failover, and proactive churn prevention.</p>
         </div>
 
         <div class="grid grid-4 reveal-stagger" style="gap: var(--space-6);">
@@ -669,7 +962,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-purple-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Smart Cancel Flows</h3>
-            <p class="card__text" style="font-size: var(--text-sm);">Understand why a customer is leaving and offer the right bundle, product, plan, discount, pause, downgrade, or skip.</p>
+            <p class="card__text" style="font-size: var(--text-sm);">Smart cancel flows that understand why a customer is leaving and offer the right save, discount, pause, downgrade, or skip.</p>
           </div>
 
           <!-- Win-Back Offers -->
@@ -678,7 +971,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
             </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Win-Back Offers</h3>
-            <p class="card__text" style="font-size: var(--text-sm);">Follow the client's changing needs, automatically reach out to canceled customers with personalized, well-timed comeback offers.</p>
+            <p class="card__text" style="font-size: var(--text-sm);">Automatically re-engage churned subscribers with personalized comeback offers timed to maximize reactivation.</p>
           </div>
 
           <!-- Intelligent Retry -->
@@ -687,7 +980,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
             </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Intelligent Retry & Failover</h3>
-            <p class="card__text" style="font-size: var(--text-sm);">Card declined? Rebillia retries at the right times and routes through a backup processor to recover the revenue.</p>
+            <p class="card__text" style="font-size: var(--text-sm);">Failed payment? Rebillia retries with smart timing, tries alternate gateways, and recovers revenue you'd otherwise lose.</p>
           </div>
 
           <!-- Churn Prediction -->
@@ -696,7 +989,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Proactive Churn Prevention</h3>
-            <p class="card__text" style="font-size: var(--text-sm);">Spot customers likely to leave before they cancel, and act early, with offers, outreach, or plan changes.</p>
+            <p class="card__text" style="font-size: var(--text-sm);">Identify at-risk subscribers before they cancel and trigger proactive retention actions, offers, outreach, or plan adjustments.</p>
           </div>
         </div>
       </div>
@@ -722,8 +1015,8 @@
                 <circle cx="9" cy="21" r="1" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="21" r="1" stroke="currentColor" stroke-width="2"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="card__title">Native to BigCommerce, WooCommerce, and AWS</h3>
-            <p class="card__text">Native to BigCommerce and WooCommerce (WooCommerce coming soon), and integrate with any other ecommerce platform via API.</p>
+            <h3 class="card__title">Ecommerce Platforms</h3>
+            <p class="card__text">Native plugins for leading ecommerce platforms with full <span class="text-highlight">subscription</span> lifecycle management.</p>
             <span class="card__link">View integrations <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
 
@@ -736,7 +1029,7 @@
               </svg>
             </div>
             <h3 class="card__title">SaaS & Digital</h3>
-            <p class="card__text">Charge by how much customers use, or on a recurring schedule, for digital products.</p>
+            <p class="card__text">Usage-based billing, metered pricing, and recurring <span class="text-highlight">subscription</span> models for digital products.</p>
             <span class="card__link">Explore solutions <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
 
@@ -749,7 +1042,7 @@
               </svg>
             </div>
             <h3 class="card__title">Custom Integration</h3>
-            <p class="card__text">An API and AI-assistant connection to build subscription billing into any platform or workflow.</p>
+            <p class="card__text">RESTful API and MCP server to build <span class="text-highlight">subscription</span> billing into any platform or workflow.</p>
             <span class="card__link">Explore developer tools <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
 
@@ -766,10 +1059,10 @@
             <img src="logos/global-payments-dark.svg" alt="Global Payments" style="height: 40px; width: auto;">
           </div>
           <p style="text-align: center; font-size: var(--text-base); color: var(--color-text); line-height: 1.7; max-width: 640px; margin: 0 auto 12px;">
-            <strong>RebilliaPay</strong> brings together the best subscription platform and Global Payments' world-class payment network, so Rebillia is now your gateway too. It's the strongest gateway built for subscription management, with payments, retention, and billing working as one system at a scale most platforms can't match. Other gateways treat subscriptions as an add-on. RebilliaPay is built for recurring revenue from the ground up.
+            Every Rebillia customer gets instant access to <strong>RebilliaPay</strong> - world-class payment processing powered by Global Payments' PayFabric infrastructure. No separate gateway contracts, no extra integrations. Sign up with Rebillia and you're ready to accept payments globally from day one.
           </p>
           <p style="text-align: center; font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.7; max-width: 640px; margin: 0 auto 24px;">
-            Preferred rates, securely saved cards for recurring charges, PCI DSS Level 1 security, and built-in fraud prevention. Paired with smart dunning, failed payments recover automatically before they become lost revenue.
+            RebilliaPay includes preferred processing rates, tokenized card vaulting for seamless recurring charges, PCI DSS Level 1 security - the highest certification level - and built-in fraud prevention. Combined with Rebillia's smart dunning engine, you recover failed payments automatically before they become lost revenue.
           </p>
           <div style="display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; font-size: var(--text-sm); color: var(--color-text-secondary);">
             <span style="display: flex; align-items: center; gap: 6px;">
@@ -797,7 +1090,7 @@
 
         <!-- Other supported gateways -->
         <div style="text-align: center; margin-top: var(--space-10);">
-          <p style="font-size: var(--text-sm); font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-5);">Already using another payment processor? Rebillia works with them all</p>
+          <p style="font-size: var(--text-sm); font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-5);">Already using another gateway? Rebillia supports them all</p>
           <div class="logo-cloud reveal" style="padding-top: 0; gap: var(--space-10) var(--space-12); flex-wrap: wrap; justify-content: center;">
             <span class="logo-cloud__item">
               <img src="logos/stripe.svg" alt="Stripe" style="height: 44px; width: auto;">
@@ -847,27 +1140,6 @@
           <h2>Built for Recurring Revenue, Everywhere</h2>
         </div>
         <div class="grid grid-3 reveal-stagger">
-          <div class="card text-center">
-            <div class="industry-illustration">
-              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-                <rect x="18" y="18" width="28" height="32" rx="6" fill="#E4ECFB" stroke="#336BD6" stroke-width="1.5"/>
-                <circle cx="28" cy="32" r="4" fill="#336BD6"/>
-                <circle cx="28" cy="31" r="1.5" fill="white"/>
-                <circle cx="40" cy="32" r="4" fill="#336BD6"/>
-                <circle cx="40" cy="31" r="1.5" fill="white"/>
-                <rect x="26" y="40" width="16" height="3" rx="1.5" fill="#94B4F0"/>
-                <line x1="32" y1="18" x2="32" y2="12" stroke="#336BD6" stroke-width="1.5"/>
-                <circle cx="32" cy="10" r="3" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
-                <path d="M52 24a8 8 0 00-4-6" stroke="#94B4F0" stroke-width="1.2" stroke-linecap="round"/>
-                <path d="M56 22a12 12 0 00-6-9" stroke="#C4D5F7" stroke-width="1.2" stroke-linecap="round"/>
-                <circle cx="54" cy="40" r="2" fill="#336BD6"/>
-                <circle cx="58" cy="46" r="2" fill="#94B4F0"/>
-                <circle cx="50" cy="48" r="2" fill="#C4D5F7"/>
-              </svg>
-            </div>
-            <h3 class="card__title" style="font-size: var(--text-base);">AI Agent Platforms</h3>
-            <p class="card__text">Billing your software can run automatically, for AI-powered products and services</p>
-          </div>
           <div class="card text-center">
             <div class="industry-illustration">
               <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
@@ -1021,7 +1293,35 @@
               </svg>
             </div>
             <h3 class="card__title" style="font-size: var(--text-base);">SaaS &amp; Software</h3>
-            <p class="card__text">Charge by usage, by number of users, or a mix of both</p>
+            <p class="card__text">Usage metering, seat-based billing, hybrid pricing models</p>
+          </div>
+          <div class="card text-center">
+            <div class="industry-illustration">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+
+  <!-- Robot head -->
+                <rect x="18" y="18" width="28" height="32" rx="6" fill="#E4ECFB" stroke="#336BD6" stroke-width="1.5"/>
+                <!-- Eyes -->
+                <circle cx="28" cy="32" r="4" fill="#336BD6"/>
+                <circle cx="28" cy="31" r="1.5" fill="white"/>
+                <circle cx="40" cy="32" r="4" fill="#336BD6"/>
+                <circle cx="40" cy="31" r="1.5" fill="white"/>
+                <!-- Mouth -->
+                <rect x="26" y="40" width="16" height="3" rx="1.5" fill="#94B4F0"/>
+                <!-- Antenna -->
+                <line x1="32" y1="18" x2="32" y2="12" stroke="#336BD6" stroke-width="1.5"/>
+                <circle cx="32" cy="10" r="3" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+                <!-- Signal waves -->
+                <path d="M52 24a8 8 0 00-4-6" stroke="#94B4F0" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M56 22a12 12 0 00-6-9" stroke="#C4D5F7" stroke-width="1.2" stroke-linecap="round"/>
+                <!-- Connection dots -->
+                <circle cx="54" cy="40" r="2" fill="#336BD6"/>
+                <circle cx="58" cy="46" r="2" fill="#94B4F0"/>
+                <circle cx="50" cy="48" r="2" fill="#C4D5F7"/>
+              </svg>
+            </div>
+            <h3 class="card__title" style="font-size: var(--text-base);">AI Agent Platforms</h3>
+            <p class="card__text">Programmatic billing for AI-native products and services</p>
           </div>
           <div class="card text-center">
             <div class="industry-illustration">
@@ -1041,11 +1341,11 @@
               </svg>
             </div>
             <h3 class="card__title" style="font-size: var(--text-base);">Digital Services</h3>
-            <p class="card__text">Paid content access, API billing, and other ways to charge on your platform</p>
+            <p class="card__text">Content access, API billing, platform monetization</p>
           </div>
         </div>
         <div class="text-center mt-8 reveal">
-          <p class="text-muted">And many more, professional services, health &amp; wellness, and beyond.</p>
+          <p class="text-muted">And many more &mdash; professional services, health &amp; wellness, and beyond.</p>
           <a href="solutions.html" class="card__link justify-center" style="display: inline-flex;">
             View all solutions
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1064,7 +1364,7 @@
           <span class="section-label">SOCIAL PROOF</span>
           <h2>What Our Customers Build with Rebillia</h2>
         </div>
-        <div class="testimonials-grid reveal-stagger bob-2col-center">
+        <div class="testimonials-grid reveal-stagger">
 
   <!-- Testimonial: Amend2 -->
           <div class="testimonial testimonial--decorated">
@@ -1080,20 +1380,6 @@
               <div>
                 <div class="testimonial__name">Amend2 Team</div>
                 <div class="testimonial__role">Firearm Accessories Manufacturer</div>
-              </div>
-            </div>
-          </div>
-
-  <!-- Video testimonial: UPS Capital -->
-          <div class="testimonial">
-            <div style="border-radius: var(--radius-lg); overflow: hidden; background: #000; margin-bottom: var(--space-5);">
-              <iframe src="https://share.descript.com/embed/eabXqnNqJk6" allow="autoplay; fullscreen" allowfullscreen title="Rebillia &times; UPS Capital interview" style="width: 100%; display: block; aspect-ratio: 16/9; border: 0;"></iframe>
-            </div>
-            <div class="testimonial__author">
-              <div class="testimonial__avatar testimonial__avatar--ring">ML</div>
-              <div>
-                <div class="testimonial__name">Mike Lazorchak</div>
-                <div class="testimonial__role"><strong>UPS Capital</strong>, Logistics &amp; Insurance Partner</div>
               </div>
             </div>
           </div>
@@ -1136,7 +1422,7 @@
             </div>
             <div class="step__number">1</div>
             <h3 class="step__title">Connect Your Platform</h3>
-            <p class="step__text">Native integrations for BigCommerce, WooCommerce, AWS, or any stack via API. One system across all your stores and brands.</p>
+            <p class="step__text">Native integrations for BigCommerce, WooCommerce, or any stack via API. One system across all your stores and brands.</p>
           </div>
           <div class="step">
 
@@ -1163,8 +1449,8 @@
               </svg>
             </div>
             <div class="step__number">2</div>
-            <h3 class="step__title">Set Up How You Charge</h3>
-            <p class="step__text">Set pricing, lifecycle rules, cross-sell offers, and what customers can change themselves. Flexible building blocks, not fixed plans, so you build the exact setup you need.</p>
+            <h3 class="step__title">Configure Your Monetization</h3>
+            <p class="step__text">Set pricing, lifecycle rules, cross-sell logic, and customer boundaries. Component-based - not fixed plans. Build the monetization model your business actually needs.</p>
           </div>
           <div class="step">
 
@@ -1188,7 +1474,7 @@
             </div>
             <div class="step__number">3</div>
             <h3 class="step__title">Subscriptions That Adapt</h3>
-            <p class="step__text">Change prices mid-period, swap products without restarting, and let customers make changes within the limits you set, so the way you charge keeps pace with your business.</p>
+            <p class="step__text">Pricing changes mid-cycle. Products swap without resets. Customers modify within your guardrails. Revenue grows - and your monetization evolves with your business.</p>
           </div>
         </div>
       </div>
@@ -1219,8 +1505,8 @@
           <h2 class="cta-block__title">Ready to See How Rebillia Works for Your Business?</h2>
           <p class="cta-block__text">Start with a free trial, or schedule a walkthrough with our team.</p>
           <div class="cta-block__actions">
-            <a href="/pricing" class="btn btn--primary btn--lg">Start Free Trial</a>
-            <a href="/pricing" class="btn btn--ghost-light btn--lg">Talk to Sales</a>
+            <a href="pricing.html" class="btn btn--ghost-light btn--lg" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); color: white;">Start Free Trial</a>
+            <a href="pricing.html" class="btn btn--ghost-light btn--lg">Talk to Sales</a>
           </div>
 
           <!-- Trust row -->
@@ -1235,7 +1521,7 @@
               <div class="trust-item__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
               </div>
-              Multi-Gateway (works with several payment processors)
+              Multi-Gateway
             </div>
           </div>
         </div>
@@ -1249,19 +1535,89 @@
   <!-- ====================================================================
        FOOTER (stays dark)
        ==================================================================== -->
-  <div id="site-footer"></div>
+  <div class="static-site-footer"><footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <!-- Brand column -->
+      <div class="footer__brand">
+        <div class="footer__brand-name">
+          <img src="logo.png" alt="Rebillia" width="140" height="40">
+        </div>
+        <p>Adaptive subscription infrastructure. From ecommerce to SaaS to AI-powered applications.</p>
+      </div>
+
+      <!-- Solutions -->
+      <div>
+        <h4 class="footer__heading">Solutions</h4>
+        <nav class="footer__links">
+          <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+          <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+          <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+          <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+          <a href="solutions.html#membership" class="footer__link">Membership</a>
+          <a href="solutions.html#api-first" class="footer__link">API-First</a>
+        </nav>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <h4 class="footer__heading">Product</h4>
+        <nav class="footer__links">
+          <a href="features.html" class="footer__link">Features</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="integrations.html" class="footer__link">Integrations</a>
+          <a href="integrations.html#payment-gateways" class="footer__link">Payment Gateways</a>
+          <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+        </nav>
+      </div>
+
+      <!-- Developers -->
+      <div>
+        <h4 class="footer__heading">Developers</h4>
+        <nav class="footer__links">
+          <a href="developers.html#api" class="footer__link">API Docs</a>
+          <a href="developers.html#mcp" class="footer__link">MCP Server</a>
+          <a href="developers.html#platform" class="footer__link">Webhooks</a>
+          <a href="status.html" class="footer__link">Status</a>
+        </nav>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="footer__heading">Company</h4>
+        <nav class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="pricing.html" class="footer__link">Contact</a>
+          <a href="careers.html" class="footer__link">Careers</a>
+          <a href="press.html" class="footer__link">Press</a>
+          <a href="partnerships.html" class="footer__link">Partners</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer__bottom">
+      <span>&copy; 2026 Rebillia. All rights reserved.</span>
+      <div class="footer__bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
 
 
   <!-- Scripts -->
-  <script src="js/layout-loader.js" defer></script>
     <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/counter.js"></script>
   <script src="js/typewriter.js"></script>
 
 <!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45175284.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45175284.js"></script>
 <!-- End of HubSpot Embed Code -->
-  <script src="js/hero-demo.js"></script>
 </body>
 </html>
