@@ -309,3 +309,6 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* Disable scroll-reveal fade-in — display immediately in their proper color (no white flash) */
+.reveal, .reveal-stagger, .reveal-stagger > * { opacity: 1 !important; transform: none !important; transition-duration: 0s !important; }
