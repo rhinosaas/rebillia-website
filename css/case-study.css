@@ -4,30 +4,25 @@
    off those two variables.
    ========================================================================== */
 
-.cs-visual { padding-top: var(--space-16); padding-bottom: var(--space-8); }
+.cs-visual { padding-top: var(--space-2); padding-bottom: var(--space-4); background: var(--color-bg-alt); }
 
 .cs-visual__band {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid #E2E8F5;
-  box-shadow: 0 30px 70px rgba(15,23,66,.10);
-  background: linear-gradient(135deg, #F2F5FD 0%, #E6EDFB 48%, #DCE6F9 100%);
-  padding: 52px 24px;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 4px 16px;
   display: flex;
   justify-content: center;
 }
+
+/* crop the promo to its content band — removes the empty top/bottom of the 16:9 */
+.cs-promo-crop { position: relative; width: 100%; aspect-ratio: 24 / 9; overflow: hidden; }
+.cs-promo-crop iframe { position: absolute; top: 50%; left: 0; transform: translateY(-50%); pointer-events: none; }
 .cs-visual__band::before,
-.cs-visual__band::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.07;
-  pointer-events: none;
-}
-.cs-visual__band::before { width: 300px; height: 300px; top: -90px; left: -60px; }
-.cs-visual__band::after  { width: 340px; height: 340px; bottom: -120px; right: -70px; }
+.cs-visual__band::after { display: none; }
 
 .cs-visual__caption {
   text-align: center;
@@ -226,3 +221,40 @@
   background: var(--accent-tint) !important;
   color: var(--accent) !important;
 }
+
+/* ---- compact case-study hero so the promo is visible immediately ---- */
+.page-wrapper .hero--light { padding-top: var(--space-8); padding-bottom: var(--space-2); }
+.page-wrapper .hero__label { margin-bottom: var(--space-4); }
+.page-wrapper .hero__title { font-size: clamp(28px, 3.6vw, 42px); margin-bottom: var(--space-4); }
+.page-wrapper .hero__subtitle { margin-bottom: 0; }
+
+/* ================= immersive per-sector theming (keys off --accent) ================= */
+/* Hero: soft accent wash + corner glows */
+.page-wrapper .hero--light{
+  background: linear-gradient(180deg, var(--accent-tint) 0%, #ffffff 82%);
+  position: relative; overflow: hidden;
+}
+.page-wrapper .hero--light::before{
+  content:""; position:absolute; z-index:0; pointer-events:none; display:block; border-radius:50%;
+  width:560px; height:560px; top:-210px; right:-150px;
+  background: radial-gradient(circle, var(--accent), transparent 68%); opacity:.13; filter:blur(6px);
+}
+.page-wrapper .hero--light::after{ display:none; }
+.page-wrapper .hero--light > .container{ position:relative; z-index:1; }
+
+/* Promo section: themed wash + accent backlight behind the card */
+.cs-visual{ background: linear-gradient(180deg, #ffffff 0%, var(--accent-tint) 46%, #ffffff 100%); position:relative; }
+.cs-visual > .container{ position:relative; z-index:1; }
+.cs-visual::after{
+  content:""; position:absolute; z-index:0; pointer-events:none;
+  left:50%; top:54%; transform:translate(-50%,-50%); width:66%; height:58%;
+  background: radial-gradient(ellipse at center, var(--accent), transparent 62%); opacity:.13; filter:blur(26px);
+}
+
+/* Alternating + timeline sections carry the accent tint */
+.page-wrapper .section--alt{ background: var(--accent-tint); }
+.cs-timeline{ background: var(--accent-tint); }
+
+/* Before/after table: accent headers + accent divider on Rebillia column */
+.page-wrapper .cs-table thead th{ color: var(--accent); }
+.page-wrapper .cs-table .cs-rebillia{ background: var(--accent-tint) !important; box-shadow: inset 3px 0 0 var(--accent); }

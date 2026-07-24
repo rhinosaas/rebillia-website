@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebillia · Food &amp; Beverage Subscription Promo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#B45309; --tint:#FBEEDD;
+    --navy:#0F1742; --navy2:#1A2B5C; --muted:#9CA7B6;
+    --border:#E7ECF6; --row:#F6F8FD;
+    --green:#10B981; --green-d:#0A8F65;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--navy); background:transparent;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .fit{width:100vw; height:100vh; display:flex; align-items:center; justify-content:center}
+  .stage{ position:relative; width:1280px; height:720px; flex:none; transform-origin:center center; }
+
+  /* ── floating chips ── */
+  .chip{
+    position:absolute; display:flex; align-items:center; gap:10px;
+    background:#fff; border:1px solid var(--border); border-radius:24px; padding:11px 20px;
+    font-size:19px; font-weight:600; color:var(--navy2);
+    box-shadow:0 12px 28px rgba(15,23,66,.12); z-index:3;
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .35s, border-color .35s;
+  }
+  .chip__d{
+    width:28px; height:28px; border-radius:50%; flex:none;
+    background:var(--tint); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:16px;
+  }
+  .chip--tl{ left:452px; top:150px; }
+  .chip--bl{ left:440px; top:520px; }
+  .chip--tr{ right:26px; top:150px; }
+  .chip--br{ right:30px; top:520px; }
+
+  /* left copy panel (rotates per control) */
+  .copy{ position:absolute; left:74px; top:50%; transform:translateY(-50%); width:396px; height:238px; z-index:4; }
+  .slide{ position:absolute; left:0; right:0; top:0; opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
+  .slide.on{ opacity:1; transform:none; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:9px; padding:8px 16px; border-radius:999px;
+    background:var(--tint); color:var(--accent); font-size:13px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+  .eyebrow i{ width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; }
+  .headline{ font-family:'Outfit',sans-serif; font-weight:800; font-size:46px; line-height:1.09; letter-spacing:-.02em; color:var(--navy); margin-top:20px; }
+  .headline span{ color:var(--accent); }
+  .chip.pop{ transform:translateY(-8px) scale(1.06); box-shadow:0 22px 44px rgba(180,83,9,.30); border-color:var(--accent); }
+  .chip.pop .chip__d{ background:var(--accent); color:#fff; }
+
+  /* ── portal card ── */
+  .card{
+    position:absolute; left:648px; top:50%; transform:translateY(-50%);
+    width:412px; background:#fff; border:1px solid var(--border); border-radius:26px;
+    padding:24px; box-shadow:0 30px 64px rgba(15,23,66,.16); z-index:2;
+    transition:transform .5s cubic-bezier(.4,0,.2,1);
+  }
+  .card.zoom{ transform:translateY(-50%) scale(1.03); }
+
+  .head{ display:flex; align-items:center; gap:15px; margin-bottom:20px; }
+  .badge{
+    width:50px; height:50px; border-radius:15px; flex:none;
+    background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center;
+    font-family:'Outfit',sans-serif; font-weight:800; font-size:23px;
+  }
+  .htitle{ font-size:20px; font-weight:700; color:var(--navy); line-height:1.2; }
+  .htitle small{ display:block; font-weight:500; font-size:14.5px; color:var(--muted); margin-top:2px; }
+  .status{
+    margin-left:auto; display:inline-flex; align-items:center; gap:7px;
+    font-size:14px; font-weight:700; color:var(--green-d);
+    background:rgba(16,185,129,.12); padding:7px 13px; border-radius:999px;
+  }
+  .status i{ width:8px; height:8px; border-radius:50%; background:var(--green); display:inline-block; }
+
+  .row{
+    position:relative; display:flex; align-items:center; gap:14px;
+    background:var(--row); border-radius:15px; padding:13px 15px; margin-top:13px;
+    transition:background .25s, box-shadow .25s;
+  }
+  .row.hi{ background:var(--tint); box-shadow:0 0 0 2px var(--accent) inset; }
+  .row__ic{
+    width:38px; height:38px; border-radius:10px; flex:none;
+    background:var(--tint); color:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .row__label{ font-size:16.5px; font-weight:600; color:var(--navy2); }
+  .row__txt{ flex:1; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+  .row__note{ font-size:12.5px; font-weight:600; color:var(--accent); height:0; opacity:0; margin-top:0; overflow:hidden; white-space:nowrap; transition:height .28s ease, opacity .28s ease, margin-top .28s ease; }
+  .row.on .row__note{ height:16px; opacity:1; margin-top:3px; }
+  .pill{
+    font-size:14px; font-weight:700; color:var(--accent);
+    background:var(--tint); padding:6px 15px; border-radius:12px; white-space:nowrap;
+    display:inline-flex; align-items:center; gap:7px; transition:transform .18s;
+  }
+  .pill-photo,
+  .opt-photo{
+    flex:none; border-radius:8px; background-image:url('img/food-flavors-sheet.webp');
+    background-size:200% 200%; background-repeat:no-repeat; background-color:#F5E9D6;
+    box-shadow:inset 0 0 0 1px rgba(15,23,66,.08);
+  }
+  .pill-photo{ width:26px; height:26px; margin:-3px 1px -3px -7px; }
+  .opt-photo{ width:34px; height:34px; }
+  .photo-1{ background-position:0 0; }
+  .photo-2{ background-position:100% 0; }
+  .photo-3{ background-position:0 100%; }
+  .photo-4{ background-position:100% 100%; }
+  .pill.flash{ animation:pillflash .5s ease; }
+  @keyframes pillflash{ 0%{transform:scale(.9); opacity:.4} 55%{transform:scale(1.08)} 100%{transform:scale(1)} }
+
+  /* toggle switch */
+  .switch{ position:relative; width:52px; height:29px; flex:none; }
+  .switch input{ position:absolute; inset:0; opacity:0; margin:0; }
+  .switch span{ position:absolute; inset:0; background:#CBD5E6; border-radius:999px; transition:background .28s; }
+  .switch span::after{
+    content:""; position:absolute; top:3px; left:3px; width:23px; height:23px;
+    border-radius:50%; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,.25); transition:transform .28s cubic-bezier(.34,1.56,.64,1);
+  }
+  .switch input:checked + span{ background:var(--accent); }
+  .switch input:checked + span::after{ transform:translateX(23px); }
+
+  /* flavor dropdown */
+  .drop{
+    position:absolute; right:15px; top:calc(100% - 4px); z-index:6; width:214px;
+    background:#fff; border:1px solid var(--border); border-radius:14px; padding:7px;
+    box-shadow:0 22px 48px rgba(15,23,66,.20);
+    opacity:0; transform:translateY(-8px) scale(.97); transform-origin:top right;
+    pointer-events:none; transition:opacity .22s ease, transform .22s ease;
+  }
+  .drop.open{ opacity:1; transform:none; }
+  .opt{
+    display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:10px;
+    font-size:15px; font-weight:600; color:var(--navy2); transition:background .16s;
+  }
+  .opt .sw{ width:18px; height:18px; border-radius:50%; flex:none; box-shadow:inset 0 0 0 1px rgba(0,0,0,.06); }
+  .opt .opt-img{ width:22px; height:22px; flex:none; display:flex; align-items:center; justify-content:center; }
+  .opt .opt-img svg{ display:block; }
+  .opt.sel, .opt.hi{ background:var(--tint); color:var(--accent); }
+  .opt .chk{ margin-left:auto; opacity:0; color:var(--accent); }
+  .opt.sel .chk{ opacity:1; }
+
+  .save{
+    margin-top:19px; width:100%; padding:15px 0; border:0; border-radius:14px;
+    background:var(--accent); color:#fff;
+    font-family:'DM Sans',sans-serif; font-size:16px; font-weight:700; letter-spacing:.01em;
+    display:flex; align-items:center; justify-content:center; gap:9px;
+    transition:background .3s, transform .12s;
+  }
+  .save.press{ transform:scale(.975); }
+  .save.done{ background:var(--green); }
+  .save .chk{ width:0; overflow:hidden; opacity:0; transition:width .3s, opacity .3s; display:inline-flex; }
+  .save.done .chk{ width:20px; opacity:1; }
+
+  /* cursor */
+  .cursor{
+    position:absolute; left:640px; top:600px; width:30px; height:30px; z-index:10;
+    margin-left:-4px; margin-top:-2px; pointer-events:none;
+    transition:left .8s cubic-bezier(.5,0,.2,1), top .8s cubic-bezier(.5,0,.2,1), transform .12s;
+    filter:drop-shadow(0 3px 5px rgba(15,23,66,.3));
+  }
+  .cursor.tap{ transform:scale(.82); }
+  .ring{
+    position:absolute; left:0; top:0; width:34px; height:34px; margin:-17px 0 0 -17px;
+    border-radius:50%; border:2px solid var(--accent); z-index:9; pointer-events:none;
+    opacity:0; transform:scale(.3);
+  }
+  .ring.go{ animation:ring .55s ease-out; }
+  @keyframes ring{ 0%{opacity:.7; transform:scale(.3)} 100%{opacity:0; transform:scale(1.5)} }
+</style>
+</head>
+<body>
+<div class="fit">
+  <div class="stage" id="stage">
+
+
+    <div class="copy">
+      <div class="slide"><span class="eyebrow"><i></i>SWAP THE FLAVOR</span><h2 class="headline">A new flavor, <span>anytime.</span></h2></div>
+      <div class="slide"><span class="eyebrow"><i></i>SKIP NEXT BOX</span><h2 class="headline">Skip it, <span>don&rsquo;t cancel.</span></h2></div>
+      <div class="slide"><span class="eyebrow"><i></i>ADD A GIFT</span><h2 class="headline">A gift with <span>any order.</span></h2></div>
+    </div>
+
+    <div class="card" id="card">
+      <div class="head">
+        <span class="badge">R</span>
+        <span class="htitle">Subscription<small>Manage your box</small></span>
+        <span class="status"><i></i>Active</span>
+      </div>
+
+      <div class="row" id="rowFlavor">
+        <span class="row__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+        <span class="row__label">Flavor</span>
+        <span class="pill" id="flavorPill"><span class="pill-photo photo-1" id="flavorPillPhoto" aria-hidden="true"></span><span id="flavorPillLabel">Chai</span></span>
+
+        <div class="drop" id="drop">
+          <div class="opt sel" data-flavor="Chai" data-photo="photo-1"><span class="opt-photo photo-1" aria-hidden="true"></span>Chai<span class="chk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+          <div class="opt" data-flavor="Vanilla" data-photo="photo-2"><span class="opt-photo photo-2" aria-hidden="true"></span>Vanilla<span class="chk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+          <div class="opt" data-flavor="Mocha" data-photo="photo-3"><span class="opt-photo photo-3" aria-hidden="true"></span>Mocha<span class="chk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+          <div class="opt" data-flavor="Seasonal Blend" data-photo="photo-4"><span class="opt-photo photo-4" aria-hidden="true"></span>Seasonal Blend<span class="chk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+        </div>
+      </div>
+
+      <label class="row" id="rowSkip">
+        <span class="row__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></span>
+        <span class="row__txt"><span class="row__label">Skip next box</span><span class="row__note">Next delivery paused</span></span>
+        <span class="switch"><input type="checkbox" id="swSkip" aria-label="Skip next box"><span></span></span>
+      </label>
+
+      <label class="row" id="rowGift">
+        <span class="row__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
+        <span class="row__txt"><span class="row__label">Add a gift</span><span class="row__note">Gift note included</span></span>
+        <span class="switch"><input type="checkbox" id="swGift" aria-label="Add a gift"><span></span></span>
+      </label>
+
+      <button class="save" id="save" type="button">
+        <span class="chk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span id="saveTxt">Save changes</span>
+      </button>
+    </div>
+
+    <div class="ring" id="ring"></div>
+    <svg class="cursor" id="cursor" viewBox="0 0 24 24" fill="#0F1742" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"><path d="M5 2l14 9-6 1.5L16 20l-3 1.3-3-7.4L5 18z"/></svg>
+  </div>
+</div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage');
+  var cursor=document.getElementById('cursor'), ring=document.getElementById('ring');
+  var rowFlavor=document.getElementById('rowFlavor'), drop=document.getElementById('drop');
+  var flavorPill=document.getElementById('flavorPill'), flavorPillLabel=document.getElementById('flavorPillLabel'), flavorPillPhoto=document.getElementById('flavorPillPhoto');
+  var swSkip=document.getElementById('swSkip'), swGift=document.getElementById('swGift');
+  var save=document.getElementById('save'), saveTxt=document.getElementById('saveTxt');
+  var card=document.getElementById('card');
+  var opts=drop.querySelectorAll('.opt');
+  var slides=document.querySelectorAll('.slide');
+  function showSlide(i){ slides.forEach(function(s,k){ s.classList.toggle('on', k===i); }); }
+
+  function fit(){
+    var s=Math.min(window.innerWidth/1280, window.innerHeight/720);
+    stage.style.transform='scale('+s+')';
+  }
+  window.addEventListener('resize',fit); fit();
+
+  function scale(){ return stage.getBoundingClientRect().width/1280; }
+  function moveTo(el,ox,oy){
+    var s=scale(), sr=stage.getBoundingClientRect(), r=el.getBoundingClientRect();
+    var x=(r.left-sr.left)/s + r.width/(2*s) + (ox||0);
+    var y=(r.top-sr.top)/s + r.height/(2*s) + (oy||0);
+    cursor.style.left=x+'px'; cursor.style.top=y+'px';
+  }
+  function tap(){
+    cursor.classList.add('tap'); setTimeout(function(){cursor.classList.remove('tap');},140);
+    ring.style.left=(parseFloat(cursor.style.left)+2)+'px';
+    ring.style.top=(parseFloat(cursor.style.top)+2)+'px';
+    ring.classList.remove('go'); void ring.offsetWidth; ring.classList.add('go');
+  }
+
+  var timers=[];
+  function at(t,fn){ timers.push(setTimeout(fn,t)); }
+
+  function reset(){
+    timers.forEach(clearTimeout); timers=[];
+    stage.querySelectorAll('.row, .slide').forEach(function(r){ r.classList.remove('on'); });
+    cursor.style.left='640px'; cursor.style.top='600px';
+    rowFlavor.classList.remove('hi'); drop.classList.remove('open');
+    flavorPillLabel.textContent='Chai'; flavorPillPhoto.className='pill-photo photo-1'; flavorPill.classList.remove('flash');
+    opts.forEach(function(o){ o.classList.remove('sel','hi'); });
+    opts[0].classList.add('sel');
+    swSkip.checked=false; swGift.checked=false;
+    
+    save.classList.remove('press','done'); saveTxt.textContent='Save changes';
+    card.classList.remove('zoom');
+  }
+
+  function run(){
+    reset();
+
+    at(360, function(){ showSlide(0); });
+    at(5040, function(){ showSlide(1); });
+    at(6960, function(){ showSlide(2); });
+
+    /* 0–2s : reveal, cursor to flavor field, highlight */
+    at(600, function(){ moveTo(flavorPill); });
+    at(1740, function(){ rowFlavor.classList.add('hi'); });
+
+    /* 2–4s : click flavor, dropdown, pick Seasonal Blend */
+    at(2400, function(){ tap(); drop.classList.add('open'); });
+    at(3480, function(){ moveTo(opts[3]); });
+    at(3900, function(){ opts[3].classList.add('hi'); });
+    at(4260, function(){
+      tap();
+      opts.forEach(function(o){ o.classList.remove('sel','hi'); });
+      opts[3].classList.add('sel');
+      flavorPillLabel.textContent='Seasonal Blend'; flavorPillPhoto.className='pill-photo '+opts[3].dataset.photo; void flavorPill.offsetWidth; flavorPill.classList.add('flash');
+    });
+    at(4740, function(){ drop.classList.remove('open'); rowFlavor.classList.remove('hi'); });
+
+    /* 4–6s : skip next box ON, emphasize "Too much at home" */
+    at(5160, function(){ moveTo(swSkip); });
+    at(6000, function(){ tap(); swSkip.checked=true; swSkip.closest('.row').classList.add('on'); });
+
+    /* 6–8s : add a gift ON, highlight "New card" */
+    at(7080, function(){ moveTo(swGift); });
+    at(7860, function(){ tap(); swGift.checked=true; swGift.closest('.row').classList.add('on'); });
+
+    /* 8–10s : save + success */
+    at(9480, function(){ moveTo(save,0,0); });
+    at(10320, function(){
+      tap(); save.classList.add('press'); card.classList.add('zoom');
+      setTimeout(function(){ save.classList.remove('press'); },160);
+    });
+    at(10680, function(){ save.classList.add('done'); saveTxt.textContent='Subscription updated'; });
+    at(11040, function(){ card.classList.remove('zoom'); });
+
+    /* loop */
+    at(12000, run);
+  }
+
+  if(document.readyState==='complete') run();
+  else window.addEventListener('load', function(){ setTimeout(run,200); });
+})();
+</script>
+</body>
+</html>

@@ -33,11 +33,201 @@
     .cs-spotlight__media img{object-fit:contain;background:#ffffff}
     .cs-spotlight__media{box-shadow:none;background:transparent}
     @media(max-width:640px){.cs-table,.cs-table tbody,.cs-table tr,.cs-table td{display:block;width:100%!important}.cs-table thead{display:none}.cs-table td{border-bottom:none;padding:var(--space-2) var(--space-4)}.cs-table tr{border-bottom:1px solid var(--color-border);padding:var(--space-4) 0}.cs-table tbody td:first-child{padding-top:var(--space-4)}}
+
+    /* ---- accent, standout headers; lighter paragraphs ---- */
+    .page-wrapper .section-label,
+    .page-wrapper .cs-spotlight__eyebrow,
+    .page-wrapper .cs-parts__eyebrow,
+    .page-wrapper .cs-timeline__eyebrow {
+      display: inline-flex; align-items: center;
+      background: var(--accent-tint); color: var(--accent);
+      padding: 6px 15px; border-radius: 999px;
+      font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .page-wrapper .section-label { margin-bottom: var(--space-5); }
+    .page-wrapper .section-label + h2,
+    .page-wrapper .cs-spotlight__h {
+      color: var(--color-text);
+      font-family: 'Outfit', sans-serif; font-weight: 800;
+      font-size: clamp(30px, 3.7vw, 46px); line-height: 1.12; letter-spacing: -.02em;
+    }
+    .page-wrapper .section-label + h2::after {
+      content: ""; display: block; width: 64px; height: 5px;
+      background: var(--accent); border-radius: 3px; margin-top: var(--space-4);
+    }
+    .page-wrapper .section p[style*="--color-text-secondary"] { font-size: var(--text-base); }
+    .page-wrapper .cs-spotlight__p { font-size: var(--text-base); }
   </style>
 </head>
 <body>
 
-  <div id="site-header"></div>
+  <div class="static-site-header"><nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar__inner">
+
+    <!-- Logo (filter: brightness(0) makes white logo dark on light nav) -->
+    <span class="navbar__logo" style="cursor:default" aria-label="Rebillia home">
+      <img src="logo-dark.png" alt="Rebillia" width="160" height="46">
+    </span>
+
+    <!-- Mobile toggle -->
+    <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Nav links -->
+    <div class="navbar__nav">
+
+      <a href="index.html" class="navbar__link">Home</a>
+
+      <!-- Platform dropdown -->
+      <div class="navbar__dropdown">
+        <a href="solutions.html" class="navbar__link">
+          Platform
+          <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="navbar__dropdown-menu" style="min-width: 300px;">
+          <div class="navbar__dropdown-heading">Billing Patterns</div>
+          <a href="solutions.html#subscribe-save" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            </span>
+            Subscribe &amp; Save
+          </a>
+          <a href="solutions.html#subscription-boxes" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </span>
+            Subscription Boxes
+          </a>
+          <a href="solutions.html#usage-based" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </span>
+            Usage-Based Billing
+          </a>
+          <a href="solutions.html#recurring-services" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            Recurring Services
+          </a>
+          <a href="solutions.html#membership" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </span>
+            Membership &amp; Access
+          </a>
+          <a href="solutions.html#api-first" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            API-First Billing
+          </a>
+          <div class="navbar__dropdown-divider"></div>
+          <div class="navbar__dropdown-heading">Integrations</div>
+          <a href="bigcommerce.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            </span>
+            BigCommerce
+          </a>
+          <a href="integrations.html#payment-gateways" class="navbar__dropdown-item">
+            <span class="dropdown-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            Payment Gateways
+          </a>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="solutions.html" class="navbar__dropdown-item navbar__dropdown-item--highlight">
+            View All Platform Capabilities &rarr;
+          </a>
+        </div>
+      </div>
+
+      <a href="features.html" class="navbar__link">Capabilities</a>
+      <a href="pricing.html" class="navbar__link">Pricing</a>
+      <a href="developers.html" class="navbar__link">Developers</a>
+      <a href="about.html" class="navbar__link">About</a>
+
+      <!-- Resources mega-menu: Industries + Resources -->
+      <div class="navbar__dropdown">
+        <a href="#" class="navbar__link">
+          Resources
+          <svg class="navbar__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="navbar__dropdown-menu navbar__mega">
+          <div class="navbar__mega-col">
+            <div class="navbar__dropdown-heading">By Industry</div>
+          <a href="beauty.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #C02772; background: #FBE9F2;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l1.8 5L19 9l-5.2 1.5L12 15.5l-1.8-5L5 9l5.2-1.5z"/><path d="M18.4 14.6l.85 2.05 2.05.85-2.05.85-.85 2.05-.85-2.05L15.5 17.5l2.05-.85z"/></svg></span>
+            Beauty
+          </a>
+          <a href="foodbeverage.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #B45309; background: #FBEEDD;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+            Food &amp; Beverage
+          </a>
+          <a href="healthwellness.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #0B7C6B; background: #E2F4F0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 019.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+            Health &amp; Wellness
+          </a>
+          <a href="petproducts.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon" style="color: #7C3AED; background: #F2EAFB;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><ellipse cx="6" cy="12.5" rx="1.9" ry="2.4"/><ellipse cx="9.7" cy="8.5" rx="1.9" ry="2.4"/><ellipse cx="14.3" cy="8.5" rx="1.9" ry="2.4"/><ellipse cx="18" cy="12.5" rx="1.9" ry="2.4"/><path d="M12 13c-2.6 0-4.7 2-4.7 4.1 0 1.4 1.1 2.4 2.5 2.4.9 0 1.5-.4 2.2-.4s1.3.4 2.2.4c1.4 0 2.5-1 2.5-2.4C16.7 15 14.6 13 12 13z"/></svg></span>
+            Pet Products
+          </a>
+          </div>
+          <div class="navbar__mega-col">
+            <div class="navbar__dropdown-heading">Resources</div>
+          <a href="customers.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+            Customer Stories
+          </a>
+          <a href="partnerships.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            Partnerships
+          </a>
+          <a href="news.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></span>
+            News &amp; Press
+          </a>
+          <a href="blog.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></span>
+            Blog
+          </a>
+          <a href="videos.html" class="navbar__dropdown-item">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></span>
+            Videos
+          </a>
+          <a href="https://docs.rebillia.com" class="navbar__dropdown-item" target="_blank" rel="noopener">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg></span>
+            Documentation
+          </a>
+          <a href="https://apiguide.rebillia.com" class="navbar__dropdown-item" target="_blank" rel="noopener">
+            <span class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><path d="M14.5 4l-5 16"/></svg></span>
+            API Documentation
+          </a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- Actions -->
+    <div class="navbar__actions">
+      <a href="https://admin.rebillia.com" class="navbar__login" target="_blank" rel="noopener">Login</a>
+      <a href="pricing.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+    </div>
+
+  </div>
+</nav>
+</div>
 
   <main class="page-wrapper" style="--accent: #C02772; --accent-tint: #FBE9F2;">
 
@@ -47,32 +237,15 @@
         <div class="hero__content">
           <h1 class="hero__title">Your Customers' Beauty Preferences Change With the Season. Their Subscriptions Should Too.</h1>
           <p class="hero__subtitle">Inside how beauty brands use Rebillia to keep subscribers active through every shade swap, formula change, and routine adjustment.</p>
-          <div style="display: flex; justify-content: center; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4);">
-            <span style="padding: 6px 16px; background: var(--color-purple-50); border-radius: 9999px; font-size: var(--text-sm); font-weight: var(--font-semibold); color: var(--color-primary);">Beauty</span>
-            <span style="padding: 6px 16px; background: var(--color-purple-50); border-radius: 9999px; font-size: var(--text-sm); font-weight: var(--font-semibold); color: var(--color-primary);">Partner Subscriptions</span>
-            <span style="padding: 6px 16px; background: var(--color-purple-50); border-radius: 9999px; font-size: var(--text-sm); font-weight: var(--font-semibold); color: var(--color-primary);">RebilliaPay</span>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- HERO VISUAL -->
-    <section class="cs-visual reveal">
-      <div class="container" style="max-width: 960px;">
+    <section class="cs-visual">
+      <div class="container" style="max-width: 1120px;">
         <div class="cs-visual__band">
-          <div class="rb-portal">
-          <span class="rb-chip rb-chip--tl"><span class="rb-chip__d">&#10022;</span>Seasonal shade</span>
-          <span class="rb-chip rb-chip--bl"><span class="rb-chip__d">+</span>Fragrance-free</span>
-          <span class="rb-chip rb-chip--tr"><span class="rb-chip__d">+</span>Add SPF</span>
-          <span class="rb-chip rb-chip--br"><span class="rb-chip__d">&hearts;</span>Partner bundle</span>
-            <div class="rb-portal__card">
-              <div class="rb-portal__head"><span class="rb-portal__badge">R</span><span class="rb-portal__title">Subscription<small>Manage your routine</small></span><span class="rb-portal__status"><i></i>Active</span></div>
-              <div class="rb-row"><span class="rb-row__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7l5.7 5.7a8 8 0 11-11.4 0z"/></svg></span><span class="rb-row__label">Shade</span><span class="rb-pill">Warm 03</span></div>
-              <label class="rb-row"><span class="rb-row__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></span><span class="rb-row__label">Fragrance-free</span><span class="rb-switch"><input type="checkbox" checked aria-label="Fragrance-free"><span></span></span></label>
-              <label class="rb-row"><span class="rb-row__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span class="rb-row__label">Add SPF 30</span><span class="rb-switch"><input type="checkbox" checked aria-label="Add SPF 30"><span></span></span></label>
-              <button class="rb-save" type="button">Save changes</button>
-            </div>
-          </div>
+          <div class="cs-promo-crop"><iframe class="cs-promo-frame" src="promo/beauty-portal.html" title="Personalize a beauty subscription in seconds" scrolling="no" allowtransparency="true" loading="lazy" style="width:100%; aspect-ratio:16 / 9; height:auto; border:0; display:block; background:transparent;"></iframe></div>
         </div>
         <p class="cs-visual__caption">One subscription that adapts to every shade, formula, and partner brand.</p>
       </div>
@@ -82,13 +255,7 @@
     <section class="section reveal">
       <div class="container" style="max-width: 800px;">
         <p style="color: var(--color-text-secondary); line-height: var(--leading-relaxed); font-size: var(--text-lg);">
-          A shade that felt perfect in spring needs to shift by summer. A moisturizer that worked in winter feels too heavy by June. A subscriber discovers they need a fragrance-free formula after a reaction. A customer wants to add a complementary product from another brand they love. A beauty routine spans cleanser, treatment, sunscreen, and color, but the subscription system forces them to buy them separately.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Beauty routines are personal, seasonal, and constantly changing. Most subscription systems are not built to move with them.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          That is the quiet reason many beauty brands either avoid subscriptions altogether or watch subscribers cancel for reasons that have nothing to do with the product itself. The customer did not stop wanting the formula. They just needed the subscription to flex, to change shades, swap products, add a treatment, or bundle with a partner brand, and the system made that harder than cancelling. Rebillia was built to close that gap.
+          A spring shade shifts by summer; a winter moisturizer feels heavy by June; a reaction calls for fragrance-free. Beauty routines constantly change, but most subscription systems cannot. Brands either avoid subscriptions or lose customers who still like the product because adjusting is harder than cancelling. Rebillia closes that gap.
         </p>
       </div>
     </section>
@@ -99,10 +266,7 @@
         <span class="section-label">HOW IT WORKS</span>
         <h2 style="margin-top: var(--space-4);">Billing Built Around the Parts That Actually Change</h2>
         <p style="margin-top: var(--space-6); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Instead of treating a subscription as one fixed product on one fixed interval, Rebillia breaks it into independent parts: product, shade, quantity, cadence, price, payment method, and customer preferences. Each part can be adjusted mid-subscription without cancelling, recreating the order, or losing the customer's history.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          A subscriber can swap a shade, change a formula, add a targeted product, adjust cadence to match consumption, update their payment method, or pair with a complementary brand while the underlying subscription stays intact. For beauty brands, that turns subscription management from a support burden into infrastructure that protects the customer relationship through the normal changes that used to end it.
+          Rebillia separates product, shade, cadence, price, and payment, so each can change without cancelling or losing history. Subscribers can swap a shade, change a formula, or add a partner product while the subscription stays intact. That replaces support friction with infrastructure that protects the relationship.
         </p>
       </div>
     </section>
@@ -130,10 +294,7 @@
         <span class="section-label">IN PRACTICE</span>
         <h2 style="margin-top: var(--space-4);">How This Applies to Beauty Brands</h2>
         <p style="margin-top: var(--space-6); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Consider a beauty brand selling makeup, skincare, sun protection, or targeted treatments. A typical subscriber might start with one shade or formula. Then seasons change. They travel and need different products. They discover a new concern and want to add something. A shade needs adjustment as their skin tone shifts. They want to pair their go-to product with another brand's complementary formula.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          With a rigid subscription system, each of these moments forces friction: contact the brand, wait for manual adjustment, create a separate order, or cancel and restart. With Rebillia, the customer makes simple changes through self-service, or the brand makes adjustments in seconds without losing continuity, and can even partner with other brands to sell bundled subscriptions. This pattern applies across beauty, whether customers are managing seasonal shade changes, formula swaps for skin sensitivity, routine adjustments, multi-product stacks, or partner brand pairings.
+          A subscriber starts with one shade, then seasons change, a new concern appears, or they add another brand's formula. A rigid system means contacting support or cancelling and restarting. With Rebillia, customers self-serve changes—or brands adjust them in seconds—without losing continuity.
         </p>
       </div>
     </section>
@@ -144,13 +305,7 @@
         <span class="section-label">STANDOUT FEATURE</span>
         <h2 style="margin-top: var(--space-4);">Partner Subscriptions: Selling Better Together</h2>
         <p style="margin-top: var(--space-6); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Rebillia also supports a feature that's especially powerful for beauty: two brands selling a joint subscription together, billed as one relationship instead of two separate checkouts.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Picture a moisturizer brand and a mineral sunscreen brand. On their own, a customer manages two separate subscriptions and two billing relationships. Partnered on Rebillia, the same customer can subscribe once, on either brand's storefront, and receive both products on a cadence that fits how they actually use them, while each brand keeps its own catalog, pricing, and payment setup behind the scenes.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          For the brands, that means a bigger basket, a shared audience, and a genuinely complementary product experience without either one needing to build custom infrastructure just to make the partnership work.
+          Rebillia lets two complementary brands sell one joint subscription instead of two separate checkouts. A moisturizer and mineral-sunscreen brand can serve one subscriber while each keeps its own catalog, pricing, and payouts. The result is a larger basket, shared audience, and complementary experience without custom infrastructure.
         </p>
       </div>
     </section>
@@ -162,7 +317,7 @@
           <div class="cs-spotlight__text">
             <span class="cs-spotlight__eyebrow">In Practice</span>
             <h3 class="cs-spotlight__h">Beauty that keeps up with every routine</h3>
-            <p class="cs-spotlight__p">Consider a subscriber who starts with one moisturizer, then wants a lighter formula for summer, adds an SPF as the season turns, and later pairs in a serum from a brand they love. With a rigid system, each of those is a separate order or a cancellation. On Rebillia the whole routine, cleanser, treatment, sunscreen, and color, lives in one adaptable subscription that shifts with skin, season, and preference, so the customer keeps a single plan and the brand keeps the relationship through every change.</p>
+            <p class="cs-spotlight__p">A subscriber starts with a moisturizer, then wants a lighter summer formula and a serum from a brand they love. On Rebillia the whole routine lives in one adaptable subscription: one plan for the customer, one relationship for the brand.</p>
           </div>
           <div class="cs-spotlight__media">
             <div class="cs-spotlight__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><b>Beauty routine close-up</b><span>realistic image drops in here</span></div>
@@ -178,10 +333,7 @@
         <span class="section-label">ACROSS THE CATEGORY</span>
         <h2 style="margin-top: var(--space-4);">The Same Flexibility Shows Up Across Beauty</h2>
         <p style="margin-top: var(--space-6); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Beauty brands running flexible subscriptions on Rebillia span different categories, skincare, color cosmetics, sun protection, targeted treatments, and more. These brands share one thing: subscribers need to adjust their routine and explore partnerships without losing the subscription.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          The point is not name-dropping. The point is that Rebillia already serves the beauty category where recurring revenue depends on what happens after the first subscription sign-up: the shade adjustment, the formula swap, the seasonal change, the added treatment, the partner brand pairing, the payment update, and the moment when flexibility could save the relationship instead of ending it.
+          Rebillia supports skincare, color cosmetics, sun protection, and more. Across the category, subscribers need to adjust routines without losing their subscription. Recurring revenue depends on the shade change, formula swap, seasonal adjustment, or partner pairing that preserves the relationship.
         </p>
       </div>
     </section>
@@ -203,25 +355,25 @@
     </section>
 
     <!-- IN-BODY SECTION: PARTNERSHIP -->
-    <section class="cs-spotlight cs-partner reveal" style="background:#FCFBFA">
+    <section class="cs-spotlight cs-partner reveal" style="background:#FBF6EE">
       <div class="container" style="max-width: 960px;">
         <div class="cs-spotlight__inner">
           <div class="cs-spotlight__text">
             <span class="cs-spotlight__eyebrow">Partner Subscriptions</span>
             <div class="cs-partner__brands"><span class="b b1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9"/><path d="M9 20v-6h6v6"/></svg></span><span class="plus">+</span><span class="b b2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9"/><path d="M9 20v-6h6v6"/></svg></span><span class="eq">= one subscription</span></div>
             <h3 class="cs-spotlight__h">Better Together: Build Subscriptions Across Brands</h3>
-            <p class="cs-spotlight__p">Two complementary brands, like a beauty blend and a concealer, sell one joint subscription. The customer subscribes once and gets both; each brand keeps its own shades, pricing, and payouts, for a bigger basket with no custom integration.</p>
+            <p class="cs-spotlight__p">Two complementary brands sell one joint subscription. The customer subscribes once and gets both; each keeps its own shades, pricing, and payouts, a bigger basket with no custom integration.</p>
           </div>
           <div class="cs-spotlight__media">
             <div class="cs-spotlight__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><b>Beauty partnership</b><span>realistic image drops in here</span></div>
-            <img src="img/case-study/beauty-partnership.jpg" style="background:#FCFBFA" alt="Beauty partnership" loading="lazy" onerror="this.remove()">
+            <img src="img/case-study/beauty-partnership.jpg" style="background:#FBF6EE" alt="Beauty partnership" loading="lazy" onerror="this.remove()">
           </div>
         </div>
       </div>
     </section>
 
     <!-- BEFORE / AFTER TABLE -->
-    <section class="section section--alt reveal">
+    <section class="section reveal">
       <div class="container" style="max-width: 900px;">
         <span class="section-label">BEFORE AND AFTER</span>
         <h2 style="margin-top: var(--space-4);">The Subscription Moment That Changes</h2>
@@ -269,7 +421,7 @@
           <div class="cs-spotlight__text">
             <span class="cs-spotlight__eyebrow">Product Spotlight</span>
             <h3 class="cs-spotlight__h">Turn cancellations into opportunities</h3>
-            <p class="cs-spotlight__p">Beauty subscriptions rarely end because the customer stopped liking the product. They end because a shade stopped matching, a formula triggered a reaction, or a routine outgrew the plan, and the billing system couldn't absorb the change without a cancel-and-restart. In a category where preferences shift with skin, season, and trend, a rigid subscription turns every small adjustment into a churn risk. Rebillia removes that risk: product, shade, cadence, and payment are independent parts a customer can change in seconds, so the moments that used to end a subscription become the moments that keep it.</p>
+            <p class="cs-spotlight__p">Beauty subscriptions often end when a shade, formula, or routine changes and billing cannot keep up. Rebillia separates product, shade, cadence, and payment, so customers adjust in seconds instead of cancelling.</p>
           </div>
           <div class="cs-spotlight__media">
             <div class="cs-spotlight__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><b>Beauty &middot; product photo</b><span>realistic image drops in here</span></div>
@@ -285,10 +437,7 @@
         <span class="section-label">THE TAKEAWAY</span>
         <h2 style="margin-top: var(--space-4);">For Beauty Brands</h2>
         <p style="margin-top: var(--space-6); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Beauty churn happens for a specific, fixable reason: the billing system cannot keep up with how customers' preferences and routines actually change, and it cannot easily connect with complementary brands.
-        </p>
-        <p style="margin-top: var(--space-5); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          A brand does not need to lose a subscriber just because they need a different shade, a formula change, a seasonal adjustment, an added product, a partner brand pairing, or a payment update. Those are not cancellation moments. They are adjustment moments.
+          Beauty churn has a fixable cause: billing cannot keep up with changing routines or complementary brands. No brand should lose a subscriber over a shade swap, formula change, or partner pairing. Those are adjustment moments, not cancellation moments.
         </p>
         <div class="testimonial testimonial--decorated" style="text-align: center; max-width: 100%; margin-top: var(--space-8);">
           <p class="testimonial__quote" style="font-size: var(--text-2xl);">"Legacy systems manage subscriptions. Rebillia manages subscription behavior."</p>
@@ -301,10 +450,10 @@
       <div class="container" style="position: relative;">
         <div class="cta-block__content">
           <h2 class="cta-block__title">Ready to Grow Your Recurring Revenue?</h2>
-          <p class="cta-block__text">If your subscription cannot handle a shade swap, formula change, product addition, seasonal adjustment, partner brand pairing, pause, or payment update without pushing the customer toward cancellation, talk to us about what that could look like for your brand.</p>
+          <p class="cta-block__text">If your subscription cannot handle shade, formula, product, seasonal, partner, pause, or payment changes without driving cancellation, talk to us about a more flexible approach.</p>
           <div class="cta-block__actions">
-            <a href="/pricing" class="btn btn--ghost-light btn--lg" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); color: white;">Start Free Trial</a>
-            <a href="/pricing" class="btn btn--ghost-light btn--lg">Schedule a Walkthrough</a>
+            <a href="pricing.html" class="btn btn--ghost-light btn--lg" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); color: white;">Start Free Trial</a>
+            <a href="pricing.html" class="btn btn--ghost-light btn--lg">Schedule a Walkthrough</a>
           </div>
           <p style="margin-top: var(--space-6);"><a href="customers.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm);">&larr; Back to Customer Stories</a></p>
         </div>
@@ -313,10 +462,81 @@
 
   </main>
 
-  <div id="site-footer"></div>
+  <div class="static-site-footer"><footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <!-- Brand column -->
+      <div class="footer__brand">
+        <div class="footer__brand-name">
+          <img src="logo.png" alt="Rebillia" width="140" height="40">
+        </div>
+        <p>Adaptive subscription infrastructure. From ecommerce to SaaS to AI-powered applications.</p>
+      </div>
+
+      <!-- Solutions -->
+      <div>
+        <h4 class="footer__heading">Solutions</h4>
+        <nav class="footer__links">
+          <a href="solutions.html#subscribe-save" class="footer__link">Subscribe &amp; Save</a>
+          <a href="solutions.html#subscription-boxes" class="footer__link">Subscription Boxes</a>
+          <a href="solutions.html#usage-based" class="footer__link">Usage-Based</a>
+          <a href="solutions.html#recurring-services" class="footer__link">Recurring Services</a>
+          <a href="solutions.html#membership" class="footer__link">Membership</a>
+          <a href="solutions.html#api-first" class="footer__link">API-First</a>
+        </nav>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <h4 class="footer__heading">Product</h4>
+        <nav class="footer__links">
+          <a href="features.html" class="footer__link">Features</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="integrations.html" class="footer__link">Integrations</a>
+          <a href="integrations.html#payment-gateways" class="footer__link">Payment Gateways</a>
+          <a href="bigcommerce.html" class="footer__link">BigCommerce</a>
+        </nav>
+      </div>
+
+      <!-- Developers -->
+      <div>
+        <h4 class="footer__heading">Developers</h4>
+        <nav class="footer__links">
+          <a href="developers.html#api" class="footer__link">API Docs</a>
+          <a href="developers.html#mcp" class="footer__link">MCP Server</a>
+          <a href="developers.html#platform" class="footer__link">Webhooks</a>
+          <a href="status.html" class="footer__link">Status</a>
+        </nav>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="footer__heading">Company</h4>
+        <nav class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="pricing.html" class="footer__link">Contact</a>
+          <a href="careers.html" class="footer__link">Careers</a>
+          <a href="press.html" class="footer__link">Press</a>
+          <a href="partnerships.html" class="footer__link">Partners</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer__bottom">
+      <span>&copy; 2026 Rebillia. All rights reserved.</span>
+      <div class="footer__bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
 
   <!-- Scripts -->
-  <script src="js/layout-loader.js" defer></script>
     <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
 </body>
