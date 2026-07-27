@@ -1,4 +1,31 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/customers",
+      "destination": "/resources/customers",
+      "permanent": true
+    },
+    {
+      "source": "/partnerships",
+      "destination": "/resources/partnerships",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/resources/news",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/resources/blog",
+      "permanent": true
+    },
+    {
+      "source": "/videos",
+      "destination": "/resources/videos",
+      "permanent": true
+    }
+  ]
 }

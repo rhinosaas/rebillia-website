@@ -49,7 +49,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rebillia.com/partnerships</loc>
+    <loc>https://www.rebillia.com/resources/partnerships</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -61,7 +61,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.rebillia.com/customers</loc>
+    <loc>https://www.rebillia.com/resources/customers</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -73,7 +73,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.rebillia.com/blog</loc>
+    <loc>https://www.rebillia.com/resources/blog</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
