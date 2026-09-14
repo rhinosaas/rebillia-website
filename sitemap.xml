@@ -90,4 +90,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url><loc>https://www.rebillia.com/status</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.rebillia.com/careers</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.rebillia.com/press</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
