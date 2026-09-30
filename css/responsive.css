@@ -40,22 +40,32 @@
     direction: ltr;
   }
 
-  /* Mobile nav — white bg */
+  /* Mobile nav — horizontal, scrollable tab bar */
   .navbar__nav {
     display: none;
     position: fixed;
     top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--space-6);
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 var(--space-4);
     background: var(--color-white);
-    overflow-y: auto;
-    gap: var(--space-1);
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: var(--space-4);
     z-index: var(--z-overlay);
     border-top: 1px solid var(--color-border-light);
+  }
+
+  /* Keep each tab on one line and prevent squishing in the horizontal row */
+  .navbar__nav > a,
+  .navbar__nav > .navbar__dropdown {
+    flex: 0 0 auto;
+  }
+  .navbar__link {
+    white-space: nowrap;
   }
 
   .navbar__nav.open {
@@ -89,9 +99,24 @@
     background: transparent;
   }
 
+  /* In the horizontal bar, submenus drop as a full-width panel BELOW the bar
+     (72px header + 150px bar = 222px) so they aren't clipped by the bar. */
+  .navbar__nav .navbar__dropdown {
+    position: static;
+  }
   .navbar__dropdown.open .navbar__dropdown-menu {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 222px;
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - 222px);
+    overflow-y: auto;
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-white);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    z-index: var(--z-overlay);
   }
 
   .navbar__dropdown-item {
