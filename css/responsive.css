@@ -40,9 +40,15 @@
     direction: ltr;
   }
 
-  /* Mobile nav — horizontal, scrollable tab bar */
+  /* Content sits below the fixed 72px header + 150px always-on tab strip */
+  .page-wrapper {
+    padding-top: 222px;
+  }
+
+  /* Mobile nav — always-visible horizontal, scrollable tab bar pinned on top */
   .navbar__nav {
-    display: none;
+    display: flex;
+    height: 150px;
     position: fixed;
     top: 72px;
     left: 0;
@@ -123,12 +129,16 @@
     padding: var(--space-2) var(--space-3);
   }
 
+  /* Tabs are always visible now, so the hamburger is no longer needed */
   .navbar__toggle {
-    display: flex;
+    display: none;
   }
 
+  /* Keep the CTA/login reachable in the top header row */
   .navbar__actions {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
   }
 
   .navbar__nav.open ~ .navbar__actions,
