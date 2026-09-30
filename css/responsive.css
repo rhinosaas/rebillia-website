@@ -60,7 +60,7 @@
 
   .navbar__nav.open {
     display: flex;
-    height: 90px;
+    height: 150px;
   }
 
   /* On enhanced-polish pages the nav is flex:1 + centered for the desktop bar;
