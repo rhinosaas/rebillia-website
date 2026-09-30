@@ -60,6 +60,17 @@
 
   .navbar__nav.open {
     display: flex;
+    /* Explicit height so the fixed menu fills the screen below the header.
+       (top/bottom alone was collapsing it to content height on some pages.) */
+    height: calc(100vh - 72px);
+    height: calc(100dvh - 72px);
+  }
+
+  /* On enhanced-polish pages the nav is flex:1 + centered for the desktop bar;
+     reset that for the mobile menu so links stack from the top. */
+  body.enhanced-polish .navbar__nav {
+    flex: none;
+    justify-content: flex-start;
   }
 
   .navbar__link {
